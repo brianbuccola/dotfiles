@@ -1,0 +1,42 @@
+! zenburn
+! vim: set ft=xdefaults:
+
+URxvt*background  : #1f1f1f
+URxvt*foreground  : #dcdccc
+URxvt*cursorColor : #8faf9f
+
+URxvt*colorBD     : #ffcfaf
+URxvt*colorUL     : #ccdc90
+URxvt*colorIT     : #80d4aa
+
+!black
+URxvt*color0      : #000d18
+URxvt*color8      : #000d18
+
+!red
+URxvt*color1      : #e89393
+URxvt*color9      : #e89393
+
+!green
+URxvt*color2      : #9ece9e
+URxvt*color10     : #9ece9e
+
+!yellow
+URxvt*color3      : #f0dfaf
+URxvt*color11     : #f0dfaf
+
+!blue
+URxvt*color4      : #8cd0d3
+URxvt*color12     : #8cd0d3
+
+!magenta
+URxvt*color5      : #c0bed1
+URxvt*color13     : #c0bed1
+
+!cyan
+URxvt*color6      : #dfaf8f
+URxvt*color14     : #dfaf8f
+
+!white
+URxvt*color7      : #efefef
+URxvt*color15     : #efefef

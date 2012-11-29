@@ -1,0 +1,21 @@
+#!/bin/sh
+
+#===============================================================================
+#
+# file:   ~/.xinitrc
+# author: Brian Buccola
+# vim:    set ft=sh:sw=4:et:nu:fenc=utf-8:
+#
+#===============================================================================
+
+$HOME/scripts/display-adjust.sh         # auto-adjust monitors
+xrdb -merge $HOME/.Xresources           # add .Xresources to database
+xset fp+ /usr/share/fonts/local         # add local fonts to fontpath
+$HOME/scripts/keyboard-adjust.sh        # add kbd layouts, switch ctrl/caps
+xsetroot -cursor_name left_ptr          # change default ugly pointer
+eval `cat $HOME/.fehbg`                 # set background
+urxvtd -q -f -o &                       # urxvt terminal daemon
+syndaemon -t -k -i 2 -d &               # disable touchpad while typing
+xscreensaver -no-splash &               # load screensaver
+
+xmonad                                  # start xmonad

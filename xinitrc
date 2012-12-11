@@ -1,12 +1,14 @@
 #!/bin/sh
 
-#===============================================================================
-#
-# file:   ~/.xinitrc
-# author: Brian Buccola
-# vim:    set ft=sh:sw=4:et:nu:fenc=utf-8:
-#
-#===============================================================================
+# vim:    set ft=sh sw=4 et nu fenc=utf-8:
+
+#===========================#
+#                           #
+# file:   ~/.xinitrc        #
+# author: Brian Buccola     #
+#                           #
+#===========================#
+
 
 $HOME/scripts/display-adjust.sh         # auto-adjust monitors
 xrdb -merge $HOME/.Xresources           # add .Xresources to database

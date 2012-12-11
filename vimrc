@@ -1,22 +1,23 @@
-"==============================================================================
-"
-" file: ~/.vimrc
-" author: Brian Buccola
-" vim: set fenc=utf-8:nu:et:sw=4:ft=vimrc:
-"
-"==============================================================================
+" vim: set fenc=utf-8 nu et sw=4 ft=vim:
+
+"==========================="
+"                           "
+" file:   ~/.vimrc          "
+" author: Brian Buccola     "
+"                           "
+"==========================="
 
 
 
 " Basics
 "==============================================================================
 
-set nocompatible                  " use vim-specific settings, not vi-compatible ones
-                                  " this must come before all other settings
-set background=dark               " make vim use lighter fg colors
+set nocompatible                " use vim settings, not vi-compatible ones
+                                " this must come before all other settings
+set background=dark             " make vim use lighter fg colors
 syntax on
-set modeline                      " use file-specific settings, if available
-                                  " add /usr/share/vim/vimfiles to $runtimepath...
+set modeline                    " use file-specific settings, if available
+                                " add /usr/share/vim/vimfiles to $runtimepath..
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
 
@@ -24,32 +25,32 @@ set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/afte
 " General
 "==============================================================================
 
-filetype plugin indent on         " load filetype plugin/indent files
-set autochdir                     " always switch to current file directory
-set backup                        " make backup files
-set backupdir=~/.vim/backup       " backup directory
-set directory=~/.vim/tmp          " directory for swap files
-set mouse=a                       " mouse support everywhere
-set wildmenu                      " turn on command-line completion wild style
-                                  " ignore these file extensions...
+filetype plugin indent on       " load filetype plugin/indent files
+set autochdir                   " always switch to current file directory
+set backup                      " make backup files
+set backupdir=~/.vim/backup     " backup directory
+set directory=~/.vim/tmp        " directory for swap files
+set mouse=a                     " mouse support everywhere
+set wildmenu                    " turn on command-line completion wild style
+                                " ignore these file extensions...
 set wildignore=*.bak,*.jpg,*.gif,*.png,*.log,*.aux,*.out,*.bbl,*.blg
-set ignorecase                    " ignore case, except...
-set smartcase                     " ...when search string contains uppercase
+set ignorecase                  " ignore case, except...
+set smartcase                   " ...when search string contains uppercase
 
 
 
 " Vim UI
 "==============================================================================
 
-set incsearch                     " highlight as you type search phrase
-set list                          " show real tabs (so they can be removed)
-set listchars=tab:>-,trail:-      " show tabs and trailing
-set number                        " show line numbers
-set report=0                      " tell me when anything is changed via :...
-set ruler                         " show current positions along bottom
-set scrolloff=10                  " keep 10 lines (top/bottom) for scope
-set showcmd                       " show command being typed
-set showmatch                     " show matching brackets
+set incsearch                   " highlight as you type search phrase
+set list                        " show real tabs (so they can be removed)
+set listchars=tab:>-,trail:-    " show tabs and trailing
+set number                      " show line numbers
+set report=0                    " tell me when anything is changed via :...
+set ruler                       " show current positions along bottom
+set scrolloff=10                " keep 10 lines (top/bottom) for scope
+set showcmd                     " show command being typed
+set showmatch                   " show matching brackets
 " set statusline=
 
 
@@ -57,10 +58,11 @@ set showmatch                     " show matching brackets
 " Text Formatting
 "==============================================================================
 
-set expandtab                     " no real tabs (use spaces for tabs)
-set tabstop=8                     " real tabs are 8, shown with set list
-set shiftwidth=2                  " number of soft tabs to use when using cindent, <<, >>, etc.
-set softtabstop=2                 " number of spaces when hitting tab/delete; see expandtab
+set expandtab                   " no real tabs (use spaces for tabs)
+set softtabstop=4               " # of spaces when hitting tab/delete
+set tabstop=8                   " real tabs are 8, shown with set list
+set shiftwidth=4                " # of softtabs when using cindent, <<, >>, ...
+set textwidth=79                " max # of characters on each line
 
 
 
@@ -68,26 +70,26 @@ set softtabstop=2                 " number of spaces when hitting tab/delete; se
 "==============================================================================
 
 " LaTeX
-set grepprg=grep\ -nH\ $*         " grep will sometimes skip displaying file
-                                  " name if you search in a singe file. This will
-                                  " confuse Latex-Suite. Set your grep program to
-                                  " always generate a file-name.
-let g:tex_flavor='latex'          " set filetype of empty tex files to latex
-                                  " instead of plaintex
+set grepprg=grep\ -nH\ $*       " grep will sometimes skip displaying file
+                                " name if you search in a singe file. This will
+                                " confuse Latex-Suite. Set your grep program to
+                                " always generate a file-name.
+let g:tex_flavor='latex'        " set filetype of empty tex files to latex
+                                " instead of plaintex
 let g:Tex_DefaultTargetFormat='pdf' " Use pdflatex instead of latex
                                     " to compile.
-let g:Tex_ViewRule_pdf='mupdf'    " choose which pdf viewer to use
+let g:Tex_ViewRule_pdf='mupdf'  " choose which pdf viewer to use
 
 
 
 " GUI Settings
 "==============================================================================
 
-set guioptions-=m                 " remove menu bar from gvim
-set guioptions-=T                 " remove toolbar from gvim
-set guioptions-=r                 " remove right-hand scroll bar
-set mousehide                     " auto-hide cursor while typing
-colorscheme molokai               " set color scheme
+set guioptions-=m               " remove menu bar from gvim
+set guioptions-=T               " remove toolbar from gvim
+set guioptions-=r               " remove right-hand scroll bar
+set mousehide                   " auto-hide cursor while typing
+colorscheme molokai             " set color scheme
 
 
 

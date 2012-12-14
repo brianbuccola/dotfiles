@@ -39,6 +39,7 @@ alias ccp="rsync -Ph"
 alias x="startx"
 alias lspapers="ls $HOME/documents/papers/ | sed 's/.pdf//' | column -t -s '-' | less"
 alias lsbooks="ls $HOME/documents/books/ | sed 's/.pdf//' | sed 's/.djvu//' | column -t -s '-' | less"
+alias tex-rm="rm *.aux *.bbl *.blg *.log *.out"
 
 # environment variables
 export PATH="$PATH:$HOME/scripts:$HOME/texlive/2011/bin/x86_64-linux:$HOME/.cabal/bin:$HOME/.gem/ruby/1.9.1/bin"

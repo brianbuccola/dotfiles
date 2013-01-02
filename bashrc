@@ -1,11 +1,6 @@
-# vim: set ft=sh:
-
-#===========================#
-#                           #
-# file:   ~/.bashrc         #
-# author: Brian Buccola     #
-#                           #
-#===========================#
+# vim:      set ft=sh:
+# file:     ~/.bashrc
+# author:   Brian Buccola
 
 # prompt
 PS1='\w \$ '

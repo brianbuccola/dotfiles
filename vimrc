@@ -1,16 +1,12 @@
-" vim: set fenc=utf-8 nu et sw=4 ft=vim:
-
-"==========================="
-"                           "
-" file:   ~/.vimrc          "
-" author: Brian Buccola     "
-"                           "
-"==========================="
+" vim:      set fenc=utf-8 nu et sw=4 ft=vim:
+" file:     ~/.vimrc
+" author:   Brian Buccola
 
 
 
-" Basics
-"==============================================================================
+" ========
+"  Basics
+" ========
 
 set nocompatible                " use vim settings, not vi-compatible ones
                                 " this must come before all other settings
@@ -22,8 +18,9 @@ set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/afte
 
 
 
-" General
-"==============================================================================
+" =========
+"  General
+" =========
 
 filetype plugin indent on       " load filetype plugin/indent files
 set autochdir                   " always switch to current file directory
@@ -39,8 +36,9 @@ set smartcase                   " ...when search string contains uppercase
 
 
 
-" Vim UI
-"==============================================================================
+" ========
+"  Vim UI
+" ========
 
 set incsearch                   " highlight as you type search phrase
 set list                        " show real tabs (so they can be removed)
@@ -55,8 +53,9 @@ set showmatch                   " show matching brackets
 
 
 
-" Text Formatting
-"==============================================================================
+" =================
+"  Text Formatting
+" =================
 
 set expandtab                   " no real tabs (use spaces for tabs)
 set softtabstop=4               " # of spaces when hitting tab/delete
@@ -66,8 +65,9 @@ set textwidth=79                " max # of characters on each line
 
 
 
-" Plugin Settings
-"==============================================================================
+" =================
+"  Plugin Settings
+" =================
 
 " LaTeX
 set grepprg=grep\ -nH\ $*       " grep will sometimes skip displaying file
@@ -82,8 +82,9 @@ let g:Tex_ViewRule_pdf='mupdf'  " choose which pdf viewer to use
 
 
 
-" GUI Settings
-"==============================================================================
+" ==============
+"  GUI Settings
+" ==============
 
 set guioptions-=m               " remove menu bar from gvim
 set guioptions-=T               " remove toolbar from gvim
@@ -93,8 +94,9 @@ colorscheme molokai             " set color scheme
 
 
 
-" Mappings
-"==============================================================================
+" ==========
+"  Mappings
+" ==========
 
 " switch from insert to command mode using jj
 inoremap jj <Esc>

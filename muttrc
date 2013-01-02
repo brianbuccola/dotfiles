@@ -1,15 +1,12 @@
-# vim: set ft=muttrc tw=0:
-
-#===========================#
-#                           #
-# file:   ~/.muttrc         #
-# author: Brian Buccola     #
-#                           #
-#===========================#
+# vim:      set ft=muttrc tw=0:
+# file:     ~/.muttrc
+# author:   Brian Buccola
 
 
-# Files, directories and commands
-#==============================================================================
+
+# ==================================
+#  Files, directories, and commands
+# ==================================
 
 set alias_file          = "~/.mutt/alias"                       # alias file
 set header_cache        = "~/.mutt/cache/headers"               # where to store headers
@@ -23,8 +20,9 @@ set ispell              = "/usr/bin/aspell -e -c"               # use aspell ins
 
 
 
-# Main options
-#==============================================================================
+# ==============
+#  Main options
+# ==============
 
 set mbox_type           = Maildir                               # mailbox type
 set folder              = "~/.mail"                             # mailbox location
@@ -49,8 +47,9 @@ unset wait_key                                                  # don't ask to "
 
 
 
-# Index options
-#==============================================================================
+# ===============
+#  Index options
+# ===============
 
 set sort                = threads                               # like gmail
 set sort_aux            = reverse-last-date-received            # like gmail
@@ -62,8 +61,9 @@ set menu_context        = 5                                     # number of line
 
 
 
-# Pager options
-#==============================================================================
+# ===============
+#  Pager options
+# ===============
 
 set pager_index_lines   = 10                                    # number of index lines to show
 set pager_context       = 5                                     # number of lines to pad top/bottom of screen when scrolling
@@ -78,8 +78,9 @@ alternative_order text/plain text/enriched text/html            # save html for 
 
 
 
-# Formats
-#==============================================================================
+# =========
+#  Formats
+# =========
 
 set date_format         = "%a %d %b %Y (%H:%M)"
 set index_format        = "%3C %Z %d %-15.15F %s"
@@ -87,8 +88,9 @@ set index_format        = "%3C %Z %d %-15.15F %s"
 
 
 
-# Composing mail
-#==============================================================================
+# ================
+#  Composing mail
+# ================
 
 set envelope_from                                               # not sure what this does!
 unset sig_dashes                                                # insert "--" on line before my sig?
@@ -109,8 +111,9 @@ set forward_quote                                               # include messag
 
 
 
-# Mailboxes
-#==============================================================================
+# ===========
+#  Mailboxes
+# ===========
 
 mailboxes   "+gmail/INBOX" \
             "+gmail/[Gmail].All Mail" \
@@ -121,8 +124,9 @@ mailboxes   "+gmail/INBOX" \
 
 
 
-# Always sourced
-#==============================================================================
+# ================
+#  Always sourced
+# ================
 
 source $alias_file                                              # source alias file
 source ~/.mutt/colors/icy                                       # source colors file
@@ -130,8 +134,9 @@ source ~/.mutt/personal                                         # source file w/
 
 
 
-# Hooks
-#==============================================================================
+# =======
+#  Hooks
+# =======
 
 folder-hook "All Mail" 'macro index d "<save-message>=gmail/[Gmail].Trash<enter>" "send to trash"'
 folder-hook !"All Mail" 'macro index d "<delete-message>" "archive the current entry (remove label)"'
@@ -141,8 +146,9 @@ folder-hook !"All Mail" 'macro index d "<delete-message>" "archive the current e
 
 
 
-# Bindings
-#==============================================================================
+# ==========
+#  Bindings
+# ==========
 
 bind index J            next-unread
 bind index K            previous-unread
@@ -162,8 +168,9 @@ bind index,pager \Cd    half-down
 
 
 
-# Macros
-#==============================================================================
+# ========
+#  Macros
+# ========
 
 macro generic,pager "<esc>m" \
                             "<shell-escape>less /usr/share/doc/mutt/manual.txt<enter>" \
@@ -183,8 +190,9 @@ macro compose v     "<edit-from>^Ume-<tab>"                                 "sel
 
 
 
-# Random stuff
-#==============================================================================
+# ==============
+#  Random stuff
+# ==============
 
 # save a decoded copy in ~/
 set pipe_decode                                                     # weed out headers before piping

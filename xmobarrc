@@ -1,0 +1,25 @@
+Config { font = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
+       , position = TopW L 100
+       , bgColor = "black"
+       , fgColor = "#5f5f5f"
+       , border = BottomBM 1
+       , borderColor = "#5f5f5f"
+       , lowerOnStart = True
+       , commands = [ Run Weather "CYUL" [ "-t","<tempF> F", "-L", "40", "-H", "80"
+                                         , "--normal", "#ffba68", "--high", "#ff0090", "--low", "#5f5fee"
+                                         ] 300
+                    , Run Wireless "wlan0" [ "-t", "<essid> <quality>", "-L", "50", "-H", "80"
+                                           ,  "--normal", "#ffba68", "--high", "#80ff00", "--low", "#5f5fee"
+                                           ] 10
+                    , Run Battery ["-t", "<acstatus>: <left>%", "-L", "10", "-H", "80"
+                                  , "--low", "#ff0090", "--normal", "#ffba68", "--high", "#80ff00"
+                                  , "--", "-O", "<fc=#80ff00>on</fc>", "-o", "off ", "-f", "/sys/class/power_supply/AC0/online"
+                                  ] 10
+                    , Run Kbd [("us(dvorak)", "dv")]
+                    , Run Date "%a %d %b %H:%M:%S" "date" 10
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %wlan0wi%  %kbd%  %CYUL%  %battery%  <fc=#c47f2c>%date%</fc> "
+       }

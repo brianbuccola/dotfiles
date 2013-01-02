@@ -40,6 +40,8 @@ alias x="startx"
 alias lspapers="ls $HOME/documents/papers/ | sed 's/.pdf//' | column -t -s '-' | less"
 alias lsbooks="ls $HOME/documents/books/ | sed 's/.pdf//' | sed 's/.djvu//' | column -t -s '-' | less"
 alias tex-rm="rm *.aux *.bbl *.blg *.log *.out"
+alias yu="yaourt -Syyu --ignore xmobar"
+alias yua="yaourt -Syyua --ignore xmobar"
 
 # environment variables
 export PATH="$PATH:$HOME/scripts:$HOME/texlive/2011/bin/x86_64-linux:$HOME/.cabal/bin:$HOME/.gem/ruby/1.9.1/bin"
@@ -51,6 +53,10 @@ export EDITOR="/usr/bin/vim"
 
 # make man pages narrower
 export MANWIDTH=80
+
+# use vim instead of less to view manpages
+# http://zameermanji.com/blog/2012/12/30/using-vim-as-manpager/
+#export MANPAGER="sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 
 # add auto-completion for sudo and man
 complete -cf sudo

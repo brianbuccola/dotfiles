@@ -1,0 +1,78 @@
+! vim:      set ft=xdefaults fenc=utf-8 nu ai et sw=4:
+! file:     ~/.Xresources
+! author:   Brian Buccola (brian.buccola@gmail.com)
+
+
+! ========
+!  Colors
+! ========
+
+#include "/home/brian/.xcolors/molokai"
+
+
+! =======
+!  URxvt
+! =======
+
+URxvt*font:             -*-terminus-medium-*-*--14-*-*-*-*-*-*-*
+URxvt*boldFont:         -*-terminus-bold-*-*--14-*-*-*-*-*-*-*
+URxvt*dynamicColors:    true
+URxvt*utf8:             2
+URxvt*eightBitInput:    true
+URxvt*saveLines:        512
+URxvt*scrollKey:        true
+URxvt*scrollTtyOutput:  false
+URxvt*scrollBar:        false
+URxvt*rightScrollBar:   false
+URxvt*jumpScroll:       true
+URxvt*multiScroll:      true
+URxvt*toolBar:          true
+URxvt*colorBDMode:      true
+URxvt*colorULMode:      true
+URxvt*borderLess:       false
+URxvt*urgentOnBell:     true
+
+! transparency
+URxvt.transparent:  true
+URxvt.shading:      45
+
+! urxvt-perls
+URxvt.perl-ext-common:      keyboard-select,url-select
+URxvt.keysym.M-C-Escape:    perl:keyboard-select:activate
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.launcher:  dwb
+URxvt.url-select.underline: true
+
+
+! ==========
+!  Xmessage
+! ==========
+
+Xmessage*font:                  -*-terminus-medium-*-*--14-*-*-*-*-*-*-*
+Xmessage*background:            #5f5f5f
+Xmessage*foreground:            #d0d0d0
+Xmessage*Scrollbar.width:       0
+Xmessage*Scrollbar.borderWidth: 0
+Xmessage*form.*.shapeStyle:     rectangle
+Xmessage*Buttons:               okay
+Xmessage*defaultButton:         okay
+Xmessage*okay*font:             -*-terminus-bold-*-*--14-*-*-*-*-*-*-*
+Xmessage*okay*foreground:       #1c1c1c
+Xmessage*okay*borderColor:      #1c1c1c
+Xmessage*yes*font:              -*-terminus-bold-*-*--14-*-*-*-*-*-*-*
+Xmessage*yes*foreground:        #1c1c1c
+Xmessage*yes*borderColor:       #1c1c1c
+Xmessage*no*font:               -*-terminus-bold-*-*--14-*-*-*-*-*-*-*
+Xmessage*no*foreground:         #1c1c1c
+Xmessage*no*borderColor:        #1c1c1c
+
+
+! ==============
+!  Xft settings
+! ==============
+
+Xft.dpi:            96
+Xft.antialias:      1
+Xft.rgba:           rgb
+Xft.hinting:        1
+Xft.hintstyle:      hintslight

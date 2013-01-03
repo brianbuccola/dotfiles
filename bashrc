@@ -39,7 +39,7 @@ alias yu="yaourt -Syyu --ignore xmobar"
 alias yua="yaourt -Syyua --ignore xmobar"
 
 # environment variables
-export PATH="$PATH:$HOME/scripts:$HOME/texlive/2011/bin/x86_64-linux:$HOME/.cabal/bin:$HOME/.gem/ruby/1.9.1/bin"
+export PATH="$PATH:$HOME/scripts:$HOME/texlive/2011/bin/x86_64-linux:$HOME/.gem/ruby/1.9.1/bin"
 export MANPATH="$MANPATH:$HOME/texlive/2011/texmf/doc/man"
 export INFOPATH="$INFOPATH:$HOME/texlive/2011/texmf/doc/info"
 export SUDO_EDITOR="/usr/bin/vim -p"

@@ -145,20 +145,20 @@ myKeys =
 
     -- Apps, etc.
 
-    , ( "M-d"   , raiseMaybe (spawn "dwb -r"               ) (className =? "Dwb"      ) ) -- "d"wb
-    , ( "M-S-k" , raiseMaybe (spawn "keepassx"             ) (className =? "Keepassx" ) ) -- "k"eepassx
-    , ( "M-f"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"    ) ) -- mupd"f"
-    , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"       ) (className =? "ncmpcpp"  ) ) -- "n"cmpcpp
-    , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"          ) (title =? "mutt"         ) ) -- "m"utt
-    , ( "M-r"   , raiseMaybe (runInTerm "" "newsbeuter"    ) (title =? "newsbeuter"   ) ) -- "r"ss
-    , ( "M-w"   , raiseMaybe (runInTerm "" "weechat-curses") (title =? "weechat 0.3.9.2") ) -- "w"eechat
-    , ( "M-S-w" , raiseMaybe (runInTerm "" "wicd-curses"   ) (title =? "wicd-curses"  ) ) -- "w"icd
-    , ( "M-v"   , raiseMaybe (runInTerm "" "alsamixer"     ) (title =? "alsamixer"    ) ) -- "v"olume
-    , ( "M-S-t" , spawn "~/scripts/trayer-toggle"                                       ) -- "t"rayer
-    , ( "M-p"   , raiseMaybe (runInTerm "" "htop"          ) (title =? "htop"         ) ) -- "h"top
+    , ( "M-d"   , raiseMaybe (spawn "dwb -r"               ) (className =? "Dwb"         ) ) -- "d"wb
+    , ( "M-S-k" , raiseMaybe (spawn "keepassx"             ) (className =? "Keepassx"    ) ) -- "k"eepassx
+    , ( "M-f"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"       ) ) -- mupd"f"
+    , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"       ) (className =? "ncmpcpp"     ) ) -- "n"cmpcpp
+    , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"          ) (title =? "mutt"            ) ) -- "m"utt
+    , ( "M-r"   , raiseMaybe (runInTerm "" "newsbeuter"    ) (title =? "newsbeuter"      ) ) -- "r"ss
+    , ( "M-w"   , raiseMaybe (runInTerm "" "weechat-curses") (title =? "weechat 0.3.9.2" ) ) -- "w"eechat
+    , ( "M-S-w" , raiseMaybe (runInTerm "" "wicd-curses"   ) (title =? "wicd-curses"     ) ) -- "w"icd
+    , ( "M-v"   , raiseMaybe (runInTerm "" "alsamixer"     ) (title =? "alsamixer"       ) ) -- "v"olume
+    , ( "M-S-t" , spawn "~/scripts/old/trayer-toggle.sh"                                   ) -- "t"rayer
+    , ( "M-p"   , raiseMaybe (runInTerm "" "htop"          ) (title =? "htop"            ) ) -- "h"top
 
-    , ( "M-<F8>" , spawn "~/scripts/display-adjust"     )
-    , ( "M-<F9>" , spawn "~/scripts/keyboard-adjust"    )
+    , ( "M-<F8>" , spawn "~/scripts/display-adjust.sh"     )
+    , ( "M-<F9>" , spawn "~/scripts/keyboard-adjust.sh"    )
 
     , ( "M-S-x" , sendMessage ToggleStruts )
 
@@ -171,7 +171,6 @@ myKeys =
 
     , ( "<Print>"   , spawn "scrot --delay 1 '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
     , ( "M-<Print>" , spawn "scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
-    -- use ~/scripts/scrot-select to capture selected part of screen (scrot -s)
 
     -- Media
 

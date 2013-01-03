@@ -5,10 +5,10 @@
 # author:   Brian Buccola
 
 
-$HOME/scripts/display-adjust            # auto-adjust monitors
+$HOME/scripts/display-adjust.sh         # auto-adjust monitors
 xrdb -merge $HOME/.Xresources           # add .Xresources to database
 xset fp+ /usr/share/fonts/local         # add local fonts to fontpath
-$HOME/scripts/keyboard-adjust           # add kbd layouts, switch ctrl/caps
+$HOME/scripts/keyboard-adjust.sh        # add kbd layouts, switch ctrl/caps
 xsetroot -cursor_name left_ptr          # change default ugly pointer
 eval `cat $HOME/.fehbg`                 # set background
 urxvtd -q -f -o &                       # urxvt terminal daemon

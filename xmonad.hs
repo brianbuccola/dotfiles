@@ -137,11 +137,12 @@ myKeys =
 
     -- Basics
 
-      ( "M-S-n"         , nextWS            )
-    , ( "M-S-p"         , prevWS            )
-    , ( "M-<Backspace>" , toggleWS          )
-    , ( "M-<Escape>"    , banish LowerRight )
-    , ( "M-<Return>"    , spawn myTerminal  )
+      ( "M-S-n"         , nextWS                        )
+    , ( "M-S-p"         , prevWS                        )
+    , ( "M-<Backspace>" , toggleWS                      )
+    , ( "M-<Escape>"    , banish LowerRight             )
+    , ( "M-<Return>"    , spawn myTerminal              )
+    , ( "M-S-<Return>"  , windows $ W.greedyView "term" ) -- go to WS "term"
 
     -- Apps, etc.
 
@@ -229,6 +230,20 @@ myKeys =
         , fgHLight = "black"
         } )
 
+    ] ++
+
+    -- Switch WS's with F1-F9 (required for Dvorak Programmer kbd layout).
+    --
+    -- Basic syntax example:
+    -- ( "<F4>", windows $ W.greedyView "term" )
+    --
+    -- The following is a list of (keys, actions) to be appended to myKeys above.
+    --
+    [ ( otherModMasks ++ "<F" ++ [key] ++ ">", action tag )
+      | (tag, key)                <- zip myWorkspaces "123456789"
+      , (otherModMasks, action)   <- [ ( "", windows . W.greedyView )
+                                     , ( "S-", windows . W.shift )
+                                     ]
     ]
 
 

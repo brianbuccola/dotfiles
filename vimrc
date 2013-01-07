@@ -101,6 +101,10 @@ colorscheme molokai             " set color scheme
 " switch from insert to command mode using jj
 inoremap jj <Esc>
 
+" enable some basic movements while in insert mode
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
 " prevent ctrl-U and ctrl-W from deleting stuff irrecoverably
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>

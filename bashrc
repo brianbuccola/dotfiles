@@ -37,6 +37,7 @@ alias lsbooks="ls $HOME/documents/books/ | sed 's/.pdf//' | sed 's/.djvu//' | co
 alias tex-rm="rm *.aux *.bbl *.blg *.log *.out"
 alias yu="yaourt -Syyu"
 alias yua="yaourt -Syyua"
+alias ghci="ghci-color"
 
 # environment variables
 export PATH="$PATH:$HOME/scripts:$HOME/texlive/2011/bin/x86_64-linux:$HOME/.cabal/bin:$HOME/.gem/ruby/1.9.1/bin"

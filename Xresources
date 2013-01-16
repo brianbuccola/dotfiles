@@ -14,8 +14,9 @@
 !  URxvt
 ! =======
 
-URxvt*font:             -*-terminus-medium-*-*--14-*-*-*-*-*-*-*
-URxvt*boldFont:         -*-terminus-bold-*-*--14-*-*-*-*-*-*-*
+!URxvt*font:             -*-terminus-medium-*-*--14-*-*-*-*-*-iso10646-*
+!URxvt*boldFont:         -*-terminus-bold-*-*--14-*-*-*-*-*-iso10646-*
+URxvt*font:             xft:Inconsolata:pixelsize=16
 URxvt*dynamicColors:    true
 URxvt*utf8:             2
 URxvt*eightBitInput:    true

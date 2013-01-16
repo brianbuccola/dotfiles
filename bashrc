@@ -3,7 +3,12 @@
 # author:   Brian Buccola
 
 # prompt
-PS1='\w \$ '
+CURRENTUSER=`whoami`
+if [[ "$CURRENTUSER" = "root" ]]; then
+    PS1='\[\e[91m\]\u: \w #\[\e[0m\] '
+else
+    PS1='\w \$ '
+fi
 
 # vi mode
 set -o vi

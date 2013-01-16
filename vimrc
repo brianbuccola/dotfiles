@@ -14,7 +14,7 @@ set background=dark             " make vim use lighter fg colors
 syntax on
 set modeline                    " use file-specific settings, if available
                                 " add /usr/share/vim/vimfiles to $runtimepath..
-set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+"set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
 
 
@@ -69,6 +69,9 @@ set textwidth=79                " max # of characters on each line
 "  Plugin Settings
 " =================
 
+" Pathogen
+call pathogen#infect()
+
 " LaTeX
 set grepprg=grep\ -nH\ $*       " grep will sometimes skip displaying file
                                 " name if you search in a singe file. This will
@@ -118,3 +121,6 @@ nnoremap K kJ
 
 " format code into nice-looking columns (visual mode)
 vnoremap <leader>c !column -t<CR>
+
+" spell check macro; `%' is current file.
+nnoremap <leader>s :w<CR>:!aspell --dont-backup check %<CR>:e<CR>

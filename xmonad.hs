@@ -93,7 +93,7 @@ myWorkspaces = [ "dwb"
 myStartupHook = return()    -- prefer .xinitrc
 
 --myFont = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
-myFont = "xft:Inconsolata:pixelsize=15"
+myFont = "xft:Inconsolata:pixelsize=14"
 
 
 

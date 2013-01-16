@@ -92,8 +92,8 @@ myWorkspaces = [ "dwb"
 
 myStartupHook = return()    -- prefer .xinitrc
 
---myFont = "xft:terminus:size=10"
-myFont = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
+--myFont = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
+myFont = "xft:Inconsolata:pixelsize=15"
 
 
 
@@ -143,6 +143,7 @@ myKeys =
     , ( "M-<Escape>"    , banish LowerRight             )
     , ( "M-<Return>"    , spawn myTerminal              )
     , ( "M-S-<Return>"  , windows $ W.greedyView "term" ) -- go to WS "term"
+    , ( "M-S-m"         , windows $ W.greedyView "misc" ) -- go to WS "misc"
 
     -- Apps, etc.
 
@@ -238,7 +239,7 @@ myKeys =
     -- ( "<F4>", windows $ W.greedyView "term" )
     --
     -- The following is a list of (keys, actions) to be appended to myKeys above.
-    --
+    -- Uses list comprehension.
     [ ( otherModMasks ++ "<F" ++ [key] ++ ">", action tag )
       | (tag, key)                <- zip myWorkspaces "123456789"
       , (otherModMasks, action)   <- [ ( "", windows . W.greedyView )

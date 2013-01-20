@@ -147,17 +147,17 @@ myKeys =
 
     -- Apps, etc.
 
-    , ( "M-d"   , raiseMaybe (spawn "dwb -r"               ) (className =? "Dwb"         ) ) -- "d"wb
-    , ( "M-S-k" , raiseMaybe (spawn "keepassx"             ) (className =? "Keepassx"    ) ) -- "k"eepassx
-    , ( "M-f"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"       ) ) -- mupd"f"
-    , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"       ) (className =? "ncmpcpp"     ) ) -- "n"cmpcpp
-    , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"          ) (title =? "mutt"            ) ) -- "m"utt
-    , ( "M-r"   , raiseMaybe (runInTerm "" "newsbeuter"    ) (title =? "newsbeuter"      ) ) -- "r"ss
-    , ( "M-w"   , raiseMaybe (runInTerm "" "weechat-curses") (title =? "weechat 0.3.9.2" ) ) -- "w"eechat
-    , ( "M-S-w" , raiseMaybe (runInTerm "" "wicd-curses"   ) (title =? "wicd-curses"     ) ) -- "w"icd
-    , ( "M-v"   , raiseMaybe (runInTerm "" "alsamixer"     ) (title =? "alsamixer"       ) ) -- "v"olume
-    , ( "M-S-t" , spawn "~/scripts/old/trayer-toggle.sh"                                   ) -- "t"rayer
-    , ( "M-p"   , raiseMaybe (runInTerm "" "htop"          ) (title =? "htop"            ) ) -- "h"top
+    , ( "M-d"   , raiseMaybe (spawn "dwb -r"               ) (className =? "Dwb"       ) ) -- "d"wb
+    , ( "M-S-k" , raiseMaybe (spawn "keepassx"             ) (className =? "Keepassx"  ) ) -- "k"eepassx
+    , ( "M-f"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"     ) ) -- mupd"f"
+    , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"       ) (className =? "ncmpcpp"   ) ) -- "n"cmpcpp
+    , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"          ) (title =? "mutt"          ) ) -- "m"utt
+    , ( "M-r"   , raiseMaybe (runInTerm "" "newsbeuter"    ) (title =? "newsbeuter"    ) ) -- "r"ss
+    , ( "M-w"   , raiseMaybe (runInTerm "" "weechat-curses") (title =? "weechat 0.4.0" ) ) -- "w"eechat
+    , ( "M-S-w" , raiseMaybe (runInTerm "" "wicd-curses"   ) (title =? "wicd-curses"   ) ) -- "w"icd
+    , ( "M-v"   , raiseMaybe (runInTerm "" "alsamixer"     ) (title =? "alsamixer"     ) ) -- "v"olume
+    , ( "M-S-t" , spawn "~/scripts/old/trayer-toggle.sh"                                 ) -- "t"rayer
+    , ( "M-p"   , raiseMaybe (runInTerm "" "htop"          ) (title =? "htop"          ) ) -- "h"top
 
     , ( "M-<F8>" , spawn "~/scripts/display-adjust.sh"     )
     , ( "M-<F9>" , spawn "~/scripts/keyboard-adjust.sh"    )

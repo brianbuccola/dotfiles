@@ -3,11 +3,10 @@
 # author:   Brian Buccola
 
 # prompt
-CURRENTUSER=`whoami`
-if [[ "$CURRENTUSER" = "root" ]]; then
-    PS1='\[\e[91m\]\u: \w #\[\e[0m\] '
+if [[ "`whoami`" = "root" ]]; then
+    PS1='\[\e[91m\](\u) \w #\[\e[0m\] '
 else
-    PS1='\w \$ '
+    PS1='\[\e[37m\]\w\[\e[0m\] \[\e[32m\]\$\[\e[0m\] '
 fi
 
 # vi mode
@@ -35,6 +34,7 @@ alias vpnc-disconnect="sudo vpnc-disconnect"
 alias mtab="cat /etc/mtab | column -t"
 alias bp='echo -e "\a"'
 alias lp2="lp -o number-up=2"
+alias lp-mcgill="lp -d HP_LaserJet_2300_series"
 alias ccp="rsync -Ph"
 alias x="startx"
 alias lspapers="ls $HOME/documents/papers/ | sed 's/.pdf//' | column -t -s '-' | less"

@@ -6,7 +6,7 @@
 if [[ "`whoami`" = "root" ]]; then
     PS1='\[\e[91m\](\u) \w #\[\e[0m\] '
 else
-    PS1='\[\e[37m\]\w\[\e[0m\] \[\e[32m\]\$\[\e[0m\] '
+    PS1='\[\e[37m\]\w \$\[\e[0m\] '
 fi
 
 # vi mode

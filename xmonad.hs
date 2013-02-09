@@ -263,6 +263,7 @@ myManageHook = composeAll . concat $
     , [ className =? "Dwb"            --> doShift "dwb"            ]
     , [ title     =? "mutt"           --> doShift "mutt"           ]
     , [ className =? "MuPDF"          --> doShift "doc"            ]
+    , [ className =? "Djview"         --> doShift "doc"            ]
     , [ title     =? "weechat-curses" --> doShift "wee"            ]
     , [ className =? "Skype"          --> doShift "wee"            ]
     , [ title     =? "newsbeuter"     --> doShift "rss"            ]

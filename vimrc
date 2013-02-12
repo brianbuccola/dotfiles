@@ -110,7 +110,7 @@ nnoremap <leader>s :w<CR>:!aspell --dont-backup check %<CR>:e<CR>
 " LaTeX (rubber) macro
 nnoremap <leader>t :w<CR>:!rubber --pdf --warn all %<CR>
 
-" View PDF macro; `%:r` is current file's root (base) name.
+" View PDF macro; `%:r' is current file's root (base) name.
 nnoremap <leader>v :!mupdf %:r.pdf &<CR><CR>
 
 

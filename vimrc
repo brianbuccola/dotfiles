@@ -69,10 +69,10 @@ function! TrimWhiteSpace()
 endfunction
 
 " call TrimWhiteSpace() just before write
-autocmd FileWritePre    * :call TrimWhiteSpace()
-autocmd FileAppendPre   * :call TrimWhiteSpace()
-autocmd FilterWritePre  * :call TrimWhiteSpace()
-autocmd BufWritePre     * :call TrimWhiteSpace()
+" autocmd FileWritePre    * :call TrimWhiteSpace()
+" autocmd FileAppendPre   * :call TrimWhiteSpace()
+" autocmd FilterWritePre  * :call TrimWhiteSpace()
+" autocmd BufWritePre     * :call TrimWhiteSpace()
 
 
 

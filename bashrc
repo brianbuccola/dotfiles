@@ -12,6 +12,9 @@ fi
 # vi mode
 set -o vi
 
+# git completion
+source /usr/share/git/completion/git-completion.bash
+
 # aliases
 alias ..="cd .."
 alias ...="cd ../.."

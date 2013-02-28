@@ -231,21 +231,21 @@ myKeys =
         , fgHLight = "black"
         } )
 
-    ] ++
+    ]-- ++
 
-    -- Switch WS's with F1-F9 (required for Dvorak Programmer kbd layout).
-    --
-    -- Basic syntax example:
-    -- ( "<F4>", windows $ W.greedyView "term" )
-    --
-    -- The following is a list of (keys, actions) to be appended to myKeys above.
-    -- Uses list comprehension.
-    [ ( otherModMasks ++ "<F" ++ [key] ++ ">", action tag )
-      | (tag, key)                <- zip myWorkspaces "123456789"
-      , (otherModMasks, action)   <- [ ( "", windows . W.greedyView )
-                                     , ( "S-", windows . W.shift )
-                                     ]
-    ]
+    -- -- Switch WS's with F1-F9 (required for Dvorak Programmer kbd layout).
+    -- --
+    -- -- Basic syntax example:
+    -- -- ( "<F4>", windows $ W.greedyView "term" )
+    -- --
+    -- -- The following is a list of (keys, actions) to be appended to myKeys above.
+    -- -- Uses list comprehension.
+    -- [ ( otherModMasks ++ "<F" ++ [key] ++ ">", action tag )
+    --   | (tag, key)                <- zip myWorkspaces "123456789"
+    --   , (otherModMasks, action)   <- [ ( "", windows . W.greedyView )
+    --                                  , ( "S-", windows . W.shift )
+    --                                  ]
+    -- ]
 
 
 

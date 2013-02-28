@@ -50,6 +50,7 @@ set softtabstop=4               " # of spaces when hitting tab/delete
 set tabstop=8                   " real tabs are 8, shown with set list
 set shiftwidth=4                " # of softtabs when using cindent, <<, >>, ...
 set textwidth=79                " max # of characters on each line
+set autoindent                  " use indentation level of previous line
 
 
 

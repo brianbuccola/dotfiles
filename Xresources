@@ -35,7 +35,7 @@ URxvt*urgentOnBell:     true
 
 ! transparency
 URxvt.transparent:  true
-URxvt.shading:      45
+URxvt.shading:      30
 
 ! urxvt-perls
 URxvt.perl-ext-common:      keyboard-select,url-select

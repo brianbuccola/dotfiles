@@ -14,5 +14,6 @@ eval `cat $HOME/.fehbg`                 # set background
 urxvtd -q -f -o &                       # urxvt terminal daemon
 syndaemon -t -k -i 2 -d &               # disable touchpad while typing
 xscreensaver -no-splash &               # load screensaver
+wmname LG3D                             # fix JabRef/Java apps
 
 xmonad                                  # start xmonad

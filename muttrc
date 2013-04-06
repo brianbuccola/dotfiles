@@ -83,7 +83,7 @@ alternative_order text/plain text/enriched text/html            # save html for 
 # =========
 
 set date_format         = "%a %d %b %Y (%H:%M)"
-set index_format        = "%3C %Z %d %-15.15F %s"
+set index_format        = "%3C %Z %D %-15.15F %s"
 #set alias_format        = "%4n %t %-20a  %r"
 
 

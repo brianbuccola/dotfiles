@@ -68,3 +68,5 @@ complete -cf man
 
 # java look and feel; needed to make JabRef fonts look OK
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

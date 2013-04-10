@@ -32,6 +32,7 @@ URxvt*colorBDMode:      true
 URxvt*colorULMode:      true
 URxvt*borderLess:       false
 URxvt*urgentOnBell:     true
+URxvt*loginShell:       true
 
 ! transparency
 URxvt.transparent:  true

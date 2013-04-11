@@ -114,6 +114,9 @@ nnoremap <leader>t :w<CR>:!rubber --pdf --warn all %<CR>
 " View PDF macro; `%:r' is current file's root (base) name.
 nnoremap <leader>v :!mupdf %:r.pdf &<CR><CR>
 
+" Blog macro: convert current markdown file to html using blog script
+nnoremap <leader>b :w<CR>:!cd .. && ./bb.sh convert source/%<CR>
+
 
 
 " =================

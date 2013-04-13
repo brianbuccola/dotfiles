@@ -115,7 +115,7 @@ nnoremap <leader>t :w<CR>:!rubber --pdf --warn all %<CR>
 nnoremap <leader>v :!mupdf %:r.pdf &<CR><CR>
 
 " Blog macro: convert current markdown file to html using blog script
-nnoremap <leader>b :w<CR>:!cd .. && bashdown convert source/%<CR>
+nnoremap <leader>b :w<CR>:!bashdown convert ~/blog/source/%<CR>
 
 
 

@@ -48,7 +48,7 @@ alias yua="yaourt -Syyua"
 alias ghci="ghci-color"
 
 # environment variables
-export PATH="$PATH:$HOME/scripts:$HOME/texlive/2011/bin/x86_64-linux:$HOME/.cabal/bin:$HOME/.gem/ruby/1.9.1/bin"
+export PATH="$PATH:$HOME/scripts:$HOME/texlive/2011/bin/x86_64-linux:$HOME/.cabal/bin:$HOME/blog"
 export MANPATH="$MANPATH:$HOME/texlive/2011/texmf/doc/man"
 export INFOPATH="$INFOPATH:$HOME/texlive/2011/texmf/doc/info"
 export SUDO_EDITOR="/usr/bin/vim -p"
@@ -68,5 +68,3 @@ complete -cf man
 
 # java look and feel; needed to make JabRef fonts look OK
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

@@ -3,7 +3,7 @@
 # author:   Brian Buccola
 
 # prompt
-if [[ "`whoami`" = "root" ]]; then
+if [[ "$(whoami)" = "root" ]]; then
     PS1='\[\e[91m\](\u) \w #\[\e[0m\] '
 else
     PS1='\[\e[37m\]\w \$\[\e[0m\] '
@@ -34,7 +34,6 @@ alias mount="sudo mount"
 alias umount="sudo umount"
 alias vpnc="sudo vpnc /etc/vpnc/mcgill.conf"
 alias vpnc-disconnect="sudo vpnc-disconnect"
-alias mtab="cat /etc/mtab | column -t"
 alias bp='echo -e "\a"'
 alias lp2="lp -o number-up=2"
 alias lp-mcgill="lp -d HP_LaserJet_2300_series"
@@ -42,7 +41,6 @@ alias ccp="rsync -Ph"
 alias x="startx"
 alias lspapers="ls $HOME/documents/papers/ | sed 's/.pdf//' | column -t -s '-' | less"
 alias lsbooks="ls $HOME/documents/books/ | sed 's/.pdf//' | sed 's/.djvu//' | column -t -s '-' | less"
-alias tex-rm="rm *.aux *.bbl *.blg *.log *.out"
 alias yu="yaourt -Syyu"
 alias yua="yaourt -Syyua"
 alias ghci="ghci-color"
@@ -57,10 +55,6 @@ export EDITOR="/usr/bin/vim"
 
 # make man pages narrower
 export MANWIDTH=80
-
-# use vim instead of less to view manpages
-# http://zameermanji.com/blog/2012/12/30/using-vim-as-manpager/
-#export MANPAGER="sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 
 # add auto-completion for sudo and man
 complete -cf sudo

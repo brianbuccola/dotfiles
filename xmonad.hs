@@ -79,7 +79,7 @@ myBorderWidth        = 1
 myNormalBorderColor  = myLightBlack -- see below for colors
 myFocusedBorderColor = myDarkYellow
 
-myWorkspaces = [ "dwb"
+myWorkspaces = [ "fox"
                , "mutt"
                , "doc"
                , "term"
@@ -147,9 +147,10 @@ myKeys =
 
     -- Apps, etc.
 
-    , ( "M-d"   , raiseMaybe (spawn "dwb -r"               ) (className =? "Dwb"       ) ) -- "d"wb
+    , ( "M-f"   , raiseMaybe (spawn "firefox"              ) (className =? "Firefox"   ) ) -- "f"irefox
+    -- , ( "M-d"   , raiseMaybe (spawn "dwb -r"               ) (className =? "Dwb"       ) ) -- "d"wb
+    , ( "M-d"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"     ) ) -- mup"d"f
     , ( "M-S-k" , raiseMaybe (spawn "keepassx"             ) (className =? "Keepassx"  ) ) -- "k"eepassx
-    , ( "M-f"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"     ) ) -- mupd"f"
     , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"       ) (className =? "ncmpcpp"   ) ) -- "n"cmpcpp
     , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"          ) (title =? "mutt"          ) ) -- "m"utt
     , ( "M-r"   , raiseMaybe (runInTerm "" "newsbeuter"    ) (title =? "newsbeuter"    ) ) -- "r"ss
@@ -259,8 +260,8 @@ myKeys =
 
 myManageHook = composeAll . concat $
 
-    [ [ className =? "Firefox"        --> doShift "dwb"            ]
-    , [ className =? "Dwb"            --> doShift "dwb"            ]
+    [ [ className =? "Firefox"        --> doShift "fox"            ]
+    , [ className =? "Dwb"            --> doShift "fox"            ]
     , [ title     =? "mutt"           --> doShift "mutt"           ]
     , [ className =? "MuPDF"          --> doShift "doc"            ]
     , [ className =? "Djview"         --> doShift "doc"            ]

@@ -41,7 +41,7 @@ URxvt.shading:      30
 URxvt.perl-ext-common:      keyboard-select,url-select
 URxvt.keysym.M-C-Escape:    perl:keyboard-select:activate
 URxvt.keysym.M-u:           perl:url-select:select_next
-URxvt.url-select.launcher:  dwb
+URxvt.url-select.launcher:  firefox
 URxvt.url-select.underline: true
 
 

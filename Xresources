@@ -7,8 +7,7 @@
 !  Colors
 ! ========
 
-#include "/home/brian/.xcolors/molokai"
-
+#include "/home/brian/.xcolors/console-vga"
 
 ! =======
 !  URxvt
@@ -34,8 +33,8 @@ URxvt*borderLess:       false
 URxvt*urgentOnBell:     true
 
 ! transparency
-URxvt.transparent:  true
-URxvt.shading:      30
+! URxvt.transparent:  true
+! URxvt.shading:      30
 
 ! urxvt-perls
 URxvt.perl-ext-common:      keyboard-select,url-select

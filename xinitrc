@@ -13,6 +13,7 @@ xsetroot -cursor_name left_ptr          # change default ugly pointer
 eval $(cat "$HOME/.fehbg")              # set background
 urxvtd -q -f -o &                       # urxvt terminal daemon
 syndaemon -t -k -i 2 -d &               # disable touchpad while typing
+unclutter &                             # make idle cursor disappear
 xscreensaver -no-splash &               # load screensaver
 wmname LG3D                             # fix JabRef/Java apps
 

@@ -188,8 +188,8 @@ myKeys =
 
         { font     = myFont
         , bgColor  = "black"
-        , fgColor  = myLightCyan
-        , bgHLight = myLightCyan
+        , fgColor  = myLightRed
+        , bgHLight = myLightRed
         , fgHLight = "black"
         } )
 

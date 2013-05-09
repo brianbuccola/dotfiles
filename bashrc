@@ -44,11 +44,11 @@ alias lsbooks="ls $HOME/documents/books/ | sed 's/.pdf//' | sed 's/.djvu//' | co
 alias ghci="ghci-color"
 
 # environment variables
-export PATH="$PATH:$HOME/scripts:$HOME/texlive/2011/bin/x86_64-linux:$HOME/.cabal/bin:$HOME/blog"
-export MANPATH="$MANPATH:$HOME/texlive/2011/texmf/doc/man"
-export INFOPATH="$INFOPATH:$HOME/texlive/2011/texmf/doc/info"
+export PATH="$PATH:$HOME/texlive/2012/bin/x86_64-linux:$HOME/scripts:$HOME/blog"
+export MANPATH="$MANPATH:$HOME/texlive/2012/texmf/doc/man"
+export INFOPATH="$INFOPATH:$HOME/texlive/2012/texmf/doc/info"
 export SUDO_EDITOR="/usr/bin/vim -p"
-export VISUAL="/usr/bin/vim"
+export VISUAL="/usr/bin/vim -p -X"
 export EDITOR="/usr/bin/vim"
 
 # make man pages narrower

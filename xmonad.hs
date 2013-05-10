@@ -253,7 +253,7 @@ myManageHook = composeAll . concat $
         myTFloats = [ "Firefox Preferences" ]
         myRFloats = []
 
-        myScratchpadManageHook = scratchpadManageHook (W.RationalRect 0.2 0.25 0.6 0.5)
+        myScratchpadManageHook = scratchpadManageHook (W.RationalRect 0.1 0.1 0.8 0.8)
 
 -- ---------
 --  Layouts

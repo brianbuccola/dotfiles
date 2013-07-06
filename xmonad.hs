@@ -135,10 +135,9 @@ myKeys =
 
     , ( "M-S-x" , sendMessage ToggleStruts )
 
-    -- Shutdown, reboot
+    -- Suspend system
 
-    , ( "M-C-s" , spawn "sudo systemctl poweroff" )
-    , ( "M-C-r" , spawn "sudo systemctl reboot"   )
+    , ( "M-C-s" , spawn "systemctl suspend" )
 
     -- Screenshots
 

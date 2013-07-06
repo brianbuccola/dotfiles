@@ -19,7 +19,7 @@ URxvt*font:             xft:Inconsolata:pixelsize=15
 URxvt*dynamicColors:    true
 URxvt*utf8:             2
 URxvt*eightBitInput:    true
-URxvt*saveLines:        512
+URxvt*saveLines:        1024
 URxvt*scrollKey:        true
 URxvt*scrollTtyOutput:  false
 URxvt*scrollBar:        false
@@ -42,6 +42,29 @@ URxvt.keysym.M-C-Escape:    perl:keyboard-select:activate
 URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.url-select.launcher:  firefox
 URxvt.url-select.underline: true
+
+! =======
+!  xterm
+! =======
+
+!xterm*font:             -*-terminus-medium-*-*--14-*-*-*-*-*-iso10646-*
+!xterm*boldFont:         -*-terminus-bold-*-*--14-*-*-*-*-*-iso10646-*
+xterm*font:             xft:Inconsolata:pixelsize=15
+xterm*dynamicColors:    true
+xterm*utf8:             2
+xterm*eightBitInput:    true
+xterm*saveLines:        1024
+xterm*scrollKey:        true
+xterm*scrollTtyOutput:  false
+xterm*scrollBar:        false
+xterm*rightScrollBar:   false
+xterm*jumpScroll:       true
+xterm*multiScroll:      true
+xterm*toolBar:          true
+xterm*colorBDMode:      true
+xterm*colorULMode:      true
+xterm*borderLess:       false
+xterm*urgentOnBell:     true
 
 
 ! ==========

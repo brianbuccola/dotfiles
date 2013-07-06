@@ -34,3 +34,39 @@ URxvt*color14: #55FFFF
 !white
 URxvt*color7: #AAAAAA
 URxvt*color15: #FFFFFF
+
+
+xterm*foreground: #AAAAAA
+xterm*background: #000000
+
+!black
+xterm*color0: #000000
+xterm*color8: #555555
+
+!red
+xterm*color1: #AA0000
+xterm*color9: #FF5555
+
+!green
+xterm*color2: #00AA00
+xterm*color10: #55FF55
+
+!yellow
+xterm*color3: #AA5500
+xterm*color11: #FFFF55
+
+!blue
+xterm*color4: #0000AA
+xterm*color12: #5555FF
+
+!magenta
+xterm*color5: #AA00AA
+xterm*color13: #FF55FF
+
+!cyan
+xterm*color6: #00AAAA
+xterm*color14: #55FFFF
+
+!white
+xterm*color7: #AAAAAA
+xterm*color15: #FFFFFF

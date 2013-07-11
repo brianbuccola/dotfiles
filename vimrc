@@ -75,6 +75,24 @@ endfunction
 " autocmd FilterWritePre  * :call TrimWhiteSpace()
 " autocmd BufWritePre     * :call TrimWhiteSpace()
 
+" LaTeX (rubber) macro, only when editing tex file
+augroup compile_tex " {
+    autocmd!
+    autocmd FileType tex :nnoremap <leader>c :w<CR>:!rubber --pdf --warn all %<CR>
+augroup END " }
+
+" View PDF macro; `%:r' is current file's root (base) name.
+augroup view_pdf " {
+    autocmd!
+    autocmd FileType tex :nnoremap <leader>v :!mupdf %:r.pdf &<CR><CR>
+augroup END " }
+
+" Blog macro: convert current markdown file to html using blog script
+augroup mkd2html " {
+    autocmd!
+    autocmd FileType mkd :nnoremap <leader>c :w<CR>:!bashdown convert ~/blog/source/%<CR>
+augroup END " }
+
 
 
 " ==========
@@ -107,17 +125,6 @@ nnoremap K kJ
 
 " spell check macro; `%' is current file.
 nnoremap <leader>s :w<CR>:!aspell --dont-backup check %<CR>:e<CR>
-
-" LaTeX (rubber) macro
-nnoremap <leader>t :w<CR>:!rubber --pdf --warn all %<CR>
-
-" View PDF macro; `%:r' is current file's root (base) name.
-nnoremap <leader>v :!mupdf %:r.pdf &<CR><CR>
-
-" Blog macro: convert current markdown file to html using blog script
-nnoremap <leader>b :w<CR>:!bashdown convert ~/blog/source/%<CR>
-
-
 
 " =================
 "  Plugin Settings

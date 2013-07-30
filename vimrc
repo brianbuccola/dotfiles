@@ -112,6 +112,14 @@ nnoremap Y y$
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
+" add new line below/above current line while in normal mode,
+" keeping current position. (<S-CR> only works in gvim.)
+nnoremap <CR> m`o<Esc>``
+nnoremap <S-CR> m`O<Esc>``
+
+" jump to new line above current line. (Only works in gvim.)
+inoremap <S-CR> <Esc>O
+
 " prevent ctrl-U and ctrl-W from deleting stuff irrecoverably
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>

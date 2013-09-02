@@ -126,7 +126,7 @@ myKeys =
     , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"       ) (className =? "ncmpcpp"   ) ) -- "n"cmpcpp
     , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"          ) (title =? "mutt"          ) ) -- "m"utt
     , ( "M-r"   , raiseMaybe (runInTerm "" "newsbeuter"    ) (title =? "newsbeuter"    ) ) -- "r"ss
-    , ( "M-w"   , raiseMaybe (runInTerm "" "weechat-curses") (title =? "weechat 0.4.1" ) ) -- "w"eechat
+    , ( "M-w"   , raiseMaybe (runInTerm "" "weechat-curses") (title =? "weechat 0.4.2-dev" ) ) -- "w"eechat
     , ( "M-v"   , raiseMaybe (runInTerm "" "alsamixer"     ) (title =? "alsamixer"     ) ) -- "v"olume
     , ( "M-p"   , raiseMaybe (runInTerm "" "htop"          ) (title =? "htop"          ) ) -- "h"top
 

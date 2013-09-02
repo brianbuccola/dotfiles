@@ -172,3 +172,4 @@ let g:Tex_ViewRule_pdf='mupdf'  " choose which pdf viewer to use
 set guioptions-=m               " remove menu bar from gvim
 set guioptions-=T               " remove toolbar from gvim
 set guioptions-=r               " remove right-hand scroll bar
+set guifont=Inconsolata\ 11     " use Inconsolata, size 11 font

@@ -15,6 +15,9 @@ setopt share_history
 # Vi keybindings
 bindkey -v
 
+# Syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Git prompt
 local gitval='$(__git_ps1 " (%s)")'
 source /usr/share/git/completion/git-prompt.sh

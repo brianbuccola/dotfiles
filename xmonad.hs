@@ -85,7 +85,7 @@ myWorkspaces = [ "fox"
                , "mutt"
                , "doc"
                , "term"
-               , "wee"
+               , "chat"
                , "rss"
                , "misc"
                , "K"        -- for keepassx
@@ -123,6 +123,7 @@ myKeys =
     -- , ( "M-d"   , raiseMaybe (spawn "dwb -r"               ) (className =? "Dwb"       ) ) -- "d"wb
     , ( "M-d"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"     ) ) -- mup"d"f
     , ( "M-S-k" , raiseMaybe (spawn "keepassx"             ) (className =? "Keepassx"  ) ) -- "k"eepassx
+    , ( "M-y"   , raiseMaybe (spawn "skype"                ) (className =? "Skype"     ) ) -- sk"y"pe
     , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"       ) (className =? "ncmpcpp"   ) ) -- "n"cmpcpp
     , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"          ) (title =? "mutt"          ) ) -- "m"utt
     , ( "M-r"   , raiseMaybe (runInTerm "" "newsbeuter"    ) (title =? "newsbeuter"    ) ) -- "r"ss
@@ -234,8 +235,8 @@ myManageHook = composeAll . concat $
     , [ title     =? "mutt"           --> doShift "mutt"           ]
     , [ className =? "MuPDF"          --> doShift "doc"            ]
     , [ className =? "Djview"         --> doShift "doc"            ]
-    , [ title     =? "weechat-curses" --> doShift "wee"            ]
-    , [ className =? "Skype"          --> doShift "wee"            ]
+    , [ title     =? "weechat-curses" --> doShift "chat"           ]
+    , [ className =? "Skype"          --> doShift "chat"           ]
     , [ title     =? "newsbeuter"     --> doShift "rss"            ]
     , [ className =? "Keepassx"       --> doShift "K"              ]
     , [ isDialog                      --> doFloat                  ]

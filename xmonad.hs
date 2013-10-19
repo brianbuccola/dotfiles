@@ -114,6 +114,7 @@ myKeys =
     , ( "M-<Backspace>" , toggleWS                      )
     , ( "M-<Escape>"    , banish LowerRight             )
     , ( "M-<Return>"    , spawn myTerminal              )
+    , ( "M-c"           , windows $ W.greedyView "chat" ) -- go to WS "chat"
     , ( "M-S-<Return>"  , windows $ W.greedyView "term" ) -- go to WS "term"
     , ( "M-S-m"         , windows $ W.greedyView "misc" ) -- go to WS "misc"
 
@@ -124,12 +125,13 @@ myKeys =
     , ( "M-d"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"     ) ) -- mup"d"f
     , ( "M-S-k" , raiseMaybe (spawn "keepassx"             ) (className =? "Keepassx"  ) ) -- "k"eepassx
     , ( "M-y"   , raiseMaybe (spawn "skype"                ) (className =? "Skype"     ) ) -- sk"y"pe
+    , ( "M-p"   , raiseMaybe (spawn "pidgin"               ) (className =? "Pidgin"    ) ) -- "p"idgin
     , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"       ) (className =? "ncmpcpp"   ) ) -- "n"cmpcpp
     , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"          ) (title =? "mutt"          ) ) -- "m"utt
     , ( "M-r"   , raiseMaybe (runInTerm "" "newsbeuter"    ) (title =? "newsbeuter"    ) ) -- "r"ss
     , ( "M-w"   , raiseMaybe (runInTerm "" "weechat-curses") (title =? "weechat 0.4.2-dev" ) ) -- "w"eechat
     , ( "M-v"   , raiseMaybe (runInTerm "" "alsamixer"     ) (title =? "alsamixer"     ) ) -- "v"olume
-    , ( "M-p"   , raiseMaybe (runInTerm "" "htop"          ) (title =? "htop"          ) ) -- "h"top
+    , ( "M-S-t" , raiseMaybe (runInTerm "" "htop"          ) (title =? "htop"          ) ) -- "h"top
 
     , ( "M-<F8>" , spawn "~/scripts/display-adjust.sh"     )
     , ( "M-<F9>" , spawn "~/scripts/keyboard-adjust.sh"    )
@@ -237,6 +239,7 @@ myManageHook = composeAll . concat $
     , [ className =? "Djview"         --> doShift "doc"            ]
     , [ title     =? "weechat-curses" --> doShift "chat"           ]
     , [ className =? "Skype"          --> doShift "chat"           ]
+    , [ className =? "Pidgin"         --> doShift "chat"           ]
     , [ title     =? "newsbeuter"     --> doShift "rss"            ]
     , [ className =? "Keepassx"       --> doShift "K"              ]
     , [ isDialog                      --> doFloat                  ]
@@ -249,7 +252,7 @@ myManageHook = composeAll . concat $
 
     where
 
-        myCFloats = [ "Xmessage", "MPlayer", "Skype", "Gimp", "Wicd-client.py" ]
+        myCFloats = [ "Xmessage", "MPlayer", "Skype", "Gimp", "Wicd-client.py", "Pidgin" ]
         myTFloats = [ "Firefox Preferences" ]
         myRFloats = []
 

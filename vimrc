@@ -37,6 +37,7 @@ set scrolloff=10                " keep 10 lines (top/bottom) for scope
 set showcmd                     " show command being typed
 set showmatch                   " show matching brackets
 " set statusline=
+set spell                       " highlight misspelled words
 colorscheme molokai             " set color scheme
 let g:netrw_liststyle=3         " use tree style directory listing
 
@@ -132,8 +133,9 @@ nnoremap Q gqap
 " with line below.
 nnoremap K kJ
 
-" spell check macro; `%' is current file.
-nnoremap <leader>s :w<CR>:!aspell --dont-backup check %<CR>:e<CR>
+" spell check macros; `%' is current file.
+nnoremap <silent> <leader>s :set spell!<CR>
+nnoremap <leader>S :w<CR>:!aspell --dont-backup check %<CR>:e<CR>
 
 " =================
 "  Plugin Settings

@@ -38,6 +38,7 @@ set showcmd                     " show command being typed
 set showmatch                   " show matching brackets
 " set statusline=
 colorscheme molokai             " set color scheme
+let g:netrw_liststyle=3         " use tree style directory listing
 
 
 

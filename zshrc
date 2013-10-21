@@ -77,6 +77,7 @@ alias grep='grep --color=auto'
 alias mv='mv -i'
 alias cp='cp -i'
 alias x='startx'
+alias bd='bashdown'
 
 # Functions
 lspdf() {

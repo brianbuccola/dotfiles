@@ -241,6 +241,7 @@ myManageHook = composeAll . concat $
     , [ className =? "Skype"          --> doShift "chat"           ]
     , [ className =? "Pidgin"         --> doShift "chat"           ]
     , [ title     =? "newsbeuter"     --> doShift "rss"            ]
+    , [ title     =? "Transmission"   --> doShift "misc"           ]
     , [ className =? "Keepassx"       --> doShift "K"              ]
     , [ isDialog                      --> doFloat                  ]
     , [ className =? c                --> doFloat | c <- myCFloats ]

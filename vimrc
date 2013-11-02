@@ -1,21 +1,12 @@
-" vim:      set fenc=utf-8 nu et sw=4 ft=vim:
+" vim:      set fenc=utf-8 nu et sts=4 sw=4 ft=vim fdm=marker fmr={{{,}}}:
 " file:     ~/.vimrc
 " author:   Brian Buccola
 
-
-
-" ========
-"  Basics
-" ========
-
-set nocompatible                " use vim settings, not vi-compatible ones
-                                " this must come before all other settings
-set background=dark             " make vim use lighter fg colors
-syntax on
-set modeline                    " use file-specific settings, if available
-                                " add /usr/share/vim/vimfiles to $runtimepath..
-"set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+" Basics {{{
+set nocompatible                " use vim (not vi) settings; must come first
 filetype plugin indent on       " load filetype plugin/indent files
+syntax on                       " enable syntax highlighting
+set modeline                    " use file-specific settings, if available
 set autochdir                   " always switch to current file directory
 set backup                      " make backup files
 set backupdir=~/.vim/backup     " backup directory
@@ -23,59 +14,43 @@ set directory=~/.vim/tmp        " directory for swap files
 set mouse=a                     " mouse support everywhere
 set mousehide                   " auto-hide cursor while typing
 set wildmenu                    " turn on command-line completion wild style
-                                " ignore these file extensions...
 set wildignore=*.bak,*.jpg,*.gif,*.png,*.log,*.aux,*.out,*.bbl,*.blg
 set ignorecase                  " ignore case, except...
 set smartcase                   " ...when search string contains uppercase
 set incsearch                   " highlight as you type search phrase
-set list                        " show real tabs (so they can be removed)
-set listchars=tab:>-,trail:-    " show tabs and trailing
 set number                      " show line numbers
 set report=0                    " tell me when anything is changed via :...
 set ruler                       " show current positions along bottom
 set scrolloff=10                " keep 10 lines (top/bottom) for scope
 set showcmd                     " show command being typed
 set showmatch                   " show matching brackets
-" set statusline=
 set spell                       " highlight misspelled words
+set background=dark             " make vim use lighter fg colors
 colorscheme molokai             " set color scheme
 let g:netrw_liststyle=3         " use tree style directory listing
-
-
-
-" =================
-"  Text Formatting
-" =================
-
+" }}}
+" GUI Settings {{{
+set guioptions-=m               " remove menu bar from gvim
+set guioptions-=T               " remove toolbar from gvim
+set guioptions-=r               " remove right-hand scroll bar
+set guifont=Inconsolata\ 11     " use Inconsolata, size 11 font
+" }}}
+" Text Formatting {{{
+set list                        " show real tabs (so they can be removed)
+set listchars=tab:▶\ ,trail:-   " show tabs and trailing whitespace
+set tabstop=8                   " real tabs are 8 columns long
 set expandtab                   " no real tabs (use spaces for tabs)
 set softtabstop=4               " # of spaces when hitting tab/delete
-set tabstop=8                   " real tabs are 8, shown with set list
 set shiftwidth=4                " # of softtabs when using cindent, <<, >>, ...
 set textwidth=79                " max # of characters on each line
 set autoindent                  " use indentation level of previous line
-
-
-
-" ============================
-"  Autocmd's, functions, etc.
-" ============================
-
+" }}}
+" Autocmd's, functions, etc. {{{
 " autoreload after modifying .vimrc
 augroup reload_vimrc " {
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
-
-" remove trailing whitespace
-function! TrimWhiteSpace()
-    %s/\s\+$//e
-endfunction
-
-" call TrimWhiteSpace() just before write
-" autocmd FileWritePre    * :call TrimWhiteSpace()
-" autocmd FileAppendPre   * :call TrimWhiteSpace()
-" autocmd FilterWritePre  * :call TrimWhiteSpace()
-" autocmd BufWritePre     * :call TrimWhiteSpace()
 
 " LaTeX (rubber) macro, only when editing tex file
 augroup compile_tex " {
@@ -94,13 +69,8 @@ augroup mkd2html " {
     autocmd!
     autocmd FileType mkd :nnoremap <leader>c :w<CR>:!bashdown convert ~/blog/source/%<CR>
 augroup END " }
-
-
-
-" ==========
-"  Mappings
-" ==========
-
+" }}}
+" Mappings {{{
 " change <leader> from `\' to <Space>
 let mapleader=' '
 
@@ -136,11 +106,8 @@ nnoremap K kJ
 " spell check macros; `%' is current file.
 nnoremap <silent> <leader>s :set spell!<CR>
 nnoremap <leader>S :w<CR>:!aspell --dont-backup check %<CR>:e<CR>
-
-" =================
-"  Plugin Settings
-" =================
-
+" }}}
+" Plugin Settings {{{
 " Pathogen
 call pathogen#infect()
 
@@ -154,25 +121,4 @@ let g:UltiSnipsEditSplit='horizontal'
 let g:UltiSnipsExpandTrigger='<Tab>'
 let g:UltiSnipsJumpForwardTrigger='<Tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
-
-" LaTeX
-set grepprg=grep\ -nH\ $*       " grep will sometimes skip displaying file
-                                " name if you search in a singe file. This will
-                                " confuse Latex-Suite. Set your grep program to
-                                " always generate a file-name.
-let g:tex_flavor='latex'        " set filetype of empty tex files to latex
-                                " instead of plaintex
-let g:Tex_DefaultTargetFormat='pdf' " Use pdflatex instead of latex
-                                    " to compile.
-let g:Tex_ViewRule_pdf='mupdf'  " choose which pdf viewer to use
-
-
-
-" ==============
-"  GUI Settings
-" ==============
-
-set guioptions-=m               " remove menu bar from gvim
-set guioptions-=T               " remove toolbar from gvim
-set guioptions-=r               " remove right-hand scroll bar
-set guifont=Inconsolata\ 11     " use Inconsolata, size 11 font
+" }}}

@@ -18,6 +18,7 @@ set wildignore=*.bak,*.jpg,*.gif,*.png,*.log,*.aux,*.out,*.bbl,*.blg
 set ignorecase                  " ignore case, except...
 set smartcase                   " ...when search string contains uppercase
 set incsearch                   " highlight as you type search phrase
+set hlsearch                    " highlight search terms
 set number                      " show line numbers
 set report=0                    " tell me when anything is changed via :...
 set ruler                       " show current positions along bottom
@@ -102,6 +103,10 @@ nnoremap Q gqap
 " use K to join current line with line above, just like J does
 " with line below.
 nnoremap K kJ
+
+" after searching, turn off all highlighted matches;
+" basically, clearing the screen clears search highlighting, too
+nnoremap <C-l> :nohlsearch<CR><C-l>
 
 " spell check macros; `%' is current file.
 nnoremap <silent> <leader>s :set spell!<CR>

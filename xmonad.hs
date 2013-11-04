@@ -115,6 +115,7 @@ myKeys =
     , ( "M-<Escape>"    , banish LowerRight             )
     , ( "M-<Return>"    , spawn myTerminal              )
     , ( "M-c"           , windows $ W.greedyView "chat" ) -- go to WS "chat"
+    , ( "M-d"           , windows $ W.greedyView "doc"  ) -- go to WS "doc"
     , ( "M-S-<Return>"  , windows $ W.greedyView "term" ) -- go to WS "term"
     , ( "M-S-m"         , windows $ W.greedyView "misc" ) -- go to WS "misc"
 
@@ -122,10 +123,11 @@ myKeys =
 
     , ( "M-f"   , raiseMaybe (spawn "firefox"              ) (className =? "Firefox"   ) ) -- "f"irefox
     -- , ( "M-d"   , raiseMaybe (spawn "dwb -r"               ) (className =? "Dwb"       ) ) -- "d"wb
-    , ( "M-d"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"     ) ) -- mup"d"f
+    -- , ( "M-d"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"     ) ) -- mup"d"f
     , ( "M-S-k" , raiseMaybe (spawn "keepassx"             ) (className =? "Keepassx"  ) ) -- "k"eepassx
     , ( "M-y"   , raiseMaybe (spawn "skype"                ) (className =? "Skype"     ) ) -- sk"y"pe
     , ( "M-p"   , raiseMaybe (spawn "pidgin"               ) (className =? "Pidgin"    ) ) -- "p"idgin
+    , ( "M-z"   , raiseMaybe (spawn "zathura"              ) (className =? "Zathura"   ) ) -- "z"athura
     , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"       ) (className =? "ncmpcpp"   ) ) -- "n"cmpcpp
     , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"          ) (title =? "mutt"          ) ) -- "m"utt
     , ( "M-r"   , raiseMaybe (runInTerm "" "newsbeuter"    ) (title =? "newsbeuter"    ) ) -- "r"ss
@@ -235,6 +237,7 @@ myManageHook = composeAll . concat $
     [ [ className =? "Firefox"        --> doShift "fox"            ]
     , [ className =? "Dwb"            --> doShift "fox"            ]
     , [ title     =? "mutt"           --> doShift "mutt"           ]
+    , [ className =? "Zathura"        --> doShift "doc"            ]
     , [ className =? "MuPDF"          --> doShift "doc"            ]
     , [ className =? "Djview"         --> doShift "doc"            ]
     , [ title     =? "weechat-curses" --> doShift "chat"           ]

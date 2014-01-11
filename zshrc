@@ -78,6 +78,8 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias x='startx'
 alias bd='bashdown'
+alias bp='echo -e "\a"'
+alias db='dropbox start && watch -n1 dropbox status && dropbox stop'
 
 # Functions
 lspdf() {

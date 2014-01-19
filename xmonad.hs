@@ -244,6 +244,7 @@ myManageHook = composeAll . concat $
     , [ title     =? "weechat-curses" --> doShift "chat"           ]
     , [ className =? "Skype"          --> doShift "chat"           ]
     , [ className =? "Pidgin"         --> doShift "chat"           ]
+    , [ className =? "Gajim"          --> doShift "chat"           ]
     , [ title     =? "newsbeuter"     --> doShift "rss"            ]
     , [ title     =? "Transmission"   --> doShift "misc"           ]
     , [ className =? "Keepassx"       --> doShift "K"              ]

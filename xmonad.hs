@@ -127,6 +127,7 @@ myKeys =
     , ( "M-S-k" , raiseMaybe (spawn "keepassx"             ) (className =? "Keepassx"  ) ) -- "k"eepassx
     , ( "M-y"   , raiseMaybe (spawn "skype"                ) (className =? "Skype"     ) ) -- sk"y"pe
     , ( "M-p"   , raiseMaybe (spawn "pidgin"               ) (className =? "Pidgin"    ) ) -- "p"idgin
+    , ( "M-g"   , raiseMaybe (spawn "gajim"                ) (className =? "Gajim"     ) ) -- "g"ajim
     , ( "M-z"   , raiseMaybe (spawn "zathura"              ) (className =? "Zathura"   ) ) -- "z"athura
     , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"       ) (className =? "ncmpcpp"   ) ) -- "n"cmpcpp
     , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"          ) (title =? "mutt"          ) ) -- "m"utt
@@ -170,14 +171,14 @@ myKeys =
         }
         "/home/brian/todo" )
 
-    , ( "M-g" , windowPromptGoto defaultXPConfig
+    --, ( "M-g" , windowPromptGoto defaultXPConfig
 
-        { font     = myFont
-        , bgColor  = "black"
-        , fgColor  = myLightRed
-        , bgHLight = myLightRed
-        , fgHLight = "black"
-        } )
+    --    { font     = myFont
+    --    , bgColor  = "black"
+    --    , fgColor  = myLightRed
+    --    , bgHLight = myLightRed
+    --    , fgHLight = "black"
+    --    } )
 
     , ( "M-b" , windowPromptBring defaultXPConfig
 

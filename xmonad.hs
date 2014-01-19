@@ -258,7 +258,7 @@ myManageHook = composeAll . concat $
 
     where
 
-        myCFloats = [ "Xmessage", "MPlayer", "Skype", "Gimp", "Wicd-client.py", "Pidgin" ]
+        myCFloats = [ "Xmessage", "MPlayer", "Gimp", "Wicd-client.py" ]
         myTFloats = [ "Firefox Preferences" ]
         myRFloats = []
 

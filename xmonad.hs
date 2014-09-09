@@ -81,7 +81,7 @@ myBorderWidth        = 1
 myNormalBorderColor  = myLightBlack -- see below for colors
 myFocusedBorderColor = myDarkYellow
 
-myWorkspaces = [ "fox"
+myWorkspaces = [ "www"
                , "mutt"
                , "doc"
                , "term"
@@ -114,6 +114,7 @@ myKeys =
     , ( "M-<Backspace>" , toggleWS                      )
     , ( "M-<Escape>"    , banish LowerRight             )
     , ( "M-<Return>"    , spawn myTerminal              )
+    , ( "M-w"           , windows $ W.greedyView "www" ) -- go to WS "www"
     , ( "M-c"           , windows $ W.greedyView "chat" ) -- go to WS "chat"
     , ( "M-d"           , windows $ W.greedyView "doc"  ) -- go to WS "doc"
     , ( "M-S-<Return>"  , windows $ W.greedyView "term" ) -- go to WS "term"
@@ -122,33 +123,35 @@ myKeys =
     -- Apps, etc.
 
     , ( "M-f"   , raiseMaybe (spawn "firefox"              ) (className =? "Firefox"   ) ) -- "f"irefox
+    , ( "M-o"   , raiseMaybe (spawn "chromium"             ) (className =? "Chromium"  ) ) -- chr"o"mium
     -- , ( "M-d"   , raiseMaybe (spawn "dwb -r"               ) (className =? "Dwb"       ) ) -- "d"wb
     -- , ( "M-d"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"     ) ) -- mup"d"f
     , ( "M-S-k" , raiseMaybe (spawn "keepassx"             ) (className =? "Keepassx"  ) ) -- "k"eepassx
     , ( "M-y"   , raiseMaybe (spawn "skype"                ) (className =? "Skype"     ) ) -- sk"y"pe
-    , ( "M-p"   , raiseMaybe (spawn "pidgin"               ) (className =? "Pidgin"    ) ) -- "p"idgin
-    , ( "M-g"   , raiseMaybe (spawn "gajim"                ) (className =? "Gajim"     ) ) -- "g"ajim
-    , ( "M-z"   , raiseMaybe (spawn "zathura"              ) (className =? "Zathura"   ) ) -- "z"athura
+    -- , ( "M-p"   , raiseMaybe (spawn "pidgin"               ) (className =? "Pidgin"    ) ) -- "p"idgin
+    -- , ( "M-g"   , raiseMaybe (spawn "gajim"                ) (className =? "Gajim"     ) ) -- "g"ajim
+    -- , ( "M-z"   , raiseMaybe (spawn "zathura"              ) (className =? "Zathura"   ) ) -- "z"athura
     , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"       ) (className =? "ncmpcpp"   ) ) -- "n"cmpcpp
     , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"          ) (title =? "mutt"          ) ) -- "m"utt
     , ( "M-r"   , raiseMaybe (runInTerm "" "newsbeuter"    ) (title =? "newsbeuter"    ) ) -- "r"ss
-    , ( "M-w"   , raiseMaybe (runInTerm "" "weechat-curses") (title =? "weechat 0.4.2-dev" ) ) -- "w"eechat
-    , ( "M-v"   , raiseMaybe (runInTerm "" "alsamixer"     ) (title =? "alsamixer"     ) ) -- "v"olume
+    -- , ( "M-w"   , raiseMaybe (runInTerm "" "weechat-curses") (title =? "WeeChat 0.4.4-dev" ) ) -- "w"eechat
+    , ( "M-v"   , raiseMaybe (spawn "pavucontrol"          ) (className =? "Pavucontrol" ) ) -- "v"olume
     , ( "M-S-t" , raiseMaybe (runInTerm "" "htop"          ) (title =? "htop"          ) ) -- "h"top
-
-    , ( "M-<F8>" , spawn "~/scripts/display-adjust.sh"     )
-    , ( "M-<F9>" , spawn "~/scripts/keyboard-adjust.sh"    )
 
     , ( "M-S-x" , sendMessage ToggleStruts )
 
     -- Suspend system
 
-    , ( "M-C-s" , spawn "systemctl suspend" )
+    -- , ( "M-C-s" , spawn "systemctl suspend" )
 
     -- Screenshots
 
     , ( "<Print>"   , spawn "scrot --delay 1 '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
     , ( "M-<Print>" , spawn "scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
+
+    -- Keyboard
+
+    -- , ( "M-<F9>" , spawn "~/scripts/keyboard-adjust.sh" )
 
     -- Media
 
@@ -156,6 +159,12 @@ myKeys =
     , ( "<XF86AudioMute>"        , spawn "amixer -q set Master toggle"    )
     , ( "<XF86AudioRaiseVolume>" , spawn "amixer -q set Master 1+ unmute" )
     , ( "<XF86AudioPlay>"        , spawn "ncmpcpp toggle"                 )
+
+    -- Display
+
+    , ( "<XF86MonBrightnessDown>" , spawn "~/scripts/brightness-dec.sh" )
+    , ( "<XF86MonBrightnessUp>"   , spawn "~/scripts/brightness-inc.sh" )
+    , ( "<XF86Display>"           , spawn "~/scripts/display-adjust.sh" )
 
     -- Scratchpad
 
@@ -235,8 +244,8 @@ myKeys =
 
 myManageHook = composeAll . concat $
 
-    [ [ className =? "Firefox"        --> doShift "fox"            ]
-    , [ className =? "Dwb"            --> doShift "fox"            ]
+    [ [ className =? "Firefox"        --> doShift "www"            ]
+    , [ className =? "Dwb"            --> doShift "www"            ]
     , [ title     =? "mutt"           --> doShift "mutt"           ]
     , [ className =? "Zathura"        --> doShift "doc"            ]
     , [ className =? "MuPDF"          --> doShift "doc"            ]
@@ -288,7 +297,7 @@ myLayout = smartBorders $ myTabbed ||| myTiled ||| myMirrorTiled ||| myFull
 
         myTiled = renamed [Replace "|||"] $ spacing 2 $ Tall nmaster delta ratio
         nmaster = 1     -- number of master windows
-        ratio   = 2/3   -- master-to-slave window ratio
+        ratio   = 3/4   -- master-to-slave window ratio
         delta   = 1/100 -- percent of screen to increment by when resizing
 
         myMirrorTiled = renamed [Replace "="] $ Mirror myTiled

@@ -17,6 +17,7 @@ set signature           = "~/.mutt/sig"                         # my signature f
 set tmpdir              = "~/.mutt/tmp"                         # where to keep temp files
 set editor              = "/usr/bin/vim +/^$"                   # use vim and skip to first blank line
 set ispell              = "/usr/bin/aspell -e -c"               # use aspell instead of ispell
+set print_command       = "/usr/bin/lp -d HP_LaserJet_2300_series" # print to office printer
 
 
 

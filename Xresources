@@ -15,7 +15,8 @@
 
 !URxvt*font:             -*-terminus-medium-*-*--14-*-*-*-*-*-iso10646-*
 !URxvt*boldFont:         -*-terminus-bold-*-*--14-*-*-*-*-*-iso10646-*
-URxvt*font:             xft:Inconsolata:pixelsize=15
+URxvt*font:             xft:Terminus:pixelsize=16
+!URxvt*font:             xft:Inconsolata:pixelsize=15
 URxvt*dynamicColors:    true
 URxvt*utf8:             2
 URxvt*eightBitInput:    true
@@ -49,7 +50,8 @@ URxvt.url-select.underline: true
 
 !xterm*font:             -*-terminus-medium-*-*--14-*-*-*-*-*-iso10646-*
 !xterm*boldFont:         -*-terminus-bold-*-*--14-*-*-*-*-*-iso10646-*
-xterm*font:             xft:Inconsolata:pixelsize=15
+xterm*font:             xft:Terminus:pixelsize=15
+!xterm*font:             xft:Inconsolata:pixelsize=15
 xterm*dynamicColors:    true
 xterm*utf8:             2
 xterm*eightBitInput:    true

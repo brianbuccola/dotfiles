@@ -17,9 +17,10 @@ Config { font = "xft:Terminus:pixelsize=14"
                                   ] 10
                     , Run Kbd [("us(dvorak)", "dv")]
                     , Run Date "%a %d %b %H:%M:%S" "date" 10
+                    , Run Com "/home/brian/scripts/wireless.sh" [] "wifi" 30
                     , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %wlp1s0wi%  %kbd%  %CYUL%  %battery% <fc=#aa5500>%date%</fc> "
+       , template = "%StdinReader% }{ <fc=#00aaaa>%wifi%</fc>  %kbd%  %CYUL%  %battery% <fc=#aa5500>%date%</fc> "
        }

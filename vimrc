@@ -119,8 +119,9 @@ inoremap <S-CR> <Esc>O
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 
-" use <C-BS> to delete entire previous word in insert mode
-inoremap <C-BS> <C-w>
+" use <C-h> to delete entire previous word (instead of just character) in insert mode.
+" since <C-BS> is the same as <C-h>, <C-BS> will also delete previous word.
+inoremap <C-h> <C-w>
 
 " map Q to gqap (reformat paragraph of text) instead of Ex mode
 nnoremap Q gqap

@@ -5,12 +5,12 @@ Config { font = "xft:Terminus:pixelsize=14"
        , border = BottomBM 0
        , borderColor = "#aaaaaa"
        , lowerOnStart = True
-       , commands = [ Run Weather "CYUL" [ "-t","<tempF> F", "-L", "40", "-H", "80"
+       , commands = [ Run Wireless "wlp1s0" [ "-t", "<essid> <quality>", "-L", "50", "-H", "80"
+                                            ,  "--normal", "#ffff55", "--high", "#55ff55", "--low", "#5555ff"
+                                            ] 10
+                    , Run Weather "KBED" [ "-t","<tempF> F", "-L", "40", "-H", "80"
                                          , "--normal", "#ffff55", "--high", "#ff5555", "--low", "#5555ff"
                                          ] 300
-                    , Run Wireless "wlp1s0" [ "-t", "<essid> <quality>", "-L", "50", "-H", "80"
-                                           ,  "--normal", "#ffff55", "--high", "#55ff55", "--low", "#5555ff"
-                                           ] 10
                     , Run Battery ["-t", "<acstatus>: <left>%", "-L", "10", "-H", "80"
                                   , "--low", "#ff5555", "--normal", "#ffff55", "--high", "#55ff55"
                                   , "--", "-O", "<fc=#55ff55>on</fc>", "-o", "off ", "-f", "/sys/class/power_supply/ACAD/online"
@@ -22,5 +22,5 @@ Config { font = "xft:Terminus:pixelsize=14"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ <fc=#00aaaa>%wifi%</fc>  %kbd%  %CYUL%  %battery% <fc=#aa5500>%date%</fc> "
+       , template = "%StdinReader% }{ <fc=#00aaaa>%wifi%</fc>  %kbd%  %KBED%  %battery% <fc=#aa5500>%date%</fc> "
        }

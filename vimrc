@@ -73,7 +73,7 @@ augroup END " }
 " Blog macro: convert current markdown file to html using blog script
 augroup mkd2html " {
     autocmd!
-    autocmd FileType mkd :nnoremap <leader>c :w<CR>:!bashdown convert ~/blog/source/%<CR>
+    autocmd FileType mkd,markdown :nnoremap <leader>c :w<CR>:!bashdown convert ~/blog/source/%<CR>
 augroup END " }
 
 augroup snippets " {

@@ -227,6 +227,8 @@ map! <C-v>em ∅
 map! <C-v>in ∈
 map! <C-v>!in ∉
 map! <C-v>sub ⊆
+map! <C-v>[[ ⟦
+map! <C-v>]] ⟧
 " }}}
 " IPA {{{
 " vowels

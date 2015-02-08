@@ -70,8 +70,9 @@ augroup latex_macros " {
     autocmd FileType tex :nnoremap <leader>v :!mupdf %:r.pdf &<CR><CR>
 augroup END " }
 
-" Blog macro: convert current markdown file to html using blog script
-augroup mkd2html " {
+" Blog macros: convert current markdown file to html using blog script,
+" view html output in Firefox
+augroup blog_macros " {
     autocmd!
     autocmd FileType mkd,markdown :nnoremap <leader>c :w<CR>:!bashdown convert ~/blog/source/%<CR>
     autocmd FileType mkd,markdown :nnoremap <leader>v :!firefox ~/blog/blog/%:r.html<CR><CR>

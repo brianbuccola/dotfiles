@@ -120,8 +120,8 @@ inoremap <C-w> <C-g>u<C-w>
 " since <C-BS> is the same as <C-h>, <C-BS> will also delete previous word.
 " inoremap <C-h> <C-w>
 
-" map Q to gqap (reformat paragraph of text) instead of Ex mode
-nnoremap Q gqap
+" map Q to gwap (reformat paragraph of text) instead of Ex mode.
+nnoremap Q gwap
 
 " use K to join current line with line above, just like J does
 " with line below.

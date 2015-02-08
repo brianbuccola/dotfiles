@@ -141,6 +141,13 @@ nnoremap <BS> <C-^>
 " use <C-f> instead of <C-k> in insert mode to insert digraphs,
 " because for some reason <C-k> isn't working.
 inoremap <C-f> <C-k>
+
+" move around soft-wrapped lines as if they were hard wrapped
+noremap j gj
+noremap k gk
+noremap 0 g0
+noremap ^ g^
+noremap $ g$
 " }}}
 " Plugin Settings {{{
 " Pathogen

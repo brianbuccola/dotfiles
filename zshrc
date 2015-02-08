@@ -81,6 +81,7 @@ alias bd='bashdown'
 alias bp='echo -e "\a"'
 alias db='dropbox start && watch -n1 dropbox status && dropbox stop'
 alias ipa='feh -F ~/downloads/IPA_chart_2005.png &'
+alias pg='ping www.google.com'
 
 # Functions
 lspdf() {

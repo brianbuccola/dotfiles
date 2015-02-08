@@ -63,15 +63,10 @@ augroup reload_vimrc " {
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
-" LaTeX (rubber) macro, only when editing tex file
-augroup compile_tex " {
+" LaTeX compile and view macros
+augroup latex_macros " {
     autocmd!
     autocmd FileType tex :nnoremap <leader>c :w<CR>:!latexmk -pdf %<CR>
-augroup END " }
-
-" View PDF macro; `%:r' is current file's root (base) name.
-augroup view_pdf " {
-    autocmd!
     autocmd FileType tex :nnoremap <leader>v :!mupdf %:r.pdf &<CR><CR>
 augroup END " }
 

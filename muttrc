@@ -185,6 +185,7 @@ macro index gc      "<change-folder>=gmail/[Gmail].Chats<enter>"            "go 
 macro index gs      "<change-folder>=gmail/[Gmail].Sent<tab><enter>"        "go to sent mail"
 macro index gp      "<change-folder>=postponed<enter>"                      "go to postponed"
 macro index gt      "<change-folder>=gmail/[Gmail].Trash<enter>"            "go to trash"
+macro index gS      "<change-folder>=gmail/[Gmail].Spam<enter>"             "go to spam"
 macro index gf      "<limit>~F<enter>"                                      "show flagged messages"
 macro index \Cr     "<tag-prefix><clear-flag>N"                             "mark tagged messages as read"
 macro index B       "<limit>~b "                                            "search message bodies"

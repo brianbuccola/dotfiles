@@ -48,7 +48,7 @@ import Colors.ConsoleVGA            -- personal colors, defined in Colors.hs
 
 main = do
 
-    xmobarPipe <- spawnPipe "xmobar"
+    xmobarPipe <- spawnPipe "/home/brian/.cabal/bin/xmobar /home/brian/.xmobarrc"
     xmonad $ withUrgencyHook NoUrgencyHook defaultConfig
 
         {   terminal           =  myTerminal

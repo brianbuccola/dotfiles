@@ -269,7 +269,7 @@ myManageHook = composeAll . concat $
     where
 
         myCFloats = [ "Xmessage", "MPlayer", "Gimp", "Wicd-client.py" ]
-        myTFloats = [ "Firefox Preferences" ]
+        myTFloats = [ "Firefox Preferences", "Hangouts" ]
         myRFloats = []
 
         myScratchpadManageHook = scratchpadManageHook (W.RationalRect 0.1 0.1 0.8 0.8)

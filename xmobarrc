@@ -8,7 +8,7 @@ Config { font = "xft:Terminus:pixelsize=14"
        , commands = [ Run Wireless "wlp1s0" [ "-t", "<essid> <quality>", "-L", "50", "-H", "80"
                                             ,  "--normal", "#ffff55", "--high", "#55ff55", "--low", "#5555ff"
                                             ] 10
-                    , Run Weather "KBED" [ "-t","<tempF> F", "-L", "40", "-H", "80"
+                    , Run Weather "CYXU" [ "-t","<tempF> F", "-L", "40", "-H", "80"
                                          , "--normal", "#ffff55", "--high", "#ff5555", "--low", "#5555ff"
                                          ] 300
                     , Run Battery ["-t", "<acstatus>: <left>%", "-L", "10", "-H", "80"
@@ -20,7 +20,7 @@ Config { font = "xft:Terminus:pixelsize=14"
                     , Run Com "/home/brian/scripts/wireless.sh" [] "wifi" 30
                     , Run StdinReader
                     ]
-       , sepChar = "%"
+       , sepChar  = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ <fc=#00aaaa>%wifi%</fc>  %kbd%  %KBED%  %battery% <fc=#aa5500>%date%</fc> "
+       , template = "%StdinReader% }{ <fc=#00aaaa>%wifi%</fc>  %kbd%  %CYXU%  %battery% <fc=#aa5500>%date%</fc> "
        }

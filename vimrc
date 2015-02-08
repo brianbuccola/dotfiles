@@ -137,6 +137,10 @@ nnoremap <leader>S :w<CR>:!aspell --dont-backup check %<CR>:e<CR>
 
 " switch to alternate buffer.
 nnoremap <BS> <C-^>
+
+" use <C-f> instead of <C-k> in insert mode to insert digraphs,
+" because for some reason <C-k> isn't working.
+inoremap <C-f> <C-k>
 " }}}
 " Plugin Settings {{{
 " Pathogen

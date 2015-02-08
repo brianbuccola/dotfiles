@@ -222,6 +222,7 @@ map! <C-v>fa ∀
 map! <C-v>ex ∃
 map! <C-v>& ∧
 map! <C-v>or ∨
+map! <C-v>ln ¬
 map! <C-v>em ∅
 map! <C-v>in ∈
 map! <C-v>!in ∉

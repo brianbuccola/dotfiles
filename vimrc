@@ -48,6 +48,8 @@ set guifont=Inconsolata\ 11     " use Inconsolata, size 11 font
 " Text Formatting {{{
 set list                        " show real tabs (so they can be removed)
 set listchars=tab:▶\ ,trail:-   " show tabs and trailing whitespace
+set linebreak                   " don't soft-wrap in the middle of a word
+set showbreak=…                 " show `…' at the beginning of a soft-broken line
 set tabstop=8                   " real tabs are 8 columns long
 set expandtab                   " no real tabs (use spaces for tabs)
 set softtabstop=2               " # of spaces when hitting tab/delete

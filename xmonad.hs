@@ -178,7 +178,7 @@ myKeys =
         , bgColor = "black"
         , fgColor = myLightMagenta
         }
-        "/home/brian/todo" )
+        "/home/brian/Dropbox/todo.txt" )
 
     --, ( "M-g" , windowPromptGoto defaultXPConfig
 

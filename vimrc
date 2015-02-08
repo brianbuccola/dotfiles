@@ -33,7 +33,7 @@ set background=dark             " make vim use lighter fg colors
 let g:netrw_liststyle=3         " use tree style directory listing
 
 if has("gui_running")           " set color scheme for both vim and gvim
-    colorscheme solarized
+    colorscheme molokai
 else
     colorscheme molokai
 endif

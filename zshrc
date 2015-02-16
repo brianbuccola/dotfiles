@@ -79,7 +79,7 @@ alias cp='cp -i'
 alias x='startx'
 alias bd='bashdown'
 alias bp='echo -e "\a"'
-alias db='dropbox start && watch -n1 dropbox status && dropbox stop'
+alias db='dropbox-cli start && watch -n1 dropbox-cli status && dropbox-cli stop'
 alias ipa='feh -F ~/downloads/IPA_chart_2005.png &'
 alias pg='ping www.google.com'
 

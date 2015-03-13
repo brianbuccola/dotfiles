@@ -30,6 +30,7 @@ set spell                       " highlight misspelled words
 set spellcapcheck=              " don't highlight uncapitalized first word
 set complete+=kspell            " use <C-n> and <C-p> to get suggested spelling completions
 set background=dark             " make vim use lighter fg colors
+set splitright                  " split to the right when executing :vsplit
 let g:netrw_liststyle=3         " use tree style directory listing
 
 if has("gui_running")           " set color scheme for both vim and gvim

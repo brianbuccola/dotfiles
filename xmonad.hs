@@ -2,8 +2,6 @@
 -- file:    ~/.xmonad/xmonad.hs
 -- author:  Brian Buccola
 
-
-
 -- =========
 --  Imports
 -- =========
@@ -40,8 +38,6 @@ import Graphics.X11.ExtraTypes.XF86 -- bind media keys
 
 import Colors.ConsoleVGA            -- personal colors, defined in Colors.hs
 
-
-
 -- ======
 --  Main
 -- ======
@@ -57,17 +53,13 @@ main = do
         ,   normalBorderColor  =  myNormalBorderColor
         ,   focusedBorderColor =  myFocusedBorderColor
         ,   workspaces         =  myWorkspaces
-
         ,   startupHook        =  myStartupHook
-
         ,   manageHook         =  myManageHook
         ,   layoutHook         =  avoidStruts $ myLayout
         ,   logHook            =  myLogHook xmobarPipe
         }
 
         `additionalKeysP` myKeys
-
-
 
 -- ========
 --  Basics
@@ -97,8 +89,6 @@ myStartupHook = return()    -- prefer .xinitrc
 -- myFont = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
 myFont = "xft:Inconsolata:pixelsize=14"
 
-
-
 -- =============
 --  Keybindings
 -- =============
@@ -108,7 +98,6 @@ myKeys =
     [
 
     -- Basics
-
       ( "M-S-n"         , nextWS                        )
     , ( "M-S-p"         , prevWS                        )
     , ( "M-<Backspace>" , toggleWS                      )
@@ -121,7 +110,6 @@ myKeys =
     , ( "M-S-m"         , windows $ W.greedyView "misc" ) -- go to WS "misc"
 
     -- Apps, etc.
-
     , ( "M-f"   , raiseMaybe (spawn "firefox"              ) (className =? "Firefox"   ) ) -- "f"irefox
     , ( "M-o"   , raiseMaybe (spawn "chromium"             ) (className =? "Chromium"  ) ) -- chr"o"mium
     -- , ( "M-d"   , raiseMaybe (spawn "dwb -r"               ) (className =? "Dwb"       ) ) -- "d"wb
@@ -140,38 +128,28 @@ myKeys =
 
     , ( "M-S-x" , sendMessage ToggleStruts )
 
-    -- Suspend system
-
-    -- , ( "M-C-s" , spawn "systemctl suspend" )
-
     -- Screenshots
-
     , ( "<Print>"   , spawn "scrot --delay 1 '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
     , ( "M-<Print>" , spawn "scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
 
     -- Keyboard
-
     -- , ( "M-<F9>" , spawn "~/scripts/keyboard-adjust.sh" )
 
     -- Media
-
     , ( "<XF86AudioLowerVolume>" , spawn "amixer -q set Master 1- unmute" )
     , ( "<XF86AudioMute>"        , spawn "amixer -q set Master toggle"    )
     , ( "<XF86AudioRaiseVolume>" , spawn "amixer -q set Master 1+ unmute" )
     , ( "<XF86AudioPlay>"        , spawn "ncmpcpp toggle"                 )
 
     -- Display
-
     , ( "<XF86MonBrightnessDown>" , spawn "~/scripts/brightness-dec.sh" )
     , ( "<XF86MonBrightnessUp>"   , spawn "~/scripts/brightness-inc.sh" )
     , ( "<XF86Display>"           , spawn "~/scripts/display-adjust.sh" )
 
     -- Scratchpad
-
     , ( "M-s" , scratchpadSpawnActionTerminal myTerminal )
 
     -- Prompts
-
     , ( "M-a" , appendFilePrompt defaultXPConfig
 
         { font    = myFont

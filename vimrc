@@ -231,6 +231,8 @@ map! <C-v>em ∅
 map! <C-v>in ∈
 map! <C-v>!in ∉
 map! <C-v>sub ⊆
+map! <C-v>cap ∩
+map! <C-v>cup ∪
 map! <C-v>[[ ⟦
 map! <C-v>]] ⟧
 " }}}

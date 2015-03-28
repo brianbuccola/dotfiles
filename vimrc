@@ -235,6 +235,8 @@ map! <C-v>cap ∩
 map! <C-v>cup ∪
 map! <C-v>[[ ⟦
 map! <C-v>]] ⟧
+map! <C-v>box □
+map! <C-v>dia ◇
 " }}}
 " IPA {{{
 " vowels

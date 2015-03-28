@@ -71,6 +71,7 @@ augroup latex_macros " {
     autocmd!
     autocmd FileType tex :nnoremap <leader>c :w<CR>:!latexmk -pdf %<CR>
     autocmd FileType tex :nnoremap <leader>v :!mupdf %:r.pdf &<CR><CR>
+    autocmd FileType tex :nnoremap <leader>lf :LatexFold<CR>
 augroup END " }
 
 " Blog macros: convert current markdown file to html using blog script,
@@ -172,6 +173,9 @@ let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 
 " LaTeX-Box
 let g:LatexBox_Folding=1
+let g:LatexBox_fold_preamble=0
+let g:LatexBox_fold_envs=0
+let g:LatexBox_fold_automatic=0
 " }}}
 " Greek {{{
 " (thanks to connermcd for these)

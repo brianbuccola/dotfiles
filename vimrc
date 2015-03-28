@@ -107,6 +107,9 @@ nnoremap <leader>a :AutoSaveToggle<CR>
 " make `Y' work like `D', `C', etc.
 nnoremap Y y$
 
+" easy save
+nnoremap <leader>w :w<CR>
+
 " enable some basic movements while in insert mode
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>

@@ -106,7 +106,7 @@ myKeys =
     , ( "M-w"           , windows $ W.greedyView "www" ) -- go to WS "www"
     , ( "M-c"           , windows $ W.greedyView "chat" ) -- go to WS "chat"
     , ( "M-d"           , windows $ W.greedyView "doc"  ) -- go to WS "doc"
-    , ( "M-S-<Return>"  , windows $ W.greedyView "term" ) -- go to WS "term"
+    , ( "M-S-t"         , windows $ W.greedyView "term" ) -- go to WS "term"
     , ( "M-S-m"         , windows $ W.greedyView "misc" ) -- go to WS "misc"
 
     -- Apps, etc.
@@ -124,7 +124,7 @@ myKeys =
     , ( "M-r"   , raiseMaybe (runInTerm "" "newsbeuter"    ) (title =? "newsbeuter"    ) ) -- "r"ss
     -- , ( "M-w"   , raiseMaybe (runInTerm "" "weechat-curses") (title =? "WeeChat 0.4.4-dev" ) ) -- "w"eechat
     , ( "M-v"   , raiseMaybe (spawn "pavucontrol"          ) (className =? "Pavucontrol" ) ) -- "v"olume
-    , ( "M-S-t" , raiseMaybe (runInTerm "" "htop"          ) (title =? "htop"          ) ) -- "h"top
+    , ( "M-S-h" , raiseMaybe (runInTerm "" "htop"          ) (title =? "htop"          ) ) -- "h"top
 
     , ( "M-S-x" , sendMessage ToggleStruts )
 

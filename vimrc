@@ -2,6 +2,9 @@
 " file:     ~/.vimrc
 " author:   Brian Buccola
 
+" Pathogen (enable plugins first)
+call pathogen#infect()
+
 " Basics {{{
 set nocompatible                " use vim (not vi) settings; must come first
 filetype plugin indent on       " load filetype plugin/indent files
@@ -154,9 +157,6 @@ noremap ^ g^
 noremap $ g$
 " }}}
 " Plugin Settings {{{
-" Pathogen
-call pathogen#infect()
-
 " vim-markdown
 let g:markdown_fenced_languages=['bash=sh', 'css', 'haskell', 'html', 'latex=tex', 'python']
 

@@ -9,6 +9,9 @@
 import XMonad
 import qualified XMonad.StackSet as W
 
+import qualified Data.List as L     -- provides isInfixOf, used for mySearchPredicate
+import qualified Data.Char as C     -- provides toLower, used for mySearchPredicate
+
 import XMonad.Actions.CycleWS       -- cycle through WSs, toggle last WS
 import XMonad.Actions.Warp          -- banish mouse pointer
 import XMonad.Actions.WindowGo      -- provides runOrRaise
@@ -174,6 +177,7 @@ myKeys =
         , fgColor  = myLightMagenta
         , bgHLight = myLightMagenta
         , fgHLight = "black"
+        , searchPredicate = mySearchPredicate
         } )
 
     , ( "M-/" , manPrompt defaultXPConfig
@@ -183,6 +187,7 @@ myKeys =
         , fgColor  = myLightRed
         , bgHLight = myLightRed
         , fgHLight = "black"
+        , searchPredicate = mySearchPredicate
         } )
 
     , ( "M-x" , shellPrompt defaultXPConfig
@@ -192,6 +197,7 @@ myKeys =
         , fgColor  = myLightGreen
         , bgHLight = myLightGreen
         , fgHLight = "black"
+        , searchPredicate = mySearchPredicate
         } )
 
     ] ++
@@ -209,6 +215,8 @@ myKeys =
                                      , ( "S-", windows . W.shift )
                                      ]
     ]
+
+mySearchPredicate = L.isInfixOf . map C.toLower
 
 -- ================
 --  Hooks, layouts

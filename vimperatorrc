@@ -25,9 +25,6 @@ set titlestring=
 set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
 set! ui.key.menuAccessKeyFocuses=false
 set complete=slf
-let leader="\"
-
-nnoremap gv :tabopen https://webvpn.mcgill.ca/http/
 
 " Toggle status (command) line; useful for when fullscreen videos don't actually go fullscreen
 nnoremap <silent> <leader>b :js toggle_bottombar()<CR>

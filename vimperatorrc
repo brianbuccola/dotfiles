@@ -1,4 +1,5 @@
 colorscheme molokai
+let leader="\"
 nnoremap k 4k
 nnoremap j 4j
 nnoremap h :tabprevious<Return>

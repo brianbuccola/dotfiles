@@ -17,6 +17,7 @@ nnoremap gs :source /home/brian/.vimperatorrc<CR>
 nnoremap U :undo<Space>
 nnoremap Q :qmarks<CR>
 nnoremap <C-r> :history<Space>
+nnoremap <Leader>t :tab<Space>
 set focuscontent
 set hintchars=uhetonasidpg.c,ryf
 set noscrollbars

@@ -148,6 +148,7 @@ myKeys =
     , ( "<XF86MonBrightnessDown>" , spawn "~/scripts/brightness-dec.sh" )
     , ( "<XF86MonBrightnessUp>"   , spawn "~/scripts/brightness-inc.sh" )
     , ( "<XF86Display>"           , spawn "~/scripts/display-adjust.sh" )
+    , ( "M-<F7>"                  , spawn "display-adjust.sh && keyboard-adjust.sh && bg-adjust.sh")
 
     -- Scratchpad
     , ( "M-s" , scratchpadSpawnActionTerminal myTerminal )

@@ -2,8 +2,8 @@ colorscheme molokai
 let leader="\"
 nnoremap k 4k
 nnoremap j 4j
-nnoremap h :tabprevious<Return>
-nnoremap l :tabnext<Return>
+nnoremap h <C-p>
+nnoremap l <C-n>
 nnoremap <C-h> h
 nnoremap <C-l> l
 nnoremap <BS> <C-^>

@@ -162,14 +162,15 @@ myKeys =
         }
         "/home/brian/Dropbox/todo.txt" )
 
-    --, ( "M-g" , windowPromptGoto defaultXPConfig
+    , ( "M-g" , windowPromptGoto defaultXPConfig
 
-    --    { font     = myFont
-    --    , bgColor  = "black"
-    --    , fgColor  = myLightRed
-    --    , bgHLight = myLightRed
-    --    , fgHLight = "black"
-    --    } )
+        { font     = myFont
+        , bgColor  = "black"
+        , fgColor  = myLightCyan
+        , bgHLight = myLightCyan
+        , fgHLight = "black"
+        , searchPredicate = mySearchPredicate
+        } )
 
     , ( "M-b" , windowPromptBring defaultXPConfig
 

@@ -89,6 +89,12 @@ augroup snippets " {
     autocmd!
     autocmd FileType snippet :set noet ts=8 sw=8 sts=8<CR>
 augroup END " }
+
+" Set commentstring for markdown files
+augroup markdown_comments " {
+    autocmd!
+    autocmd FileType mkd,markdown :setlocal commentstring=<!--\ %s\ -->
+augroup END " }
 " }}}
 " Mappings {{{
 " change <leader> from `\' to <Space>

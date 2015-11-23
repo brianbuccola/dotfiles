@@ -41,7 +41,7 @@ URxvt*urgentOnBell:     true
 URxvt.perl-ext-common:      keyboard-select,url-select
 URxvt.keysym.M-C-Escape:    perl:keyboard-select:activate
 URxvt.keysym.M-u:           perl:url-select:select_next
-URxvt.url-select.launcher:  firefox
+URxvt.url-select.launcher:  qutebrowser
 URxvt.url-select.underline: true
 
 ! =======

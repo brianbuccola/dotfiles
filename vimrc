@@ -167,7 +167,7 @@ noremap $ g$
 " }}}
 " Plugin Settings {{{
 " vim-markdown
-let g:markdown_fenced_languages=['bash=sh', 'css', 'haskell', 'html', 'latex=tex', 'python']
+let g:markdown_fenced_languages=['bash=sh', 'css', 'haskell', 'html', 'latex=tex', 'python', 'ruby']
 
 " Syntastic
 let g:syntastic_mode_map={ 'mode': 'active',

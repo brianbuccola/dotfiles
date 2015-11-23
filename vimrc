@@ -250,6 +250,8 @@ map! <C-v>[[ ⟦
 map! <C-v>]] ⟧
 map! <C-v>box □
 map! <C-v>dia ◇
+map! <C-v>lb ⟨
+map! <C-v>rb ⟩
 " }}}
 " IPA {{{
 " vowels

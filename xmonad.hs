@@ -106,14 +106,15 @@ myKeys =
     , ( "M-<Backspace>" , toggleWS                      )
     , ( "M-<Escape>"    , banish LowerRight             )
     , ( "M-<Return>"    , spawn myTerminal              )
-    , ( "M-w"           , windows $ W.greedyView "www" ) -- go to WS "www"
+    -- , ( "M-w"           , windows $ W.greedyView "www" ) -- go to WS "www"
     , ( "M-c"           , windows $ W.greedyView "chat" ) -- go to WS "chat"
     , ( "M-d"           , windows $ W.greedyView "doc"  ) -- go to WS "doc"
     , ( "M-S-t"         , windows $ W.greedyView "term" ) -- go to WS "term"
     , ( "M-S-m"         , windows $ W.greedyView "misc" ) -- go to WS "misc"
 
     -- Apps, etc.
-    , ( "M-f"   , raiseMaybe (spawn "firefox"              ) (className =? "Firefox"   ) ) -- "f"irefox
+    -- , ( "M-f"   , raiseMaybe (spawn "firefox"              ) (className =? "Firefox"   ) ) -- "f"irefox
+    , ( "M-w"   , raiseMaybe (spawn "qutebrowser"             ) (className =? "qutebrowser"  ) ) -- "www"
     , ( "M-o"   , raiseMaybe (spawn "chromium"             ) (className =? "Chromium"  ) ) -- chr"o"mium
     -- , ( "M-d"   , raiseMaybe (spawn "dwb -r"               ) (className =? "Dwb"       ) ) -- "d"wb
     -- , ( "M-d"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"     ) ) -- mup"d"f
@@ -148,7 +149,7 @@ myKeys =
     , ( "<XF86MonBrightnessDown>" , spawn "~/scripts/brightness-dec.sh" )
     , ( "<XF86MonBrightnessUp>"   , spawn "~/scripts/brightness-inc.sh" )
     , ( "<XF86Display>"           , spawn "~/scripts/display-adjust.sh" )
-    , ( "M-<F7>"                  , spawn "display-adjust.sh && keyboard-adjust.sh && bg-adjust.sh")
+    , ( "M-<F7>"                  , spawn "display-adjust.sh && keyboard-adjust.sh && ~/.fehbg")
 
     -- Scratchpad
     , ( "M-s" , scratchpadSpawnActionTerminal myTerminal )
@@ -231,7 +232,7 @@ mySearchPredicate = L.isInfixOf . map C.toLower
 myManageHook = composeAll . concat $
 
     [ [ className =? "Firefox"        --> doShift "www"            ]
-    , [ className =? "Dwb"            --> doShift "www"            ]
+    , [ className =? "qutebrowser"    --> doShift "www"            ]
     , [ title     =? "mutt"           --> doShift "mutt"           ]
     , [ className =? "Zathura"        --> doShift "doc"            ]
     , [ className =? "MuPDF"          --> doShift "doc"            ]
@@ -243,6 +244,7 @@ myManageHook = composeAll . concat $
     , [ className =? "Gajim"          --> doShift "chat"           ]
     , [ title     =? "newsbeuter"     --> doShift "rss"            ]
     , [ title     =? "Transmission"   --> doShift "misc"           ]
+    , [ className =? "mpv"            --> doShift "misc"           ]
     , [ className =? "Keepassx"       --> doShift "K"              ]
     , [ isDialog                      --> doFloat                  ]
     , [ className =? c                --> doFloat | c <- myCFloats ]

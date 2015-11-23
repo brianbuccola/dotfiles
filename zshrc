@@ -83,6 +83,8 @@ alias bp='echo -e "\a"'
 alias db='dropbox-cli start && watch -n1 dropbox-cli status && dropbox-cli stop'
 alias ipa='feh -F ~/downloads/IPA_chart_2005.png &'
 alias pg='ping www.google.com'
+alias vpn-mcgill='sudo openconnect securevpn.mcgill.ca'
+alias vpn-mit='sudo openconnect vpn.mit.edu'
 
 # Functions
 lspdf() {

@@ -130,7 +130,7 @@ mailboxes   "+gmail/INBOX" \
 # ================
 
 source $alias_file                                              # source alias file
-source ~/.mutt/colors/icy                                       # source colors file
+source ~/.mutt/colors/default                                   # source colors file
 source ~/.mutt/personal                                         # source file w/ personal info
 source ~/.mutt/gpg.rc                                           # source GPG file
 source /usr/share/doc/mutt/samples/gpg.rc                       # source GPG sample file

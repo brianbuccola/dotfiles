@@ -3,7 +3,8 @@
 " author:   Brian Buccola
 
 " Pathogen (enable plugins first)
-call pathogen#infect()
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 
 " Basics {{{
 set nocompatible                " use vim (not vi) settings; must come first

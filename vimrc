@@ -277,4 +277,8 @@ map! <C-v>eth ð
 map! <C-v>S ʃ
 map! <C-v>Z ʒ
 map! <C-v>T θ
+map! <C-v>? ʔ
+" other
+map! <C-v>" ˈ
+map! <C-v>"" ˌ
 " }}}

@@ -78,14 +78,6 @@ augroup latex_macros " {
     autocmd FileType tex :nnoremap <leader>lf :LatexFold<CR>
 augroup END " }
 
-" Blog macros: convert current markdown file to html using blog script,
-" view html output in Firefox
-augroup blog_macros " {
-    autocmd!
-    autocmd FileType mkd,markdown :nnoremap <leader>c :w<CR>:!bashdown convert ~/blog/source/%<CR>
-    autocmd FileType mkd,markdown :nnoremap <leader>v :!firefox ~/blog/blog/%:r.html<CR><CR>
-augroup END " }
-
 augroup snippets " {
     autocmd!
     autocmd FileType snippet :set noet ts=8 sw=8 sts=8<CR>

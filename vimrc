@@ -94,7 +94,7 @@ augroup END " }
 " Set commentstring for markdown files
 augroup markdown_comments " {
     autocmd!
-    autocmd FileType mkd,markdown :setlocal commentstring=<!--\ %s\ -->
+    autocmd FileType markdown :setlocal commentstring=<!--\ %s\ -->
 augroup END " }
 " }}}
 " Mappings {{{

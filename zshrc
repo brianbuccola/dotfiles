@@ -110,7 +110,7 @@ export LESS_TERMCAP_us=$(printf "\e[1;32m")     # begin underline
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 
 # environment variables
-export PATH="$PATH:$HOME/texlive/2014/bin/x86_64-linux:$HOME/scripts:$HOME/blog:$HOME/.cabal/bin:$HOME/.gem/ruby/2.2.0/bin"
+export PATH="$PATH:$HOME/texlive/2014/bin/x86_64-linux:$HOME/repos/scripts:$HOME/.cabal/bin:$HOME/.gem/ruby/2.2.0/bin"
 export MANPATH="$MANPATH:$HOME/texlive/2014/texmf/doc/man"
 export INFOPATH="$INFOPATH:$HOME/texlive/2014/texmf/doc/info"
 export SUDO_EDITOR="/usr/bin/vim -p"

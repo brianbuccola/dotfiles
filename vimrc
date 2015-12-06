@@ -165,11 +165,6 @@ let g:markdown_fenced_languages=['bash=sh', 'css', 'haskell', 'html', 'latex=tex
 " vim-liquid
 let g:liquid_highlight_types=g:markdown_fenced_languages
 
-" Syntastic
-let g:syntastic_mode_map={ 'mode': 'active',
-                         \ 'active_filetypes': [],
-                         \ 'passive_filetypes': ['tex'] }
-
 " UltiSnips
 let g:UltiSnipsEditSplit='horizontal'
 let g:UltiSnipsExpandTrigger='<Tab>'

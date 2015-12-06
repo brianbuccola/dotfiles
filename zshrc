@@ -89,9 +89,9 @@ alias vpn-mit='sudo openconnect vpn.mit.edu'
 # Functions
 lspdf() {
     if [[ $? -eq 0 ]]; then
-        ls | column -t -s '-' | sed 's/\.pdf$//g'
+        ls | column -t -s '_' | sed 's/\.pdf$//g' | sed 's/-/ /g'
     elif [[ $? -eq 1 ]]; then
-        ls "$1" | column -t -s '-' | sed 's/\.pdf$//g'
+        ls "$1" | column -t -s '_' | sed 's/\.pdf$//g' | sed 's/-/ /g'
     else
         echo "Error: too many arguments."
     fi

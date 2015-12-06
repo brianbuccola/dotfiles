@@ -162,6 +162,9 @@ noremap $ g$
 " vim-markdown
 let g:markdown_fenced_languages=['bash=sh', 'css', 'haskell', 'html', 'latex=tex', 'python', 'ruby']
 
+" vim-liquid
+let g:liquid_highlight_types=g:markdown_fenced_languages
+
 " Syntastic
 let g:syntastic_mode_map={ 'mode': 'active',
                          \ 'active_filetypes': [],

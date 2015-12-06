@@ -8,7 +8,7 @@ Config { font = "xft:Terminus:pixelsize=14"
        , commands = [ Run Wireless "wlp1s0" [ "-t", "<essid> <quality>", "-L", "50", "-H", "80"
                                             ,  "--normal", "#ffff55", "--high", "#55ff55", "--low", "#5555ff"
                                             ] 10
-                    , Run Weather "CYUL" [ "-t","<tempF> F", "-L", "40", "-H", "80"
+                    , Run Weather "LLBG" [ "-t","<tempF> F", "-L", "40", "-H", "80"
                                          , "--normal", "#ffff55", "--high", "#ff5555", "--low", "#5555ff"
                                          ] 300
                     , Run Battery ["-t", "<acstatus>: <left>%", "-L", "10", "-H", "80"
@@ -23,5 +23,5 @@ Config { font = "xft:Terminus:pixelsize=14"
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ <fc=#ff55ff>%wifi%</fc>  %kbd%  %CYUL%  %battery% <fc=#55ffff>%updates%</fc> <fc=#aa5500>%date%</fc> "
+       , template = "%StdinReader% }{ <fc=#ff55ff>%wifi%</fc>  %kbd%  %LLBG%  %battery% <fc=#55ffff>%updates%</fc> <fc=#aa5500>%date%</fc> "
        }

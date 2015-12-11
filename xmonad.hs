@@ -89,8 +89,8 @@ myWorkspaces = [ "www"
 
 myStartupHook = return()    -- prefer .xinitrc
 
--- myFont = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
-myFont = "xft:Inconsolata:pixelsize=14"
+myFont = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
+-- myFont = "xft:Inconsolata:pixelsize=14"
 
 -- =============
 --  Keybindings

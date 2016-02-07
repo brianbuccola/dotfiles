@@ -176,6 +176,9 @@ let g:LatexBox_Folding=1
 let g:LatexBox_fold_preamble=0
 let g:LatexBox_fold_envs=0
 let g:LatexBox_fold_automatic=0
+
+" vim-auto-save
+let g:auto_save_no_updatetime=1
 " }}}
 " Greek {{{
 " (thanks to connermcd for these)

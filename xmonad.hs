@@ -113,9 +113,9 @@ myKeys =
     , ( "M-S-m"         , windows $ W.greedyView "misc" ) -- go to WS "misc"
 
     -- Apps, etc.
-    -- , ( "M-f"   , raiseMaybe (spawn "firefox"              ) (className =? "Firefox"   ) ) -- "f"irefox
-    , ( "M-w"   , raiseMaybe (spawn "qutebrowser"             ) (className =? "qutebrowser"  ) ) -- "www"
-    , ( "M-o"   , raiseMaybe (spawn "chromium"             ) (className =? "Chromium"  ) ) -- chr"o"mium
+    , ( "M-f"   , raiseMaybe (spawn "firefox"              ) (className =? "Firefox"   ) ) -- "f"irefox
+    , ( "M-w"   , raiseMaybe (spawn "qutebrowser"          ) (className =? "qutebrowser"  ) ) -- "www"
+    -- , ( "M-o"   , raiseMaybe (spawn "chromium"             ) (className =? "Chromium"  ) ) -- chr"o"mium
     -- , ( "M-d"   , raiseMaybe (spawn "dwb -r"               ) (className =? "Dwb"       ) ) -- "d"wb
     -- , ( "M-d"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"     ) ) -- mup"d"f
     , ( "M-p"   , raiseMaybe (spawn "keepassx"             ) (className =? "Keepassx"  ) ) -- "k"eepassx
@@ -231,8 +231,8 @@ mySearchPredicate = L.isInfixOf . map C.toLower
 
 myManageHook = composeAll . concat $
 
-    [ [ className =? "Firefox"        --> doShift "www"            ]
-    , [ className =? "qutebrowser"    --> doShift "www"            ]
+    [ [ className =? "qutebrowser"    --> doShift "www"            ]
+    -- , [ className =? "Firefox"        --> doShift "www"            ]
     , [ title     =? "mutt"           --> doShift "mutt"           ]
     , [ className =? "Zathura"        --> doShift "doc"            ]
     , [ className =? "MuPDF"          --> doShift "doc"            ]

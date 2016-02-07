@@ -117,3 +117,4 @@ export INFOPATH="$INFOPATH:$HOME/texlive/2014/texmf/doc/info"
 export SUDO_EDITOR="/usr/bin/vim -p"
 export VISUAL="/usr/bin/vim -p -X"
 export EDITOR="/usr/bin/vim -p"
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')

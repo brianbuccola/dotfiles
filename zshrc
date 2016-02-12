@@ -57,6 +57,9 @@ zstyle ':completion:*:man:*' menu select
 autoload -Uz compinit
 compinit
 
+## Make <S-Tab> do reverse completion.
+bindkey '^[[Z' reverse-menu-complete
+
 # Colors
 autoload -U colors
 colors

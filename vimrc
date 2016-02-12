@@ -107,7 +107,7 @@ nnoremap <leader>a :AutoSaveToggle<CR>
 nnoremap Y y$
 
 " easy save
-nnoremap <leader>w :w<CR>
+nnoremap <leader>w :update<CR>
 
 " enable some basic movements while in insert mode
 inoremap <C-h> <Left>

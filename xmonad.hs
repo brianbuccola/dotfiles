@@ -115,7 +115,7 @@ myKeys =
     -- Apps, etc.
     , ( "M-f"   , raiseMaybe (spawn "firefox"              ) (className =? "Firefox"   ) ) -- "f"irefox
     , ( "M-w"   , raiseMaybe (spawn "qutebrowser"          ) (className =? "qutebrowser"  ) ) -- "www"
-    -- , ( "M-o"   , raiseMaybe (spawn "chromium"             ) (className =? "Chromium"  ) ) -- chr"o"mium
+    , ( "M-o"   , raiseMaybe (spawn "chromium"             ) (className =? "Chromium"  ) ) -- chr"o"mium
     -- , ( "M-d"   , raiseMaybe (spawn "dwb -r"               ) (className =? "Dwb"       ) ) -- "d"wb
     -- , ( "M-d"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"     ) ) -- mup"d"f
     , ( "M-p"   , raiseMaybe (spawn "keepassx"             ) (className =? "Keepassx"  ) ) -- "k"eepassx

@@ -2,6 +2,7 @@
 setopt correct
 setopt noclobber
 setopt autocd
+setopt no_case_glob
 setopt extended_glob
 setopt no_match
 setopt notify

@@ -23,5 +23,5 @@ Config { font = "xft:Terminus:pixelsize=14"
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ <fc=#ff55ff>%wifi%</fc>  %kbd%  %LLBG%  %battery% <fc=#55ffff>%updates%</fc> <fc=#aa5500>%date%</fc> "
+       , template = "%StdinReader% }{ %wlp1s0wi%  %kbd%  %LLBG%  %battery% <fc=#55ffff>%updates%</fc> <fc=#aa5500>%date%</fc> "
        }

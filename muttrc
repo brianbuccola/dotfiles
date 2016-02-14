@@ -2,8 +2,6 @@
 # file:     ~/.muttrc
 # author:   Brian Buccola
 
-
-
 # ==================================
 #  Files, directories, and commands
 # ==================================
@@ -18,8 +16,6 @@ set tmpdir              = "~/.mutt/tmp"                         # where to keep 
 set editor              = "/usr/bin/vim +/^$"                   # use vim and skip to first blank line
 set ispell              = "/usr/bin/aspell -e -c"               # use aspell instead of ispell
 set print_command       = "/usr/bin/lp -d HP_LaserJet_2300_series" # print to office printer
-
-
 
 # ==============
 #  Main options
@@ -46,8 +42,6 @@ set thorough_search                                             # strip headers 
 unset help
 unset wait_key                                                  # don't ask to "press any key to continue" after shell cmd, etc.
 
-
-
 # ===============
 #  Index options
 # ===============
@@ -59,8 +53,6 @@ set sort_aux            = reverse-last-date-received            # like gmail
 #set reply_regexp        = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 set strict_threads                                              # thread based on "In-Reply-To:" and "References:", not $reply_regexp
 set menu_context        = 5                                     # number of lines to pad top/bottom of screen when scrolling
-
-
 
 # ===============
 #  Pager options
@@ -77,8 +69,6 @@ auto_view text/html                                             # view html auto
 alternative_order text/plain text/enriched text/html            # save html for last
 #set quote_regexp        = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 
-
-
 # =========
 #  Formats
 # =========
@@ -86,8 +76,6 @@ alternative_order text/plain text/enriched text/html            # save html for 
 set date_format         = "%a %d %b %Y (%H:%M)"
 set index_format        = "%3C %Z %D %-15.15F %s"
 #set alias_format        = "%4n %t %-20a  %r"
-
-
 
 # ================
 #  Composing mail
@@ -110,8 +98,6 @@ set reverse_name                                                # reply based on
 set include                                                     # include message in replies
 set forward_quote                                               # include message in forwards
 
-
-
 # ===========
 #  Mailboxes
 # ===========
@@ -123,8 +109,6 @@ mailboxes   "+gmail/INBOX" \
             "+gmail/Trash" \
             "+postponed"
 
-
-
 # ================
 #  Always sourced
 # ================
@@ -135,8 +119,6 @@ source ~/.mutt/personal                                         # source file w/
 source ~/.mutt/gpg.rc                                           # source GPG file
 source /usr/share/doc/mutt/samples/gpg.rc                       # source GPG sample file
 
-
-
 # =======
 #  Hooks
 # =======
@@ -146,8 +128,6 @@ folder-hook !"All Mail" 'macro index d "<delete-message>" "archive the current e
 # NB: the above hook removes label, i.e. removes msg from current (non-All Mail) folder.
 # This amounts to archiving (leaving a copy in All Mail), EXCEPT in the case of Trash.
 # When in Trash, this macro deletes the msg for good.
-
-
 
 # ==========
 #  Bindings
@@ -168,8 +148,6 @@ bind pager G            bottom
 bind index,pager gr     group-reply
 bind index,pager \Cu    half-up
 bind index,pager \Cd    half-down
-
-
 
 # ========
 #  Macros
@@ -193,8 +171,6 @@ macro compose v     "<edit-from>^Ume-<tab>"                                 "sel
 
 macro index A       "<create-alias>"                                        "create an alias from a message sender"
 macro index a       "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter><first-entry>" "mark all new as read"
-
-
 
 # ==============
 #  Random stuff

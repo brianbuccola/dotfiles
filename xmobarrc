@@ -6,7 +6,7 @@ Config { font = "xft:Terminus:pixelsize=14"
        , borderColor = "#aaaaaa"
        , lowerOnStart = True
        , commands = [ Run Wireless "wlp1s0" [ "-t", "<essid> <quality>", "-L", "50", "-H", "80"
-                                            ,  "--normal", "#ffff55", "--high", "#55ff55", "--low", "#5555ff"
+                                            , "--normal", "#ffff55", "--high", "#55ff55", "--low", "#5555ff"
                                             ] 10
                     , Run Weather "LLBG" [ "-t","<tempF> F", "-L", "40", "-H", "80"
                                          , "--normal", "#ffff55", "--high", "#ff5555", "--low", "#5555ff"

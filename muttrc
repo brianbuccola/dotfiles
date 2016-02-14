@@ -203,7 +203,6 @@ macro index a       "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-patte
 # save a decoded copy in ~/
 set pipe_decode                                                     # weed out headers before piping
 macro index     |   "<pipe-message>cat > ~/"    "save message as"   # pipe message to file
-macro attach    |   "<pipe-message>cat > /tmp/mutt-mail ; dwb /tmp/mutt-mail"   "pipe html to dwb"
 
 # quick-sync ~/.mail immediately with mbsync
 macro index R   "<shell-escape>/usr/bin/mbsync -Va<enter>" "sync IMAP"

@@ -27,7 +27,7 @@ set print_command       = "/usr/bin/lp -d HP_LaserJet_2300_series" # print to of
 
 set mbox_type           = Maildir                               # mailbox type
 set folder              = "~/.mail"                             # mailbox location
-set spoolfile           = "+gmail/[Gmail].All Mail"             # default inbox on open
+set spoolfile           = "+gmail/All Mail"                     # default inbox on open
 set timeout             = 3                                     # idle time before scanning
 set mail_check          = 0                                     # minimum time between scans
 set sort_alias          = alias                                 # sort alias file by alias
@@ -117,10 +117,10 @@ set forward_quote                                               # include messag
 # ===========
 
 mailboxes   "+gmail/INBOX" \
-            "+gmail/[Gmail].All Mail" \
-            "+gmail/[Gmail].Sent Mail" \
-            "+gmail/[Gmail].Spam" \
-            "+gmail/[Gmail].Trash" \
+            "+gmail/All Mail" \
+            "+gmail/Sent Mail" \
+            "+gmail/Spam" \
+            "+gmail/Trash" \
             "+postponed"
 
 
@@ -141,11 +141,11 @@ source /usr/share/doc/mutt/samples/gpg.rc                       # source GPG sam
 #  Hooks
 # =======
 
-folder-hook "All Mail" 'macro index d "<save-message>=gmail/[Gmail].Trash<enter>" "send to trash"'
+folder-hook "All Mail" 'macro index d "<save-message>=gmail/Trash<enter>" "send to trash"'
 folder-hook !"All Mail" 'macro index d "<delete-message>" "archive the current entry (remove label)"'
 # NB: the above hook removes label, i.e. removes msg from current (non-All Mail) folder.
 # This amounts to archiving (leaving a copy in All Mail), EXCEPT in the case of Trash.
-# When in [Gmail].Trash, this macro deletes the msg for good.
+# When in Trash, this macro deletes the msg for good.
 
 
 
@@ -180,12 +180,11 @@ macro generic,pager "<esc>m" \
                                                                             "show Mutt documentation"
 
 macro index gi      "<change-folder>=gmail/INBOX<enter>"                    "go to inbox"
-macro index ga      "<change-folder>=gmail/[Gmail].All<tab><enter>"         "go to all mail"
-macro index gc      "<change-folder>=gmail/[Gmail].Chats<enter>"            "go to chats"
-macro index gs      "<change-folder>=gmail/[Gmail].Sent<tab><enter>"        "go to sent mail"
+macro index ga      "<change-folder>=gmail/All<tab><enter>"                 "go to all mail"
+macro index gs      "<change-folder>=gmail/Sent<tab><enter>"                "go to sent mail"
 macro index gp      "<change-folder>=postponed<enter>"                      "go to postponed"
-macro index gt      "<change-folder>=gmail/[Gmail].Trash<enter>"            "go to trash"
-macro index gS      "<change-folder>=gmail/[Gmail].Spam<enter>"             "go to spam"
+macro index gt      "<change-folder>=gmail/Trash<enter>"                    "go to trash"
+macro index gS      "<change-folder>=gmail/Spam<enter>"                     "go to spam"
 macro index gf      "<limit>~F<enter>"                                      "show flagged messages"
 macro index \Cr     "<tag-prefix><clear-flag>N"                             "mark tagged messages as read"
 macro index B       "<limit>~b "                                            "search message bodies"
@@ -218,5 +217,5 @@ set pipe_decode                                                     # weed out h
 macro index     |   "<pipe-message>cat > ~/"    "save message as"   # pipe message to file
 macro attach    |   "<pipe-message>cat > /tmp/mutt-mail ; dwb /tmp/mutt-mail"   "pipe html to dwb"
 
-# quick-sync ~/.mail immediately with offlineimap
-macro index R   "<shell-escape>/usr/bin/offlineimap -o<enter>" "sync IMAP"
+# quick-sync ~/.mail immediately with mbsync
+macro index R   "<shell-escape>/usr/bin/mbsync -Va<enter>" "sync IMAP"

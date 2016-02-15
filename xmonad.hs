@@ -82,6 +82,7 @@ myWorkspaces = [ "www"
                , "term"
                , "chat"
                , "rss"
+               , "log"
                , "misc"
                , "K"        -- for keepassx
                , "NSP"      -- for scratchpad
@@ -110,6 +111,7 @@ myKeys =
     , ( "M-c"           , windows $ W.greedyView "chat" ) -- go to WS "chat"
     , ( "M-d"           , windows $ W.greedyView "doc"  ) -- go to WS "doc"
     , ( "M-S-t"         , windows $ W.greedyView "term" ) -- go to WS "term"
+    , ( "M-S-l"         , windows $ W.greedyView "log" )  -- go to WS "log"
     , ( "M-S-m"         , windows $ W.greedyView "misc" ) -- go to WS "misc"
 
     -- Apps, etc.

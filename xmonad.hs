@@ -129,19 +129,19 @@ myKeys =
 
     -- Screenshots
     , ( "<Print>"   , spawn "scrot --delay 1 '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
-    , ( "M-<Print>" , spawn "scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
+    , ( "M-<Print>" , spawn "scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'"        )
 
     -- Media
     , ( "<XF86AudioLowerVolume>" , spawn "pactl set-sink-volume 1 -2dB" )
     , ( "<XF86AudioMute>"        , spawn "pactl set-sink-mute 1 toggle" )
     , ( "<XF86AudioRaiseVolume>" , spawn "pactl set-sink-volume 1 +2dB" )
-    , ( "<XF86AudioPlay>"        , spawn "ncmpcpp toggle"                 )
+    , ( "<XF86AudioPlay>"        , spawn "ncmpcpp toggle"               )
 
     -- Display
-    , ( "<XF86MonBrightnessDown>" , spawn "~/scripts/brightness-dec.sh" )
-    , ( "<XF86MonBrightnessUp>"   , spawn "~/scripts/brightness-inc.sh" )
-    , ( "<XF86Display>"           , spawn "~/scripts/display-adjust.sh" )
-    , ( "M-<F7>"                  , spawn "display-adjust.sh && keyboard-adjust.sh && ~/.fehbg")
+    , ( "<XF86MonBrightnessDown>" , spawn "~/scripts/brightness-dec.sh"                         )
+    , ( "<XF86MonBrightnessUp>"   , spawn "~/scripts/brightness-inc.sh"                         )
+    , ( "<XF86Display>"           , spawn "~/scripts/display-adjust.sh"                         )
+    , ( "M-<F7>"                  , spawn "display-adjust.sh && keyboard-adjust.sh && ~/.fehbg" )
 
     -- Scratchpad
     , ( "M-s" , scratchpadSpawnActionTerminal myTerminal )

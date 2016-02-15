@@ -107,39 +107,29 @@ myKeys =
     , ( "M-<Backspace>" , toggleWS                      )
     , ( "M-<Escape>"    , banish LowerRight             )
     , ( "M-<Return>"    , spawn myTerminal              )
-    -- , ( "M-w"           , windows $ W.greedyView "www" ) -- go to WS "www"
     , ( "M-c"           , windows $ W.greedyView "chat" ) -- go to WS "chat"
     , ( "M-d"           , windows $ W.greedyView "doc"  ) -- go to WS "doc"
     , ( "M-S-t"         , windows $ W.greedyView "term" ) -- go to WS "term"
-    , ( "M-S-l"         , windows $ W.greedyView "log" )  -- go to WS "log"
+    , ( "M-S-l"         , windows $ W.greedyView "log"  ) -- go to WS "log"
     , ( "M-S-m"         , windows $ W.greedyView "misc" ) -- go to WS "misc"
 
     -- Apps, etc.
-    , ( "M-f"   , raiseMaybe (spawn "firefox"              ) (className =? "Firefox"   ) ) -- "f"irefox
-    , ( "M-w"   , raiseMaybe (spawn "qutebrowser"          ) (className =? "qutebrowser"  ) ) -- "www"
-    , ( "M-o"   , raiseMaybe (spawn "chromium"             ) (className =? "Chromium"  ) ) -- chr"o"mium
-    -- , ( "M-d"   , raiseMaybe (spawn "dwb -r"               ) (className =? "Dwb"       ) ) -- "d"wb
-    -- , ( "M-d"   , raiseMaybe (spawn ""                     ) (className =? "MuPDF"     ) ) -- mup"d"f
-    , ( "M-p"   , raiseMaybe (spawn "keepassx"             ) (className =? "Keepassx"  ) ) -- "k"eepassx
-    , ( "M-y"   , raiseMaybe (spawn "skype"                ) (className =? "Skype"     ) ) -- sk"y"pe
-    -- , ( "M-p"   , raiseMaybe (spawn "pidgin"               ) (className =? "Pidgin"    ) ) -- "p"idgin
-    -- , ( "M-g"   , raiseMaybe (spawn "gajim"                ) (className =? "Gajim"     ) ) -- "g"ajim
-    -- , ( "M-z"   , raiseMaybe (spawn "zathura"              ) (className =? "Zathura"   ) ) -- "z"athura
-    , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"       ) (className =? "ncmpcpp"   ) ) -- "n"cmpcpp
-    , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"          ) (title =? "mutt"          ) ) -- "m"utt
-    , ( "M-r"   , raiseMaybe (runInTerm "" "newsbeuter"    ) (title =? "newsbeuter"    ) ) -- "r"ss
-    -- , ( "M-w"   , raiseMaybe (runInTerm "" "weechat-curses") (title =? "WeeChat 0.4.4-dev" ) ) -- "w"eechat
-    , ( "M-v"   , raiseMaybe (spawn "pavucontrol"          ) (className =? "Pavucontrol" ) ) -- "v"olume
-    , ( "M-S-h" , raiseMaybe (runInTerm "" "htop"          ) (title =? "htop"          ) ) -- "h"top
+    , ( "M-f"   , raiseMaybe (spawn "firefox"           ) (className =? "Firefox"     ) ) -- "f"irefox
+    , ( "M-w"   , raiseMaybe (spawn "qutebrowser"       ) (className =? "qutebrowser" ) ) -- "www"
+    , ( "M-o"   , raiseMaybe (spawn "chromium"          ) (className =? "Chromium"    ) ) -- chr"o"mium
+    , ( "M-p"   , raiseMaybe (spawn "keepassx"          ) (className =? "Keepassx"    ) ) -- "k"eepassx
+    , ( "M-y"   , raiseMaybe (spawn "skype"             ) (className =? "Skype"       ) ) -- sk"y"pe
+    , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"    ) (className =? "ncmpcpp"     ) ) -- "n"cmpcpp
+    , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"       ) (title =? "mutt"            ) ) -- "m"utt
+    , ( "M-r"   , raiseMaybe (runInTerm "" "newsbeuter" ) (title =? "newsbeuter"      ) ) -- "r"ss
+    , ( "M-v"   , raiseMaybe (spawn "pavucontrol"       ) (className =? "Pavucontrol" ) ) -- "v"olume
+    , ( "M-S-h" , raiseMaybe (runInTerm "" "htop"       ) (title =? "htop"            ) ) -- "h"top
 
-    , ( "M-S-x" , sendMessage ToggleStruts )
+    , ( "M-S-x" , sendMessage ToggleStruts ) -- toggle xmobar visibility
 
     -- Screenshots
     , ( "<Print>"   , spawn "scrot --delay 1 '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
     , ( "M-<Print>" , spawn "scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
-
-    -- Keyboard
-    -- , ( "M-<F9>" , spawn "~/scripts/keyboard-adjust.sh" )
 
     -- Media
     , ( "<XF86AudioLowerVolume>" , spawn "amixer -q set Master 1- unmute" )
@@ -234,7 +224,6 @@ mySearchPredicate = L.isInfixOf . map C.toLower
 myManageHook = composeAll . concat $
 
     [ [ className =? "qutebrowser"    --> doShift "www"            ]
-    -- , [ className =? "Firefox"        --> doShift "www"            ]
     , [ title     =? "mutt"           --> doShift "mutt"           ]
     , [ className =? "Zathura"        --> doShift "doc"            ]
     , [ className =? "MuPDF"          --> doShift "doc"            ]

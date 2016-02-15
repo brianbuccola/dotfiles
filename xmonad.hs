@@ -132,9 +132,9 @@ myKeys =
     , ( "M-<Print>" , spawn "scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'"        )
 
     -- Media
-    , ( "<XF86AudioLowerVolume>" , spawn "pactl set-sink-volume 1 -2dB" )
+    , ( "<XF86AudioLowerVolume>" , spawn "pactl set-sink-volume 1 -5%"  )
     , ( "<XF86AudioMute>"        , spawn "pactl set-sink-mute 1 toggle" )
-    , ( "<XF86AudioRaiseVolume>" , spawn "pactl set-sink-volume 1 +2dB" )
+    , ( "<XF86AudioRaiseVolume>" , spawn "pactl set-sink-volume 1 +5%"  )
     , ( "<XF86AudioPlay>"        , spawn "ncmpcpp toggle"               )
 
     -- Display

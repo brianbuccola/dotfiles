@@ -83,6 +83,7 @@ augroup latex_macros " {
     autocmd FileType tex :nnoremap <leader>lf :LatexFold<CR>
 augroup END " }
 
+" Use real tabs for snippets
 augroup snippets " {
     autocmd!
     autocmd FileType snippet :set noet ts=8 sw=8 sts=8<CR>

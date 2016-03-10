@@ -91,10 +91,6 @@ augroup END " }
 " switch from insert to command mode using jj
 inoremap jj <Esc>
 
-" easy write
-inoremap jw <Esc>:w<CR>a
-nnoremap <leader>jw :w<CR>
-
 " AutoSaveToggle
 nnoremap <leader>a :AutoSaveToggle<CR>
 

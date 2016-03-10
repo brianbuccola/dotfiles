@@ -97,6 +97,9 @@ nnoremap <leader>a :AutoSaveToggle<CR>
 " make `Y' work like `D', `C', etc.
 nnoremap Y y$
 
+" easy edit
+nnoremap <leader>e :e<Space>
+
 " easy save
 nnoremap <leader>w :update<CR>
 

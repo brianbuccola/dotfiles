@@ -139,6 +139,9 @@ noremap $ g$
 
 " visually select the text just pasted
 nnoremap gz `[v`]
+
+" look up current word (under cursor) in online thesaurus
+nnoremap <Leader>t :OnlineThesaurusCurrentWord<CR>
 " }}}
 " Plugin Settings {{{
 " vim-markdown

@@ -104,8 +104,6 @@ nnoremap <leader>e :e<Space>
 nnoremap <leader>w :update<CR>
 
 " enable some basic movements while in insert mode
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
 
 " add new line below/above current line while in normal mode,
 " keeping current position. (<S-CR> only works in gvim.)
@@ -114,14 +112,17 @@ nnoremap <S-CR> m`O<Esc>``
 
 " jump to new line above current line. (Only works in gvim.)
 inoremap <S-CR> <Esc>O
+" inoremap <C-h> <Left>
+" inoremap <C-l> <Right>
 
 " prevent ctrl-U and ctrl-W from deleting stuff irrecoverably
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 
-" use <C-h> to delete entire previous word (instead of just character) in insert mode.
-" since <C-BS> is the same as <C-h>, <C-BS> will also delete previous word.
-" inoremap <C-h> <C-w>
+" use <C-h> to delete entire previous word (instead of just character) in
+" insert and command modes; since <C-BS> is the same as <C-h>, <C-BS> will also
+" delete previous word.
+map! <C-h> <C-w>
 
 " map Q to gwap (reformat paragraph of text) instead of Ex mode.
 nnoremap Q gwap

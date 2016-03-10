@@ -66,6 +66,7 @@ set shiftwidth=2                " # of softtabs when using cindent, <<, >>, ...
 set textwidth=79                " max # of characters on each line
 set autoindent                  " use indentation level of previous line
 set nojoinspaces                " don't add extra space after ., !, etc. when joining
+set formatoptions+=j            " delete comment character when joining commented lines
 " }}}
 " Autocmd's, functions, etc. {{{
 " autoreload after modifying .vimrc

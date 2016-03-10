@@ -123,10 +123,6 @@ nnoremap Q gwap
 " with line below.
 nnoremap K kJ
 
-" spell check macros; `%' is current file.
-nnoremap <silent> <leader>s :set spell!<CR>
-nnoremap <leader>S :w<CR>:!aspell --dont-backup check %<CR>:e<CR>
-
 " switch to alternate buffer.
 nnoremap <BS> <C-^>
 

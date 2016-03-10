@@ -157,7 +157,6 @@ let g:UltiSnipsJumpForwardTrigger='<Tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 
 " LaTeX-Box
-let g:LatexBox_no_mappings=1
 let g:LatexBox_ignore_warnings=[]
 let g:LatexBox_Folding=1
 let g:LatexBox_fold_automatic=0

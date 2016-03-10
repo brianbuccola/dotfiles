@@ -42,9 +42,9 @@ let mapleader=' '
 let maplocalleader=' '
 
 if has("gui_running")           " set color scheme for both vim and gvim
-    colorscheme molokai
+    colorscheme gruvbox
 else
-    colorscheme molokai
+    colorscheme gruvbox
 endif
 " }}}
 " GUI Settings {{{

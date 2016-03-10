@@ -92,7 +92,7 @@ augroup END " }
 inoremap jj <Esc>
 
 " AutoSaveToggle
-nnoremap <leader>a :AutoSaveToggle<CR>
+nnoremap coa :AutoSaveToggle<CR>
 
 " make `Y' work like `D', `C', etc.
 nnoremap Y y$

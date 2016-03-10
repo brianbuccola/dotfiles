@@ -123,10 +123,6 @@ nnoremap Q gwap
 " with line below.
 nnoremap K kJ
 
-" after searching, turn off all highlighted matches;
-" basically, clearing the screen clears search highlighting, too
-noremap <C-l> :nohlsearch<CR><C-l>
-
 " spell check macros; `%' is current file.
 nnoremap <silent> <leader>s :set spell!<CR>
 nnoremap <leader>S :w<CR>:!aspell --dont-backup check %<CR>:e<CR>

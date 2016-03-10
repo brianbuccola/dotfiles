@@ -19,7 +19,7 @@ set mouse=a                     " mouse support everywhere
 set mousehide                   " auto-hide cursor while typing
 set wildmode=list:longest,full  " make completion more like zsh
 set wildmenu                    " turn on command-line completion wild style
-set wildignore=*.bak,*.jpg,*.gif,*.png,*.log,*.aux,*.out,*.bbl,*.blg
+set wildignore+=*.swp,*.bak,*.jpg,*.gif,*.png
 set ignorecase                  " ignore case, except...
 set smartcase                   " ...when search string contains uppercase
 set incsearch                   " highlight as you type search phrase

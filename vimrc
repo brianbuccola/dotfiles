@@ -104,14 +104,6 @@ nnoremap <leader>e :e<Space>
 nnoremap <leader>w :update<CR>
 
 " enable some basic movements while in insert mode
-
-" add new line below/above current line while in normal mode,
-" keeping current position. (<S-CR> only works in gvim.)
-nnoremap <CR> m`o<Esc>``
-nnoremap <S-CR> m`O<Esc>``
-
-" jump to new line above current line. (Only works in gvim.)
-inoremap <S-CR> <Esc>O
 " inoremap <C-h> <Left>
 " inoremap <C-l> <Right>
 

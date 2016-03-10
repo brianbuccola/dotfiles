@@ -164,6 +164,9 @@ let g:LatexBox_fold_automatic=0
 
 " vim-auto-save
 let g:auto_save_no_updatetime=1
+
+" vim-online-thesaurus
+let g:online_thesaurus_map_keys=0
 " }}}
 " Greek {{{
 " (thanks to connermcd for these)

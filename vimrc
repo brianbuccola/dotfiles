@@ -75,14 +75,6 @@ augroup reload_vimrc " {
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
-" LaTeX compile and view macros
-augroup latex_macros " {
-    autocmd!
-    autocmd FileType tex :nnoremap <leader>c :w<CR>:!latexmk -pdf %<CR>
-    autocmd FileType tex :nnoremap <leader>v :!mupdf %:r.pdf &<CR><CR>
-    autocmd FileType tex :nnoremap <leader>lf :LatexFold<CR>
-augroup END " }
-
 " Use real tabs for snippets
 augroup snippets " {
     autocmd!

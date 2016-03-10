@@ -136,6 +136,9 @@ noremap k gk
 noremap 0 g0
 noremap ^ g^
 noremap $ g$
+
+" visually select the text just pasted
+nnoremap gz `[v`]
 " }}}
 " Plugin Settings {{{
 " vim-markdown

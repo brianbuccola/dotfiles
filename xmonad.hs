@@ -39,7 +39,7 @@ import XMonad.Prompt.Workspace      -- list and go to WS
 
 import Graphics.X11.ExtraTypes.XF86 -- bind media keys
 
-import Colors.ConsoleVGA            -- personal colors, defined in Colors.hs
+import Colors.Gruvbox               -- personal colors, defined in Colors.hs
 
 -- ======
 --  Main

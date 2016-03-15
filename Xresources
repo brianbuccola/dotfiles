@@ -7,7 +7,9 @@
 !  Colors
 ! ========
 
-#include "/home/brian/.xcolors/console-vga"
+!#include "/home/brian/.xcolors/console-vga"
+#include "/home/brian/.config/gruvbox-contrib/xresources/gruvbox-dark.xresources"
+!#include "/home/brian/.config/gruvbox-contrib/xresources/gruvbox-light.xresources"
 
 ! =======
 !  URxvt

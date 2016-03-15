@@ -1,19 +1,19 @@
 Config { font = "xft:Terminus:pixelsize=14"
        , position = TopW L 100
-       , bgColor = "black"
-       , fgColor = "#aaaaaa"
+       , bgColor = "#1d2021"
+       , fgColor = "#a89984"
        , border = BottomBM 0
-       , borderColor = "#aaaaaa"
+       , borderColor = "#a89984"
        , lowerOnStart = True
        , commands = [ Run Wireless "wlp1s0" [ "-t", "<essid> <quality>", "-L", "50", "-H", "80"
-                                            , "--normal", "#ffff55", "--high", "#55ff55", "--low", "#5555ff"
+                                            , "--normal", "#fabd2f", "--high", "#b8bb26", "--low", "#83a598"
                                             ] 10
                     , Run Weather "LLBG" [ "-t", "<tempF> F", "-L", "40", "-H", "80"
-                                         , "--normal", "#ffff55", "--high", "#ff5555", "--low", "#5555ff"
+                                         , "--normal", "#fabd2f", "--high", "#fb4934", "--low", "#83a598"
                                          ] 300
                     , Run Battery ["-t", "<acstatus>: <left>%", "-L", "10", "-H", "80"
-                                  , "--low", "#ff5555", "--normal", "#ffff55", "--high", "#55ff55"
-                                  , "--", "-O", "<fc=#55ff55>on</fc>", "-o", "off ", "-f", "/sys/class/power_supply/ACAD/online"
+                                  , "--low", "#fb4934", "--normal", "#fabd2f", "--high", "#b8bb26"
+                                  , "--", "-O", "<fc=#b8bb26>on</fc>", "-o", "off ", "-f", "/sys/class/power_supply/ACAD/online"
                                   ] 10
                     , Run Kbd [("us(dvorak)", "dv")]
                     , Run Date "%a %d %b %H:%M:%S" "date" 10
@@ -23,5 +23,5 @@ Config { font = "xft:Terminus:pixelsize=14"
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %wlp1s0wi%  %kbd%  %LLBG%  %battery% <fc=#55ffff>%updates%</fc> <fc=#aa5500>%date%</fc> "
+       , template = "%StdinReader% }{ %wlp1s0wi%  %kbd%  %LLBG%  %battery% <fc=#8ec07c>%updates%</fc> <fc=#d79921>%date%</fc> "
        }

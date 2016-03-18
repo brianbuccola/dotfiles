@@ -80,13 +80,13 @@ augroup END " }
 " Use real tabs for snippets
 augroup snippets " {
     autocmd!
-    autocmd FileType snippet :set noet ts=8 sw=8 sts=8<CR>
+    autocmd FileType snippet setlocal noet ts=8 sw=8 sts=8<CR>
 augroup END " }
 
 " Set commentstring for markdown files
 augroup markdown_comments " {
     autocmd!
-    autocmd FileType markdown :setlocal commentstring=<!--\ %s\ -->
+    autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
 augroup END " }
 " }}}
 " Mappings {{{

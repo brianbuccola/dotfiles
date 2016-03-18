@@ -170,7 +170,7 @@ macro index B       "<limit>~b "                                            "sea
 macro compose v     "<edit-from>^Ume-<tab>"                                 "select from"
 
 macro index A       "<create-alias>"                                        "create an alias from a message sender"
-macro index a       "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter><first-entry>" "mark all new as read"
+macro index a       "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter><first-entry><sync-mailbox>" "mark all new as read"
 
 # ==============
 #  Random stuff

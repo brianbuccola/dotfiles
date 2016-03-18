@@ -33,7 +33,6 @@ set showmatch                   " show matching brackets
 set spell                       " highlight misspelled words
 set spellcapcheck=              " don't highlight uncapitalized first word
 set complete+=kspell            " use <C-n> and <C-p> to get suggested spelling completions
-set background=dark             " make vim use lighter fg colors
 set splitright                  " split to the right when executing :vsplit
 let g:netrw_liststyle=3         " use tree style directory listing
 
@@ -42,10 +41,13 @@ let mapleader=' '
 let maplocalleader=' '
 
 if has("gui_running")           " set color scheme for both vim and gvim
+    let g:gruvbox_contrast_dark='hard'
     colorscheme gruvbox
 else
+    let g:gruvbox_contrast_dark='hard'
     colorscheme gruvbox
 endif
+set background=dark             " use dark bg color and light fg colors
 " }}}
 " GUI Settings {{{
 set guioptions-=m               " remove menu bar from gvim

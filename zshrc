@@ -63,6 +63,8 @@ bindkey '^[[Z' reverse-menu-complete
 # Colors
 autoload -U colors
 colors
+GRUVBOX_SHELL="${HOME}/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+[[ -s ${GRUVBOX_SHELL} ]] && source "${GRUVBOX_SHELL}"
 
 # Custom prompt
 PROMPT="%B%T%b [%{$fg_bold[red]%}%?%{$reset_color%}]%{$fg_no_bold[green]%}${gitval}%{$reset_color%} %# "

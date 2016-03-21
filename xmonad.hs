@@ -138,9 +138,9 @@ myKeys =
     , ( "<XF86AudioPlay>"        , spawn "ncmpcpp toggle"               )
 
     -- Display
-    , ( "<XF86MonBrightnessDown>" , spawn "~/scripts/brightness-dec.sh"                         )
-    , ( "<XF86MonBrightnessUp>"   , spawn "~/scripts/brightness-inc.sh"                         )
-    , ( "<XF86Display>"           , spawn "~/scripts/display-adjust.sh"                         )
+    , ( "<XF86MonBrightnessDown>" , spawn "~/repos/scripts/brt.sh down"                         )
+    , ( "<XF86MonBrightnessUp>"   , spawn "~/repos/scripts/brt.sh up"                           )
+    , ( "<XF86Display>"           , spawn "~/repos/scripts/display-adjust.sh"                   )
     , ( "M-<F7>"                  , spawn "display-adjust.sh && keyboard-adjust.sh && ~/.fehbg" )
 
     -- Scratchpad

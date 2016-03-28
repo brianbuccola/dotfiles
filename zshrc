@@ -92,6 +92,7 @@ alias pg='ping www.google.com'
 alias vpn-mcgill='sudo openconnect securevpn.mcgill.ca'
 alias vpn-mit='sudo openconnect vpn.mit.edu'
 alias g='git'
+alias mx='mpv $(xsel)'
 
 # Functions
 lspdf() {

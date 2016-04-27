@@ -50,11 +50,11 @@ endif
 set background=dark             " use dark bg color and light fg colors
 " }}}
 " GUI Settings {{{
-set guioptions-=m               " remove menu bar from gvim
-set guioptions-=T               " remove toolbar from gvim
-set guioptions-=r               " remove right-hand scroll bar
-set guioptions-=L               " remove left-hand scroll bar even when there is a vertically split window
-set guifont=Inconsolata\ 11     " use Inconsolata, size 11 font
+set guioptions-=m                  " remove menu bar from gvim
+set guioptions-=T                  " remove toolbar from gvim
+set guioptions-=r                  " remove right-hand scroll bar
+set guioptions-=L                  " remove left-hand scroll bar even when there is a vertically split window
+set guifont=DejaVu\ Sans\ Mono\ 11 " use DejaVu Sans Mono, size 11 font
 " }}}
 " Text Formatting {{{
 set list                        " show real tabs (so they can be removed)

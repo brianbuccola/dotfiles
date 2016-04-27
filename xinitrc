@@ -7,7 +7,7 @@
 
 ${HOME}/repos/scripts/display-adjust.sh     # auto-adjust monitors
 xrdb -merge ${HOME}/.Xresources             # add .Xresources to database
-xset fp+ /usr/share/fonts/local             # add local fonts to fontpath
+# xset fp+ /usr/share/fonts/local             # add local fonts to fontpath
 ${HOME}/repos/scripts/keyboard-adjust.sh    # add kbd layouts, switch ctrl/caps
 xsetroot -cursor_name left_ptr              # change default ugly pointer
 ${HOME}/.fehbg                              # set background

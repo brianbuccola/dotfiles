@@ -13,7 +13,6 @@ ${HOME}/.fehbg                              # set background
 urxvtd -q -f -o &                           # urxvt terminal daemon
 syndaemon -t -k -i 2 -d &                   # disable touchpad while typing
 xautolock -time 10 -locker physlock &       # lock screen (with physlock) after 10m of inactivity
-setterm -blank 1                            # make console (tty) blank after 1m of inactivity
 wmname LG3D                                 # fix JabRef/Java apps
 
 xmonad                                      # start xmonad

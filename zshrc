@@ -16,6 +16,11 @@ setopt share_history
 # Vi keybindings
 bindkey -v
 
+# Edit command in text editor
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd "^E" edit-command-line
+bindkey -M viins "^E" edit-command-line
+
 # Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

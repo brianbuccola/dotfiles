@@ -12,7 +12,7 @@ xsetroot -cursor_name left_ptr              # change default ugly pointer
 ${HOME}/.fehbg                              # set background
 urxvtd -q -f -o &                           # urxvt terminal daemon
 syndaemon -t -k -i 2 -d &                   # disable touchpad while typing
-xset s 60                                   # make screen blank after 1m of inactivity
+xset s on +dpms                             # make screen blank after 10m of inactivity (default)
 xautolock -time 10 -locker slock &          # lock screen (with physlock) after 10m of inactivity
 wmname LG3D                                 # fix JabRef/Java apps
 

@@ -131,6 +131,6 @@ export PATH="$PATH:$HOME/texlive/2015/bin/x86_64-linux:$HOME/repos/scripts:$HOME
 export MANPATH="$MANPATH:$HOME/texlive/2015/texmf-dist/doc/man"
 export INFOPATH="$INFOPATH:$HOME/texlive/2015/texmf-dist/doc/info"
 export SUDO_EDITOR="/usr/bin/vim -p"
-export VISUAL="/usr/bin/vim -p -X"
+export VISUAL="/usr/bin/vim -p"
 export EDITOR="/usr/bin/vim -p"
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')

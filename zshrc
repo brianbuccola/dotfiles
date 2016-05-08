@@ -102,7 +102,11 @@ alias mx='mpv $(xsel)'
 # Functions
 lspdf() {
     if [[ $? -eq 0 ]]; then
-        ls | column -t -s '_' | sed 's/\.pdf$//g' | sed 's/-/ /g'
+        ls | \
+          sed 's/\.pdf$//g' | \
+          sed 's/\./, /g' | \
+          sed 's/-/ /g' | \
+          column -t -s '_'
     elif [[ $? -eq 1 ]]; then
         ls "$1" | column -t -s '_' | sed 's/\.pdf$//g' | sed 's/-/ /g'
     else

@@ -1,0 +1,28 @@
+! vim: set ft=xdefaults:
+
+URxvt*foreground: #bcbcbc
+URxvt*background: #262626
+!black
+URxvt*color0:     #1c1c1c
+URxvt*color8:     #444444
+!red
+URxvt*color1:     #af5f5f
+URxvt*color9:     #ff8700
+!green
+URxvt*color2:     #5f875f
+URxvt*color10:    #87af87
+!yellow
+URxvt*color3:     #87875f
+URxvt*color11:    #ffffaf
+!blue
+URxvt*color4:     #5f87af
+URxvt*color12:    #8fafd7
+!magenta
+URxvt*color5:     #5f5f87
+URxvt*color13:    #8787af
+!cyan
+URxvt*color6:     #5f8787
+URxvt*color14:    #5fafaf
+!white
+URxvt*color7:     #6c6c6c
+URxvt*color15:    #ffffff

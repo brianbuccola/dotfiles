@@ -134,3 +134,4 @@ export SUDO_EDITOR="/usr/bin/vim -p"
 export VISUAL="/usr/bin/vim -p"
 export EDITOR="/usr/bin/vim -p"
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export PASSWORD_STORE_X_SELECTION="primary"

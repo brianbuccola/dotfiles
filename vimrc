@@ -54,7 +54,7 @@ set guioptions-=m                  " remove menu bar from gvim
 set guioptions-=T                  " remove toolbar from gvim
 set guioptions-=r                  " remove right-hand scroll bar
 set guioptions-=L                  " remove left-hand scroll bar even when there is a vertically split window
-set guifont=DejaVu\ Sans\ Mono\ 11 " use DejaVu Sans Mono, size 11 font
+set guifont=Terminus\ 12           " use Terminus, size 12 font
 " }}}
 " Text Formatting {{{
 set list                        " show real tabs (so they can be removed)

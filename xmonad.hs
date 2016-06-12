@@ -84,7 +84,6 @@ myWorkspaces = [ "www"
                , "rss"
                , "log"
                , "misc"
-               , "K"        -- for keepassx
                , "NSP"      -- for scratchpad
                ]
 
@@ -117,7 +116,6 @@ myKeys =
     , ( "M-f"   , raiseMaybe (spawn "firefox"           ) (className =? "Firefox"     ) ) -- "f"irefox
     , ( "M-w"   , raiseMaybe (spawn "qutebrowser"       ) (className =? "qutebrowser" ) ) -- "www"
     , ( "M-o"   , raiseMaybe (spawn "chromium"          ) (className =? "Chromium"    ) ) -- chr"o"mium
-    , ( "M-p"   , raiseMaybe (spawn "keepassx"          ) (className =? "Keepassx"    ) ) -- "k"eepassx
     , ( "M-y"   , raiseMaybe (spawn "skype"             ) (className =? "Skype"       ) ) -- sk"y"pe
     , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"    ) (title =? "ncmpcpp"         ) ) -- "n"cmpcpp
     , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"       ) (title =? "mutt"            ) ) -- "m"utt
@@ -236,7 +234,6 @@ myManageHook = composeAll . concat $
     , [ title     =? "newsbeuter"     --> doShift "rss"            ]
     , [ title     =? "Transmission"   --> doShift "misc"           ]
     , [ className =? "mpv"            --> doShift "misc"           ]
-    , [ className =? "Keepassx"       --> doShift "K"              ]
     , [ isDialog                      --> doFloat                  ]
     , [ className =? c                --> doFloat | c <- myCFloats ]
     , [ title     =? t                --> doFloat | t <- myTFloats ]
@@ -303,5 +300,4 @@ myLogHook xmobarPipe = dynamicLogWithPP xmobarPP
 
         renameWS ws
             | ws == "NSP" = ""
-            | ws == "K"   = xmobarColor myLightRed "" $ ws
             | otherwise   = ws

@@ -12,7 +12,7 @@ xsetroot -cursor_name left_ptr              # change default ugly pointer
 ${HOME}/.fehbg                              # set background
 urxvtd -q -f -o                             # urxvt terminal daemon
 xset s on +dpms                             # make screen blank after 10m of inactivity (default)
-xautolock -time 10 -locker slock &          # lock screen (with physlock) after 10m of inactivity
+xautolock -time 10 -locker slock &          # lock screen (with slock) after 10m of inactivity
 wmname LG3D                                 # fix JabRef/Java apps
 
 # increase sensitivity and speed of Lenovo trackpoint

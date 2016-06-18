@@ -144,6 +144,9 @@ nnoremap gz `[v`]
 
 " look up current word (under cursor) in online thesaurus
 nnoremap <Leader>t :OnlineThesaurusCurrentWord<CR>
+
+" edit current command in command-line window
+cnoremap <C-e> <C-f>
 " }}}
 " Plugin Settings {{{
 " vim-markdown

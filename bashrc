@@ -16,43 +16,33 @@ set -o vi
 source /usr/share/git/completion/git-completion.bash
 
 # aliases
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .-="cd -"
-alias ls="ls --color=auto"
-alias ll="ls -alh"
-alias la="ls -a"
-alias l.="ls -d .*"
-alias mv="mv -i"
-alias cp="cp -i"
-alias c="clear"
-alias grep="grep --color=auto"
-alias vless="vim -u /usr/share/vim/vim73/macros/less.vim"
-alias pacman="sudo pacman"
-alias mount="sudo mount"
-alias umount="sudo umount"
-alias netctl="sudo netctl"
-alias wifi-menu="sudo wifi-menu"
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias bp='echo -e "\a"'
-alias lp2="lp -o number-up=2"
-alias lp-mcgill="lp -d HP_LaserJet_2300_series"
-alias ccp="rsync -Ph"
-alias x="startx"
-alias lspapers="ls $HOME/documents/papers/ | sed 's/.pdf//' | column -t -s '-' | less"
-alias lsbooks="ls $HOME/documents/books/ | sed 's/.pdf//' | sed 's/.djvu//' | column -t -s '-' | less"
-alias ghci="ghci-color"
+alias cp='cp -i'
+alias db='dropbox-cli start && watch -n1 dropbox-cli status && dropbox-cli stop'
+alias g='git'
+alias ghci='ghci-color'
+alias grep='grep --color=auto'
+alias j='jobs -l'
+alias la='ls -a'
+alias ld='ls -d .*/ */'
+alias ll='ls -alh'
+alias l.='ls -d .*'
+alias ls='ls --color=auto -F'
+alias mv='mv -i'
+alias mx='mpv $(xsel)'
+alias pg='ping www.google.com'
+alias vless="vim -u /usr/share/vim/vim74/macros/less.vim"
+alias vpn-mcgill='sudo openconnect securevpn.mcgill.ca'
+alias vpn-mit='sudo openconnect vpn.mit.edu'
+alias x='startx'
 
 # environment variables
-export PATH="$PATH:$HOME/texlive/2012/bin/x86_64-linux:$HOME/scripts:$HOME/blog"
-export MANPATH="$MANPATH:$HOME/texlive/2012/texmf/doc/man"
-export INFOPATH="$INFOPATH:$HOME/texlive/2012/texmf/doc/info"
 export SUDO_EDITOR="/usr/bin/vim -p"
 export VISUAL="/usr/bin/vim -p -X"
 export EDITOR="/usr/bin/vim"
-
-# make man pages narrower
-export MANWIDTH=80
 
 # add auto-completion for sudo and man
 complete -cf sudo
@@ -62,10 +52,10 @@ complete -cf man
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 
 # colorize less, especially for manpages
-export LESS_TERMCAP_mb=$(printf "\e[1;31m")
-export LESS_TERMCAP_md=$(printf "\e[1;31m")
-export LESS_TERMCAP_me=$(printf "\e[0m")
-export LESS_TERMCAP_se=$(printf "\e[0m")
-export LESS_TERMCAP_so=$(printf "\e[1;44;33m")
-export LESS_TERMCAP_ue=$(printf "\e[0m")
-export LESS_TERMCAP_us=$(printf "\e[1;32m")
+export LESS_TERMCAP_mb=$(printf "\e[1;31m")     # begin blinking
+export LESS_TERMCAP_md=$(printf "\e[1;31m")     # begin bold
+export LESS_TERMCAP_me=$(printf "\e[0m")        # end mode
+export LESS_TERMCAP_se=$(printf "\e[0m")        # end standout mode
+export LESS_TERMCAP_so=$(printf "\e[1;44;33m")  # begin standout mode (info box)
+export LESS_TERMCAP_ue=$(printf "\e[0m")        # end underline
+export LESS_TERMCAP_us=$(printf "\e[1;32m")     # begin underline

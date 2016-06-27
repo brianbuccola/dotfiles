@@ -15,8 +15,4 @@ xset s on +dpms                             # make screen blank after 10m of ina
 xautolock -time 10 -locker slock &          # lock screen (with slock) after 10m of inactivity
 wmname LG3D                                 # fix JabRef/Java apps
 
-# increase sensitivity and speed of Lenovo trackpoint
-echo "150" | sudo tee /sys/devices/platform/i8042/serio4/serio5/sensitivity
-echo "200" | sudo tee /sys/devices/platform/i8042/serio4/serio5/speed
-
 xmonad                                      # start xmonad

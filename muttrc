@@ -41,6 +41,7 @@ unset mark_old                                                  # mark new msg's
 set thorough_search                                             # strip headers and eval mimes before searching
 unset help
 unset wait_key                                                  # don't ask to "press any key to continue" after shell cmd, etc.
+set text_flowed                                                 # trailing white space indicates that paragraph continues on next line
 
 # ===============
 #  Index options

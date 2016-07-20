@@ -88,6 +88,13 @@ augroup markdown_comments " {
     autocmd!
     autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
 augroup END " }
+
+" Add format option 'w' to add trailing white space, indicating that paragraph
+" continues on next line. This is to be used with mutt's 'text_flowed' option.
+augroup mail_trailing_whitespace " {
+    autocmd!
+    autocmd FileType mail setlocal formatoptions+=w
+augroup END " }
 " }}}
 " Mappings {{{
 " switch from insert to command mode using jj

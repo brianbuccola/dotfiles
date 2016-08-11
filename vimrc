@@ -65,7 +65,7 @@ set tabstop=8                   " real tabs are 8 columns long
 set expandtab                   " no real tabs (use spaces for tabs)
 set softtabstop=2               " # of spaces when hitting tab/delete
 set shiftwidth=2                " # of softtabs when using cindent, <<, >>, ...
-set textwidth=79                " max # of characters on each line
+set textwidth=80                " max # of characters on each line
 set autoindent                  " use indentation level of previous line
 set nojoinspaces                " don't add extra space after ., !, etc. when joining
 set formatoptions+=j            " delete comment character when joining commented lines

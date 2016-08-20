@@ -23,7 +23,6 @@ set wildignore+=*.swp,*.bak,*.jpg,*.gif,*.png
 set ignorecase                  " Ignore case, except...
 set smartcase                   " ...when search string contains uppercase.
 set incsearch                   " Highlight as you type search phrase.
-set hlsearch                    " Highlight search terms.
 set number                      " Show line numbers.
 set report=0                    " Tell me when anything is changed via :...
 set ruler                       " Show current positions along bottom.

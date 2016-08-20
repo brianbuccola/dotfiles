@@ -7,154 +7,153 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 " Basics {{{
-set nocompatible                " use vim (not vi) settings; must come first
-filetype plugin indent on       " load filetype plugin/indent files
-syntax on                       " enable syntax highlighting
-set modeline                    " use file-specific settings, if available
-set autochdir                   " always switch to current file directory
-set backup                      " make backup files
-set backupdir=~/.vim/backup     " backup directory
-set directory=~/.vim/tmp        " directory for swap files
-set mouse=a                     " mouse support everywhere
-set mousehide                   " auto-hide cursor while typing
-set wildmode=list:longest,full  " make completion more like zsh
-set wildmenu                    " turn on command-line completion wild style
+set nocompatible                " Use vim (not vi) settings; must come first.
+filetype plugin indent on       " Load filetype plugin/indent files.
+syntax on                       " Enable syntax highlighting.
+set modeline                    " Use file-specific settings, if available.
+set autochdir                   " Always switch to current file directory.
+set backup                      " Make backup files.
+set backupdir=~/.vim/backup     " Backup directory.
+set directory=~/.vim/tmp        " Directory for swap files.
+set mouse=a                     " Mouse support everywhere.
+set mousehide                   " Auto-hide cursor while typing.
+set wildmode=list:longest,full  " Make completion more like zsh.
+set wildmenu                    " Turn on command-line completion wild style.
 set wildignore+=*.swp,*.bak,*.jpg,*.gif,*.png
-set ignorecase                  " ignore case, except...
-set smartcase                   " ...when search string contains uppercase
-set incsearch                   " highlight as you type search phrase
-set hlsearch                    " highlight search terms
-set number                      " show line numbers
-set report=0                    " tell me when anything is changed via :...
-set ruler                       " show current positions along bottom
-set scrolloff=5                 " keep 5 lines (top/bottom) for scope
-set showcmd                     " show command being typed
-set showmatch                   " show matching brackets
-set spell                       " highlight misspelled words
-set spellcapcheck=              " don't highlight uncapitalized first word
-set complete+=kspell            " use <C-n> and <C-p> to get suggested spelling completions
-set splitright                  " split to the right when executing :vsplit
-let g:netrw_liststyle=3         " use tree style directory listing
+set ignorecase                  " Ignore case, except...
+set smartcase                   " ...when search string contains uppercase.
+set incsearch                   " Highlight as you type search phrase.
+set hlsearch                    " Highlight search terms.
+set number                      " Show line numbers.
+set report=0                    " Tell me when anything is changed via :...
+set ruler                       " Show current positions along bottom.
+set scrolloff=5                 " Keep 5 lines (top/bottom) for scope.
+set showcmd                     " Show command being typed.
+set showmatch                   " Show matching brackets.
+set spell                       " Highlight misspelled words.
+set spellcapcheck=              " Don't highlight uncapitalized first word.
+set complete+=kspell            " Use <C-n> and <C-p> to get suggested spelling completions.
+set splitright                  " Split to the right when executing :vsplit.
+let g:netrw_liststyle=3         " Use tree style directory listing.
 
-" change <Leader> and <LocalLeader>from `\' to <Space>
+" Change <Leader> and <LocalLeader>from `\' to <Space>.
 let mapleader=' '
 let maplocalleader=' '
 
-if has("gui_running")           " set color scheme for both vim and gvim
+if has("gui_running")           " Set color scheme for both vim and gvim.
     let g:gruvbox_contrast_dark='hard'
     colorscheme gruvbox
 else
     let g:gruvbox_contrast_dark='hard'
     colorscheme gruvbox
 endif
-set background=dark             " use dark bg color and light fg colors
+set background=dark             " Use dark bg color and light fg colors.
 " }}}
 " GUI Settings {{{
-set guioptions-=m                  " remove menu bar from gvim
-set guioptions-=T                  " remove toolbar from gvim
-set guioptions-=r                  " remove right-hand scroll bar
-set guioptions-=L                  " remove left-hand scroll bar even when there is a vertically split window
-set guifont=Terminus\ 12           " use Terminus, size 12 font
+set guioptions-=m               " Remove menu bar from gvim.
+set guioptions-=T               " Remove toolbar from gvim.
+set guioptions-=r               " Remove right-hand scroll bar.
+set guioptions-=L               " Remove left-hand scroll bar even when there is a vertically split window.
+set guifont=Terminus\ 12        " Use Terminus, size 12 font.
 " }}}
 " Text Formatting {{{
-set list                        " show real tabs (so they can be removed)
-set listchars=tab:▶\ ,trail:-   " show tabs and trailing whitespace
-set linebreak                   " don't soft-wrap in the middle of a word
-set showbreak=…                 " show `…' at the beginning of a soft-broken line
-set tabstop=8                   " real tabs are 8 columns long
-set expandtab                   " no real tabs (use spaces for tabs)
-set softtabstop=2               " # of spaces when hitting tab/delete
-set shiftwidth=2                " # of softtabs when using cindent, <<, >>, ...
-set textwidth=80                " max # of characters on each line
-set autoindent                  " use indentation level of previous line
-set nojoinspaces                " don't add extra space after ., !, etc. when joining
-set formatoptions+=j            " delete comment character when joining commented lines
+set list                        " Show real tabs (so they can be removed).
+set listchars=tab:▶\ ,trail:-   " Show tabs and trailing whitespace.
+set linebreak                   " Don't soft-wrap in the middle of a word.
+set showbreak=…                 " Show `…' at the beginning of a soft-broken line.
+set tabstop=8                   " Real tabs are 8 columns long.
+set expandtab                   " No real tabs (use spaces for tabs).
+set softtabstop=2               " Set # of spaces when hitting tab/delete.
+set shiftwidth=2                " Set # of softtabs when using cindent, <<, >>, ...
+set textwidth=80                " Set max # of characters on each line.
+set autoindent                  " Use indentation level of previous line.
+set nojoinspaces                " Don't add extra space after ., !, etc. when joining.
+set formatoptions+=j            " Delete comment character when joining commented lines.
 " }}}
 " Autocmd's, functions, etc. {{{
-" autoreload after modifying .vimrc
+" Autoreload after modifying .vimrc.
 augroup reload_vimrc " {
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
-" Use real tabs for snippets
+" Use real tabs for snippets.
 augroup snippets " {
     autocmd!
     autocmd FileType snippet setlocal noexpandtab tabstop=8 shiftwidth=8 softtabstop=8
 augroup END " }
 
-" Set commentstring for markdown files
+" Set commentstring for markdown files.
 augroup markdown_comments " {
     autocmd!
     autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
 augroup END " }
 
-" Add some useful format options for writing prose
+" Add some useful format options for writing prose.
 augroup prose_formatoptions " {
     autocmd!
-    autocmd FileType mail setlocal formatoptions+=w                  " add trailing white space; to be used with mutt's 'text_flowed' option
-    autocmd FileType text,mail,markdown setlocal formatoptions+=a    " automatically reformat paragraph whenever text is inserted or deleted
-    autocmd FileType text,mail,markdown setlocal formatoptions-=l    " format option 'a' overrides 'l' anyway
-    autocmd FileType text,mail,markdown setlocal formatoptions+=n    " format numbered lists by including indentation
+    autocmd FileType mail setlocal formatoptions+=w                  " Add trailing white space; to be used with mutt's 'text_flowed' option.
+    autocmd FileType text,mail,markdown setlocal formatoptions+=a    " Automatically reformat paragraph whenever text is inserted or deleted.
+    autocmd FileType text,mail,markdown setlocal formatoptions-=l    " Format option 'a' overrides 'l' anyway.
+    autocmd FileType text,mail,markdown setlocal formatoptions+=n    " Format numbered lists by including indentation.
 augroup END " }
 " }}}
 " Mappings {{{
-" switch from insert to command mode using jj
+" Switch from insert to command mode using jj.
 inoremap jj <Esc>
 
-" AutoSaveToggle
+" Add vim-unimpaired-like keybinding for AutoSaveToggle.
 nnoremap coa :AutoSaveToggle<CR>
 
-" make `Y' work like `D', `C', etc.
+" Make `Y' work like `D', `C', etc.
 nnoremap Y y$
 
-" easy edit
+" Easy edit.
 nnoremap <leader>e :e<Space>
 
-" easy save
+" Easy save.
 nnoremap <leader>w :update<CR>
 
-" enable some basic movements while in insert mode
+" Enable some basic movements while in insert mode.
 " inoremap <C-h> <Left>
 " inoremap <C-l> <Right>
 
-" prevent ctrl-U and ctrl-W from deleting stuff irrecoverably
+" Prevent ctrl-U and ctrl-W from deleting stuff irrecoverably.
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 
-" use <C-h> to delete entire previous word (instead of just character) in
-" insert and command modes; since <C-BS> is the same as <C-h>, <C-BS> will also
-" delete previous word.
+" Use <C-h> to delete entire previous word (instead of just character) in insert
+" and command modes. Since <C-BS> is the same as <C-h>, <C-BS> will also delete
+" previous word.
 map! <C-h> <C-w>
 
-" map Q to gwap (reformat paragraph of text) instead of Ex mode.
+" Map Q to gwap (reformat paragraph of text) instead of Ex mode.
 nnoremap Q gwap
 
-" use K to join current line with line above, just like J does
-" with line below.
+" Use K to join current line with line above, just like J does with line below.
 nnoremap K kJ
 
-" switch to alternate buffer.
+" Switch to alternate buffer.
 nnoremap <BS> <C-^>
 
-" use <C-f> instead of <C-k> in insert mode to insert digraphs,
-" because for some reason <C-k> isn't working.
+" Use <C-f> instead of <C-k> in insert mode to insert digraphs, because for some
+" reason <C-k> isn't working.
 inoremap <C-f> <C-k>
 
-" move around soft-wrapped lines as if they were hard wrapped
+" Move around soft-wrapped lines as if they were hard wrapped.
 noremap j gj
 noremap k gk
 noremap 0 g0
 noremap ^ g^
 noremap $ g$
 
-" visually select the text just pasted
+" Visually select the text just pasted.
 nnoremap gz `[v`]
 
-" look up current word (under cursor) in online thesaurus
+" Look up current word (under cursor) in online thesaurus.
 nnoremap <Leader>t :OnlineThesaurusCurrentWord<CR>
 
-" edit current command in command-line window
+" Edit current command in command-line window.
 cnoremap <C-e> <C-f>
 " }}}
 " Plugin Settings {{{
@@ -182,7 +181,7 @@ let g:auto_save_no_updatetime=1
 let g:online_thesaurus_map_keys=0
 " }}}
 " Greek {{{
-" (thanks to connermcd for these)
+" (Thanks to connermcd for these.)
 map! <C-v>GA Γ
 map! <C-v>DE Δ
 map! <C-v>TH Θ
@@ -249,7 +248,7 @@ map! <C-v>lb ⟨
 map! <C-v>rb ⟩
 " }}}
 " IPA {{{
-" vowels
+" Vowels
 map! <C-v>-i ɨ
 map! <C-v>-u ʉ
 map! <C-v>m ɯ
@@ -264,7 +263,7 @@ map! <C-v>^ ʌ
 map! <C-v>O ɔ
 map! <C-v>ae æ
 map! <C-v>A ɑ
-" consonants
+" Consonants
 map! <C-v>N ŋ
 map! <C-v>r ɹ
 map! <C-v>mf ɱ
@@ -273,7 +272,7 @@ map! <C-v>S ʃ
 map! <C-v>Z ʒ
 map! <C-v>T θ
 map! <C-v>? ʔ
-" other
+" Other
 map! <C-v>" ˈ
 map! <C-v>"" ˌ
 " }}}

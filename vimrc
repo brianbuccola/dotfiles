@@ -68,8 +68,6 @@ set shiftwidth=2                " # of softtabs when using cindent, <<, >>, ...
 set textwidth=80                " max # of characters on each line
 set autoindent                  " use indentation level of previous line
 set nojoinspaces                " don't add extra space after ., !, etc. when joining
-set formatoptions+=a            " automatically reformat paragraph whenever text is inserted or deleted
-set formatoptions+=n            " format numbered lists by including indentation
 set formatoptions+=j            " delete comment character when joining commented lines
 " }}}
 " Autocmd's, functions, etc. {{{
@@ -91,11 +89,13 @@ augroup markdown_comments " {
     autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
 augroup END " }
 
-" Add format option 'w' to add trailing white space, indicating that paragraph
-" continues on next line. This is to be used with mutt's 'text_flowed' option.
-augroup mail_trailing_whitespace " {
+" Add some useful format options for writing prose
+augroup prose_formatoptions " {
     autocmd!
-    autocmd FileType mail setlocal formatoptions+=w
+    autocmd FileType mail setlocal formatoptions+=w                  " add trailing white space; to be used with mutt's 'text_flowed' option
+    autocmd FileType text,mail,markdown setlocal formatoptions+=a    " automatically reformat paragraph whenever text is inserted or deleted
+    autocmd FileType text,mail,markdown setlocal formatoptions-=l    " format option 'a' overrides 'l' anyway
+    autocmd FileType text,mail,markdown setlocal formatoptions+=n    " format numbered lists by including indentation
 augroup END " }
 " }}}
 " Mappings {{{

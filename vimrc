@@ -68,6 +68,7 @@ set shiftwidth=2                " # of softtabs when using cindent, <<, >>, ...
 set textwidth=80                " max # of characters on each line
 set autoindent                  " use indentation level of previous line
 set nojoinspaces                " don't add extra space after ., !, etc. when joining
+set formatoptions+=a            " automatically reformat paragraph whenever text is inserted or deleted
 set formatoptions+=n            " format numbered lists by including indentation
 set formatoptions+=j            " delete comment character when joining commented lines
 " }}}

@@ -2,6 +2,13 @@
 # file:     ~/.muttrc
 # author:   Brian Buccola
 
+# ===============
+#  Personal info
+# ===============
+
+set realname            = "Brian Buccola"                       # use real name
+set from                = "brian.buccola@gmail.com"             # default from address
+
 # ==================================
 #  Files, directories, and commands
 # ==================================
@@ -116,7 +123,6 @@ mailboxes   "+gmail/INBOX" \
 
 source $alias_file                                              # source alias file
 source ~/.mutt/colors/default                                   # source colors file
-source ~/.mutt/personal                                         # source file w/ personal info
 source ~/.mutt/gpg.rc                                           # source GPG file
 source /usr/share/doc/mutt/samples/gpg.rc                       # source GPG sample file
 

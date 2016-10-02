@@ -2,10 +2,6 @@
 " file:     ~/.vimrc
 " author:   Brian Buccola
 
-" Pathogen (enable plugins first)
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-
 " Basics {{{
 set nocompatible                " Use vim (not vi) settings; must come first.
 filetype plugin indent on       " Load filetype plugin/indent files.

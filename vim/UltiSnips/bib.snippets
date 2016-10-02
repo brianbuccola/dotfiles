@@ -1,0 +1,84 @@
+snippet "@?a" "article entry" br
+@article{${1:article},
+	author = {$2},
+	date = {$3},
+	${4:doi = {$5},}
+	journaltitle = {$6},
+	${7:number = {$8},}
+	${9:pages = {$10},}
+	title = {$11},
+	${12:url = {$13},}
+	${14:volume = {$15},}
+}
+endsnippet
+
+snippet "@?b" "book entry" br
+@book{${1:bibkey},
+	author = {$2},
+	date = {$3},
+	${4:editor = {$5},}
+	${6:location = {$7},}
+	${8:publisher = {$9},}
+	title = {$10},
+}
+endsnippet
+
+snippet "@?in?c" "incollection entry" br
+@incollection{${1:bibkey},
+	author = {$2},
+	booktitle = {$3},
+	date = {$4},
+	${5:doi = {$6},}
+	${7:editor = {$8},}
+	${9:location = {$10},}
+	${11:pages = {$12},}
+	${13:publisher = {$14},}
+	title = {$15},
+	${16:url = {$17},}
+}
+endsnippet
+
+snippet "@?m" "misc entry" br
+@misc{${1:bibentry},
+	author = {$2},
+	date = {$3},
+	${4:location = {$5},}
+	title = {$6},
+	${7:url = {$8},}
+}
+endsnippet
+
+snippet "@?in?p" "inproceedings entry" br
+@inproceedings{${1:bibentry},
+	author = {$2},
+	booktitle = {$3},
+	date = {$4},
+	${5:doi = {$6},}
+	${7:editor = {$8},}
+	${9:location = {$10},}
+	${11:pages = {$12},}
+	${13:publisher = {$14},}
+	title = {$15},
+	${16:url = {$17},}
+	${18:volume = {$19},}
+}
+endsnippet
+
+snippet "@?t" "thesis entry" br
+@thesis{${1:bibentry},
+	author = {$1},
+	date = {$2},
+	institution = {$3},
+	title = {$4},
+}
+endsnippet
+
+snippet "@?up?" "unpublished entry" br
+@misc{${1:bibentry},
+	author = {$2},
+	date = {$3},
+	${4:location = {$5},}
+	title = {$6},
+	${7:url = {$8},}
+}
+endsnippet

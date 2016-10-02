@@ -1,0 +1,15 @@
+snippet fm "YAML frontmatter" b
+---
+layout: ${1:post}
+title: ${2:title}
+date: ${3:`date +%F`}
+---
+
+$0
+endsnippet
+
+snippet hl "{% highlight %}" b
+{% highlight ${1:language} %}
+$0
+{% endhighlight %}
+endsnippet

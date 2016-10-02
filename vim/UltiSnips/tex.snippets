@@ -1,0 +1,81 @@
+snippet doc "\documentclass{}" b
+\documentclass[${1:options}]{${2:article}}
+endsnippet
+
+snippet nc "\newcommand{}" b
+\newcommand{${1:command}}[${2:argnum}]{${3:definition}}
+endsnippet
+
+snippet bib "\bibliography{}" b
+\addbibresource{/home/brian/${1:repos/references/references.bib}}
+endsnippet
+
+snippet l "\label{}" w
+\label{$1}
+endsnippet
+
+snippet bf "\textbf{}" w
+\textbf{$1}
+endsnippet
+
+snippet bfv "\textbf{} VISUAL"
+\textbf{${VISUAL}}
+endsnippet
+
+snippet em "\emph{}"
+\emph{$1}
+endsnippet
+
+snippet emv "\emph{} VISUAL"
+\emph{${VISUAL}}
+endsnippet
+
+snippet it "\textit{}"
+\textit{$1}
+endsnippet
+
+snippet itv "\textit{} VISUAL"
+\textit{${VISUAL}}
+endsnippet
+
+snippet sf "\textsf{}" w
+\textsf{$1}
+endsnippet
+
+snippet sfv "\textsf{} VISUAL"
+\textsf{${VISUAL}}
+endsnippet
+
+snippet tt "\texttt{}" w
+\texttt{$1}
+endsnippet
+
+snippet ttv "\texttt{} VISUAL"
+\texttt{${VISUAL}}
+endsnippet
+
+snippet '' "Surround quotes"
+\`\`$1''
+endsnippet
+
+snippet fn "\footnote{}" i
+\footnote{%
+	%
+	$0
+	%
+}
+endsnippet
+
+snippet fr "New frame" b
+% beginframe===================================================================
+\begin{frame}{${1:frametitle}}
+	$0
+\end{frame}
+% endframe=====================================================================
+endsnippet
+
+snippet only "\only<>{}" i
+\only<$1>{
+	$2
+}
+endsnippet

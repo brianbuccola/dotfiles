@@ -1,0 +1,12 @@
+# file:   ~/mutt/gpg.rc
+# author: Brian Buccola
+# vim:    ft=muttrc:tw=0:
+
+# =====
+#  GPG
+# =====
+
+set pgp_timeout = 3600                      # how long to cache passphrase (in secs)
+set crypt_autosign = no                     # automatically sign all outgoing mail?
+set crypt_replyencrypt = yes                # automatically encrypt replies to encrypted messages?
+set pgp_sign_as = "brian.buccola@gmail.com" # my Key ID

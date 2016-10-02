@@ -1,130 +1,125 @@
-# vim:      set ft=muttrc tw=0:
-# file:     ~/.muttrc
-# author:   Brian Buccola
+# vim:    set ft=muttrc tw=0:
+# file:   ~/.muttrc
+# author: Brian Buccola
 
 # ===============
 #  Personal info
 # ===============
 
-set realname            = "Brian Buccola"                       # use real name
-set from                = "brian.buccola@gmail.com"             # default from address
+set realname = "Brian Buccola"           # use real name
+set from     = "brian.buccola@gmail.com" # default from address
+set use_from                             # let Mutt generate "From:" header field
 
 # ==================================
 #  Files, directories, and commands
 # ==================================
 
-set alias_file          = "~/.mutt/alias"                       # alias file
-set header_cache        = "~/.mutt/cache/headers"               # where to store headers
-set message_cachedir    = "~/.mutt/cache/bodies"                # where to store bodies
-set certificate_file    = "~/.mutt/certificates"                # where to store certs
-set mailcap_path        = "~/.mailcap"                          # entries for filetypes
-set signature           = "~/.mutt/sig"                         # my signature file
-set tmpdir              = "~/.mutt/tmp"                         # where to keep temp files
-set editor              = "/usr/bin/vim +/^$"                   # use vim and skip to first blank line
-set ispell              = "/usr/bin/aspell -e -c"               # use aspell instead of ispell
-set print_command       = "/usr/bin/lp -d HP_LaserJet_2300_series" # print to office printer
+set alias_file       = "~/.mutt/alias"                  # alias file
+set header_cache     = "~/.mutt/cache/headers"          # where to store headers
+set message_cachedir = "~/.mutt/cache/bodies"           # where to store bodies
+set certificate_file = "~/.mutt/certificates"           # where to store certs
+set mailcap_path     = "~/.mailcap"                     # entries for filetypes
+set signature        = "~/.mutt/sig"                    # my signature file
+set tmpdir           = "~/.mutt/tmp"                    # where to keep temp files
+set editor           = "/usr/bin/vim +/^$"              # use vim and skip to first blank line
+set ispell           = "/usr/bin/aspell -e -c"          # use aspell instead of ispell
+set print_command    = "/usr/bin/lp -d name_of_printer" # print to office printer
 
 # ==============
 #  Main options
 # ==============
 
-set mbox_type           = Maildir                               # mailbox type
-set folder              = "~/.mail"                             # mailbox location
-set spoolfile           = "+gmail/All Mail"                     # default inbox on open
-set timeout             = 3                                     # idle time before scanning
-set mail_check          = 0                                     # minimum time between scans
-set sort_alias          = alias                                 # sort alias file by alias
-set reverse_alias                                               # show names from alias file in index
-unset move                                                      # don't allow Mutt to move mail (gmail does)
-unset record                                                    # don't save sent items (gmail does automatically)
-set postponed           = "+postponed"                          # where to save postponed msg's (drafts) to
-set quit                                                        # no confirm on quit
-set beep_new                                                    # bell/beep on new mail
-set check_new
-set arrow_cursor                                                # use arrow cursor as indicator
-unset confirmappend                                             # don't ask before saving/moving to folder
-unset imap_peek                                                 # flag as read in all folders, after reading in any one
-unset mark_old                                                  # mark new msg's as old when quitting mutt?
-set thorough_search                                             # strip headers and eval mimes before searching
-unset help
-unset wait_key                                                  # don't ask to "press any key to continue" after shell cmd, etc.
-set text_flowed                                                 # trailing white space indicates that paragraph continues on next line
+set mbox_type       = Maildir           # mailbox type
+set folder          = "~/.mail"         # mailbox location
+set spoolfile       = "+gmail/All Mail" # default inbox on open
+set timeout         = 3                 # idle time before scanning
+set mail_check      = 0                 # minimum time between scans
+set sort_alias      = alias             # sort alias file by alias
+set reverse_alias                       # show names from alias file in index
+unset move                              # don't allow Mutt to move mail (gmail does)
+unset record                            # don't save sent items (gmail does automatically)
+set postponed       = "+postponed"      # where to save postponed msg's (drafts) to
+set quit                                # no confirm on quit
+set beep_new                            # bell/beep on new mail
+set check_new                           # check for new mail while mailbox is open
+set arrow_cursor                        # use arrow cursor as indicator
+unset confirmappend                     # don't ask before saving/moving to folder
+unset imap_peek                         # flag as read in all folders, after reading in any one
+unset mark_old                          # mark new msg's as old when quitting mutt?
+set thorough_search                     # strip headers and eval mimes before searching
+unset help                              # don't show help lines describing major keybindings
+unset wait_key                          # don't ask to "press any key to continue" after shell cmd, etc.
+set text_flowed                         # trailing white space indicates that paragraph continues on next line
 
 # ===============
 #  Index options
 # ===============
 
-set sort                = threads                               # like gmail
-set sort_aux            = reverse-last-date-received            # like gmail
-#set uncollapse_jump                                             # don't collapse on an unread message
-#set sort_re                                                     # thread based on regex
-#set reply_regexp        = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
-set strict_threads                                              # thread based on "In-Reply-To:" and "References:", not $reply_regexp
-set menu_context        = 5                                     # number of lines to pad top/bottom of screen when scrolling
+set sort           = threads                    # like gmail
+set sort_aux       = reverse-last-date-received # like gmail
+set strict_threads                              # thread based on "In-Reply-To:" and "References:", not $reply_regexp
+set menu_context   = 5                          # number of lines to pad top/bottom of screen when scrolling
 
 # ===============
 #  Pager options
 # ===============
 
-set pager_index_lines   = 10                                    # number of index lines to show
-set pager_context       = 5                                     # number of lines to pad top/bottom of screen when scrolling
-set pager_stop                                                  # don't go to next message automatically
-set menu_scroll                                                 # scroll line-by-line in menus
-set smart_wrap                                                  # don't split words
-set tilde                                                       # show tildes like in vim
-unset markers                                                   # no ugly plus signs
-auto_view text/html                                             # view html automatically
-alternative_order text/plain text/enriched text/html            # save html for last
-#set quote_regexp        = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+set pager_index_lines = 10                           # number of index lines to show
+set pager_context     = 5                            # number of lines to pad top/bottom of screen when scrolling
+set pager_stop                                       # don't go to next message automatically
+set menu_scroll                                      # scroll line-by-line in menus
+set smart_wrap                                       # don't split words
+set tilde                                            # show tildes like in vim
+unset markers                                        # no ugly plus signs
+auto_view text/html                                  # view html automatically
+alternative_order text/plain text/enriched text/html # save html for last
 
 # =========
 #  Formats
 # =========
 
-set date_format         = "%a %d %b %Y (%H:%M)"
-set index_format        = "%3C %Z %D %-15.15F %s"
-#set alias_format        = "%4n %t %-20a  %r"
+set date_format  = "%a %d %b %Y (%H:%M)"
+set index_format = "%3C %Z %D %-15.15F %s"
+set alias_format = "%4n %t %-20a %r"
 
 # ================
 #  Composing mail
 # ================
 
-set envelope_from                                               # not sure what this does!
-unset sig_dashes                                                # insert "--" on line before my sig?
-set sig_on_top                                                  # include sig before quoted material
-set edit_headers                                                # show headers when composing
-set sendmail            = "/usr/bin/msmtp"                      # use msmtp to send mail
-set fast_reply                                                  # skip to compose when replying
-#set sendmail_wait       = -1                                    # don't wait for sending... to complete
-set askcc                                                       # ask for CC:
-set fcc_attach                                                  # save attachments with the body
-set mime_forward        = ask-no                                # forward attachments as MIME/part of body?
-set forward_format      = "Fwd: %s"                             # format for subject when forwarding
-set attribution         = "On %d, %n <%a> wrote:"               # set the attribution
-set reply_to                                                    # reply to Reply to: field
-set reverse_name                                                # reply based on who msg was sent to
-set include                                                     # include message in replies
-set forward_quote                                               # include message in forwards
+set sig_dashes                               # insert "--" on line before my sig
+set sig_on_top                               # include sig before quoted material
+set edit_headers                             # show headers when composing
+set sendmail       = "/usr/bin/msmtp"        # use msmtp to send mail
+set fast_reply                               # skip to compose when replying
+set askcc                                    # ask for CC:
+set fcc_attach                               # save attachments with the body
+set mime_forward   = ask-no                  # forward attachments as MIME/part of body?
+set forward_format = "Fwd: %s"               # format for subject when forwarding
+set attribution    = "On %d, %n <%a> wrote:" # set the attribution
+set reply_to                                 # reply to Reply to: field
+set reverse_name                             # reply based on who msg was sent to
+set include                                  # include message in replies
+set forward_quote                            # include message in forwards
 
 # ===========
 #  Mailboxes
 # ===========
 
-mailboxes   "+gmail/INBOX" \
-            "+gmail/All Mail" \
-            "+gmail/Sent Mail" \
-            "+gmail/Spam" \
-            "+gmail/Trash" \
-            "+postponed"
+mailboxes "+gmail/INBOX" \
+          "+gmail/All Mail" \
+          "+gmail/Sent Mail" \
+          "+gmail/Spam" \
+          "+gmail/Trash" \
+          "+postponed"
 
 # ================
 #  Always sourced
 # ================
 
-source $alias_file                                              # source alias file
-source ~/.mutt/colors/default                                   # source colors file
-source ~/.mutt/gpg.rc                                           # source GPG file
-source /usr/share/doc/mutt/samples/gpg.rc                       # source GPG sample file
+source $alias_file                        # source alias file
+source ~/.mutt/colors/default             # source colors file
+source ~/.mutt/gpg.rc                     # source GPG file
+source /usr/share/doc/mutt/samples/gpg.rc # source GPG sample file
 
 # =======
 #  Hooks
@@ -140,52 +135,56 @@ folder-hook !"All Mail" 'macro index d "<delete-message>" "archive the current e
 #  Bindings
 # ==========
 
-bind index J            next-unread
-bind index K            previous-unread
-bind index gg           first-entry
-bind index G            last-entry
+bind index J  next-unread
+bind index K  previous-unread
+bind index gg first-entry
+bind index G  last-entry
 
-bind pager j            next-line
-bind pager k            previous-line
-bind pager J            next-undeleted
-bind pager K            previous-undeleted
-bind pager gg           top
-bind pager G            bottom
+bind pager j  next-line
+bind pager k  previous-line
+bind pager J  next-undeleted
+bind pager K  previous-undeleted
+bind pager gg top
+bind pager G  bottom
 
-bind index,pager gr     group-reply
-bind index,pager \Cu    half-up
-bind index,pager \Cd    half-down
+bind index,pager gr  group-reply
+bind index,pager \Cu half-up
+bind index,pager \Cd half-down
 
 # ========
 #  Macros
 # ========
 
-macro generic,pager "<esc>m" \
-                            "<shell-escape>less /usr/share/doc/mutt/manual.txt<enter>" \
-                                                                            "show Mutt documentation"
+# view Mutt manual
+macro generic,pager \
+  "<esc>m" \
+  "<shell-escape>less /usr/share/doc/mutt/manual.txt<enter>" \
+  "show Mutt documentation"
 
-macro index gi      "<change-folder>=gmail/INBOX<enter>"                    "go to inbox"
-macro index ga      "<change-folder>=gmail/All<tab><enter>"                 "go to all mail"
-macro index gs      "<change-folder>=gmail/Sent<tab><enter>"                "go to sent mail"
-macro index gp      "<change-folder>=postponed<enter>"                      "go to postponed"
-macro index gt      "<change-folder>=gmail/Trash<enter>"                    "go to trash"
-macro index gS      "<change-folder>=gmail/Spam<enter>"                     "go to spam"
-macro index gf      "<limit>~F<enter>"                                      "show flagged messages"
-macro index \Cr     "<tag-prefix><clear-flag>N"                             "mark tagged messages as read"
-macro index B       "<limit>~b "                                            "search message bodies"
+# change to various folders
+macro index gi "<change-folder>=gmail/INBOX<enter>"     "go to inbox"
+macro index ga "<change-folder>=gmail/All<tab><enter>"  "go to all mail"
+macro index gs "<change-folder>=gmail/Sent<tab><enter>" "go to sent mail"
+macro index gp "<change-folder>=postponed<enter>"       "go to postponed"
+macro index gt "<change-folder>=gmail/Trash<enter>"     "go to trash"
+macro index gS "<change-folder>=gmail/Spam<enter>"      "go to spam"
+macro index gf "<limit>~F<enter>"                       "show flagged messages"
 
-macro compose v     "<edit-from>^Ume-<tab>"                                 "select from"
+# create alias (bind to A and reserve a for mark all new as read)
+macro index A "<create-alias>" "create an alias from a message sender"
 
-macro index A       "<create-alias>"                                        "create an alias from a message sender"
-macro index a       "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter><first-entry><sync-mailbox>" "mark all new as read"
+# mark all new as read
+macro index a \
+  "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter><first-entry><sync-mailbox>" \
+  "mark all new as read"
 
 # ==============
 #  Random stuff
 # ==============
 
 # save a decoded copy in ~/
-set pipe_decode                                                     # weed out headers before piping
-macro index     |   "<pipe-message>cat > ~/"    "save message as"   # pipe message to file
+set pipe_decode                                          # weed out headers before piping
+macro index | "<pipe-message>cat > ~/" "save message as" # pipe message to file
 
 # quick-sync ~/.mail immediately with mbsync
-macro index R   "<shell-escape>/usr/bin/mbsync -Va<enter>" "sync IMAP"
+macro index R "<shell-escape>/usr/bin/mbsync -Va<enter>" "sync IMAP"

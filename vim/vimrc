@@ -167,6 +167,7 @@ let g:UltiSnipsEditSplit='horizontal'
 let g:UltiSnipsExpandTrigger='<Tab>'
 let g:UltiSnipsJumpForwardTrigger='<Tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
+let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
 
 " LaTeX-Box
 let g:LatexBox_ignore_warnings=[]

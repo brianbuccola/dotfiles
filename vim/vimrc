@@ -124,7 +124,7 @@ inoremap <C-w> <C-g>u<C-w>
 map! <C-h> <C-w>
 
 " Map Q to gwap (reformat paragraph of text) instead of Ex mode.
-nnoremap Q gwap
+nnoremap Q gqap
 
 " Use K to join current line with line above, just like J does with line below.
 nnoremap K kJ

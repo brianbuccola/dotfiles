@@ -89,12 +89,9 @@ augroup markdown_comments " {
 augroup END " }
 
 " Add some useful format options for writing prose.
-augroup prose_formatoptions " {
+augroup mail_formatoptions " {
     autocmd!
     autocmd FileType mail setlocal formatoptions+=w                  " Add trailing white space; to be used with mutt's 'text_flowed' option.
-    autocmd FileType text,mail,markdown setlocal formatoptions+=a    " Automatically reformat paragraph whenever text is inserted or deleted.
-    autocmd FileType text,mail,markdown setlocal formatoptions-=l    " Format option 'a' overrides 'l' anyway.
-    autocmd FileType text,mail,markdown setlocal formatoptions+=n    " Format numbered lists by including indentation.
 augroup END " }
 " }}}
 " Mappings {{{

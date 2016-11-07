@@ -1,6 +1,6 @@
--- vim:     set ft=haskell tw=0 sw=4 fenc=utf-8 nu ai et:
--- file:    ~/.xmonad/xmonad.hs
--- author:  Brian Buccola
+-- vim:    set   ft=haskell tw=0 sw=4 fenc=utf-8 nu ai et:
+-- file:   ~/.xmonad/xmonad.hs
+-- author: Brian Buccola <brian.buccola@gmail.com>
 
 -- =========
 --  Imports
@@ -68,29 +68,23 @@ main = do
 --  Basics
 -- ========
 
-myTerminal = "urxvtc"
-
-myModMask = mod1Mask
-
+myTerminal           = "urxvtc"
+myModMask            = mod1Mask
 myBorderWidth        = 1
 myNormalBorderColor  = myLightBlack -- see below for colors
 myFocusedBorderColor = myDarkYellow
-
-myWorkspaces = [ "www"
-               , "mutt"
-               , "doc"
-               , "term"
-               , "chat"
-               , "rss"
-               , "log"
-               , "misc"
-               , "NSP"      -- for scratchpad
-               ]
-
-myStartupHook = return()    -- prefer .xinitrc
-
-myFont = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
--- myFont = "xft:Inconsolata:pixelsize=14"
+myWorkspaces         = [ "www"
+                       , "mutt"
+                       , "doc"
+                       , "term"
+                       , "chat"
+                       , "rss"
+                       , "log"
+                       , "misc"
+                       , "NSP" -- for scratchpad
+                       ]
+myStartupHook        = return() -- prefer .xinitrc
+myFont               = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
 
 -- =============
 --  Keybindings
@@ -111,19 +105,17 @@ myKeys =
     , ( "M-S-t"         , windows $ W.greedyView "term" ) -- go to WS "term"
     , ( "M-S-l"         , windows $ W.greedyView "log"  ) -- go to WS "log"
     , ( "M-S-m"         , windows $ W.greedyView "misc" ) -- go to WS "misc"
+    , ( "M-S-x"         , sendMessage ToggleStruts      ) -- toggle xmobar visibility
 
     -- Apps, etc.
-    , ( "M-f"   , raiseMaybe (spawn "firefox"           ) (className =? "Firefox"     ) ) -- "f"irefox
-    , ( "M-w"   , raiseMaybe (spawn "qutebrowser"       ) (className =? "qutebrowser" ) ) -- "www"
-    , ( "M-o"   , raiseMaybe (spawn "chromium"          ) (className =? "Chromium"    ) ) -- chr"o"mium
-    , ( "M-y"   , raiseMaybe (spawn "skype"             ) (className =? "Skype"       ) ) -- sk"y"pe
-    , ( "M-n"   , raiseMaybe (runInTerm "" "ncmpcpp"    ) (title =? "ncmpcpp"         ) ) -- "n"cmpcpp
-    , ( "M-m"   , raiseMaybe (runInTerm "" "mutt"       ) (title =? "mutt"            ) ) -- "m"utt
-    , ( "M-r"   , raiseMaybe (runInTerm "" "newsbeuter" ) (title =? "newsbeuter"      ) ) -- "r"ss
-    , ( "M-v"   , raiseMaybe (spawn "pavucontrol"       ) (className =? "Pavucontrol" ) ) -- "v"olume
-    , ( "M-S-h" , raiseMaybe (runInTerm "" "htop"       ) (title =? "htop"            ) ) -- "h"top
-
-    , ( "M-S-x" , sendMessage ToggleStruts ) -- toggle xmobar visibility
+    , ( "M-o"   , raiseMaybe ( spawn "chromium"          ) ( className =? "Chromium"    ) ) -- chr"o"mium
+    , ( "M-v"   , raiseMaybe ( spawn "pavucontrol"       ) ( className =? "Pavucontrol" ) ) -- "v"olume
+    , ( "M-w"   , raiseMaybe ( spawn "qutebrowser"       ) ( className =? "qutebrowser" ) ) -- "www"
+    , ( "M-y"   , raiseMaybe ( spawn "skype"             ) ( className =? "Skype"       ) ) -- sk"y"pe
+    , ( "M-S-h" , raiseMaybe ( runInTerm "" "htop"       ) ( title =? "htop"            ) ) -- "h"top
+    , ( "M-m"   , raiseMaybe ( runInTerm "" "mutt"       ) ( title =? "mutt"            ) ) -- "m"utt
+    , ( "M-n"   , raiseMaybe ( runInTerm "" "ncmpcpp"    ) ( title =? "ncmpcpp"         ) ) -- "n"cmpcpp
+    , ( "M-r"   , raiseMaybe ( runInTerm "" "newsbeuter" ) ( title =? "newsbeuter"      ) ) -- "r"ss
 
     -- Screenshots
     , ( "<Print>"   , spawn "scrot --delay 1 '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
@@ -145,53 +137,45 @@ myKeys =
     , ( "M-s" , scratchpadSpawnActionTerminal myTerminal )
 
     -- Prompts
-    , ( "M-a" , appendFilePrompt defaultXPConfig
-
-        { font    = myFont
-        , bgColor = "black"
-        , fgColor = myLightMagenta
-        }
-        "/home/brian/notes/notes" )
-
     , ( "M-g" , windowPromptGoto defaultXPConfig
-
         { font     = myFont
         , bgColor  = "black"
         , fgColor  = myLightCyan
         , bgHLight = myLightCyan
         , fgHLight = "black"
         , searchPredicate = mySearchPredicate
-        } )
+        }
+      )
 
     , ( "M-b" , windowPromptBring defaultXPConfig
-
         { font     = myFont
         , bgColor  = "black"
         , fgColor  = myLightMagenta
         , bgHLight = myLightMagenta
         , fgHLight = "black"
         , searchPredicate = mySearchPredicate
-        } )
+        }
+      )
 
     , ( "M-/" , manPrompt defaultXPConfig
-
         { font     = myFont
         , bgColor  = "black"
         , fgColor  = myLightRed
         , bgHLight = myLightRed
         , fgHLight = "black"
         , searchPredicate = mySearchPredicate
-        } )
+        }
+      )
 
     , ( "M-x" , shellPrompt defaultXPConfig
-
         { font     = myFont
         , bgColor  = "black"
         , fgColor  = myLightGreen
         , bgHLight = myLightGreen
         , fgHLight = "black"
         , searchPredicate = mySearchPredicate
-        } )
+        }
+      )
 
     ] ++
 
@@ -205,7 +189,7 @@ myKeys =
     [ ( otherModMasks ++ "<F" ++ [key] ++ ">", action tag )
       | (tag, key)                <- zip myWorkspaces "123456789"
       , (otherModMasks, action)   <- [ ( "", windows . W.greedyView )
-                                     , ( "S-", windows . W.shift )
+                                     , ( "S-", windows . W.shift    )
                                      ]
     ]
 
@@ -221,31 +205,26 @@ mySearchPredicate = L.isInfixOf . map C.toLower
 
 myManageHook = composeAll . concat $
 
-    [ [ className =? "qutebrowser"    --> doShift "www"            ]
-    , [ title     =? "mutt"           --> doShift "mutt"           ]
-    , [ className =? "Zathura"        --> doShift "doc"            ]
-    , [ className =? "MuPDF"          --> doShift "doc"            ]
-    , [ className =? "Djview"         --> doShift "doc"            ]
-    , [ className =? "Xpdf"           --> doShift "doc"            ]
-    , [ title     =? "weechat-curses" --> doShift "chat"           ]
-    , [ className =? "Skype"          --> doShift "chat"           ]
-    , [ className =? "Pidgin"         --> doShift "chat"           ]
-    , [ className =? "Gajim"          --> doShift "chat"           ]
-    , [ title     =? "newsbeuter"     --> doShift "rss"            ]
-    , [ title     =? "Transmission"   --> doShift "misc"           ]
-    , [ className =? "mpv"            --> doShift "misc"           ]
-    , [ isDialog                      --> doFloat                  ]
-    , [ className =? c                --> doFloat | c <- myCFloats ]
-    , [ title     =? t                --> doFloat | t <- myTFloats ]
-    , [ resource  =? r                --> doFloat | r <- myRFloats ]
-    , [ manageDocks                                                ]
-    , [ myScratchpadManageHook                                     ]
+    [ [ className =? "qutebrowser"  --> doShift "www"            ]
+    , [ title     =? "mutt"         --> doShift "mutt"           ]
+    , [ className =? "MuPDF"        --> doShift "doc"            ]
+    , [ className =? "Acroread"     --> doShift "doc"            ]
+    , [ className =? "Skype"        --> doShift "chat"           ]
+    , [ title     =? "newsbeuter"   --> doShift "rss"            ]
+    , [ className =? "mpv"          --> doShift "misc"           ]
+    , [ className =? "transmission" --> doShift "misc"           ]
+    , [ isDialog                    --> doFloat                  ]
+    , [ className =? c              --> doFloat | c <- myCFloats ]
+    , [ title     =? t              --> doFloat | t <- myTFloats ]
+    , [ resource  =? r              --> doFloat | r <- myRFloats ]
+    , [ manageDocks                                              ]
+    , [ myScratchpadManageHook                                   ]
     ]
 
     where
 
-        myCFloats = [ "Xmessage", "MPlayer", "Gimp", "Wicd-client.py" ]
-        myTFloats = [ "Firefox Preferences", "Hangouts" ]
+        myCFloats = [ "Xmessage", "Gimp" ]
+        myTFloats = []
         myRFloats = []
 
         myScratchpadManageHook = scratchpadManageHook (W.RationalRect 0.1 0.1 0.8 0.8)

@@ -1,4 +1,4 @@
--- vim:    set   ft=haskell tw=0 sw=4 fenc=utf-8 nu ai et:
+-- vim:    set ft=haskell tw=0 sw=4 fenc=utf-8 nu ai et:
 -- file:   ~/.xmonad/xmonad.hs
 -- author: Brian Buccola <brian.buccola@gmail.com>
 

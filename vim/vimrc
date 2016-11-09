@@ -7,7 +7,6 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 " Basics {{{
-set nocompatible                " Use vim (not vi) settings; must come first.
 filetype plugin indent on       " Load filetype plugin/indent files.
 syntax on                       " Enable syntax highlighting.
 set modeline                    " Use file-specific settings, if available.

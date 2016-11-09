@@ -175,7 +175,6 @@ let g:LatexBox_Folding=1
 let g:LatexBox_fold_automatic=0
 
 " vimtex
-let g:vimtex_format_enabled=1
 let g:vimtex_imaps_enabled=0
 let g:vimtex_latexmk_continuous=0
 let g:vimtex_view_method='mupdf'

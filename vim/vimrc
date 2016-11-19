@@ -2,6 +2,34 @@
 " file:     ~/.vimrc
 " author:   Brian Buccola
 
+" Plugins {{{
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
+Plug 'tmhedberg/matchit'
+Plug 'tomasr/molokai'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'wellle/targets.vim'
+Plug 'coderifous/textobj-word-column.vim'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-abolish'
+Plug 'vim-scripts/vim-auto-save'
+Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-commentary'
+Plug 'tommcdo/vim-exchange'
+Plug 'tpope/vim-fugitive'
+Plug 'tommcdo/vim-lion'
+Plug 'tpope/vim-liquid'
+Plug 'beloglazov/vim-online-thesaurus'
+Plug 'tpope/vim-repeat'
+Plug 'timakro/vim-searchant'
+Plug 'justinmk/vim-sneak'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'lervag/vimtex'
+Plug 'tpope/vim-unimpaired'
+call plug#end()
+" }}}
 " Basics {{{
 filetype plugin indent on       " Load filetype plugin/indent files.
 syntax on                       " Enable syntax highlighting.

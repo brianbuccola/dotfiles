@@ -192,11 +192,6 @@ let g:UltiSnipsJumpForwardTrigger='<Tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
 
-" LaTeX-Box
-let g:LatexBox_ignore_warnings=[]
-let g:LatexBox_Folding=1
-let g:LatexBox_fold_automatic=0
-
 " vimtex
 let g:vimtex_imaps_enabled=0
 let g:vimtex_latexmk_continuous=0

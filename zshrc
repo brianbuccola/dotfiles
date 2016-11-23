@@ -123,9 +123,6 @@ export LESS_TERMCAP_so=$(printf "\e[1;44;33m")  # begin standout mode (info box)
 export LESS_TERMCAP_ue=$(printf "\e[0m")        # end underline
 export LESS_TERMCAP_us=$(printf "\e[1;32m")     # begin underline
 
-# java look and feel; needed to make JabRef fonts look OK
-export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
-
 # environment variables
 export PATH="$PATH:$HOME/texlive/2015/bin/x86_64-linux:$HOME/repos/scripts:$HOME/.cabal/bin:$HOME/.gem/ruby/2.3.0/bin"
 export MANPATH="$MANPATH:$HOME/texlive/2015/texmf-dist/doc/man"

@@ -14,4 +14,4 @@ highlight article "^Author:" default default bold
 highlight article "^Link:"   cyan    default bold
 highlight article "^Date:"   red     default bold
 
-highlight   articlelist "semantics" blue      default     bold
+highlight articlelist "semantics?" red default bold

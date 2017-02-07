@@ -4,7 +4,6 @@
 # file:     ~/.xinitrc
 # author:   Brian Buccola
 
-
 ${HOME}/repos/scripts/display-adjust.sh     # auto-adjust monitors
 xrdb -merge ${HOME}/.Xresources             # add .Xresources to database
 ${HOME}/repos/scripts/keyboard-adjust.sh    # add kbd layouts, switch ctrl/caps
@@ -13,6 +12,5 @@ ${HOME}/.fehbg                              # set background
 urxvtd -q -f -o                             # urxvt terminal daemon
 xset s on +dpms                             # make screen blank after 10m of inactivity (default)
 xautolock -time 10 -locker slock &          # lock screen (with slock) after 10m of inactivity
-wmname LG3D                                 # fix JabRef/Java apps
 
 xmonad                                      # start xmonad

@@ -122,16 +122,14 @@ myKeys =
     , ( "M-<Print>" , spawn "scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'"        )
 
     -- Media
-    , ( "<XF86AudioLowerVolume>" , spawn "pactl set-sink-volume 1 -5%"  )
-    , ( "<XF86AudioMute>"        , spawn "pactl set-sink-mute 1 toggle" )
-    , ( "<XF86AudioRaiseVolume>" , spawn "pactl set-sink-volume 1 +5%"  )
-    , ( "<XF86AudioPlay>"        , spawn "ncmpcpp toggle"               )
+    , ( "<XF86AudioLowerVolume>" , spawn "pactl set-sink-volume 0 -5%"    )
+    , ( "<XF86AudioMute>"        , spawn "pactl set-sink-mute 0 toggle"   )
+    , ( "<XF86AudioRaiseVolume>" , spawn "pactl set-sink-volume 0 +5%"    )
+    , ( "<XF86AudioMicMute>"     , spawn "pactl set-source-mute 1 toggle" )
+    -- , ( "<XF86AudioPlay>"        , spawn "ncmpcpp toggle"               )
 
     -- Display
-    , ( "<XF86MonBrightnessDown>" , spawn "~/repos/scripts/brt.sh down"                         )
-    , ( "<XF86MonBrightnessUp>"   , spawn "~/repos/scripts/brt.sh up"                           )
-    , ( "<XF86Display>"           , spawn "~/repos/scripts/display-adjust.sh"                   )
-    , ( "M-<F7>"                  , spawn "display-adjust.sh && keyboard-adjust.sh && ~/.fehbg" )
+    , ( "<XF86Display>" , spawn "~/repos/scripts/display-adjust.sh && keyboard-adjust.sh && ~/.fehbg" )
 
     -- Scratchpad
     , ( "M-s" , scratchpadSpawnActionTerminal myTerminal )

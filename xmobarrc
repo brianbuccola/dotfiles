@@ -5,7 +5,7 @@ Config { font = "xft:Fira Mono:pixelsize=12"
        , border = BottomBM 0
        , borderColor = "#a89984"
        , lowerOnStart = True
-       , commands = [ Run Wireless "wlp1s0" [ "-t", "<essid> <quality>", "-L", "50", "-H", "80"
+       , commands = [ Run Wireless "wlp3s0" [ "-t", "<essid> <quality>", "-L", "50", "-H", "80"
                                             , "--normal", "#fabd2f", "--high", "#b8bb26", "--low", "#83a598"
                                             ] 10
                     , Run Weather "LFPO" [ "-t", "<tempF> F", "-L", "40", "-H", "80"
@@ -17,11 +17,10 @@ Config { font = "xft:Fira Mono:pixelsize=12"
                                   ] 10
                     , Run Kbd [("us(dvorak)", "dv")]
                     , Run Date "%a %d %b %H:%M:%S" "date" 10
-                    , Run Com "/home/brian/repos/scripts/wireless.sh" [] "wifi" 30
                     , Run Com "/home/brian/repos/scripts/update-notify.sh" [] "updates" 36000
                     , Run StdinReader
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %wlp1s0wi%  %kbd%  %LFPO%  %battery% <fc=#8ec07c>%updates%</fc> <fc=#d79921>%date%</fc> "
+       , template = "%StdinReader% }{ %wlp3s0wi%  %kbd%  %LFPO%  %battery% <fc=#8ec07c>%updates%</fc> <fc=#d79921>%date%</fc> "
        }

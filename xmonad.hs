@@ -47,7 +47,7 @@ import Colors.Gruvbox               -- personal colors, defined in Colors.hs
 
 main = do
 
-    xmobarPipe <- spawnPipe "/home/brian/.cabal/bin/xmobar /home/brian/.xmobarrc"
+    xmobarPipe <- spawnPipe "/usr/bin/xmobar /home/brian/.xmobarrc"
     xmonad $ withUrgencyHook NoUrgencyHook defaultConfig
 
         {   terminal           =  myTerminal

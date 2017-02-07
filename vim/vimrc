@@ -80,7 +80,7 @@ set guifont=xos4\ Terminus\ 12  " Use Terminus, size 12 font.
 " }}}
 " Text Formatting {{{
 set list                        " Show real tabs (so they can be removed).
-set listchars=tab:▶\ ,trail:-   " Show tabs and trailing whitespace.
+set listchars=tab:»\ ,trail:-   " Show tabs and trailing whitespace.
 set linebreak                   " Don't soft-wrap in the middle of a word.
 set showbreak=…                 " Show `…' at the beginning of a soft-broken line.
 set tabstop=8                   " Real tabs are 8 columns long.

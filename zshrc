@@ -9,7 +9,6 @@ setopt notify
 setopt append_history
 setopt dvorak
 setopt promptsubst
-setopt no_beep
 setopt inc_append_history
 setopt share_history
 

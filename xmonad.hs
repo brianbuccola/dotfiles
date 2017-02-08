@@ -253,7 +253,7 @@ myLogHook xmobarPipe = dynamicLogWithPP xmobarPP
 
     { ppOutput          = hPutStrLn xmobarPipe
     , ppTitle           = xmobarColor myLightGreen "" . pad
-    , ppCurrent         = xmobarColor myLightWhite "" . pad
+    , ppCurrent         = xmobarColor myLightYellow "" . pad
     , ppUrgent          = xmobarColor myLightRed myDarkRed . pad
     , ppHidden          = pad . renameWS
     , ppSep             = ""

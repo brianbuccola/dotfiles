@@ -98,6 +98,7 @@ alias vless="vim -u /usr/share/vim/vim74/macros/less.vim"
 alias vpn-mcgill='sudo openconnect securevpn.mcgill.ca'
 alias vpn-mit='sudo openconnect vpn.mit.edu'
 alias x='startx'
+alias xmr='pkill xmobar && xmonad --restart'
 
 # Functions
 lspdf() {

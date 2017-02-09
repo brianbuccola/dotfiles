@@ -1,15 +1,16 @@
 # Zsh options
-setopt correct
-setopt noclobber
-setopt autocd
-setopt no_case_glob
-setopt extended_glob
-setopt no_match
-setopt notify
 setopt append_history
+setopt autocd
+setopt correct
 setopt dvorak
-setopt promptsubst
+setopt extended_glob
 setopt inc_append_history
+setopt no_beep
+setopt no_case_glob
+setopt no_match
+setopt no_clobber
+setopt notify
+setopt promptsubst
 setopt share_history
 
 # Vi keybindings

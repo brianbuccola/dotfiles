@@ -113,7 +113,7 @@ myKeys =
     , ( "<XF86AudioNext>"        , spawn "mpc next"                       )
     , ( "<XF86AudioPrev>"        , spawn "mpc prev"                       )
     , ( "<XF86AudioStop>"        , spawn "mpc stop"                       )
-    , ( "<XF86Display>"          , spawn "~/repos/scripts/display-adjust.sh && keyboard-adjust.sh && ~/.fehbg" )
+    -- , ( "<XF86Display>"          , spawn "~/repos/scripts/display-adjust.sh && keyboard-adjust.sh && ~/.fehbg" )
     , ( "<XF86TouchpadToggle>"   , spawn "~/repos/scripts/touchpad-toggle.sh" )
 
     -- Prompts

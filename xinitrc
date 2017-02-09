@@ -13,4 +13,4 @@ urxvtd -q -f -o                             # urxvt terminal daemon
 xset s on +dpms                             # make screen blank after 10m of inactivity (default)
 xautolock -time 10 -locker slock &          # lock screen (with slock) after 10m of inactivity
 
-xmonad                                      # start xmonad
+xmonad &> ${HOME}/.xmonad/log               # start xmonad

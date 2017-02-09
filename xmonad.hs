@@ -46,7 +46,7 @@ myToggleBarKey XConfig {XMonad.modMask = modMask} = (modMask .|. shiftMask, xK_x
 
 myPP = xmobarPP
     { ppTitle   = xmobarColor myLightGreen "" . pad
-    , ppCurrent = xmobarColor myLightYellow "" . pad
+    , ppCurrent = xmobarColor myLightYellow "" . (\s -> "[" ++ s ++ "]")
     , ppUrgent  = xmobarColor myLightRed myDarkRed . pad
     , ppHidden  = pad . renameWS
     , ppSep     = ""

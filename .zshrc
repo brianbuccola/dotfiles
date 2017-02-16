@@ -93,6 +93,7 @@ alias l.='ls -d .*'
 alias ls='ls --color=auto -F'
 alias mv='mv -i'
 alias mx='mpv $(xsel)'
+alias p='pacaur'
 alias pg='ping www.google.com'
 alias vless="vim -u /usr/share/vim/vim74/macros/less.vim"
 alias vpn-mcgill='sudo openconnect securevpn.mcgill.ca'
@@ -125,6 +126,7 @@ lspdf() {
 
 # Add completions to aliases and functions
 compdef g=git
+compdef p=pacaur
 
 # colorize less, especially for manpages
 export LESS_TERMCAP_mb=$(printf "\e[1;31m")     # begin blinking

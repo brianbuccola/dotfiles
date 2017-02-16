@@ -82,7 +82,6 @@ alias ....='cd ../../..'
 alias bp='echo -e "\a"'
 alias cp='cp -i'
 alias db='dropbox-cli start && watch -n1 dropbox-cli status && dropbox-cli stop'
-alias g='git'
 alias ghci='ghci-color'
 alias grep='grep --color=auto'
 alias j='jobs -l'
@@ -102,6 +101,14 @@ alias x='startx'
 alias xmr='pkill xmobar && xmonad --restart'
 
 # Functions
+g() {
+    if [[ $(pwd) = ${HOME} ]]; then
+        /usr/bin/git --git-dir=${HOME}/repos/dotfiles --work-tree=${HOME} $@
+    else
+        /usr/bin/git $@
+    fi
+}
+
 lspdf() {
     if [[ $? -eq 0 ]]; then
         ls | \
@@ -115,6 +122,9 @@ lspdf() {
         echo "Error: too many arguments."
     fi
 }
+
+# Add completions to aliases and functions
+compdef g=git
 
 # colorize less, especially for manpages
 export LESS_TERMCAP_mb=$(printf "\e[1;31m")     # begin blinking

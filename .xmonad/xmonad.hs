@@ -117,23 +117,23 @@ myKeys =
     , ( "<XF86TouchpadToggle>"   , spawn "~/repos/scripts/touchpad-toggle.sh" )
 
     -- Prompts
-    , ( "M-g" , windowPromptGoto defaultXPConfig
+    , ( "M-g" , windowPrompt defaultXPConfig
         { font     = myFont
         , bgColor  = "black"
         , fgColor  = myLightCyan
         , bgHLight = myLightCyan
         , fgHLight = "black"
         , searchPredicate = mySearchPredicate
-        }
+        } Goto allWindows
       )
-    , ( "M-b" , windowPromptBring defaultXPConfig
+    , ( "M-b" , windowPrompt defaultXPConfig
         { font     = myFont
         , bgColor  = "black"
         , fgColor  = myLightMagenta
         , bgHLight = myLightMagenta
         , fgHLight = "black"
         , searchPredicate = mySearchPredicate
-        }
+        } Bring allWindows
       )
     , ( "M-/" , manPrompt defaultXPConfig
         { font     = myFont

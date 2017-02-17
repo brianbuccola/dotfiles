@@ -155,7 +155,7 @@ myKeys =
       )
     ]
 
-mySearchPredicate = L.isInfixOf . map C.toLower
+mySearchPredicate x y = (L.isInfixOf . map C.toLower $ x) (map C.toLower y)
 
 -- ============
 --  manageHook

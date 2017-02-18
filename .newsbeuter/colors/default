@@ -15,3 +15,4 @@ highlight article "^Link:"   cyan    default bold
 highlight article "^Date:"   red     default bold
 
 highlight articlelist "semantics?" red default bold
+highlight articlelist "(t|T)420"   red default bold

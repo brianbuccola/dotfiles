@@ -40,7 +40,7 @@ main = xmonad =<< statusBar myBar myPP myToggleBarKey myConfig
 --  Basics
 -- ========
 
-myFont = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
+myFont = "xft:Fira Mono:pixelsize=12"
 myBar = "xmobar"
 myToggleBarKey XConfig {XMonad.modMask = modMask} = (modMask .|. shiftMask, xK_x) -- "M-S-x" to toggle xmobar visibility
 

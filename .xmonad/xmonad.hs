@@ -105,10 +105,10 @@ myKeys =
     , ( "M-<Print>" , spawn "scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'"        )
 
     -- Media keys, etc.
-    , ( "<XF86AudioLowerVolume>" , spawn "pactl set-sink-volume 0 -5%"    )
-    , ( "<XF86AudioMute>"        , spawn "pactl set-sink-mute 0 toggle"   )
-    , ( "<XF86AudioRaiseVolume>" , spawn "pactl set-sink-volume 0 +5%"    )
-    , ( "<XF86AudioMicMute>"     , spawn "pactl set-source-mute 1 toggle" )
+    , ( "<XF86AudioLowerVolume>" , spawn "pactl set-sink-volume 1 -5%"    )
+    , ( "<XF86AudioMute>"        , spawn "pactl set-sink-mute 1 toggle"   )
+    , ( "<XF86AudioRaiseVolume>" , spawn "pactl set-sink-volume 1 +5%"    )
+    , ( "<XF86AudioMicMute>"     , spawn "pactl set-source-mute 2 toggle" )
     , ( "<XF86AudioPlay>"        , spawn "mpc toggle"                     )
     , ( "<XF86AudioNext>"        , spawn "mpc next"                       )
     , ( "<XF86AudioPrev>"        , spawn "mpc prev"                       )

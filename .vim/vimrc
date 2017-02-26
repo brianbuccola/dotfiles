@@ -76,7 +76,7 @@ set guioptions-=m               " Remove menu bar from gvim.
 set guioptions-=T               " Remove toolbar from gvim.
 set guioptions-=r               " Remove right-hand scroll bar.
 set guioptions-=L               " Remove left-hand scroll bar even when there is a vertically split window.
-set guifont=Fira\ Mono\ 12      " Use Fira Mono, size 12 font.
+set guifont=Fira\ Mono\ 11      " Use Fira Mono, size 12 font.
 " }}}
 " Text Formatting {{{
 set list                        " Show real tabs (so they can be removed).
@@ -115,6 +115,12 @@ augroup END " }
 augroup mail_formatoptions " {
     autocmd!
     autocmd FileType mail setlocal formatoptions+=w                  " Add trailing white space; to be used with mutt's 'text_flowed' option.
+augroup END " }
+
+" Don't save backups when editing passwords.
+augroup pass_nobackup " {
+    autocmd!
+    autocmd BufRead /dev/shm/pass.* setlocal nobackup
 augroup END " }
 " }}}
 " Mappings {{{

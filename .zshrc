@@ -21,6 +21,9 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd "^E" edit-command-line
 bindkey -M viins "^E" edit-command-line
 
+# Don't eat space after '<Tab>' followed by '&' or '|'
+ZLE_SPACE_SUFFIX_CHARS=$'&|'
+
 # Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

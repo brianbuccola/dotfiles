@@ -64,7 +64,7 @@ myConfig = withUrgencyHook NoUrgencyHook defaultConfig
     ,   borderWidth        =  1
     ,   normalBorderColor  =  myLightBlack
     ,   focusedBorderColor =  myDarkYellow
-    ,   workspaces         =  [ "www", "mutt", "doc", "term", "chat", "rss", "log", "misc", "NSP" ] -- NSP for scratchpad
+    ,   workspaces         =  [ "www", "mutt", "doc", "term", "chat", "rss", "ncmpcpp", "log", "misc", "NSP" ] -- NSP for scratchpad
     ,   startupHook        =  return() -- prefer .xinitrc
     ,   manageHook         =  myManageHook
     ,   layoutHook         =  myLayoutHook
@@ -168,6 +168,7 @@ myManageHook = composeAll . concat $
     , [ className =? "Acroread"              --> doShift "doc"            ]
     , [ title     =? "Skype for Linux Beta"  --> doShift "chat"           ]
     , [ title     =? "newsbeuter"            --> doShift "rss"            ]
+    , [ title     =? "ncmpcpp"               --> doShift "ncmpcpp"        ]
     , [ className =? "mpv"                   --> doShift "misc"           ]
     , [ className =? "transmission"          --> doShift "misc"           ]
     , [ isDialog                             --> doFloat                  ]

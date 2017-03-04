@@ -141,7 +141,7 @@ export LESS_TERMCAP_ue=$(printf "\e[0m")        # end underline
 export LESS_TERMCAP_us=$(printf "\e[1;32m")     # begin underline
 
 # environment variables
-export PATH="$PATH:$HOME/texlive/2016/bin/x86_64-linux:$HOME/repos/scripts:$HOME/.gem/ruby/2.4.0/bin"
+export PATH="$PATH:$HOME/texlive/2016/bin/x86_64-linux:$HOME/repos/scripts:$HOME/.gem/ruby/2.4.0/bin:$HOME/.cabal/bin"
 export MANPATH="$MANPATH:$HOME/texlive/2016/texmf-dist/doc/man"
 export INFOPATH="$INFOPATH:$HOME/texlive/2016/texmf-dist/doc/info"
 export SUDO_EDITOR="/usr/bin/vim"

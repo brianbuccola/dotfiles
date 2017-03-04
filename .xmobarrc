@@ -26,5 +26,5 @@ Config { font = "xft:Fira Mono:pixelsize=12"
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %wlp3s0wi%  %dynnetwork% %kbd%  %CYXU%  %battery% <fc=#8ec07c>%updates%</fc> <fc=#d79921>%date%</fc> "
+       , template = "%StdinReader% }{ %wlp3s0wi%  %dynnetwork%  %kbd%  %CYXU%  %battery%  <fc=#8ec07c>%updates%</fc>  <fc=#d79921>%date%</fc> "
        }

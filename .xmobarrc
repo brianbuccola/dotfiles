@@ -19,7 +19,7 @@ Config { font = "xft:Fira Mono:pixelsize=12"
                                   , "--", "-O", "<fc=#b8bb26>on</fc>", "-o", "off ", "-i", "idle"
                                   , "-f", "/sys/class/power_supply/AC/online"
                                   ] 10
-                    , Run Kbd [("us(dvorak)", "dv")]
+                    , Run Kbd [("us(dvp)", "dvp")]
                     , Run Date "%a %d %b %H:%M:%S" "date" 10
                     , Run Com "/home/brian/repos/scripts/update-notify.sh" [] "updates" 36000
                     , Run StdinReader

@@ -101,7 +101,7 @@ myKeys =
     , ( "M-r"   , raiseMaybe ( runInTerm "" "newsbeuter" ) ( title =? "newsbeuter"           ) ) -- "r"ss
 
     -- Screenshots
-    , ( "<Print>"   , spawn "scrot --delay 1 '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
+    , ( "<Print>"   , spawn "scrot '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
     , ( "M-<Print>" , spawn "scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'"        )
 
     -- Media keys, etc.

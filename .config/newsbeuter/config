@@ -4,7 +4,23 @@
 
 
 # my colors and highlights
-include ~/.newsbeuter/colors/default
+## color <element> <fgcolor> <bgcolor> [<attr> ...]
+color background        red     default bold
+color listnormal        white   default
+color listfocus         white   default bold
+color listnormal_unread blue    default
+color listfocus_unread  blue    default bold
+color info              green   default bold
+color article           default default
+
+highlight article "^Feed:"   magenta default bold
+highlight article "^Title:"  green   default bold
+highlight article "^Author:" default default bold
+highlight article "^Link:"   cyan    default bold
+highlight article "^Date:"   red     default bold
+
+highlight articlelist "semantics?" red default bold
+highlight articlelist "(t|T)420"   red default bold
 
 # my title formats
 feedlist-title-format       "Feedlist (%u unread, %t total)%?T? - tag `%T'&?"
@@ -118,7 +134,7 @@ download-timeout 10
 ## configuration option: error-log
 ## description: If set, then user errors (e.g. errors regarding defunct RSS feeds) will be logged to this file.
 ## parameter syntax: <path>
-error-log "~/.newsbeuter/log"
+error-log "~/.local/share/newsbeuter/log"
 
 ## configuration option: feed-sort-order
 ## description: If set to "firsttag", the feeds in the feed list will be sorted by their first tag in the urls file.

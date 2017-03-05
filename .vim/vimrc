@@ -136,6 +136,9 @@ nnoremap Y y$
 " Easy edit.
 nnoremap <leader>e :e<Space>
 
+" Easy buffer switch.
+nnoremap <leader>b :b<Space>
+
 " Easy save.
 nnoremap <leader>w :update<CR>
 

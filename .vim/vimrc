@@ -37,7 +37,7 @@ set backup                     " Make backup files.
 set backupdir=~/.vim/backup    " Backup directory.
 set complete+=kspell           " Use <C-n> and <C-p> to get suggested spelling completions.
 set directory=~/.vim/tmp       " Directory for swap files.
-set ignorecase                 " Ignore case, except...
+set ignorecase                 " Ignore case, except... (see smartcase)
 set incsearch                  " Highlight as you type search phrase.
 set modeline                   " Use file-specific settings, if available.
 set mouse=a                    " Mouse support everywhere.
@@ -83,9 +83,9 @@ set formatoptions+=j          " Delete comment character when joining commented 
 set linebreak                 " Don't soft-wrap in the middle of a word.
 set list                      " Show real tabs when present.
 set listchars=tab:»\ ,trail:- " Show tabs and trailing whitespace.
-set nojoinspaces              " Don't add extra space after ., !, etc. when joining.
-set shiftwidth=4              " Set # of softtabs when using cindent, <<, >>, ...
-set showbreak=…               " Show `…' at the beginning of a soft-broken line.
+set nojoinspaces              " Don't add extra space after '.', '!', etc. when joining.
+set shiftwidth=4              " Set # of softtabs when using cindent, '<<', '>>', etc.
+set showbreak=…               " Show '…' at the beginning of a soft-broken line.
 set softtabstop=4             " Set # of spaces when hitting tab/delete.
 set tabstop=8                 " Real tabs are 8 columns long.
 set textwidth=80              " Set max # of characters on each line.

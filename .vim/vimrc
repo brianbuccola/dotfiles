@@ -114,7 +114,8 @@ augroup END " }
 " Add some useful format options for writing prose.
 augroup mail_formatoptions " {
     autocmd!
-    autocmd FileType mail setlocal formatoptions+=w                  " Add trailing white space; to be used with mutt's 'text_flowed' option.
+    " Add trailing white space; to be used with mutt's 'text_flowed' option.
+    autocmd FileType mail setlocal formatoptions+=w
 augroup END " }
 
 " Don't save backups when editing passwords.

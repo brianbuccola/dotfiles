@@ -98,6 +98,7 @@ alias mv='mv -i'
 alias mx='mpv $(xsel)'
 alias p='pacaur'
 alias pg='ping www.google.com'
+alias R='R --quiet'
 alias t='task'
 alias vless="vim -u /usr/share/vim/vim74/macros/less.vim"
 alias vpn-mcgill='sudo openconnect securevpn.mcgill.ca'

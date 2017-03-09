@@ -93,7 +93,7 @@ myKeys =
     -- Apps
     , ( "M-o"   , raiseMaybe ( spawn "chromium"          ) ( className =? "Chromium"         ) ) -- chr"o"mium
     , ( "M-v"   , raiseMaybe ( spawn "pavucontrol"       ) ( className =? "Pavucontrol"      ) ) -- "v"olume
-    , ( "M-w"   , raiseMaybe ( spawn "qutebrowser"       ) ( className =? "qutebrowser"      ) ) -- "www"
+    , ( "M-w"   , raiseMaybe ( spawn "qutebrowser --backend webengine" ) ( className =? "qutebrowser" ) ) -- "www"
     , ( "M-y"   , raiseMaybe ( spawn "skypeforlinux"     ) ( title =? "Skype for Linux Beta" ) ) -- sk"y"pe
     , ( "M-S-h" , raiseMaybe ( runInTerm "" "htop"       ) ( title =? "htop"                 ) ) -- "h"top
     , ( "M-m"   , raiseMaybe ( runInTerm "" "mutt"       ) ( title =? "mutt"                 ) ) -- "m"utt

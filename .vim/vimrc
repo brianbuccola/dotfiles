@@ -52,7 +52,7 @@ set smartcase                  " ...when search string contains uppercase.
 set spell                      " Highlight misspelled words.
 set spellcapcheck=             " Don't highlight uncapitalized first word.
 set splitright                 " Split to the right when executing :vsplit.
-set wildignore+=*.swp,*.bak,*.jpg,*.gif,*.png
+set wildignore+=*.swp,*.bak,*.jpg,*.gif,*.pdf,*.png
 set wildmenu                   " Turn on command-line completion wild style.
 set wildmode=list:longest,full " Make completion more like zsh.
 let mapleader=' '              " Set <leader> to space.

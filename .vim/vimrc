@@ -11,6 +11,7 @@ Plug 'honza/vim-snippets'
 Plug 'lervag/vimtex'
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
+Plug 'plasticboy/vim-markdown'
 Plug 'timakro/vim-searchant'
 Plug 'tmhedberg/matchit'
 Plug 'tomasr/molokai'
@@ -20,7 +21,6 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-liquid'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -177,10 +177,13 @@ nnoremap <Leader>t :OnlineThesaurusCurrentWord<CR>
 " }}}
 " Plugin Settings {{{
 " vim-markdown
-let g:markdown_fenced_languages=['bash=sh', 'css', 'haskell', 'html', 'latex=tex', 'python', 'ruby']
+let g:vim_markdown_fenced_languages=['bash=sh', 'css', 'haskell', 'html', 'latex=tex', 'python', 'ruby']
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_math=1
+let g:vim_markdown_frontmatter=1
 
 " vim-liquid
-let g:liquid_highlight_types=g:markdown_fenced_languages
+let g:liquid_highlight_types=g:vim_markdown_fenced_languages
 
 " UltiSnips
 let g:UltiSnipsEditSplit='horizontal'

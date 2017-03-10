@@ -62,9 +62,11 @@ let g:netrw_liststyle=3        " Use tree style directory listing.
 " Colorschemes {{{
 if has("gui_running")
     let g:gruvbox_contrast_dark='hard'
+    let g:gruvbox_italic=1
     colorscheme gruvbox
 else
     let g:gruvbox_contrast_dark='hard'
+    let g:gruvbox_italic=1
     colorscheme gruvbox
 endif
 set background=dark " Use dark bg color and light fg colors.

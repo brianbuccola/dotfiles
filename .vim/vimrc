@@ -105,10 +105,10 @@ augroup pass_nobackup " {
     autocmd BufRead /dev/shm/pass.* setlocal nobackup
 augroup END " }
 
-" Don't hard-wrap lines when editing a text field in qutebrowser.
-augroup qutebrowser_nowrap " {
+" Settings for editing a text field in qutebrowser.
+augroup qutebrowser " {
     autocmd!
-    autocmd BufRead /tmp/qutebrowser-editor-* setlocal textwidth=0
+    autocmd BufRead /tmp/qutebrowser-editor-* setlocal textwidth=0 filetype=markdown
 augroup END " }
 " }}}
 " Mappings {{{

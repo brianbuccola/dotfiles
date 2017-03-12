@@ -24,6 +24,9 @@ bindkey -M viins "^E" edit-command-line
 # Don't eat space after '<Tab>' followed by '&' or '|'
 ZLE_SPACE_SUFFIX_CHARS=$'&|'
 
+# Eat space after '<Tab>' followed by ')', etc.
+ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;)'
+
 # Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

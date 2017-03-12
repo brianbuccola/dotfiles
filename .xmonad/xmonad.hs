@@ -105,16 +105,16 @@ myKeys =
     , ( "M-<Print>" , spawn "scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'"        )
 
     -- Media keys, etc.
-    , ( "<XF86AudioLowerVolume>" , spawn "pactl set-sink-volume 0 -5%"    )
-    , ( "<XF86AudioMute>"        , spawn "pactl set-sink-mute 0 toggle"   )
-    , ( "<XF86AudioRaiseVolume>" , spawn "pactl set-sink-volume 0 +5%"    )
-    , ( "<XF86AudioMicMute>"     , spawn "pactl set-source-mute 1 toggle" )
-    , ( "<XF86AudioPlay>"        , spawn "mpc toggle"                     )
-    , ( "<XF86AudioNext>"        , spawn "mpc next"                       )
-    , ( "<XF86AudioPrev>"        , spawn "mpc prev"                       )
-    , ( "<XF86AudioStop>"        , spawn "mpc stop"                       )
-    -- , ( "<XF86Display>"          , spawn "~/repos/scripts/display-adjust.sh && keyboard-adjust.sh && ~/.fehbg" )
-    , ( "<XF86TouchpadToggle>"   , spawn "~/repos/scripts/touchpad-toggle.sh" )
+    , ( "<XF86AudioLowerVolume>" , spawn "pactl set-sink-volume 0 -5%"     )
+    , ( "<XF86AudioMute>"        , spawn "pactl set-sink-mute 0 toggle"    )
+    , ( "<XF86AudioRaiseVolume>" , spawn "pactl set-sink-volume 0 +5%"     )
+    , ( "<XF86AudioMicMute>"     , spawn "pactl set-source-mute 1 toggle"  )
+    , ( "<XF86AudioPlay>"        , spawn "mpc toggle"                      )
+    , ( "<XF86AudioNext>"        , spawn "mpc next"                        )
+    , ( "<XF86AudioPrev>"        , spawn "mpc prev"                        )
+    , ( "<XF86AudioStop>"        , spawn "mpc stop"                        )
+    -- , ( "<XF86Display>"          , spawn "~/repos/scripts/display-adjust && keyboard-adjust && ~/.fehbg" )
+    , ( "<XF86TouchpadToggle>"   , spawn "~/repos/scripts/touchpad-toggle" )
 
     -- Prompts
     , ( "M-g" , windowPrompt defaultXPConfig

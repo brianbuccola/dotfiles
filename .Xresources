@@ -2,7 +2,6 @@
 ! file:     ~/.Xresources
 ! author:   Brian Buccola
 
-
 ! ========
 !  Colors
 ! ========
@@ -15,8 +14,6 @@
 !  URxvt
 ! =======
 
-!URxvt*font:             -*-terminus-medium-*-*--14-*-*-*-*-*-iso10646-*
-!URxvt*boldFont:         -*-terminus-bold-*-*--14-*-*-*-*-*-iso10646-*
 URxvt*font:             xft:Fira Mono:pixelsize=14
 URxvt*dynamicColors:    true
 URxvt*utf8:             2
@@ -34,10 +31,6 @@ URxvt*colorULMode:      true
 URxvt*borderLess:       false
 URxvt*urgentOnBell:     true
 
-! transparency
-! URxvt.transparent:  true
-! URxvt.shading:      30
-
 ! urxvt-perls
 URxvt.perl-ext-common:      keyboard-select,url-select
 URxvt.keysym.M-C-Escape:    perl:keyboard-select:activate
@@ -49,10 +42,7 @@ URxvt.url-select.underline: true
 !  xterm
 ! =======
 
-!xterm*font:             -*-terminus-medium-*-*--14-*-*-*-*-*-iso10646-*
-!xterm*boldFont:         -*-terminus-bold-*-*--14-*-*-*-*-*-iso10646-*
-xterm*font:             xft:Terminus:pixelsize=15
-!xterm*font:             xft:Inconsolata:pixelsize=15
+xterm*font:             xft:Fira Mono:pixelsize=14
 xterm*dynamicColors:    true
 xterm*utf8:             2
 xterm*eightBitInput:    true
@@ -69,12 +59,11 @@ xterm*colorULMode:      true
 xterm*borderLess:       false
 xterm*urgentOnBell:     true
 
-
 ! ==========
 !  Xmessage
 ! ==========
 
-Xmessage*font:                  -*-terminus-medium-*-*--14-*-*-*-*-*-*-*
+/* Xmessage*font:                  -*-fira mono-medium-*-*-*-*-*-*-*-*-*-*-* */
 Xmessage*background:            #5f5f5f
 Xmessage*foreground:            #d0d0d0
 Xmessage*Scrollbar.width:       0
@@ -82,16 +71,15 @@ Xmessage*Scrollbar.borderWidth: 0
 Xmessage*form.*.shapeStyle:     rectangle
 Xmessage*Buttons:               okay
 Xmessage*defaultButton:         okay
-Xmessage*okay*font:             -*-terminus-bold-*-*--14-*-*-*-*-*-*-*
+/* Xmessage*okay*font:             -*-fira mono-medium-*-*-*-*-*-*-*-*-*-*-* */
 Xmessage*okay*foreground:       #1c1c1c
 Xmessage*okay*borderColor:      #1c1c1c
-Xmessage*yes*font:              -*-terminus-bold-*-*--14-*-*-*-*-*-*-*
+/* Xmessage*yes*font:              -*-fira mono-medium-*-*-*-*-*-*-*-*-*-*-* */
 Xmessage*yes*foreground:        #1c1c1c
 Xmessage*yes*borderColor:       #1c1c1c
-Xmessage*no*font:               -*-terminus-bold-*-*--14-*-*-*-*-*-*-*
+/* Xmessage*no*font:               -*-fira mono-medium-*-*-*-*-*-*-*-*-*-*-* */
 Xmessage*no*foreground:         #1c1c1c
 Xmessage*no*borderColor:        #1c1c1c
-
 
 ! ==============
 !  Xft settings

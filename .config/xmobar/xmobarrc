@@ -21,7 +21,7 @@ Config { font = "xft:Fira Mono:pixelsize=12"
                                   ] 10
                     , Run Kbd [("us(dvp)", "dvp")]
                     , Run Date "%a %d %b %H:%M:%S" "date" 10
-                    , Run Com "/home/brian/repos/scripts/update-notify.sh" [] "updates" 36000
+                    , Run Com "/home/brian/repos/scripts/update-notify" [] "updates" 36000
                     , Run StdinReader
                     ]
        , sepChar  = "%"

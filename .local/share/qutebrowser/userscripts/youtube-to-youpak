@@ -1,0 +1,5 @@
+#!/bin/bash
+
+new_url=$(echo "${QUTE_URL}" | sed 's/youtube/youpak/')
+
+echo "spawn --detach mpv ${new_url}" >> "${QUTE_FIFO}"

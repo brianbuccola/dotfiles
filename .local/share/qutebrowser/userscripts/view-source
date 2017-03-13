@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# View source with vim instead of in a new tab.
+
+src=$(mktemp --tmpdir qutebrowser_XXXXXXXX.html)
+curl "${QUTE_URL}" > "${src}"
+urxvt -e vim "${src}"
+rm "${src}"

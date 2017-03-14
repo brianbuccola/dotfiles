@@ -43,6 +43,7 @@ set modeline                   " Use file-specific settings, if available.
 set mouse=a                    " Mouse support everywhere.
 set mousehide                  " Auto-hide cursor while typing.
 set number                     " Show line numbers.
+set relativenumber             " Show line numbers relative to the current line.
 set report=0                   " Tell me when anything is changed via :...
 set ruler                      " Show current positions along bottom.
 set scrolloff=5                " Keep 5 lines (top/bottom) for scope.

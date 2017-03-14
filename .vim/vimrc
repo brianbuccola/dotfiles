@@ -92,6 +92,8 @@ set showbreak=…               " Show '…' at the beginning of a soft-broken l
 set softtabstop=4             " Set # of spaces when hitting tab/delete.
 set tabstop=8                 " Real tabs are 8 columns long.
 set textwidth=80              " Set max # of characters on each line.
+set breakindent        " Allow 'breakindentopt' to apply
+set breakindentopt=shift:1 " Shift a wrapped line one space rightward (including 'showbreak' character).
 " }}}
 " Autocmd's, functions, etc. {{{
 " Autoreload after modifying .vimrc.

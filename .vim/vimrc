@@ -157,6 +157,12 @@ nnoremap gz `[v`]
 " Add vim-unimpaired-like keybinding for AutoSaveToggle.
 nnoremap coa :AutoSaveToggle<CR>
 
+" Switch buffers more easily.
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " Easy edit.
 nnoremap <leader>e :e<Space>
 

@@ -24,6 +24,7 @@ URxvt*scrollTtyOutput:  false
 URxvt*scrollBar:        false
 URxvt*rightScrollBar:   false
 URxvt*jumpScroll:       true
+URxvt*letterSpace:      -1.5
 URxvt*multiScroll:      true
 URxvt*toolBar:          true
 URxvt*colorBDMode:      true

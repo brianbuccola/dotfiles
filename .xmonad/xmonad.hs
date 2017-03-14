@@ -202,7 +202,7 @@ myLayoutHook = smartBorders $ myTabbed ||| myTiled ||| myMirrorTiled ||| myFull
             }
         myTiled = renamed [Replace "|||"] $ spacing 2 $ Tall nmaster delta ratio
         nmaster = 1     -- number of master windows
-        ratio   = 3/4   -- master-to-slave window ratio
+        ratio   = 1/2   -- master-to-slave window ratio
         delta   = 1/100 -- percent of screen to increment by when resizing
         myMirrorTiled = renamed [Replace "="] $ Mirror myTiled
         myFull = renamed [Replace "[ ]"] $ Full

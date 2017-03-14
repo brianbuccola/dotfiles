@@ -88,12 +88,12 @@ set list                      " Show real tabs when present.
 set listchars=tab:»\ ,trail:- " Show tabs and trailing whitespace.
 set nojoinspaces              " Don't add extra space after '.', '!', etc. when joining.
 set shiftwidth=4              " Set # of softtabs when using cindent, '<<', '>>', etc.
-set showbreak=…               " Show '…' at the beginning of a soft-broken line.
 set softtabstop=4             " Set # of spaces when hitting tab/delete.
 set tabstop=8                 " Real tabs are 8 columns long.
 set textwidth=80              " Set max # of characters on each line.
 set breakindent        " Allow 'breakindentopt' to apply
 set breakindentopt=shift:1 " Shift a wrapped line one space rightward (including 'showbreak' character).
+set showbreak=↪\       " Show '↳' at the beginning of a soft-broken line.
 " }}}
 " Autocmd's, functions, etc. {{{
 " Autoreload after modifying .vimrc.

@@ -22,7 +22,7 @@ URxvt*eightBitInput:    true
 URxvt*fading:           50
 URxvt*font:             xft:Fira Mono:pixelsize=14
 URxvt*jumpScroll:       true
-URxvt*letterSpace:      -1.5
+URxvt*letterSpace:      -2
 URxvt*multiScroll:      true
 URxvt*rightScrollBar:   false
 URxvt*saveLines:        5000

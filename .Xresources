@@ -14,24 +14,24 @@
 !  URxvt
 ! =======
 
-URxvt*font:             xft:Fira Mono:pixelsize=14
+URxvt*borderLess:       false
+URxvt*colorBDMode:      true
+URxvt*colorULMode:      true
 URxvt*dynamicColors:    true
-URxvt*utf8:             2
 URxvt*eightBitInput:    true
-URxvt*saveLines:        1024
-URxvt*scrollKey:        true
-URxvt*scrollTtyOutput:  false
-URxvt*scrollBar:        false
-URxvt*rightScrollBar:   false
 URxvt*fading:           50
+URxvt*font:             xft:Fira Mono:pixelsize=14
 URxvt*jumpScroll:       true
 URxvt*letterSpace:      -1.5
 URxvt*multiScroll:      true
+URxvt*rightScrollBar:   false
+URxvt*saveLines:        5000
+URxvt*scrollBar:        false
+URxvt*scrollKey:        true
+URxvt*scrollTtyOutput:  false
 URxvt*toolBar:          true
-URxvt*colorBDMode:      true
-URxvt*colorULMode:      true
-URxvt*borderLess:       false
 URxvt*urgentOnBell:     true
+URxvt*utf8:             2
 
 ! urxvt-perls
 URxvt.perl-ext-common:      keyboard-select,url-select

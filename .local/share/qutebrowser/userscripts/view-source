@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # View source with vim instead of in a new tab.
 
 trap cleanup EXIT
@@ -10,4 +10,4 @@ cleanup () {
 
 src=$(mktemp --tmpdir qutebrowser_XXXXXXXX.html)
 curl "${QUTE_URL}" > "${src}"
-urxvt -e vim "${src}"
+urxvt -e vim -n "${src}"

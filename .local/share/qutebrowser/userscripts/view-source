@@ -2,7 +2,12 @@
 
 # View source with vim instead of in a new tab.
 
+trap cleanup EXIT
+
+cleanup () {
+    rm "$src"
+}
+
 src=$(mktemp --tmpdir qutebrowser_XXXXXXXX.html)
 curl "${QUTE_URL}" > "${src}"
 urxvt -e vim "${src}"
-rm "${src}"

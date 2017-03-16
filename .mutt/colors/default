@@ -4,7 +4,7 @@
 color   normal      default         default     # affects index, help, pager, etc.
 color   indicator   brightwhite     default
 color   status      green           default
-color   markers     brightred       default
+color   markers     white           default
 color   tilde       brightcyan      default
 color   tree        red             default
 color   error       brightred       default

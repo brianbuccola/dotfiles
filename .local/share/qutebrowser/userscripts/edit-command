@@ -11,7 +11,8 @@ cleanup() {
 }
 
 qb_cmd=$(mktemp --tmpdir qutebrowser_XXXXXXXX)
+cmd_prefix=$(echo "$QUTE_COMMANDLINE_TEXT" | head -c1)
 echo "$QUTE_COMMANDLINE_TEXT" | cut -c 2- > "$qb_cmd"
 urxvt -e vim -n "$qb_cmd"
 
-echo set-cmd-text :$(head -n1 "$qb_cmd") >> "$QUTE_FIFO"
+echo set-cmd-text "$cmd_prefix$(head -n1 "$qb_cmd")" >> "$QUTE_FIFO"

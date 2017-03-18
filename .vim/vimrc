@@ -60,17 +60,14 @@ let mapleader=' '              " Set <leader> to space.
 let maplocalleader=' '         " Set <localleader> to space.
 let g:netrw_liststyle=3        " Use tree style directory listing.
 " }}}
-" Colorschemes {{{
-if has("gui_running")
-    let g:gruvbox_contrast_dark='hard'
-    let g:gruvbox_italic=1
-    colorscheme gruvbox
-else
-    let g:gruvbox_contrast_dark='hard'
-    let g:gruvbox_italic=1
-    colorscheme gruvbox
-endif
-set background=dark " Use dark bg color and light fg colors.
+" Colors {{{
+set termguicolors " Enable true color support.
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_italic=1
+colorscheme gruvbox
+set background=dark
 " }}}
 " GUI Settings {{{
 set guifont=Fira\ Mono\ 11 " Use Fira Mono, size 11 font.

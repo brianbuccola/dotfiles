@@ -173,12 +173,6 @@ nnoremap <leader>e :e<Space>
 " Easy buffer switch.
 nnoremap <leader>b :b<Space>
 
-" Easy buffer next.
-nnoremap <leader>n :bnext<CR>
-
-" Easy buffer prev.
-nnoremap <leader>p :bprev<CR>
-
 " Switch to alternate buffer.
 nnoremap <BS> <C-^>
 

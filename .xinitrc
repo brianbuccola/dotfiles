@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# vim:      set ft=sh sw=4 et nu fenc=utf-8:
+# vim:      set ft=sh tw=0:
 # file:     ~/.xinitrc
 # author:   Brian Buccola
 

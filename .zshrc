@@ -1,3 +1,7 @@
+# vim:    ft=zsh tw=0
+# file:   ~/.zshrc
+# author: Brian Buccola <brian.buccola@gmail.com>
+
 # Zsh options
 setopt append_history
 setopt autocd

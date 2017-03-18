@@ -1,6 +1,6 @@
-" vim:    set fenc=utf-8 nu et sts=4 sw=4 ft=vim fdm=marker fmr={{{,}}}:
-" file:   ~/.vimrc
-" author: Brian Buccola
+" vim:    set ft=vim tw=0 fdm=marker fmr={{{,}}}:
+" file:   ~/.vim/vimrc
+" author: Brian Buccola <brian.buccola@gmail.com>
 
 " Plugins {{{
 call plug#begin('~/.vim/plugged')

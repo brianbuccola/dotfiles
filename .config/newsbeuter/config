@@ -47,6 +47,7 @@ bind-key    g   home
 bind-key    G   end
 bind-key    y   open-in-browser-and-mark-read
 bind-key    y   open-in-browser     article
+bind-key    Y   open-all-unread-in-browser-and-mark-read
 bind-key    o   sort
 bind-key    O   rev-sort
 bind-key    a   mark-feed-read

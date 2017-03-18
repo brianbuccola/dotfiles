@@ -59,7 +59,7 @@ myPP = xmobarPP
             | otherwise   = ws
 
 myConfig = withUrgencyHook NoUrgencyHook defaultConfig
-    {   terminal           =  "urxvtc"
+    {   terminal           =  "st"
     ,   modMask            =  mod1Mask
     ,   borderWidth        =  1
     ,   normalBorderColor  =  myLightBlack
@@ -78,17 +78,17 @@ myConfig = withUrgencyHook NoUrgencyHook defaultConfig
 myKeys =
     [
     -- Basics
-      ( "M-S-n"         , nextWS                                 )
-    , ( "M-S-p"         , prevWS                                 )
-    , ( "M-<Backspace>" , toggleWS                               )
-    , ( "M-<Escape>"    , banish LowerRight                      )
-    , ( "M-<Return>"    , spawn "urxvtc"                         )
-    , ( "M-s"           , scratchpadSpawnActionTerminal "urxvtc" )
-    , ( "M-c"           , windows $ W.greedyView "chat"          ) -- go to WS "chat"
-    , ( "M-d"           , windows $ W.greedyView "doc"           ) -- go to WS "doc"
-    , ( "M-S-t"         , windows $ W.greedyView "term"          ) -- go to WS "term"
-    , ( "M-S-l"         , windows $ W.greedyView "log"           ) -- go to WS "log"
-    , ( "M-S-m"         , windows $ W.greedyView "misc"          ) -- go to WS "misc"
+      ( "M-S-n"         , nextWS                             )
+    , ( "M-S-p"         , prevWS                             )
+    , ( "M-<Backspace>" , toggleWS                           )
+    , ( "M-<Escape>"    , banish LowerRight                  )
+    , ( "M-<Return>"    , spawn "st"                         )
+    , ( "M-s"           , scratchpadSpawnActionCustom "st -n scratchpad" )
+    , ( "M-c"           , windows $ W.greedyView "chat"      ) -- go to WS "chat"
+    , ( "M-d"           , windows $ W.greedyView "doc"       ) -- go to WS "doc"
+    , ( "M-S-t"         , windows $ W.greedyView "term"      ) -- go to WS "term"
+    , ( "M-S-l"         , windows $ W.greedyView "log"       ) -- go to WS "log"
+    , ( "M-S-m"         , windows $ W.greedyView "misc"      ) -- go to WS "misc"
 
     -- Apps
     , ( "M-o"   , raiseMaybe ( spawn "chromium"          ) ( className =? "Chromium"         ) ) -- chr"o"mium

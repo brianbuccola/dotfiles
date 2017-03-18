@@ -1,2 +1,2 @@
-" Add trailing white space; to be used with mutt's 'text_flowed' option.
-set formatoptions+=w
+" Don't wrap lines when writing email.
+set textwidth=0

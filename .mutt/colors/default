@@ -1,32 +1,34 @@
-# vim: filetype=muttrc:
+# vim:  ft=muttrc:
+# file: ~/.mutt/colors/default
+# author: Brian Buccola <brian.buccola@gmail.com>
 
 # basic colors
-color   normal      default         default     # affects index, help, pager, etc.
+color   attachment  white           default
+color   error       brightred       default
 color   indicator   brightwhite     default
-color   status      green           default
 color   markers     white           default
+color   normal      default         default
+color   search      brightmagenta   default
+color   status      green           default
 color   tilde       brightcyan      default
 color   tree        red             default
-color   error       brightred       default
-color   search      brightmagenta   default
-color   attachment  white           default
 
 # index
-color   index       brightblue      blue      "~N!~h'brian.buccola@mail.mcgill.ca'!~h'brian.buccola@mail.huji.ac.il'"      # new gmail msg's
-color   index       brightred       red       "~N~h'brian.buccola@mail.mcgill.ca'"                                         # new mcgill msg's
-color   index       brightyellow    yellow    "~N~h'brian.buccola@mail.huji.ac.il'"                                        # new huji msg's
-color   index       brightblue      default   "~R!~h'brian.buccola@mail.mcgill.ca'!~h'brian.buccola@mail.huji.ac.il'!~P"   # read gmail msg's (bold)
-color   index       brightred       default   "~R~h'brian.buccola@mail.mcgill.ca'"                                         # read mcgill msg's
-color   index       brightyellow    default   "~R~h'brian.buccola@mail.huji.ac.il'"                                        # read huji msg's
-color   index       white           default   "~R~P"                                                                       # grey messages from me (read)
-color   index       yellow          blue      "~O"                                                                         # old (but unread) messages
-color   index       brightred       default   "~D"                                                                         # deleted messages
-color   index       brightred       white     "~="                                                                         # duplicate messages
-color   index       brightwhite     default   "~T"                                                                         # tagged messages
-color   index       brightmagenta   default   "~F"                                                                         # flagged messages
+color   index       brightblue      blue    "~N!~h'brian.buccola@mail.mcgill.ca'!~h'brian.buccola@mail.huji.ac.il'"     # new gmail msg's
+color   index       brightred       red     "~N~h'brian.buccola@mail.mcgill.ca'"                                        # new mcgill msg's
+color   index       brightyellow    yellow  "~N~h'brian.buccola@mail.huji.ac.il'"                                       # new huji msg's
+color   index       brightblue      default "~R!~h'brian.buccola@mail.mcgill.ca'!~h'brian.buccola@mail.huji.ac.il'!~P"  # read gmail msg's (bold)
+color   index       brightred       default "~R~h'brian.buccola@mail.mcgill.ca'"                                        # read mcgill msg's
+color   index       brightyellow    default "~R~h'brian.buccola@mail.huji.ac.il'"                                       # read huji msg's
+color   index       white           default "~R~P"                                                                      # grey messages from me (read)
+color   index       yellow          blue    "~O"                                                                        # old (but unread) messages
+color   index       brightred       default "~D"                                                                        # deleted messages
+color   index       brightred       white   "~="                                                                        # duplicate messages
+color   index       brightwhite     default "~T"                                                                        # tagged messages
+color   index       brightmagenta   default "~F"                                                                        # flagged messages
 
 # header
-color   hdrdefault  white           default                                             # shows up grey with molokai colorscheme
+color   hdrdefault  white           default
 color   header      brightmagenta   default ^From:
 color   header      white           default ^To:
 color   header      white           default ^Reply-To:
@@ -34,12 +36,10 @@ color   header      white           default ^Cc:
 color   header      brightgreen     default ^Subject:
 
 # body
-color   signature   white           default
+color   body        brightblue      default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+"    # identifies URLs
+color   body        brightred       default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+"           # identifies email addresses
 color   quoted      magenta         default
 color   quoted1     green           default
 color   quoted2     red             default
 color   quoted3     yellow          default
-#color bold      red magenta
-#color underline brightwhite default
-color   body        brightred       default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+"        # identifies email addresses
-color   body        brightblue      default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" # identifies URLs
+color   signature   white           default

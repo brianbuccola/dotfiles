@@ -1,11 +1,8 @@
-# file:   ~/mutt/gpg.rc
-# author: Brian Buccola
-# vim:    ft=muttrc:tw=0:
+# vim:    ft=muttrc tw=0:
+# file:   ~/.mutt/gpg.rc
+# author: Brian Buccola <brian.buccola@gmail.com>
 
-# =====
-#  GPG
-# =====
-
+# GPG
 set pgp_use_gpg_agent = yes                 # let gpg-agent take care of already supplied passphrases
 set pgp_timeout = 3600                      # how long to cache passphrase (in secs)
 set crypt_autosign = no                     # automatically sign all outgoing mail?

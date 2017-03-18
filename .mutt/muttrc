@@ -1,107 +1,27 @@
 # vim:    set ft=muttrc tw=0:
-# file:   ~/.muttrc
-# author: Brian Buccola
+# file:   ~/.mutt/muttrc
+# author: Brian Buccola <brian.buccola@gmail.com>
 
-# ===============
-#  Personal info
-# ===============
+# Personal info
+set from = "brian.buccola@gmail.com"            # default from address
+set realname = "Brian Buccola"                  # use real name
 
-set realname = "Brian Buccola"           # use real name
-set from     = "brian.buccola@gmail.com" # default from address
-set use_from                             # let Mutt generate "From:" header field
+# Files, directories, and commands
+set alias_file = "~/.mutt/alias"                # alias file
+set certificate_file = "~/.mutt/certificates"   # where to store certs
+set editor = "/usr/bin/vim +/^$"                # use vim and skip to first blank line
+set header_cache = "~/.mutt/cache/headers"      # where to store headers
+set mailcap_path = "~/.mailcap"                 # entries for filetypes
+set message_cachedir = "~/.mutt/cache/bodies"   # where to store bodies
+set tmpdir = "~/.mutt/tmp"                      # where to keep temp files
 
-# ==================================
-#  Files, directories, and commands
-# ==================================
+# Always sourced
+source $alias_file                              # source alias file
+source ~/.mutt/colors/default                   # source colors file
+source ~/.mutt/gpg.rc                           # source GPG file
+source /usr/share/doc/mutt/samples/gpg.rc       # source GPG sample file
 
-set alias_file       = "~/.mutt/alias"                  # alias file
-set header_cache     = "~/.mutt/cache/headers"          # where to store headers
-set message_cachedir = "~/.mutt/cache/bodies"           # where to store bodies
-set certificate_file = "~/.mutt/certificates"           # where to store certs
-set mailcap_path     = "~/.mailcap"                     # entries for filetypes
-set tmpdir           = "~/.mutt/tmp"                    # where to keep temp files
-set editor           = "/usr/bin/vim +/^$"              # use vim and skip to first blank line
-set ispell           = "/usr/bin/aspell -e -c"          # use aspell instead of ispell
-set print_command    = "/usr/bin/lp -d name_of_printer" # print to office printer
-
-# ==============
-#  Main options
-# ==============
-
-set mbox_type       = Maildir           # mailbox type
-set folder          = "~/.mail"         # mailbox location
-set spoolfile       = "+gmail/All Mail" # default inbox on open
-set timeout         = 3                 # idle time before scanning
-set mail_check      = 0                 # minimum time between scans
-set sort_alias      = alias             # sort alias file by alias
-set reverse_alias                       # show names from alias file in index
-unset move                              # don't allow Mutt to move mail (gmail does)
-unset record                            # don't save sent items (gmail does automatically)
-set postponed       = "+postponed"      # where to save postponed msg's (drafts) to
-set quit                                # no confirm on quit
-set beep_new                            # bell/beep on new mail
-set check_new                           # check for new mail while mailbox is open
-set arrow_cursor                        # use arrow cursor as indicator
-unset confirmappend                     # don't ask before saving/moving to folder
-unset imap_peek                         # flag as read in all folders, after reading in any one
-unset mark_old                          # mark new msg's as old when quitting mutt?
-set thorough_search                     # strip headers and eval mimes before searching
-unset help                              # don't show help lines describing major keybindings
-unset wait_key                          # don't ask to "press any key to continue" after shell cmd, etc.
-set text_flowed                         # trailing white space indicates that paragraph continues on next line
-
-# ===============
-#  Index options
-# ===============
-
-set sort           = threads                    # like gmail
-set sort_aux       = reverse-last-date-received # like gmail
-set strict_threads                              # thread based on "In-Reply-To:" and "References:", not $reply_regexp
-set menu_context   = 5                          # number of lines to pad top/bottom of screen when scrolling
-
-# ===============
-#  Pager options
-# ===============
-
-set pager_index_lines = 10                           # number of index lines to show
-set pager_context     = 5                            # number of lines to pad top/bottom of screen when scrolling
-set pager_stop                                       # don't go to next message automatically
-set menu_scroll                                      # scroll line-by-line in menus
-set smart_wrap                                       # don't split words
-set tilde                                            # show tildes like in vim
-unset markers                                        # no ugly plus signs
-auto_view text/html                                  # view html automatically
-alternative_order text/plain text/enriched text/html # save html for last
-
-# =========
-#  Formats
-# =========
-
-set date_format  = "%a %d %b %Y (%H:%M)"
-set index_format = "%3C %Z %D %-15.15F %s"
-set alias_format = "%4n %t %-20a %r"
-
-# ================
-#  Composing mail
-# ================
-
-set edit_headers                             # show headers when composing
-set sendmail       = "/usr/bin/msmtp"        # use msmtp to send mail
-set fast_reply                               # skip to compose when replying
-set askcc                                    # ask for CC:
-set fcc_attach                               # save attachments with the body
-set mime_forward   = ask-yes                 # forward attachments as MIME/part of body?
-set forward_format = "Fwd: %s"               # format for subject when forwarding
-set attribution    = "On %d, %n <%a> wrote:" # set the attribution
-set reply_to                                 # reply to Reply to: field
-set reverse_name                             # reply based on who msg was sent to
-set include                                  # include message in replies
-set forward_quote                            # include message in forwards
-
-# ===========
-#  Mailboxes
-# ===========
-
+# Mailboxes
 mailboxes "+gmail/INBOX" \
           "+gmail/All Mail" \
           "+gmail/Sent Mail" \
@@ -109,56 +29,86 @@ mailboxes "+gmail/INBOX" \
           "+gmail/Trash" \
           "+postponed"
 
-# ================
-#  Always sourced
-# ================
+# Main options
+set arrow_cursor                                # use arrow cursor as indicator
+set beep_new                                    # bell/beep on new mail
+set folder = "~/.mail"                          # mailbox location
+set mail_check = 0                              # minimum time between scans
+set mbox_type = Maildir                         # mailbox type
+set postponed = "+postponed"                    # where to save postponed msg's (drafts) to
+set reverse_alias                               # show names from alias file in index
+set sort_alias = alias                          # sort alias file by alias
+set spoolfile = "+gmail/All Mail"               # default inbox on open
+unset help                                      # don't show help lines describing major keybindings
+unset mark_old                                  # mark new msg's as old when quitting mutt?
+unset record                                    # don't save sent items (gmail does automatically)
+unset wait_key                                  # don't ask to "press any key to continue" after shell cmd, etc.
 
-source $alias_file                        # source alias file
-source ~/.mutt/colors/default             # source colors file
-source ~/.mutt/gpg.rc                     # source GPG file
-source /usr/share/doc/mutt/samples/gpg.rc # source GPG sample file
+# Index options
+set sort = threads                              # like gmail
+set sort_aux = reverse-last-date-received       # like gmail
+set strict_threads                              # thread based on "In-Reply-To:" and "References:", not $reply_regexp
 
-# =======
-#  Hooks
-# =======
+# Pager options
+set menu_scroll                                 # scroll line-by-line in menus
+set pager_index_lines = 10                      # number of index lines to show
+set pager_stop                                  # don't go to next message automatically
+set wrap=78                                     # wrap text after 78 columns
 
+# Formats
+set alias_format = "%4n %t %-20a %r"            # <index> <tagged?> <alias> <name-and-address>
+set date_format = "%a %d %b %Y (%H:%M)"         # Thu 23 Jul 2016 (19:47)
+set index_format = "%3C %Z %D %-15.15F %s"      # <index> <flags> <date> <sender> <subject>
+
+# Composing mail
+set askcc                                       # ask for CC:
+set attribution = "On %d, %n <%a> wrote:"       # set the attribution
+set edit_headers                                # show headers when composing
+set fast_reply                                  # skip to compose when replying
+set forward_format = "Fwd: %s"                  # format for subject when forwarding
+set forward_quote                               # include message in forwards
+set include                                     # include message in replies
+set mime_forward = ask-yes                      # forward attachments as MIME/part of body?
+set reply_to                                    # reply to Reply to: field
+set reverse_name                                # reply based on who msg was sent to
+set sendmail = "/usr/bin/msmtp"                 # use msmtp to send mail
+
+# Hooks
 folder-hook "All Mail" 'macro index d "<save-message>=gmail/Trash<enter>" "send to trash"'
 folder-hook !"All Mail" 'macro index d "<delete-message>" "archive the current entry (remove label)"'
-# NB: the above hook removes label, i.e. removes msg from current (non-All Mail) folder.
-# This amounts to archiving (leaving a copy in All Mail), EXCEPT in the case of Trash.
-# When in Trash, this macro deletes the msg for good.
+## NB: the above hook removes label, i.e. removes msg from current (non-All Mail) folder.
+## This amounts to archiving (leaving a copy in All Mail), EXCEPT in the case of Trash.
+## When in Trash, this macro deletes the msg for good.
 
-# ==========
-#  Bindings
-# ==========
-
+# Bindings
+bind index,alias,attach,pager \Cf next-page
+bind index,alias,attach,pager \Cb previous-page
+bind index,alias,attach,pager \Cu half-up
+bind index,alias,attach,pager \Cd half-down
+bind index,alias,attach,pager \Ce next-line
+bind index,alias,attach,pager \Cy previous-line
+bind index,alias,attach gg first-entry
+bind index,alias,attach G  last-entry
+bind index,pager,attach gr  group-reply
 bind index J  next-unread
 bind index K  previous-unread
-bind index gg first-entry
-bind index G  last-entry
-
+bind index L  bottom-page
 bind pager j  next-line
 bind pager k  previous-line
-bind pager J  next-undeleted
-bind pager K  previous-undeleted
 bind pager gg top
 bind pager G  bottom
 
-bind index,pager gr  group-reply
-bind index,pager \Cu half-up
-bind index,pager \Cd half-down
-
-# ========
-#  Macros
-# ========
-
-# view Mutt manual
+# Macros
+## view Mutt manual
 macro generic,pager \
   "<esc>m" \
   "<shell-escape>less /usr/share/doc/mutt/manual.txt<enter>" \
   "show Mutt documentation"
 
-# change to various folders
+## quick-sync ~/.mail immediately with mbsync
+macro index R "<shell-escape>/usr/bin/mbsync -Va<enter>" "sync IMAP"
+
+## change to various folders
 macro index gi "<change-folder>=gmail/INBOX<enter>"     "go to inbox"
 macro index ga "<change-folder>=gmail/All<tab><enter>"  "go to all mail"
 macro index gs "<change-folder>=gmail/Sent<tab><enter>" "go to sent mail"
@@ -167,21 +117,12 @@ macro index gt "<change-folder>=gmail/Trash<enter>"     "go to trash"
 macro index gS "<change-folder>=gmail/Spam<enter>"      "go to spam"
 macro index gf "<limit>~F<enter>"                       "show flagged messages"
 
-# create alias (bind to A and reserve a for mark all new as read)
+## create alias (bind to A and reserve a for mark all new as read)
 macro index A "<create-alias>" "create an alias from a message sender"
 
-# mark all new as read
+## mark all new as read
 macro index a \
   "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter><first-entry><sync-mailbox>" \
   "mark all new as read"
 
-# ==============
-#  Random stuff
-# ==============
-
-# save a decoded copy in ~/
-set pipe_decode                                          # weed out headers before piping
-macro index | "<pipe-message>cat > ~/" "save message as" # pipe message to file
-
-# quick-sync ~/.mail immediately with mbsync
-macro index R "<shell-escape>/usr/bin/mbsync -Va<enter>" "sync IMAP"
+# vim: set ft=muttrc tw=0:

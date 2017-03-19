@@ -10,4 +10,4 @@ cleanup () {
 
 src=$(mktemp --tmpdir qutebrowser_XXXXXXXX.html)
 curl "${QUTE_URL}" > "${src}"
-urxvt -e vim -n "${src}"
+st -e vim -n "${src}"

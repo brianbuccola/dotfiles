@@ -1,15 +1,12 @@
 #!/bin/sh
+#
+# vim:    set ft=sh tw=0:
+# file:   ~/.xinitrc
+# author: Brian Buccola
 
-# vim:      set ft=sh tw=0:
-# file:     ~/.xinitrc
-# author:   Brian Buccola
-
-display-adjust                     # auto-adjust monitors
-keyboard-adjust                    # add kbd layouts, switch ctrl/caps
-xrdb -merge ${HOME}/.Xresources    # add .Xresources to database
-xsetroot -cursor_name left_ptr     # change default ugly pointer
-${HOME}/.fehbg                     # set background
+display-adjust
+keyboard-adjust
+xrdb -merge ~/.Xresources
 xset s on +dpms                    # make screen blank after 10m of inactivity (default)
 xautolock -time 10 -locker slock & # lock screen (with slock) after 10m of inactivity
-
-xmonad &> ${HOME}/.xmonad/log      # start xmonad
+xmonad &> ~/.xmonad/log

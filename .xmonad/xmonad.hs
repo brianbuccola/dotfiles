@@ -83,7 +83,7 @@ myKeys =
     , ( "M-<Backspace>" , toggleWS                           )
     , ( "M-<Escape>"    , banish LowerRight                  )
     , ( "M-<Return>"    , spawn "st"                         )
-    , ( "M-s"           , scratchpadSpawnActionCustom "st -n scratchpad" )
+    , ( "M-s"           , scratchpadSpawnActionCustom "st -n scratchpad -t scratchpad" )
     , ( "M-c"           , windows $ W.greedyView "chat"      ) -- go to WS "chat"
     , ( "M-d"           , windows $ W.greedyView "doc"       ) -- go to WS "doc"
     , ( "M-S-t"         , windows $ W.greedyView "term"      ) -- go to WS "term"

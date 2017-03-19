@@ -76,7 +76,9 @@ set sendmail = "/usr/bin/msmtp"                 # use msmtp to send mail
 
 # Hooks
 folder-hook "All Mail" 'macro index d "<save-message>=gmail/Trash<enter>" "send to trash"'
+folder-hook "All Mail" 'macro index <Esc>d "<tag-thread><tag-prefix><save-message>=gmail/Trash<enter>" "send thread to trash"'
 folder-hook !"All Mail" 'macro index d "<delete-message>" "archive the current entry (remove label)"'
+folder-hook !"All Mail" 'macro index <Esc>d "<delete-message>" "archive thread (INBOX) or remove label (elsewhere)"'
 ## NB: the above hook removes label, i.e. removes msg from current (non-All Mail) folder.
 ## This amounts to archiving (leaving a copy in All Mail), EXCEPT in the case of Trash.
 ## When in Trash, this macro deletes the msg for good.

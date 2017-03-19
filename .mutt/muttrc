@@ -39,6 +39,7 @@ set postponed = "+postponed"                    # where to save postponed msg's 
 set reverse_alias                               # show names from alias file in index
 set sort_alias = alias                          # sort alias file by alias
 set spoolfile = "+gmail/All Mail"               # default inbox on open
+set timeout = 3                                 # don't wait for user input before checking for new mail
 unset help                                      # don't show help lines describing major keybindings
 unset mark_old                                  # mark new msg's as old when quitting mutt?
 unset record                                    # don't save sent items (gmail does automatically)

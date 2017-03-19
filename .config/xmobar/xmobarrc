@@ -1,6 +1,6 @@
 Config { font = "xft:Fira Mono:pixelsize=12"
        , position = TopW L 100
-       , bgColor = "#1d2021"
+       , bgColor = "#000000"
        , fgColor = "#a89984"
        , border = BottomBM 0
        , borderColor = "#a89984"

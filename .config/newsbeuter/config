@@ -2,8 +2,7 @@
 # newsbeuter example configuration #
 ####################################
 
-
-# my colors and highlights
+# my colors
 ## color <element> <fgcolor> <bgcolor> [<attr> ...]
 color background        red     default bold
 color listnormal        white   default
@@ -13,49 +12,52 @@ color listfocus_unread  blue    default bold
 color info              green   default bold
 color article           default default
 
-highlight article "^Feed:"   magenta default bold
-highlight article "^Title:"  green   default bold
-highlight article "^Author:" default default bold
-highlight article "^Link:"   cyan    default bold
-highlight article "^Date:"   red     default bold
-
-highlight articlelist "semantics?" red default bold
-highlight articlelist "(t|T)420"   red default bold
+# my highlights
+## highlight <target> <regex> <fgcolor> [<bgcolor> [<attribute> ...]]
+highlight article     "^Feed:"     magenta default bold
+highlight article     "^Title:"    green   default bold
+highlight article     "^Author:"   default default bold
+highlight article     "^Link:"     cyan    default bold
+highlight article     "^Date:"     red     default bold
+highlight articlelist "semantics?" red     default bold
+highlight articlelist "(t|T)420"   red     default bold
 highlight all "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" blue default bold
 highlight all "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" red default bold
 
 # my title formats
-feedlist-title-format       "Feedlist (%u unread, %t total)%?T? - tag `%T'&?"
-articlelist-title-format    "%T (%u unread, %t total) - %U"
-searchresult-title-format   "Search result (%u unread, %t total)"
-filebrowser-title-format    "%?O?Open File&Save File? - %f"
-help-title-format           "Help"
-selecttag-title-format      "Select tag"
-selectfilter-title-format   "Select filter"
-itemview-title-format       ""
-urlview-title-format        "URLs"
-dialogs-title-format        "Dialogs"
+feedlist-title-format     "Feedlist (%u unread, %t total)%?T? - tag `%T'&?"
+articlelist-title-format  "%T (%u unread, %t total) - %U"
+searchresult-title-format "Search result (%u unread, %t total)"
+filebrowser-title-format  "%?O?Open File&Save File? - %f"
+help-title-format         "Help"
+selecttag-title-format    "Select tag"
+selectfilter-title-format "Select filter"
+itemview-title-format     ""
+urlview-title-format      "URLs"
+dialogs-title-format      "Dialogs"
 
 # my key-bindings
-bind-key    j   down                all
-bind-key    k   up                  all
-bind-key    J   next-unread         all
-bind-key    K   prev-unread         all
-bind-key    n   next-unread-feed    all
-bind-key    p   prev-unread-feed    all
-bind-key    ^U  pageup
-bind-key    ^D  pagedown
-bind-key    g   home
-bind-key    G   end
-bind-key    y   open-in-browser-and-mark-read
-bind-key    y   open-in-browser     article
-bind-key    Y   open-all-unread-in-browser-and-mark-read
-bind-key    o   sort
-bind-key    O   rev-sort
-bind-key    a   mark-feed-read
-bind-key    d   delete-article
-bind-key    ^E  edit-urls
-bind-key    E   edit-flags
+## all
+bind-key  j down
+bind-key  k up
+bind-key  J next-unread
+bind-key  K prev-unread
+bind-key  n next-unread-feed
+bind-key  p prev-unread-feed
+bind-key ^U pageup
+bind-key ^D pagedown
+bind-key  g home
+bind-key  G end
+bind-key  y open-in-browser-and-mark-read
+bind-key  Y open-all-unread-in-browser-and-mark-read
+bind-key  o sort
+bind-key  O rev-sort
+bind-key  a mark-feed-read
+bind-key  d delete-article
+bind-key ^E edit-urls
+bind-key  E edit-flags
+## article
+bind-key  y open-in-browser article
 
 # my macros
 macro x set browser "mpv %u &>/dev/null &" ; open-in-browser-and-mark-read ; set browser "qutebrowser"

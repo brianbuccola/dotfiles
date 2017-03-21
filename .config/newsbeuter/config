@@ -55,6 +55,9 @@ bind-key    d   delete-article
 bind-key    ^E  edit-urls
 bind-key    E   edit-flags
 
+# my macros
+macro x set browser "mpv %u &>/dev/null &" ; open-in-browser-and-mark-read ; set browser "qutebrowser"
+
 ## configuration option: always-display-description
 ## description: If true, then the description will always displayed even if e.g. a content:encoded tag has been found.
 ## parameter syntax: [true/false]

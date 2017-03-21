@@ -25,6 +25,9 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd "^E" edit-command-line
 bindkey -M viins "^E" edit-command-line
 
+# Use "jj" to enter vi-cmd-mode
+bindkey -M viins "jj" vi-cmd-mode
+
 # Don't eat space after '<Tab>' followed by '&' or '|'
 ZLE_SPACE_SUFFIX_CHARS=$'&|'
 

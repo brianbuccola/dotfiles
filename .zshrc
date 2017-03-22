@@ -28,6 +28,10 @@ bindkey -M viins "^E" edit-command-line
 # Use "jj" to enter vi-cmd-mode
 bindkey -M viins "jj" vi-cmd-mode
 
+# Traverse history with '^P' and '^N'.
+bindkey -M viins '^P' up-history
+bindkey -M viins '^N' down-history
+
 # Don't eat space after '<Tab>' followed by '&' or '|'
 ZLE_SPACE_SUFFIX_CHARS=$'&|'
 

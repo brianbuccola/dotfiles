@@ -129,12 +129,8 @@ macro index a \
   "mark all new as read"
 
 ## toggle wrapping, smart wrap, and markers
-macro pager w \
-  "<enter-command>set wrap=78 smart_wrap markers<enter>" \
-  "set wrapping stuff"
-macro pager W \
-  "<enter-command>set wrap=0<enter><enter-command>unset smart_wrap markers<enter>" \
-  "unset wrapping stuff"
+macro pager w "<enter-command>set wrap=78 smart_wrap markers<enter>"    "set wrapping stuff"
+macro pager W "<enter-command>set wrap=0 nosmart_wrap nomarkers<enter>" "unset wrapping stuff"
 
 ## open URLs with urlview
 macro pager u "<pipe-message>urlview<enter>" "open URLs with urlview"

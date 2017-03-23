@@ -136,4 +136,7 @@ macro pager W \
   "<enter-command>set wrap=0<enter><enter-command>unset smart_wrap markers<enter>" \
   "unset wrapping stuff"
 
+## open URLs with urlview
+macro pager u "<pipe-message>urlview<enter>" "open URLs with urlview"
+
 # vim: set ft=muttrc tw=0:

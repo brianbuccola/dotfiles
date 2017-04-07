@@ -14,7 +14,7 @@ mcc http://catalogue.mcgill.ca.proxy2.library.mcgill.ca/F/?func=login-session
 lsa https://www.linguisticsociety.org/user/login
 pd http://www.pandora.com/
 rd http://www.reddit.com/
-jos https://mc.manuscriptcentral.com/js
+js https://mc.manuscriptcentral.com/js
 sa http://semanticsarchive.net/
 pp https://www.paypal.com/ca/webapps/mpp/home
 gh https://github.com/login

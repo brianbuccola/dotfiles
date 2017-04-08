@@ -209,6 +209,18 @@ let g:online_thesaurus_map_keys=0
 
 " vimtex
 let g:vimtex_imaps_enabled=0
-let g:vimtex_latexmk_continuous=0
 let g:vimtex_view_method='mupdf'
+let g:vimtex_compiler_latexmk = {
+    \ 'background' : 0,
+    \ 'build_dir' : '',
+    \ 'callback' : 0,
+    \ 'continuous' : 0,
+    \ 'options' : [
+    \     '-pdf',
+    \     '-verbose',
+    \     '-file-line-error',
+    \     '-synctex=1',
+    \     '-interaction=nonstopmode',
+    \ ],
+\}
 " }}}

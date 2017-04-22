@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# Open selected DOI.
+
+echo "open -t uwo $QUTE_SELECTED_TEXT" >> "$QUTE_FIFO"

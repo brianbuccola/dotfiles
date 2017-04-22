@@ -223,3 +223,7 @@ let g:vimtex_compiler_latexmk = {
     \ ],
 \}
 " }}}
+" Extra digraphs {{{
+map! <C-k>[[ ⟦
+map! <C-k>]] ⟧
+" }}}

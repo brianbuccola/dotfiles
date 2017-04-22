@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# Echo hint URL.
+
+echo message-info "$QUTE_URL" >> "$QUTE_FIFO"

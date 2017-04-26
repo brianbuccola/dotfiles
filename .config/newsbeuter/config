@@ -23,6 +23,7 @@ highlight articlelist "semantics?" red     default bold
 highlight articlelist "(t|T)420"   red     default bold
 highlight all "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" blue default bold
 highlight all "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" red default bold
+highlight article     "^Author:"   yellow  default bold
 
 # my title formats
 feedlist-title-format     "Feedlist (%u unread, %t total)%?T? - tag `%T'&?"

@@ -126,6 +126,30 @@ g() {
     fi
 }
 
+dst() {
+    # Change st to dark colorscheme.
+    # Mnemonic: dark st
+    local pwd_old=$(pwd)
+    cd "$HOME"
+    g checkout master
+    cd "$HOME/builds/st"
+    updpkgsums && makepkg -sif
+    cd "$pwd_old"
+}
+
+lst() {
+    # Change st to light colorscheme.
+    # Mnemonic: light st
+    local pwd_old=$(pwd)
+    cd "$HOME"
+    g checkout st-light
+    cd "$HOME/builds/st"
+    updpkgsums && makepkg -sif
+    cd "$HOME"
+    g checkout master
+    cd "$pwd_old"
+}
+
 lspdf() {
     if [[ $? -eq 0 ]]; then
         ls | \

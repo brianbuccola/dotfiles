@@ -215,6 +215,7 @@ let g:vimtex_compiler_latexmk = {
     \ 'build_dir' : '',
     \ 'callback' : 0,
     \ 'continuous' : 0,
+    \ 'executable' : 'latexmk',
     \ 'options' : [
     \     '-pdf',
     \     '-verbose',

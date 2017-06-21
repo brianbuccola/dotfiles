@@ -1,2 +1,2 @@
 " Disable indenting for tex files.
-let b:did_indent = 1
+" let b:did_indent = 1

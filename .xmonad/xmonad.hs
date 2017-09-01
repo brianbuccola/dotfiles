@@ -94,7 +94,7 @@ myKeys =
     , ( "M-o"   , raiseMaybe ( spawn "chromium"          ) ( className =? "Chromium"         ) ) -- chr"o"mium
     , ( "M-v"   , raiseMaybe ( spawn "pavucontrol -t 1"  ) ( className =? "Pavucontrol"      ) ) -- "v"olume
     , ( "M-w"   , raiseMaybe ( spawn "qutebrowser --backend webengine" ) ( className =? "qutebrowser" ) ) -- "www"
-    , ( "M-y"   , raiseMaybe ( spawn "skypeforlinux"     ) ( title =? "Skype for Linux Beta" ) ) -- sk"y"pe
+    , ( "M-y"   , raiseMaybe ( spawn "skypeforlinux"     ) ( title =? "Skype Preview"        ) ) -- sk"y"pe
     , ( "M-S-h" , raiseMaybe ( runInTerm "" "htop"       ) ( title =? "htop"                 ) ) -- "h"top
     , ( "M-m"   , raiseMaybe ( runInTerm "" "mutt"       ) ( title =? "mutt"                 ) ) -- "m"utt
     , ( "M-n"   , raiseMaybe ( runInTerm "" "ncmpcpp"    ) ( title =? "ncmpcpp"              ) ) -- "n"cmpcpp
@@ -162,19 +162,19 @@ mySearchPredicate x y = (L.isInfixOf . map C.toLower $ x) (map C.toLower y)
 -- ============
 
 myManageHook = composeAll . concat $
-    [ [ className =? "qutebrowser"           --> doShift "www"            ]
-    , [ title     =? "mutt"                  --> doShift "mutt"           ]
-    , [ className =? "MuPDF"                 --> doShift "doc"            ]
-    , [ className =? "Acroread"              --> doShift "doc"            ]
-    , [ title     =? "Skype for Linux Beta"  --> doShift "chat"           ]
-    , [ title     =? "newsbeuter"            --> doShift "rss"            ]
-    , [ title     =? "ncmpcpp"               --> doShift "ncmpcpp"        ]
-    , [ className =? "mpv"                   --> doShift "misc"           ]
-    , [ className =? "transmission"          --> doShift "misc"           ]
-    , [ isDialog                             --> doFloat                  ]
-    , [ className =? c                       --> doFloat | c <- myCFloats ]
-    , [ title     =? t                       --> doFloat | t <- myTFloats ]
-    , [ resource  =? r                       --> doFloat | r <- myRFloats ]
+    [ [ className =? "qutebrowser"   --> doShift "www"            ]
+    , [ title     =? "mutt"          --> doShift "mutt"           ]
+    , [ className =? "MuPDF"         --> doShift "doc"            ]
+    , [ className =? "Acroread"      --> doShift "doc"            ]
+    , [ title     =? "Skype Preview" --> doShift "chat"           ]
+    , [ title     =? "newsbeuter"    --> doShift "rss"            ]
+    , [ title     =? "ncmpcpp"       --> doShift "ncmpcpp"        ]
+    , [ className =? "mpv"           --> doShift "misc"           ]
+    , [ className =? "transmission"  --> doShift "misc"           ]
+    , [ isDialog                     --> doFloat                  ]
+    , [ className =? c               --> doFloat | c <- myCFloats ]
+    , [ title     =? t               --> doFloat | t <- myTFloats ]
+    , [ resource  =? r               --> doFloat | r <- myRFloats ]
     , [ scratchpadManageHook (W.RationalRect 0.1 0.1 0.8 0.8)             ]
     ]
     where

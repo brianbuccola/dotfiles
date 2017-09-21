@@ -11,7 +11,7 @@ Config { font = "xft:Fira Mono:pixelsize=12"
                     , Run DynNetwork [ "-t", "<rx>|<tx>", "-S", "true", "-L", "1000", "-H", "5000"
                                      , "--low", "#b8bb26", "--normal", "#fabd2f", "--high", "#fb4934"
                                      ] 10
-                    , Run Weather "CYXU" [ "-t", "<tempF> F", "-L", "40", "-H", "80"
+                    , Run Weather "LFPO" [ "-t", "<tempF> F", "-L", "40", "-H", "80"
                                          , "--normal", "#fabd2f", "--high", "#fb4934", "--low", "#83a598"
                                          ] 300
                     , Run Battery ["-t", "<acstatus>: <left>%", "-L", "10", "-H", "70"
@@ -26,5 +26,5 @@ Config { font = "xft:Fira Mono:pixelsize=12"
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %wlp3s0wi%  %dynnetwork%  %kbd%  %CYXU%  %battery%  <fc=#8ec07c>%updates%</fc>  <fc=#d79921>%date%</fc> "
+       , template = "%StdinReader% }{ %wlp3s0wi%  %dynnetwork%  %kbd%  %LFPO%  %battery%  <fc=#8ec07c>%updates%</fc>  <fc=#d79921>%date%</fc> "
        }

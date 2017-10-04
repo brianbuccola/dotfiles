@@ -64,7 +64,7 @@ myConfig = withUrgencyHook NoUrgencyHook defaultConfig
     ,   borderWidth        =  1
     ,   normalBorderColor  =  myLightBlack
     ,   focusedBorderColor =  myDarkYellow
-    ,   workspaces         =  [ "www", "mutt", "doc", "term", "chat", "rss", "ncmpcpp", "log", "misc", "NSP" ] -- NSP for scratchpad
+    ,   workspaces         =  [ "www", "mutt", "doc", "term", "chat", "rss", "netflix", "log", "misc", "NSP" ] -- NSP for scratchpad
     ,   startupHook        =  return() -- prefer .xinitrc
     ,   manageHook         =  myManageHook
     ,   layoutHook         =  myLayoutHook
@@ -83,17 +83,19 @@ myKeys =
     , ( "M-<Backspace>" , toggleWS                           )
     , ( "M-<Escape>"    , banish LowerRight                  )
     , ( "M-<Return>"    , spawn "st"                         )
+    , ( "M-S-w"         , spawn "qutebrowser"                )
     , ( "M-s"           , scratchpadSpawnActionCustom "st -n scratchpad -t scratchpad" )
+    , ( "M-w"           , windows $ W.greedyView "www"       ) -- go to WS "www"
     , ( "M-c"           , windows $ W.greedyView "chat"      ) -- go to WS "chat"
     , ( "M-d"           , windows $ W.greedyView "doc"       ) -- go to WS "doc"
     , ( "M-S-t"         , windows $ W.greedyView "term"      ) -- go to WS "term"
+    , ( "M-f"           , windows $ W.greedyView "netflix"   ) -- go to WS "netflix"
     , ( "M-S-l"         , windows $ W.greedyView "log"       ) -- go to WS "log"
     , ( "M-S-m"         , windows $ W.greedyView "misc"      ) -- go to WS "misc"
 
     -- Apps
     , ( "M-o"   , raiseMaybe ( spawn "chromium"          ) ( className =? "Chromium"         ) ) -- chr"o"mium
     , ( "M-v"   , raiseMaybe ( spawn "pavucontrol -t 1"  ) ( className =? "Pavucontrol"      ) ) -- "v"olume
-    , ( "M-w"   , raiseMaybe ( spawn "qutebrowser --backend webengine" ) ( className =? "qutebrowser" ) ) -- "www"
     , ( "M-y"   , raiseMaybe ( spawn "skypeforlinux"     ) ( title =? "Skype Preview"        ) ) -- sk"y"pe
     , ( "M-S-h" , raiseMaybe ( runInTerm "" "htop"       ) ( title =? "htop"                 ) ) -- "h"top
     , ( "M-m"   , raiseMaybe ( runInTerm "" "mutt"       ) ( title =? "mutt"                 ) ) -- "m"utt

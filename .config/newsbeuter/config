@@ -81,7 +81,8 @@ articlelist-format "%4i %f %D %6L  %?T?|%-17T|  ?%t %> %-4i"
 ## configuration option: auto-reload
 ## description: If enabled, all feeds will be automatically reloaded at start up and then continuously after a certain time has passed (see reload-time).
 ## parameter syntax: [yes/no]
-auto-reload "yes"
+# auto-reload "yes"
+auto-reload "no"
 
 ## configuration option: bookmark-cmd
 ## description: If set, then <bookmark-command> will be used as bookmarking plugin. See the documentation on bookmarking for further information.

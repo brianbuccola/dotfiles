@@ -55,6 +55,8 @@ set menu_scroll                                 # scroll line-by-line in menus
 set pager_index_lines = 10                      # number of index lines to show
 set pager_stop                                  # don't go to next message automatically
 set wrap=78                                     # wrap text after 78 columns
+auto_view text/html                             # view html automatically
+alternative_order text/plain text/enriched text/html # save html for last
 
 # Formats
 set alias_format = "%4n %t %-20a %r"            # <index> <tagged?> <alias> <name-and-address>

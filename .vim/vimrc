@@ -2,39 +2,10 @@
 " file:   ~/.vim/vimrc
 " author: Brian Buccola <brian.buccola@gmail.com>
 
-" Plugins {{{
-call plug#begin('~/.vim/plugged')
-Plug 'SirVer/ultisnips'
-Plug 'beloglazov/vim-online-thesaurus'
-Plug 'coderifous/textobj-word-column.vim'
-Plug 'chriskempson/base16-vim'
-Plug 'honza/vim-snippets'
-Plug 'kana/vim-textobj-user'
-Plug 'lervag/vimtex'
-Plug 'morhetz/gruvbox'
-Plug 'nanotech/jellybeans.vim'
-Plug 'plasticboy/vim-markdown'
-Plug 'reedes/vim-textobj-quote'
-Plug 'timakro/vim-searchant'
-Plug 'tmhedberg/matchit'
-Plug 'tomasr/molokai'
-Plug 'tommcdo/vim-exchange'
-Plug 'tommcdo/vim-lion'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-characterize'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'vim-scripts/ReplaceWithRegister'
-Plug 'vim-scripts/vim-auto-save'
-Plug 'wellle/targets.vim'
-call plug#end()
-" }}}
 " Basics {{{
 filetype plugin indent on      " Load filetype plugin/indent files.
 syntax on                      " Enable syntax highlighting.
+source ~/.vim/packages.vim     " Source ~/.vim/packages.vim.
 set autochdir                  " Always switch to current file directory.
 set backup                     " Make backup files.
 set backupdir=~/.vim/backup    " Backup directory.
@@ -148,7 +119,7 @@ noremap ^ g^
 noremap $ g$
 
 " Use K to join current line with line above, just like J does with line below.
-nnoremap K kJ
+" nnoremap K kJ
 
 " Map Q to gqap (reformat paragraph of text) instead of Ex mode.
 nnoremap Q gqap

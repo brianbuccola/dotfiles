@@ -97,6 +97,7 @@ alias ....='cd ../../..'
 alias bp='echo -e "\a"'
 alias cp='cp -i'
 alias db='dropbox-cli start && watch -n1 dropbox-cli status && dropbox-cli stop'
+alias g='git'
 alias ghci='ghci-color'
 alias grep='grep --color=auto'
 alias j='jobs -l'
@@ -119,14 +120,6 @@ alias vpn-mit='sudo openconnect vpn.mit.edu'
 alias x='startx'
 
 # Functions
-g() {
-    if [[ $(pwd) = ${HOME} ]]; then
-        /usr/bin/git --git-dir=${HOME}/repos/dotfiles --work-tree=${HOME} $@
-    else
-        /usr/bin/git $@
-    fi
-}
-
 dst() {
     # Change st to dark colorscheme.
     # Mnemonic: dark st

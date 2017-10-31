@@ -100,7 +100,7 @@ myKeys =
     , ( "M-S-h" , raiseMaybe ( runInTerm "" "htop"       ) ( title =? "htop"                 ) ) -- "h"top
     , ( "M-m"   , raiseMaybe ( runInTerm "" "mutt"       ) ( title =? "mutt"                 ) ) -- "m"utt
     , ( "M-n"   , raiseMaybe ( runInTerm "" "ncmpcpp"    ) ( title =? "ncmpcpp"              ) ) -- "n"cmpcpp
-    , ( "M-r"   , raiseMaybe ( runInTerm "" "newsbeuter" ) ( title =? "newsbeuter"           ) ) -- "r"ss
+    , ( "M-r"   , raiseMaybe ( runInTerm "" "newsboat"   ) ( title =? "newsboat"             ) ) -- "r"ss
 
     -- Screenshots
     , ( "<Print>"   , spawn "scrot '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
@@ -169,7 +169,7 @@ myManageHook = composeAll . concat $
     , [ className =? "MuPDF"         --> doShift "doc"            ]
     , [ className =? "Acroread"      --> doShift "doc"            ]
     , [ title     =? "Skype Preview" --> doShift "chat"           ]
-    , [ title     =? "newsbeuter"    --> doShift "rss"            ]
+    , [ title     =? "newsboat"      --> doShift "rss"            ]
     , [ title     =? "ncmpcpp"       --> doShift "ncmpcpp"        ]
     , [ className =? "mpv"           --> doShift "misc"           ]
     , [ className =? "transmission"  --> doShift "misc"           ]

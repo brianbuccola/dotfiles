@@ -7,28 +7,28 @@
 -- =========
 
 import XMonad
-import qualified XMonad.StackSet as W
-import qualified Data.List as L     -- provides isInfixOf, used for mySearchPredicate
-import qualified Data.Char as C     -- provides toLower, used for mySearchPredicate
-import XMonad.Actions.CycleWS       -- cycle through WSs, toggle last WS
-import XMonad.Actions.Warp          -- banish mouse pointer
-import XMonad.Actions.WindowGo      -- provides runOrRaise
-import XMonad.Hooks.DynamicLog      -- for xmobar
-import XMonad.Hooks.ManageHelpers   -- provides isDialog
-import XMonad.Hooks.UrgencyHook     -- colorize urgent WSs
-import XMonad.Util.Run              -- provides spawnPipe, runInTerm, and hPutStrLn
-import XMonad.Util.EZConfig         -- easily configure keybindings
-import XMonad.Util.Scratchpad       -- scratchpad terminal
-import XMonad.Layout.Spacing        -- pad windows with some spacing
-import XMonad.Layout.NoBorders      -- provides smartBorders, noBorders
-import XMonad.Layout.Tabbed         -- tabbed windows layout
-import XMonad.Layout.Renamed        -- custom layout names
-import XMonad.Prompt                -- prompts
-import XMonad.Prompt.Man            -- man page prompt
-import XMonad.Prompt.Shell          -- execute shell commands prompt
-import XMonad.Prompt.Window         -- list and go to/bring window
-import Graphics.X11.ExtraTypes.XF86 -- bind media keys
-import Colors.Gruvbox               -- personal colors, defined in Colors/Gruvbox.hs
+import qualified XMonad.StackSet as W -- provides greedyView and RationalRect
+import qualified Data.List as L       -- provides isInfixOf, used for mySearchPredicate
+import qualified Data.Char as C       -- provides toLower, used for mySearchPredicate
+import XMonad.Actions.CycleWS         -- cycle through WSs, toggle last WS
+import XMonad.Actions.Warp            -- banish mouse pointer
+import XMonad.Actions.WindowGo        -- provides runOrRaise
+import XMonad.Hooks.DynamicLog        -- for xmobar
+import XMonad.Hooks.ManageHelpers     -- provides isDialog
+import XMonad.Hooks.UrgencyHook       -- colorize urgent WSs
+import XMonad.Util.Run                -- provides spawnPipe, runInTerm, and hPutStrLn
+import XMonad.Util.EZConfig           -- easily configure keybindings
+import XMonad.Util.Scratchpad         -- scratchpad terminal
+import XMonad.Layout.Spacing          -- pad windows with some spacing
+import XMonad.Layout.NoBorders        -- provides smartBorders, noBorders
+import XMonad.Layout.Tabbed           -- tabbed windows layout
+import XMonad.Layout.Renamed          -- custom layout names
+import XMonad.Prompt                  -- prompts
+import XMonad.Prompt.Man              -- man page prompt
+import XMonad.Prompt.Shell            -- execute shell commands prompt
+import XMonad.Prompt.Window           -- list and go to/bring window
+import Graphics.X11.ExtraTypes.XF86   -- bind media keys
+import Colors.Gruvbox                 -- personal colors, defined in Colors/Gruvbox.hs
 
 -- ======
 --  Main
@@ -59,15 +59,15 @@ myPP = xmobarPP
             | otherwise   = ws
 
 myConfig = withUrgencyHook NoUrgencyHook defaultConfig
-    {   terminal           =  "st"
-    ,   modMask            =  mod1Mask
-    ,   borderWidth        =  1
-    ,   normalBorderColor  =  myLightBlack
-    ,   focusedBorderColor =  myDarkYellow
-    ,   workspaces         =  [ "www", "mutt", "doc", "term", "chat", "rss", "netflix", "log", "misc", "NSP" ] -- NSP for scratchpad
-    ,   startupHook        =  return() -- prefer .xinitrc
-    ,   manageHook         =  myManageHook
-    ,   layoutHook         =  myLayoutHook
+    { terminal           =  "st"
+    , modMask            =  mod1Mask
+    , borderWidth        =  1
+    , normalBorderColor  =  myLightBlack
+    , focusedBorderColor =  myDarkYellow
+    , workspaces         =  [ "www", "mutt", "doc", "term", "chat", "rss", "netflix", "log", "misc", "NSP" ] -- NSP for scratchpad
+    , startupHook        =  return() -- prefer .xinitrc
+    , manageHook         =  myManageHook
+    , layoutHook         =  myLayoutHook
     }
     `additionalKeysP` myKeys
 
@@ -78,80 +78,80 @@ myConfig = withUrgencyHook NoUrgencyHook defaultConfig
 myKeys =
     [
     -- Basics
-      ( "M-S-n"         , nextWS                             )
-    , ( "M-S-p"         , prevWS                             )
-    , ( "M-<Backspace>" , toggleWS                           )
-    , ( "M-<Escape>"    , banish LowerRight                  )
-    , ( "M-<Return>"    , spawn "st"                         )
-    , ( "M-S-w"         , spawn "qutebrowser"                )
-    , ( "M-s"           , scratchpadSpawnActionCustom "st -n scratchpad -t scratchpad" )
-    , ( "M-w"           , windows $ W.greedyView "www"       ) -- go to WS "www"
-    , ( "M-c"           , windows $ W.greedyView "chat"      ) -- go to WS "chat"
-    , ( "M-d"           , windows $ W.greedyView "doc"       ) -- go to WS "doc"
-    , ( "M-S-t"         , windows $ W.greedyView "term"      ) -- go to WS "term"
-    , ( "M-f"           , windows $ W.greedyView "netflix"   ) -- go to WS "netflix"
-    , ( "M-S-l"         , windows $ W.greedyView "log"       ) -- go to WS "log"
-    , ( "M-S-m"         , windows $ W.greedyView "misc"      ) -- go to WS "misc"
+      ( "M-S-n"         , nextWS                                                            )
+    , ( "M-S-p"         , prevWS                                                            )
+    , ( "M-<Backspace>" , toggleWS                                                          )
+    , ( "M-<Escape>"    , banish LowerRight                                                 )
+    , ( "M-<Return>"    , spawn "st"                                                        )
+    , ( "M-S-w"         , spawn "qutebrowser"                                               )
+    , ( "M-s"           , scratchpadSpawnActionCustom "st -n scratchpad -t scratchpad"      )
+    , ( "M-w"           , windows $ W.greedyView "www"                                      ) -- go to WS "www"
+    , ( "M-c"           , windows $ W.greedyView "chat"                                     ) -- go to WS "chat"
+    , ( "M-d"           , windows $ W.greedyView "doc"                                      ) -- go to WS "doc"
+    , ( "M-S-t"         , windows $ W.greedyView "term"                                     ) -- go to WS "term"
+    , ( "M-f"           , windows $ W.greedyView "netflix"                                  ) -- go to WS "netflix"
+    , ( "M-S-l"         , windows $ W.greedyView "log"                                      ) -- go to WS "log"
+    , ( "M-S-m"         , windows $ W.greedyView "misc"                                     ) -- go to WS "misc"
 
     -- Apps
-    , ( "M-o"   , raiseMaybe ( spawn "chromium"          ) ( className =? "Chromium"         ) ) -- chr"o"mium
-    , ( "M-v"   , raiseMaybe ( spawn "pavucontrol -t 1"  ) ( className =? "Pavucontrol"      ) ) -- "v"olume
-    , ( "M-y"   , raiseMaybe ( spawn "skypeforlinux"     ) ( title =? "Skype Preview"        ) ) -- sk"y"pe
-    , ( "M-S-h" , raiseMaybe ( runInTerm "" "htop"       ) ( title =? "htop"                 ) ) -- "h"top
-    , ( "M-m"   , raiseMaybe ( runInTerm "" "mutt"       ) ( title =? "mutt"                 ) ) -- "m"utt
-    , ( "M-n"   , raiseMaybe ( runInTerm "" "ncmpcpp"    ) ( title =? "ncmpcpp"              ) ) -- "n"cmpcpp
-    , ( "M-r"   , raiseMaybe ( runInTerm "" "newsboat"   ) ( title =? "newsboat"             ) ) -- "r"ss
+    , ( "M-o"   , raiseMaybe ( spawn "chromium"         ) ( className =? "Chromium"    )    ) -- chr"o"mium
+    , ( "M-v"   , raiseMaybe ( spawn "pavucontrol -t 1" ) ( className =? "Pavucontrol" )    ) -- "v"olume
+    , ( "M-y"   , raiseMaybe ( spawn "skypeforlinux"    ) ( title =? "Skype Preview"   )    ) -- sk"y"pe
+    , ( "M-S-h" , raiseMaybe ( runInTerm "" "htop"      ) ( title =? "htop"            )    ) -- "h"top
+    , ( "M-m"   , raiseMaybe ( runInTerm "" "mutt"      ) ( title =? "mutt"            )    ) -- "m"utt
+    , ( "M-n"   , raiseMaybe ( runInTerm "" "ncmpcpp"   ) ( title =? "ncmpcpp"         )    ) -- "n"cmpcpp
+    , ( "M-r"   , raiseMaybe ( runInTerm "" "newsboat"  ) ( title =? "newsboat"        )    ) -- "r"ss
 
     -- Screenshots
-    , ( "<Print>"   , spawn "scrot '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'" )
-    , ( "M-<Print>" , spawn "scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots/'"        )
+    , ( "<Print>"   , spawn "scrot '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots'"    )
+    , ( "M-<Print>" , spawn "scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots'" )
 
     -- Media keys, etc.
-    , ( "<XF86AudioLowerVolume>" , spawn "pactl set-sink-volume 0 -5%"     )
-    , ( "<XF86AudioMute>"        , spawn "pactl set-sink-mute 0 toggle"    )
-    , ( "<XF86AudioRaiseVolume>" , spawn "pactl set-sink-volume 0 +5%"     )
-    , ( "<XF86AudioMicMute>"     , spawn "pactl set-source-mute 1 toggle"  )
-    , ( "<XF86AudioPlay>"        , spawn "mpc toggle"                      )
-    , ( "<XF86AudioNext>"        , spawn "mpc next"                        )
-    , ( "<XF86AudioPrev>"        , spawn "mpc prev"                        )
-    , ( "<XF86AudioStop>"        , spawn "mpc stop"                        )
-    -- , ( "<XF86Display>"          , spawn "~/repos/scripts/display-adjust && keyboard-adjust && ~/.fehbg" )
-    , ( "<XF86TouchpadToggle>"   , spawn "~/repos/scripts/touchpad-toggle" )
+    , ( "<XF86AudioLowerVolume>" , spawn "pactl set-sink-volume 0 -5%"                      )
+    , ( "<XF86AudioMute>"        , spawn "pactl set-sink-mute 0 toggle"                     )
+    , ( "<XF86AudioRaiseVolume>" , spawn "pactl set-sink-volume 0 +5%"                      )
+    , ( "<XF86AudioMicMute>"     , spawn "pactl set-source-mute 1 toggle"                   )
+    , ( "<XF86AudioPlay>"        , spawn "mpc toggle"                                       )
+    , ( "<XF86AudioNext>"        , spawn "mpc next"                                         )
+    , ( "<XF86AudioPrev>"        , spawn "mpc prev"                                         )
+    , ( "<XF86AudioStop>"        , spawn "mpc stop"                                         )
+    , ( "<XF86Display>"          , spawn "display-adjust && keyboard-adjust"                )
+    , ( "<XF86TouchpadToggle>"   , spawn "~/repos/scripts/touchpad-toggle"                  )
 
     -- Prompts
     , ( "M-g" , windowPrompt defaultXPConfig
-        { font     = myFont
-        , bgColor  = "black"
-        , fgColor  = myLightCyan
-        , bgHLight = myLightCyan
-        , fgHLight = "black"
+        { font            = myFont
+        , bgColor         = "black"
+        , fgColor         = myLightCyan
+        , bgHLight        = myLightCyan
+        , fgHLight        = "black"
         , searchPredicate = mySearchPredicate
         } Goto allWindows
       )
     , ( "M-b" , windowPrompt defaultXPConfig
-        { font     = myFont
-        , bgColor  = "black"
-        , fgColor  = myLightMagenta
-        , bgHLight = myLightMagenta
-        , fgHLight = "black"
+        { font            = myFont
+        , bgColor         = "black"
+        , fgColor         = myLightMagenta
+        , bgHLight        = myLightMagenta
+        , fgHLight        = "black"
         , searchPredicate = mySearchPredicate
         } Bring allWindows
       )
     , ( "M-/" , manPrompt defaultXPConfig
-        { font     = myFont
-        , bgColor  = "black"
-        , fgColor  = myLightRed
-        , bgHLight = myLightRed
-        , fgHLight = "black"
+        { font            = myFont
+        , bgColor         = "black"
+        , fgColor         = myLightRed
+        , bgHLight        = myLightRed
+        , fgHLight        = "black"
         , searchPredicate = mySearchPredicate
         }
       )
     , ( "M-x" , shellPrompt defaultXPConfig
-        { font     = myFont
-        , bgColor  = "black"
-        , fgColor  = myLightGreen
-        , bgHLight = myLightGreen
-        , fgHLight = "black"
+        { font            = myFont
+        , bgColor         = "black"
+        , fgColor         = myLightGreen
+        , bgHLight        = myLightGreen
+        , fgHLight        = "black"
         , searchPredicate = mySearchPredicate
         }
       )
@@ -177,7 +177,7 @@ myManageHook = composeAll . concat $
     , [ className =? c               --> doFloat | c <- myCFloats ]
     , [ title     =? t               --> doFloat | t <- myTFloats ]
     , [ resource  =? r               --> doFloat | r <- myRFloats ]
-    , [ scratchpadManageHook (W.RationalRect 0.1 0.1 0.8 0.8)             ]
+    , [ scratchpadManageHook (W.RationalRect 0.1 0.1 0.8 0.8)     ]
     ]
     where
         myCFloats = [ "Xmessage", "Gimp" ]
@@ -202,9 +202,9 @@ myLayoutHook = smartBorders $ myTabbed ||| myTiled ||| myMirrorTiled ||| myFull
             , urgentTextColor     = myLightRed
             , urgentBorderColor   = myLightBlack
             }
-        myTiled = renamed [Replace "|||"] $ spacing 2 $ Tall nmaster delta ratio
-        nmaster = 1     -- number of master windows
-        ratio   = 1/2   -- master-to-slave window ratio
-        delta   = 1/100 -- percent of screen to increment by when resizing
+        myTiled       = renamed [Replace "|||"] $ spacing 2 $ Tall nmaster delta ratio
+        nmaster       = 1     -- number of master windows
+        ratio         = 1/2   -- master-to-slave window ratio
+        delta         = 1/100 -- percent of screen to increment by when resizing
         myMirrorTiled = renamed [Replace "="] $ Mirror myTiled
-        myFull = renamed [Replace "[ ]"] $ Full
+        myFull        = renamed [Replace "[ ]"] $ Full

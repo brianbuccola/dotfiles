@@ -41,6 +41,10 @@ ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;)'
 # Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# fzf (fuzzy finder) keybindings and completion
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 # Git prompt
 local gitval='$(__git_ps1 " (%s)")'
 source /usr/share/git/completion/git-prompt.sh
@@ -54,7 +58,6 @@ GIT_PS1_SHOWCOLORHINTS=1
 HISTFILE=~/.histfile
 HISTSIZE=5000
 SAVEHIST=5000
-bindkey '^R' history-incremental-search-backward
 
 # Completion styling
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate

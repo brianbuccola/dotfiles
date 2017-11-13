@@ -145,6 +145,12 @@ nnoremap <C-l> <C-w>l
 " Easy edit.
 nnoremap <leader>e :e<Space>
 
+" Easy split.
+nnoremap <leader>s :sp<Space>
+
+" Easy vsplit.
+nnoremap <leader>v :vs<Space>
+
 " Easy buffer switch.
 nnoremap <leader>b :ls<CR>:b<Space>
 

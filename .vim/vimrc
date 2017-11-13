@@ -146,7 +146,7 @@ nnoremap <C-l> <C-w>l
 nnoremap <leader>e :e<Space>
 
 " Easy buffer switch.
-nnoremap <leader>b :b<Space>
+nnoremap <leader>b :ls<CR>:b<Space>
 
 " Switch to alternate buffer.
 nnoremap <BS> <C-^>

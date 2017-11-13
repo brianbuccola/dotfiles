@@ -3,7 +3,11 @@ snippet "d(o)?c" "\documentclass{}" br
 endsnippet
 
 snippet nc "\newcommand{}" b
-\newcommand{\\${1:command}}[${2:argnum}]{${3:definition}}
+\newcommand{\\${1:command}}`!p snip.rv='[' if t[2] else ""`${2:argnum}`!p snip.rv = ']' if t[2] else ""`{${3:definition}}$0
+endsnippet
+
+snippet nc* "\newcommand{}" b
+\newcommand*{\\${1:command}}`!p snip.rv='[' if t[2] else ""`${2:argnum}`!p snip.rv = ']' if t[2] else ""`{${3:definition}}$0
 endsnippet
 
 snippet bib "\addbibresource{}" b

@@ -130,6 +130,9 @@ nnoremap Y y$
 " Visually select the text just pasted.
 nnoremap gz `[v`]
 
+" Add vim-unimpaired-like keybinding for QuickScopeToggle.
+nmap coq <plug>(QuickScopeToggle)
+
 " Add vim-unimpaired-like keybinding for AutoSaveToggle.
 nnoremap coa :AutoSaveToggle<CR>
 
@@ -170,6 +173,9 @@ let g:UltiSnipsExpandTrigger='<Tab>'
 let g:UltiSnipsJumpForwardTrigger='<Tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
+
+" quick-scope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " vim-auto-save
 let g:auto_save_no_updatetime=1

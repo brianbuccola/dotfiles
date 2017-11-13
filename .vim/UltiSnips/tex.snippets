@@ -66,6 +66,50 @@ snippet fn "\footnote{}" i
 }
 endsnippet
 
+snippet ex "\ex" b
+\ex\label{ex:${1:label}}%
+$2
+\xe
+endsnippet
+
+snippet ex~ "\ex~" b
+\ex~\label{ex:${1:label}}%
+$2
+\xe
+endsnippet
+
+snippet pex "\pex" b
+\pex\label{ex:${1:label}}%
+\a $2
+\xe
+endsnippet
+
+snippet pex~ "\pex~" b
+\pex~\label{ex:${1:label}}%
+\a $2
+\xe
+endsnippet
+
+snippet exgl "\ex (with gloss)" b
+\ex\label{ex:${1:label}}%
+\begingl
+\gla $2
+\glb $3
+\glft \`$4.'
+\endgl
+\xe
+endsnippet
+
+snippet exgl~ "\ex~ (with gloss)" b
+\ex~\label{ex:${1:label}}%
+\begingl
+\gla $2
+\glb $3
+\glft \`$4.'
+\endgl
+\xe
+endsnippet
+
 snippet fr "New frame" b
 % beginframe===================================================================
 \begin{frame}{${1:frametitle}}

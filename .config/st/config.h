@@ -189,9 +189,6 @@ static Shortcut shortcuts[] = {
 	{ ControlMask|ShiftMask,XK_C,           clipcopy,       {.i =  0} },
 	{ ControlMask|ShiftMask,XK_V,           clippaste,      {.i =  0} },
 	{ MODKEY,               XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ShiftMask,            XK_Prior,       kscrollup,      {.i = -1} },
-	{ ShiftMask,            XK_Next,        kscrolldown,    {.i = -1} },
-	{ MODKEY,               XK_u,           copyurl,        {.i =  0} },
 };
 
 /*

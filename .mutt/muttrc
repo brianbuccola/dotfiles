@@ -134,7 +134,7 @@ macro index a \
 macro pager w "<enter-command>set wrap=78 smart_wrap markers<enter>"    "set wrapping stuff"
 macro pager W "<enter-command>set wrap=0 nosmart_wrap nomarkers<enter>" "unset wrapping stuff"
 
-## open URLs with urlview
-macro pager u "<pipe-message>urlview<enter>" "open URLs with urlview"
+## open URLs with extract_url
+macro pager u "<enter-command>unset pipe_decode<enter><pipe-message>extract_url<enter>" "open URLs with extract_url"
 
 # vim: set ft=muttrc tw=0:

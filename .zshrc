@@ -117,7 +117,7 @@ alias p='pacaur'
 alias pg='ping www.google.com'
 alias r='ranger'
 alias R='R --quiet'
-alias t='task'
+alias t='tmux'
 alias vless="vim -u /usr/share/vim/vim74/macros/less.vim"
 alias vpn-mcgill='sudo openconnect securevpn.mcgill.ca'
 alias vpn-mit='sudo openconnect vpn.mit.edu'
@@ -165,7 +165,7 @@ lspdf() {
 # Add completions to aliases and functions
 compdef g=git
 compdef p=pacaur
-compdef t=task
+compdef t=tmux
 
 # colorize less, especially for manpages
 export LESS_TERMCAP_mb=$(printf "\e[1;31m")     # begin blinking

@@ -163,6 +163,20 @@ lspdf() {
     fi
 }
 
+screencast() {
+    ffmpeg \
+        -y \
+        -f x11grab \
+        -video_size 1600x900 \
+        -framerate 25 \
+        -i "$DISPLAY" \
+        -f alsa \
+        -i default \
+        -c:v ffvhuff \
+        -c:a flac \
+        output.mkv
+}
+
 # Add completions to aliases and functions
 compdef g=git
 compdef p=pacaur

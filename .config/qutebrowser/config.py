@@ -134,4 +134,4 @@ config.bind(';?', "hint links userscript echo-url", mode="normal")
 config.bind(';u', "spawn --userscript open-doi", mode="normal")
 
 # command mode
-config.bind('<ctrl-e>', "spawn --userscript edit-command", mode="command")
+config.bind('<ctrl-e>', "edit-command --run", mode="command")

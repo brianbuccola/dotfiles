@@ -43,6 +43,10 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set background=dark
 let g:gruvbox_italic=1
 colorscheme gruvbox
+if g:colors_name == "gruvbox"
+    " Use truly black background (for proper terminal opacity).
+    highlight Normal ctermbg=16 guibg=#000000
+endif
 " }}}
 " GUI Settings {{{
 set guifont=Fira\ Mono\ 11 " Use Fira Mono, size 11 font.

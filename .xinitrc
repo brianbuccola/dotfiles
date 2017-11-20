@@ -10,4 +10,5 @@ touchpad-toggle
 xrdb -merge ~/.Xresources
 ~/.fehbg
 xautolock -time 5 -locker i3lock-blur &
+compton &
 exec i3

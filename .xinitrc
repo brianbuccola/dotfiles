@@ -9,7 +9,7 @@ keyboard-adjust
 touchpad-toggle
 xrdb -merge ~/.Xresources
 ~/.fehbg
-xautolock -time 5 -locker i3lock-blur &
+xautolock -time 5 -locker slock &
 compton &
 
 while true; do

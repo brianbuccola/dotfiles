@@ -1,0 +1,40 @@
+color=#928374
+separator_block_width=15
+
+[window]
+command=xtitle -s
+color=#458588
+interval=persist
+
+[wireless]
+command=~/repos/scripts/wireless
+label=📡
+interval=1
+
+[bandwidth]
+command=/usr/lib/i3blocks/bandwidth | sed 's/IN/↓/; s/OUT/↑/'
+interval=1
+label=⚡
+
+[battery]
+command=/usr/lib/i3blocks/battery | sed 's/DIS/↓/; s/CHR/↑/'
+interval=1
+label=🔋
+
+[updates]
+command=~/repos/scripts/update-notify
+interval=36000
+label=⛽
+
+[volume]
+command=/usr/lib/i3blocks/volume
+interval=once
+signal=10
+label=🎧
+
+[datetime]
+command=date '+%a %d %b %H:%M:%S'
+interval=1
+label=🕰
+
+# vim: set ft=conf:

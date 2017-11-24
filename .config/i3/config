@@ -1,0 +1,323 @@
+# $mod = Mod1 (Alt)
+set $mod Mod1
+
+# directional variables
+set $up k
+set $down j
+set $left h
+set $right l
+
+# terminal variable
+set $term st
+
+# font
+font pango:Fira Mono 14px
+
+# no window titles, just a 1px border
+for_window [class=".*"] border pixel 1
+
+# hide edge borders on workspaces with only one window
+hide_edge_borders smart
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Shift+Return exec --no-startup-id $term
+
+# start a tmux session
+bindsym $mod+Return exec --no-startup-id $term -e tmux
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start rofi
+bindsym $mod+d exec --no-startup-id rofi -show run
+
+# start rofi-pass
+bindsym $mod+Shift+p exec --no-startup-id rofi-pass
+
+# poor man's rofi-manpage
+bindsym $mod slash exec --no-startup-id man -k . | awk '{ print $1 " " $2 }' | rofi -dmenu -p man: | awk '{ print $2 " " $1 }' | tr -d '()' | xargs st -e man
+
+# change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# move focused window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# split in horizontal orientation
+bindsym $mod+z split h
+bindsym $mod+bar split h
+bindsym $mod+backslash split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+bindsym $mod+minus split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+p focus parent
+
+# focus the child container
+bindsym $mod+c focus child
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+s move scratchpad
+
+# show the first scratchpad window
+bindsym $mod+s scratchpad show
+
+# scratchpad should float
+for_window [instance="^scratchpad$"] floating enable
+
+# gpg pinentry should also float
+for_window [class="^Pinentry$"] floating enable
+
+# workspace variables
+set $workspace1 "1:🌍"
+set $workspace2 "2:📬"
+set $workspace3 "3:📜"
+set $workspace4 "4:💻"
+set $workspace5 "5:🗞"
+set $workspace6 "6:🎬"
+set $workspace7 "7:misc"
+set $workspace8 "8:misc"
+set $workspace9 "9:misc"
+set $workspace10 "10:misc"
+
+# switch to workspace
+bindsym $mod+parenleft workspace $workspace1
+bindsym $mod+parenright workspace $workspace2
+bindsym $mod+braceright workspace $workspace3
+bindsym $mod+plus workspace $workspace4
+bindsym $mod+braceleft workspace $workspace5
+bindsym $mod+bracketright workspace $workspace6
+bindsym $mod+bracketleft workspace $workspace7
+bindsym $mod+exclam workspace $workspace8
+bindsym $mod+equal workspace $workspace9
+bindsym $mod+asterisk workspace $workspace10
+
+# switch to previous/next workspace
+bindsym $mod+comma workspace prev
+bindsym $mod+period workspace next
+
+# switch to the previously focused workspace
+bindsym $mod+BackSpace workspace back_and_forth
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize mode (you can also use the mouse)
+mode "resize" {
+    bindsym $left resize shrink width 10 px or 10 ppt
+    bindsym $down resize grow height 10 px or 10 ppt
+    bindsym $up resize shrink height 10 px or 10 ppt
+    bindsym $right resize grow width 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Control+bracketleft mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# open mode
+mode "open" {
+    bindsym h exec --no-startup-id $term -n htop -t htop -e bash -c "tmux new -A -s htop 'tmux set set-titles-string htop && htop'"; mode "default"
+    bindsym m exec --no-startup-id $term -n mutt -t mutt -e bash -c "tmux new -A -s mutt 'tmux set set-titles-string mutt && mutt'"; mode "default"
+    bindsym n exec --no-startup-id $term -n ncmpcpp -t ncmpcpp -e bash -c "tmux new -A -s ncmpcpp ncmpcpp"; mode "default"
+    bindsym q exec qutebrowser; mode "default"
+    bindsym r exec --no-startup-id $term -n newsboat -t newsboat -e bash -c "tmux new -A -s newsboat 'tmux set set-titles-string newsboat && newsboat'"; mode "default"
+    bindsym s exec --no-startup-id $term -n scratchpad -t scratchpad -g 120x30 -e bash -c "tmux new -A -s scratch"; mode "default"
+    bindsym k exec skypeforlinux; mode "default"
+    bindsym v exec pavucontrol -t 1; mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Control+bracketleft mode "default"
+}
+
+bindsym $mod+o mode "open"
+
+# goto mode
+set $goto "goto: [w]ww [m]ail [d]ocs [t]erm [r]ss [v]ideo"
+mode $goto {
+    bindsym w workspace $workspace1; mode "default"
+    bindsym q workspace $workspace1; mode "default"
+    bindsym m workspace $workspace2; mode "default"
+    bindsym d workspace $workspace3; mode "default"
+    bindsym t workspace $workspace4; mode "default"
+    bindsym r workspace $workspace5; mode "default"
+    bindsym v workspace $workspace6; mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Control+bracketleft mode "default"
+}
+
+bindsym $mod+g mode $goto
+
+# audio mode
+set $audio "audio mode: [k] ↑5% [j] ↓10% [m]ute mi[c] [r]eset"
+set $audio_up exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks
+set $audio_down exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks
+set $audio_mute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks
+set $audio_reset_volume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ 100% && pkill -RTMIN+10 i3blocks
+set $audio_mic_mute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+mode $audio {
+    bindsym $up $audio_up
+    bindsym $down $audio_down
+    bindsym plus $audio_up
+    bindsym minus $audio_down
+    bindsym m $audio_mute
+    bindsym c $audio_mic_mute; mode "default"
+    bindsym r $audio_reset_volume; mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Control+bracketleft mode "default"
+}
+
+bindsym $mod+a mode $audio
+
+# passthrough mode
+set $passthrough "passthrough: [$mod+Escape] to leave"
+mode $passthrough {
+    bindsym $mod+Escape mode "default"
+}
+
+bindsym $mod+Escape mode $passthrough
+
+# start i3bar to display a workspace bar
+bar {
+    status_command i3blocks
+    position top
+    separator_symbol "·"
+}
+
+bindsym $mod+b bar mode toggle
+
+# automatic window management
+assign [class="^qutebrowser$"] workspace $workspace1
+assign [title="^mutt$"] workspace $workspace2
+assign [class="^MuPDF$"] workspace $workspace3
+assign [title="^newsboat$"] workspace $workspace5
+assign [class="^mpv$"] workspace $workspace6
+
+for_window [title="^GIMP Startup$"] workspace $workspace10
+for_window [window_role="^gimp-toolbox$"] floating disable
+for_window [window_role="^gimp-dock$"] floating disable
+for_window [window_role="^gimp-toolbox$"] move left
+for_window [window_role="^gimp-dock$"] move right
+
+# media controls
+bindsym XF86AudioLowerVolume $audio_down
+bindsym XF86AudioMute $audio_mute
+bindsym XF86AudioRaiseVolume $audio_up
+bindsym XF86AudioMicMute $audio_mic_mute
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym XF86AudioNext exec --no-startup-id mpc next
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+bindsym XF86AudioStop exec --no-startup-id mpc stop
+bindsym XF86Display exec --no-startup-id display-adjust && keyboard-adjust && ~/.fehbg
+bindsym XF86ScreenSaver exec --no-startup-id i3lock-blur
+bindsym XF86TouchpadToggle exec --no-startup-id touchpad-toggle
+bindsym --release Print exec --no-startup-id scrot '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots'
+bindsym --release Shift+Print exec --no-startup-id scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots'
+
+# gaps
+smart_gaps on
+smart_borders no_gaps
+set $default_gaps_inner 5
+set $default_gaps_outer 0
+gaps inner $default_gaps_inner
+gaps outer $default_gaps_outer
+
+set $mode_gaps gaps
+set $mode_gaps_outer outer gaps
+set $mode_gaps_inner inner gaps
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+    bindsym o      mode "$mode_gaps_outer"
+    bindsym i      mode "$mode_gaps_inner"
+
+    bindsym 0      mode "default", exec --no-startup-id i3-msg "gaps inner current set 0" && i3-msg "gaps outer current set 0"
+    bindsym d      mode "default", exec --no-startup-id i3-msg "gaps inner current set $default_gaps_inner" && i3-msg "gaps outer current set $default_gaps_outer"
+
+    bindsym Shift+0 mode "default", exec --no-startup-id i3-msg "gaps inner all set 0" && i3-msg "gaps outer all set 0"
+    bindsym Shift+d mode "default", exec --no-startup-id i3-msg "gaps inner all set $default_gaps_inner" && i3-msg "gaps outer all set $default_gaps_outer"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Control+bracketleft mode "default"
+}
+
+mode "$mode_gaps_inner" {
+    bindsym plus  gaps inner current plus 5
+    bindsym minus gaps inner current minus 5
+    bindsym 0     mode "default", gaps inner current set 0
+    bindsym d     mode "default", gaps inner current set $default_gaps_inner
+
+    bindsym Shift+plus  gaps inner all plus 5
+    bindsym Shift+minus gaps inner all minus 5
+    bindsym Shift+0     mode "default", gaps inner all set 0
+    bindsym Shift+d     mode "default", gaps inner all set $default_gaps_inner
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Control+bracketleft mode "default"
+}
+
+mode "$mode_gaps_outer" {
+    bindsym plus  gaps outer current plus 5
+    bindsym minus gaps outer current minus 5
+    bindsym 0     mode "default", gaps outer current set 0
+    bindsym d     mode "default", gaps outer current set $default_gaps_outer
+
+    bindsym Shift+plus  gaps outer all plus 5
+    bindsym Shift+minus gaps outer all minus 5
+    bindsym Shift+0     mode "default", gaps outer all set 0
+    bindsym Shift+d     mode "default", gaps outer all set $default_gaps_outer
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Control+bracketleft mode "default"
+}
+
+# vim: set tw=0:

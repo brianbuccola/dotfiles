@@ -10,7 +10,7 @@ touchpad-toggle
 xrdb -merge ~/.Xresources
 ~/.fehbg
 xautolock -time 5 -locker slock &
-compton &
+compton -b
 
 while true; do
     ${HOME}/repos/scripts/dwmstatus

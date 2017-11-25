@@ -60,7 +60,7 @@ bind-key  E edit-flags
 bind-key  y open-in-browser article
 
 # my macros
-macro x set browser "mpv %u &>/dev/null &" ; open-in-browser-and-mark-read ; set browser "qutebrowser"
+macro x set browser "mpv %u &>/dev/null &" ; open-in-browser-and-mark-read ; set browser "qutebrowser --target tab-bg-silent"
 
 ## configuration option: always-display-description
 ## description: If true, then the description will always displayed even if e.g. a content:encoded tag has been found.
@@ -102,7 +102,7 @@ auto-reload "no"
 ## configuration option: browser
 ## description: Set the browser command to use when opening an article in the browser. If <browser-command> contains %u, it will be used as complete commandline and %u will be replaced with the URL that shall be opened.
 ## parameter syntax: <browser-command>
-browser "qutebrowser"
+browser "qutebrowser --target tab-bg-silent"
 
 ## configuration option: cache-file
 ## description: This configuration option sets the cache file. This is especially useful if the filesystem of your home directory doesn't support proper locking (e.g. NFS).

@@ -91,8 +91,8 @@ autoload -U colors
 colors
 
 # Custom prompt
-PROMPT="%B%T%b [%{$fg_bold[red]%}%?%{$reset_color%}]%{$fg_no_bold[green]%}${gitval}%{$reset_color%} %# "
-RPROMPT="%{$fg_no_bold[green]%}%~%{$reset_color%}"
+PROMPT="┌─%B%T%b %(?..[%B%F{red}%?%f%b] )%F{white}%~%f
+└─╼%F{white}${gitval}%f %# "
 
 # Aliases
 alias ...='cd ../..'

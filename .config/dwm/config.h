@@ -5,11 +5,11 @@
 /* appearance */
 static const char *fonts[]          = { "Fira Mono:pixelsize=12" };
 static const char dmenufont[]       = "Fira Mono:pixelsize=12";
-static const char normbordercolor[] = "#454545";
+static const char normbordercolor[] = "#3e3e3e";
 static const char normbgcolor[]     = "#000000";
 static const char normfgcolor[]     = "#a89984";
 static const char selbordercolor[]  = "#458588";
-static const char selbgcolor[]      = "#454545";
+static const char selbgcolor[]      = "#3e3e3e";
 static const char selfgcolor[]      = "#ebdbb2";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */

@@ -25,12 +25,11 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class            instance        title       tags mask   isfloating  monitor */
-	/* { "qutebrowser",    NULL,           NULL,       1 << 0,     0,          -1 }, */
+	{ "qutebrowser",    NULL,           NULL,       1 << 0,     0,          -1 },
 	{ NULL,             NULL,           "mutt",     1 << 1,     0,          -1 },
 	{ "MuPDF",          NULL,           NULL,       1 << 2,     0,          -1 },
 	{ NULL,             NULL,           "newsboat", 1 << 4,     0,          -1 },
 	{ NULL,             NULL,           "mpv",      1 << 5,     0,          -1 },
-	{ NULL,             NULL,           "Netflix",  1 << 5,     0,          -1 },
 	{ NULL,             "scratchpad",   NULL,       1 << 8,     0,          -1 },
 	{ "Pinentry",       NULL,           NULL,       0,          1,          -1 },
 };

@@ -102,6 +102,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_equal,                  8)
 	TAGKEYS(                        XK_s,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ 0,                            XK_Print,                spawn, SHCMD("import -silent -window root \"/tmp/$(date '+%Y-%m-%d-%T')-screenshot.png\"") },
+	{ MODKEY,                       XK_Print,                spawn, SHCMD("import -silent \"/tmp/$(date '+%Y-%m-%d-%T')-screenshot.png\"") },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD("amixer -q sset Master 5%+") },
 	{ 0,                            XF86XK_AudioLowerVolume, spawn, SHCMD("amixer -q sset Master 5%-") },
 	{ 0,                            XF86XK_AudioMute,        spawn, SHCMD("amixer -q sset Master toggle") },

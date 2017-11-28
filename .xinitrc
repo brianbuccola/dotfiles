@@ -9,6 +9,7 @@ keyboard-adjust
 touchpad-toggle
 xrdb -merge ~/.Xresources
 ~/.fehbg
+xset s 300 300
 xautolock -time 5 -locker slock &
 compton -b
 

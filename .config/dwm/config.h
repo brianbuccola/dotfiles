@@ -59,14 +59,10 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]      = { "dmenu_run",          "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *manmenucmd[]    = { "manmenu",            "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *passmenucmd[]   = { "passmenu", "--type", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]       = { "st", "-e", "tmux", NULL };
-static const char *volupcmd[]      = { "amixer", "-q", "sset", "Master", "5%+", NULL };
-static const char *voldowncmd[]    = { "amixer", "-q", "sset", "Master", "5%-", NULL };
-static const char *volmutecmd[]    = { "amixer", "-q", "sset", "Master", "toggle", NULL };
-static const char *volmicmutecmd[] = { "amixer", "-q", "sset", "Capture", "toggle", NULL };
+static const char *dmenucmd[]    = { "dmenu_run",          "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *manmenucmd[]  = { "manmenu",            "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *passmenucmd[] = { "passmenu", "--type", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *termcmd[]     = { "st", "-e", "tmux", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -106,10 +102,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_equal,                  8)
 	TAGKEYS(                        XK_s,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
-	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
-	{ 0,                            XF86XK_AudioMute,        spawn, {.v = volmutecmd } },
-	{ 0,                            XF86XK_AudioMicMute,     spawn, {.v = volmicmutecmd } },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD("amixer -q sset Master 5%+") },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn, SHCMD("amixer -q sset Master 5%-") },
+	{ 0,                            XF86XK_AudioMute,        spawn, SHCMD("amixer -q sset Master toggle") },
+	{ 0,                            XF86XK_AudioMicMute,     spawn, SHCMD("amixer -q sset Capture toggle") },
 };
 
 /* button definitions */

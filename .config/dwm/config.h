@@ -106,6 +106,13 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioLowerVolume, spawn, SHCMD("amixer -q sset Master 5%-") },
 	{ 0,                            XF86XK_AudioMute,        spawn, SHCMD("amixer -q sset Master toggle") },
 	{ 0,                            XF86XK_AudioMicMute,     spawn, SHCMD("amixer -q sset Capture toggle") },
+	{ 0,                            XF86XK_AudioPlay,        spawn, SHCMD("mpc toggle") },
+	{ 0,                            XF86XK_AudioNext,        spawn, SHCMD("mpc next") },
+	{ 0,                            XF86XK_AudioPrev,        spawn, SHCMD("mpc prev") },
+	{ 0,                            XF86XK_AudioStop,        spawn, SHCMD("mpc stop") },
+	{ 0,                            XF86XK_Display,          spawn, SHCMD("display-adjust && keyboard-adjust && ~/.fehbg") },
+	{ 0,                            XF86XK_ScreenSaver,      spawn, SHCMD("slock") },
+	{ 0,                            XF86XK_TouchpadToggle,   spawn, SHCMD("touchpad-toggle") },
 };
 
 /* button definitions */

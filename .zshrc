@@ -122,6 +122,7 @@ alias timer='termdown'
 alias vless="vim -u /usr/share/vim/vim74/macros/less.vim"
 alias vpn-mcgill='sudo openconnect securevpn.mcgill.ca'
 alias vpn-mit='sudo openconnect vpn.mit.edu'
+alias wt='watch -n1 systemctl --user list-timers'
 alias x='startx'
 
 # Functions

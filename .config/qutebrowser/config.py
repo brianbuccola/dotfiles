@@ -73,18 +73,7 @@ c.colors.prompts.fg = c.colors.statusbar.normal.fg
 
 # Fonts
 c.fonts.monospace = "Fira Mono"
-c.fonts.completion.entry = "10pt Fira Mono"
-c.fonts.completion.category = "bold 10pt Fira Mono"
-c.fonts.debug_console = "10pt Fira Mono"
-c.fonts.downloads = "10pt Fira Mono"
-c.fonts.hints = "bold 13px Fira Mono"
-c.fonts.keyhint = "10pt Fira Mono"
-c.fonts.messages.error = "10pt Fira Mono"
-c.fonts.messages.info = "10pt Fira Mono"
-c.fonts.messages.warning = "10pt Fira Mono"
 c.fonts.prompts = "10pt Fira Sans"
-c.fonts.statusbar = "10pt Fira Mono"
-c.fonts.tabs = "10pt Fira Mono"
 c.fonts.web.family.fixed = "Fira Mono"
 c.fonts.web.family.serif = "DejaVu Serif"
 c.fonts.web.family.sans_serif = "Fira Sans"

@@ -12,11 +12,4 @@ xsetroot -solid "#000000"
 xset s 300 300
 xautolock -time 5 -locker slock &
 
-while true; do
-    ${HOME}/repos/scripts/dwmstatus
-    sleep 1
-done &
-
-while true; do
-    /usr/bin/dwm 2> ~/.dwm.log
-done
+exec i3

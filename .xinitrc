@@ -11,7 +11,6 @@ xrdb -merge ~/.Xresources
 xsetroot -solid "#000000"
 xset s 300 300
 xautolock -time 5 -locker slock &
-compton -b
 
 while true; do
     ${HOME}/repos/scripts/dwmstatus

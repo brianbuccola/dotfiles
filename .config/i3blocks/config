@@ -1,40 +1,34 @@
-color=#928374
-separator_block_width=15
-
-[window]
-command=xtitle -s
-color=#458588
-interval=persist
-
-[wireless]
-command=~/repos/scripts/wireless
-label=📡
+# general settings
+command=~/.config/i3blocks/blocks/$BLOCK_NAME
 interval=1
+color=#a89984
+# separator_block_width=30
+
+# blocks
+[wireless]
 
 [bandwidth]
-command=/usr/lib/i3blocks/bandwidth | sed 's/IN/↓/; s/OUT/↑/'
-interval=1
-label=⚡
 
 [battery]
-command=/usr/lib/i3blocks/battery | sed 's/DIS/↓/; s/CHR/↑/'
-interval=1
-label=🔋
+label=bat
+
+[memory]
+label=mem
+
+[diskspace]
+label=disk
 
 [updates]
-command=~/repos/scripts/update-notify
-interval=36000
-label=⛽
+label=ups
 
 [volume]
-command=/usr/lib/i3blocks/volume
 interval=once
-signal=10
-label=🎧
+signal=1
+label=vol
+
+[weather]
+interval=3
 
 [datetime]
-command=date '+%a %d %b %H:%M:%S'
-interval=1
-label=🕰
 
 # vim: set ft=conf:

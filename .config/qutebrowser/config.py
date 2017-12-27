@@ -72,9 +72,20 @@ c.colors.prompts.bg = "#cc241d"
 c.colors.prompts.fg = c.colors.statusbar.normal.fg
 
 # Fonts
-c.fonts.monospace = "Fira Mono"
-c.fonts.prompts = "10pt Fira Sans"
-c.fonts.web.family.fixed = "Fira Mono"
+c.fonts.monospace = "xos4 Terminus"
+# c.fonts.completion.category = "bold 8pt monospace"
+# c.fonts.completion.entry = "8pt monospace"
+# c.fonts.debug_console = "8pt monospace"
+# c.fonts.downloads = "8pt monospace"
+# c.fonts.hints = "bold 8pt monospace"
+# c.fonts.keyhint = "8pt monospace"
+# c.fonts.messages.error = "8pt monospace"
+# c.fonts.messages.info = "8pt monospace"
+# c.fonts.messages.warning = "8pt monospace"
+# c.fonts.prompts = "8pt monospace"
+# c.fonts.statusbar = "8pt monospace"
+# c.fonts.tabs = "8pt monospace"
+c.fonts.web.family.fixed = "monospace"
 c.fonts.web.family.serif = "DejaVu Serif"
 c.fonts.web.family.sans_serif = "Fira Sans"
 

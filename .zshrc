@@ -113,7 +113,7 @@ alias l.='ls -d .*'
 alias ls='ls --color=auto -F'
 alias mv='mv -i'
 alias mx='mpv $(xsel)'
-alias p='trizen'
+alias p='sudo pacman'
 alias pg='ping www.google.com'
 alias r='ranger'
 alias R='R --quiet'
@@ -180,7 +180,7 @@ screencast() {
 
 # Add completions to aliases and functions
 compdef g=git
-# compdef p=pacaur
+compdef p=pacman
 compdef t=tmux
 
 # colorize less, especially for manpages

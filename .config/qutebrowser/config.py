@@ -133,5 +133,5 @@ config.bind('X', "spawn --userscript youtube-to-youpak", mode="normal")
 config.bind(';?', "hint links userscript echo-url", mode="normal")
 config.bind(';u', "spawn --userscript open-doi", mode="normal")
 
-# command mode
+## command mode
 config.bind('<ctrl-e>', "edit-command --run", mode="command")

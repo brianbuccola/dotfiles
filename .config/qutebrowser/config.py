@@ -135,3 +135,6 @@ config.bind(';u', "spawn --userscript open-doi", mode="normal")
 
 ## command mode
 config.bind('<ctrl-e>', "edit-command --run", mode="command")
+
+# Proxy
+# c.content.proxy = "socks://localhost:8080/"

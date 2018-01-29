@@ -204,7 +204,7 @@ mode "audio" {
     bindsym $down $audio_down
     bindsym plus $audio_up
     bindsym minus $audio_down
-    bindsym m $audio_mute
+    bindsym m $audio_mute; mode "default"
     bindsym c $audio_mic_mute; mode "default"
     bindsym r $audio_reset_volume; mode "default"
 

@@ -32,6 +32,7 @@ static const Rule rules[] = {
 	{ NULL,             NULL,           "mpv",      1 << 5,     0,          -1 },
 	{ NULL,             "scratchpad",   NULL,       1 << 8,     0,          -1 },
 	{ "Pinentry",       NULL,           NULL,       0,          1,          -1 },
+	{ "Xmessage",       NULL,           NULL,       0,          1,          -1 },
 };
 
 /* layout(s) */

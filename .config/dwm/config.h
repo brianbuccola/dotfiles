@@ -3,8 +3,8 @@
 #include <X11/XF86keysym.h> /* for media keys */
 
 /* appearance */
-static const char *fonts[]          = { "Fira Mono:pixelsize=12" };
-static const char dmenufont[]       = "Fira Mono:pixelsize=12";
+static const char *fonts[]          = { "xos4 Terminus:size=9" };
+static const char dmenufont[]       = "xos4 Terminus:size=9";
 static const char normbordercolor[] = "#3e3e3e";
 static const char normbgcolor[]     = "#000000";
 static const char normfgcolor[]     = "#a89984";

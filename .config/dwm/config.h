@@ -17,7 +17,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "q", "m", "d", "t", "r", "v", "y", "z", "s" };
+static const char *tags[] = { "q", "m", "d", "t", "n", "v", "w", "y", "z" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -30,7 +30,7 @@ static const Rule rules[] = {
 	{ "MuPDF",          NULL,           NULL,       1 << 2,     0,          -1 },
 	{ NULL,             NULL,           "newsboat", 1 << 4,     0,          -1 },
 	{ NULL,             NULL,           "mpv",      1 << 5,     0,          -1 },
-	{ NULL,             "scratchpad",   NULL,       1 << 8,     0,          -1 },
+	{ NULL,             "scratchpad",   NULL,       1 << 3,     0,          -1 },
 	{ "Pinentry",       NULL,           NULL,       0,          1,          -1 },
 	{ "Xmessage",       NULL,           NULL,       0,          1,          -1 },
 };
@@ -102,7 +102,16 @@ static Key keys[] = {
 	TAGKEYS(                        XK_bracketleft,            6)
 	TAGKEYS(                        XK_exclam,                 7)
 	TAGKEYS(                        XK_equal,                  8)
-	TAGKEYS(                        XK_s,                      8)
+	TAGKEYS(                        XK_q,                      0)
+	TAGKEYS(                        XK_m,                      1)
+	TAGKEYS(                        XK_d,                      2)
+	TAGKEYS(                        XK_t,                      3)
+	TAGKEYS(                        XK_n,                      4)
+	TAGKEYS(                        XK_v,                      5)
+	TAGKEYS(                        XK_w,                      6)
+	TAGKEYS(                        XK_y,                      7)
+	TAGKEYS(                        XK_z,                      8)
+        { MODKEY,                       XK_s,                      spawn, SHCMD("") }, /* NOP */
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ 0,                            XK_Print,                spawn, SHCMD("import -silent -window root \"/tmp/$(date '+%Y-%m-%d-%T')-screenshot.png\"") },
 	{ ShiftMask,                    XK_Print,                spawn, SHCMD("import -silent \"/tmp/$(date '+%Y-%m-%d-%T')-screenshot.png\"") },

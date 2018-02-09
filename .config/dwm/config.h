@@ -111,7 +111,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_w,                      6)
 	TAGKEYS(                        XK_y,                      7)
 	TAGKEYS(                        XK_z,                      8)
-        { MODKEY,                       XK_s,                      spawn, SHCMD("") }, /* NOP */
+	{ MODKEY,                       XK_s,                      spawn, SHCMD("") }, /* NOP */
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ 0,                            XK_Print,                spawn, SHCMD("import -silent -window root \"/tmp/$(date '+%Y-%m-%d-%T')-screenshot.png\"") },
 	{ ShiftMask,                    XK_Print,                spawn, SHCMD("import -silent \"/tmp/$(date '+%Y-%m-%d-%T')-screenshot.png\"") },

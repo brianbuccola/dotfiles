@@ -67,7 +67,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]    = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *manmenucmd[]  = { "manmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", "#fb4934", NULL };
-static const char *passmenucmd[] = { "passmenu2", "--typeboth", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", "#b8bb26", NULL };
+static const char *passmenucmdboth[] = { "passmenu2", "--typeboth", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", "#b8bb26", NULL };
+static const char *passmenucmdpass[] = { "passmenu2", "--typepass", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", "#b8bb26", NULL };
+static const char *passmenucmduser[] = { "passmenu2", "--typeuser", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", "#b8bb26", NULL };
 static const char *volmenucmd[]  = { "volmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", "#d3869b", NULL };
 static const char *termcmd[]     = { "st", "-e", "tmux", NULL };
 
@@ -75,7 +77,9 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_slash,  spawn,          {.v = manmenucmd } },
-	{ MODKEY,                       XK_p,      spawn,          {.v = passmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = passmenucmdboth } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = passmenucmdpass } },
+	{ MODKEY|ControlMask,           XK_p,      spawn,          {.v = passmenucmduser } },
 	{ MODKEY,                       XK_u,      spawn,          {.v = volmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_Escape, spawn,          SHCMD("mouse-warp") },

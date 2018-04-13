@@ -132,7 +132,7 @@ dst() {
     local pwd_old=$(pwd)
     cd "$HOME"
     g checkout master
-    cd "$HOME/builds/st"
+    cd "$HOME/suckless/st"
     updpkgsums && makepkg -sif
     cd "$pwd_old"
 }
@@ -143,7 +143,7 @@ lst() {
     local pwd_old=$(pwd)
     cd "$HOME"
     g checkout st-light
-    cd "$HOME/builds/st"
+    cd "$HOME/suckless/st"
     updpkgsums && makepkg -sif
     cd "$HOME"
     g checkout master

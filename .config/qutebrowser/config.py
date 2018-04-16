@@ -21,7 +21,7 @@ c.input.partial_timeout = 30000
 c.tabs.show = "multiple"
 c.tabs.indicator.width = 0
 c.tabs.title.format = "{title}"
-c.tabs.title.format_pinned = "{title}"
+c.tabs.title.format_pinned = ""
 c.tabs.padding = {"top": 4, "bottom": 4, "left": 4, "right": 4}
 
 # Storage

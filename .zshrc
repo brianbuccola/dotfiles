@@ -133,9 +133,9 @@ ddwm() {
     cd "$HOME"
     g checkout master
     cd "$HOME/suckless/dwm"
-    updpkgsums && makepkg -csif
+    updpkgsums && makepkg -csif --noconfirm
     cd "$HOME/suckless/st"
-    updpkgsums && makepkg -csif
+    updpkgsums && makepkg -csif --noconfirm
     cd "$pwd_old"
 }
 
@@ -146,9 +146,9 @@ ldwm() {
     cd "$HOME"
     g checkout light-dwm
     cd "$HOME/suckless/dwm"
-    updpkgsums && makepkg -csif
+    updpkgsums && makepkg -csif --noconfirm
     cd "$HOME/suckless/st"
-    updpkgsums && makepkg -csif
+    updpkgsums && makepkg -csif --noconfirm
     cd "$HOME"
     g checkout master
     cd "$pwd_old"

@@ -126,25 +126,29 @@ alias wt='watch -n1 systemctl --user list-timers'
 alias x='startx'
 
 # Functions
-dst() {
-    # Change st to dark colorscheme.
-    # Mnemonic: dark st
+ddwm() {
+    # Change dwm status bar and st to dark colorscheme.
+    # Mnemonic: dark dwm
     local pwd_old=$(pwd)
     cd "$HOME"
     g checkout master
+    cd "$HOME/suckless/dwm"
+    updpkgsums && makepkg -csif
     cd "$HOME/suckless/st"
-    updpkgsums && makepkg -sif
+    updpkgsums && makepkg -csif
     cd "$pwd_old"
 }
 
-lst() {
-    # Change st to light colorscheme.
-    # Mnemonic: light st
+ldwm() {
+    # Change dwm status bar and st to light colorscheme.
+    # Mnemonic: light dwm
     local pwd_old=$(pwd)
     cd "$HOME"
-    g checkout st-light
+    g checkout light-dwm
+    cd "$HOME/suckless/dwm"
+    updpkgsums && makepkg -csif
     cd "$HOME/suckless/st"
-    updpkgsums && makepkg -sif
+    updpkgsums && makepkg -csif
     cd "$HOME"
     g checkout master
     cd "$pwd_old"

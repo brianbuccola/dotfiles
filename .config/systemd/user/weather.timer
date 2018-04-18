@@ -1,0 +1,10 @@
+[Unit]
+Description=Run weather script every minute
+
+[Timer]
+OnCalendar=minutely
+Persistent=true
+Unit=weather.service
+
+[Install]
+WantedBy=timers.target

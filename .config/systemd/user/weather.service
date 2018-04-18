@@ -1,0 +1,6 @@
+[Unit]
+Description=Run weather script
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -c '/home/brian/repos/scripts/weather > /tmp/weather'

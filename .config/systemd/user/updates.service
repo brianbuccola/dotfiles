@@ -1,0 +1,11 @@
+[Unit]
+Description=Check for updates in repos and AUR
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/checkupdates
+ExecStart=/home/brian/repos/scripts/checkup-aur
+TimeoutStopSec=10
+
+[Install]
+WantedBy=default.target

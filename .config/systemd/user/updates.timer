@@ -1,0 +1,9 @@
+[Unit]
+Description=Run update check on boot (after 1m) and then every 2h
+
+[Timer]
+OnActiveSec=1min
+OnUnitActiveSec=2h
+
+[Install]
+WantedBy=default.target

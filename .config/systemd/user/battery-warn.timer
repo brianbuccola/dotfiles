@@ -1,0 +1,10 @@
+[Unit]
+Description=Battery warning timer
+
+[Timer]
+OnCalendar=minutely
+Persistent=true
+Unit=battery-warn.service
+
+[Install]
+WantedBy=timers.target

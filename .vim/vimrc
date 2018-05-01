@@ -116,8 +116,8 @@ map! <C-h> <C-w>
 cnoremap <C-e> <C-f>
 
 " Move around soft-wrapped lines as if they were hard wrapped.
-noremap j gj
-noremap k gk
+noremap <expr> j v:count ? 'j' : 'gj'
+noremap <expr> k v:count ? 'k' : 'gk'
 noremap 0 g0
 noremap ^ g^
 noremap $ g$

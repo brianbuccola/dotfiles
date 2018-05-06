@@ -133,6 +133,8 @@ config.bind('<shift-space>', "scroll-page 0 -0.9", mode="normal")
 config.bind('X', "spawn --userscript youtube-to-youpak", mode="normal")
 config.bind(';?', "hint links userscript echo-url", mode="normal")
 config.bind(';u', "spawn --userscript open-doi", mode="normal")
+config.bind('g{', "navigate decrement", mode="normal")
+config.bind('g}', "navigate increment", mode="normal")
 
 ## command mode
 config.bind('<ctrl-e>', "edit-command --run", mode="command")

@@ -31,7 +31,8 @@ bindkey -a ys add-surround
 bindkey -M visual S add-surround
 
 # Edit command in text editor
-autoload edit-command-line; zle -N edit-command-line
+autoload -Uz edit-command-line
+zle -N edit-command-line
 bindkey -M vicmd "^E" edit-command-line
 bindkey -M viins "^E" edit-command-line
 
@@ -97,7 +98,7 @@ compinit
 bindkey '^[[Z' reverse-menu-complete
 
 # Colors
-autoload -U colors
+autoload -Uz colors
 colors
 
 # Custom prompt

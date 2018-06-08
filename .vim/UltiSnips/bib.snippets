@@ -68,8 +68,11 @@ snippet "@?t" "thesis entry" br
 @thesis{${1:bibentry},
 	author = {$2},
 	date = {$3},
-	institution = {$4},
-	title = {$5},
+	${4:location = {$5},}
+	institution = {$6},
+	title = {$7},
+	${8:type = {${9:phdthesis}},}
+	${10:url = {$11},}
 }
 endsnippet
 

@@ -102,24 +102,6 @@ static const char *colorname[] = {
 	"#8ec07c",  /* 14: bright cyan    */
 	"#ebdbb2",  /* 15: bright white   */
 
-	/* gruvbox-light colors */
-	/* "#fbf1c7",   0: black          */
-	/* "#cc241d",   1: red            */
-	/* "#98971a",   2: green          */
-	/* "#d79921",   3: yellow         */
-	/* "#458588",   4: blue           */
-	/* "#b16286",   5: magenta        */
-	/* "#689d6a",   6: cyan           */
-	/* "#7c6f64",   7: white          */
-	/* "#928374",   8: bright black   */
-	/* "#9d0006",   9: bright red     */
-	/* "#79740e",  10: bright green   */
-	/* "#b57614",  11: bright yellow  */
-	/* "#076678",  12: bright blue    */
-	/* "#8f3f71",  13: bright magenta */
-	/* "#427b58",  14: bright cyan    */
-	/* "#3c3836",  15: bright white   */
-
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */

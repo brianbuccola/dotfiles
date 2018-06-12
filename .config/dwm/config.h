@@ -7,16 +7,16 @@
 static const char *fonts[]          = { "xos4 Terminus:size=9" };
 static const char dmenufont[]       = "xos4 Terminus:size=9";
 /* gruvbox-dark colors */
-static const char normbordercolor[] = "#3e3e3e";
+static const char normbordercolor[] = "#928374";
 static const char normbgcolor[]     = "#000000";
-static const char normfgcolor[]     = "#a89984";
+static const char normfgcolor[]     = "#928374";
 static const char selbordercolor[]  = "#d79921";
 static const char selbgcolor[]      = "#000000";
 static const char selfgcolor[]      = "#fabd2f";
 /* gruvbox-light colors */
-/* static const char normbordercolor[] = "#3e3e3e"; */
+/* static const char normbordercolor[] = "#928374"; */
 /* static const char normbgcolor[]     = "#fbf1c7"; */
-/* static const char normfgcolor[]     = "#7c6f64"; */
+/* static const char normfgcolor[]     = "#928374"; */
 /* static const char selbordercolor[]  = "#d79921"; */
 /* static const char selbgcolor[]      = "#fbf1c7"; */
 /* static const char selfgcolor[]      = "#fabd2f"; */

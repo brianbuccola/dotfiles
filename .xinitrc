@@ -21,5 +21,6 @@ done &
 
 while true; do
     tmux has-session -t scratchpad || st -n scratchpad -e tmux new -s scratchpad &
+    tmux has-session -t work || st -n work -e tmux new -s work &
     /usr/bin/dwm 2> ~/.dwm.log
 done

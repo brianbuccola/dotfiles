@@ -37,6 +37,7 @@ static const Rule rules[] = {
 	{ NULL,             NULL,           "newsboat", 1 << 4,     0,          -1 },
 	{ NULL,             NULL,           "mpv",      1 << 5,     0,          -1 },
 	{ NULL,             "scratchpad",   NULL,       1 << 3,     0,          -1 },
+	{ NULL,             "work",         NULL,       1 << 6,     0,          -1 },
 	{ "Pinentry",       NULL,           NULL,       0,          1,          -1 },
 	{ "Xmessage",       NULL,           NULL,       0,          1,          -1 },
 };

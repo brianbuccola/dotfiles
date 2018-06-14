@@ -144,9 +144,9 @@ ddwm() {
     cd "$HOME"
     g checkout master
     cd "$HOME/suckless/dwm"
-    updpkgsums && makepkg -csif --noconfirm
+    updpkgsums && aurbuild -d custom && sudo pacman -S --noconfirm dwm
     cd "$HOME/suckless/st"
-    updpkgsums && makepkg -csif --noconfirm
+    updpkgsums && aurbuild -d custom && sudo pacman -S --noconfirm st
     cd "$pwd_old"
 }
 
@@ -157,9 +157,9 @@ ldwm() {
     cd "$HOME"
     g checkout light-dwm
     cd "$HOME/suckless/dwm"
-    updpkgsums && makepkg -csif --noconfirm
+    updpkgsums && aurbuild -d custom && sudo pacman -S --noconfirm dwm
     cd "$HOME/suckless/st"
-    updpkgsums && makepkg -csif --noconfirm
+    updpkgsums && aurbuild -d custom && sudo pacman -S --noconfirm st
     cd "$HOME"
     g checkout master
     cd "$pwd_old"

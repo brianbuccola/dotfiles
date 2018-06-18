@@ -194,6 +194,7 @@ let g:auto_save_no_updatetime=1
 let g:online_thesaurus_map_keys=0
 
 " vimtex
+let g:matchup_override_vimtex=1
 let g:vimtex_imaps_enabled=0
 let g:vimtex_view_method='mupdf'
 " }}}

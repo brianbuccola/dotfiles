@@ -4,15 +4,6 @@
 #include "movestack.c"      /* for movestack patch */
 
 /* appearance */
-static const char *fonts[]          = { "xos4 Terminus:size=9" };
-static const char dmenufont[]       = "xos4 Terminus:size=9";
-/* gruvbox-dark colors */
-static const char normbordercolor[] = "#928374";
-static const char normbgcolor[]     = "#000000";
-static const char normfgcolor[]     = "#928374";
-static const char selbordercolor[]  = "#d79921";
-static const char selbgcolor[]      = "#000000";
-static const char selfgcolor[]      = "#fabd2f";
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -21,6 +12,30 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+/* gruvbox-dark colors */
+static const char *fonts[]          = { "xos4 Terminus:size=9" };
+static const char dmenufont[]       = "xos4 Terminus:size=9";
+static const char black[]           = "#000000";
+static const char red[]             = "#cc241d";
+static const char green[]           = "#98971a";
+static const char yellow[]          = "#d79921";
+static const char blue[]            = "#458588";
+static const char magenta[]         = "#b16286";
+static const char cyan[]            = "#689d6a";
+static const char white[]           = "#a89984";
+static const char bright_black[]    = "#928374";
+static const char bright_red[]      = "#fb4934";
+static const char bright_green[]    = "#b8bb26";
+static const char bright_yellow[]   = "#fabd2f";
+static const char bright_blue[]     = "#83a598";
+static const char bright_magenta[]  ="#d3869b";
+static const char bright_cyan[]     = "#8ec07c";
+static const char bright_white[]    = "#ebdbb2";
+static const char *colors[][3]      = {
+	/*               fg             bg      border   */
+	[SchemeNorm] = { bright_black,  black,  bright_black },
+	[SchemeSel]  = { bright_yellow, black,  yellow  },
+};
 
 /* tagging */
 static const char *tags[] = { "q", "m", "d", "t", "n", "v", "w", "y", "z" };
@@ -67,12 +82,12 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]    = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *manmenucmd[]  = { "manmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", "#fb4934", NULL };
-static const char *passmenucmdboth[] = { "passmenu2", "--typeboth", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", "#b8bb26", NULL };
-static const char *passmenucmdpass[] = { "passmenu2", "--typepass", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", "#b8bb26", NULL };
-static const char *passmenucmduser[] = { "passmenu2", "--typeuser", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", "#b8bb26", NULL };
-static const char *volmenucmd[]  = { "volmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", "#d3869b", NULL };
+static const char *dmenucmd[]    = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", bright_black, "-sb", black, "-sf", bright_yellow, NULL };
+static const char *manmenucmd[]  = { "manmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", bright_black, "-sb", black, "-sf", bright_red, NULL };
+static const char *passmenucmdboth[] = { "passmenu2", "--typeboth", "-m", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", bright_black, "-sb", black, "-sf", bright_green, NULL };
+static const char *passmenucmdpass[] = { "passmenu2", "--typepass", "-m", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", bright_black, "-sb", black, "-sf", bright_green, NULL };
+static const char *passmenucmduser[] = { "passmenu2", "--typeuser", "-m", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", bright_black, "-sb", black, "-sf", bright_green, NULL };
+static const char *volmenucmd[]  = { "volmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", bright_black, "-sb", black, "-sf", bright_magenta, NULL };
 static const char *termcmd[]     = { "st", "-e", "tmux", NULL };
 
 static Key keys[] = {

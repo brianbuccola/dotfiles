@@ -72,6 +72,9 @@ set showbreak=↪\       " Show '↪' at the beginning of a soft-broken line.
 set softtabstop=4      " Set # of spaces when hitting tab/delete.
 set tabstop=8          " Real tabs are 8 columns long.
 set textwidth=80       " Set max # of characters on each line.
+if has('nvim')         " Show effects of a command incrementally as you type.
+    set inccommand=nosplit
+endif
 " }}}
 " Autocmd's, functions, etc. {{{
 " Autoreload after modifying .vimrc.

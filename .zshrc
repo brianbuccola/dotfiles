@@ -143,10 +143,10 @@ ddwm() {
     local pwd_old=$(pwd)
     cd "$HOME"
     g checkout master
-    cd "$HOME/suckless/dwm"
-    updpkgsums && aurbuild -d custom && sudo pacman -S --noconfirm dwm
-    cd "$HOME/suckless/st"
-    updpkgsums && aurbuild -d custom && sudo pacman -S --noconfirm st
+    cd "$HOME/suckless/dwm-git"
+    updpkgsums && aurbuild -d custom && sudo pacman -S --noconfirm dwm-git
+    cd "$HOME/suckless/st-git"
+    updpkgsums && aurbuild -d custom && sudo pacman -S --noconfirm st-git
     cd "$pwd_old"
 }
 
@@ -156,10 +156,10 @@ ldwm() {
     local pwd_old=$(pwd)
     cd "$HOME"
     g checkout light-dwm
-    cd "$HOME/suckless/dwm"
-    updpkgsums && aurbuild -d custom && sudo pacman -S --noconfirm dwm
-    cd "$HOME/suckless/st"
-    updpkgsums && aurbuild -d custom && sudo pacman -S --noconfirm st
+    cd "$HOME/suckless/dwm-git"
+    updpkgsums && aurbuild -d custom && sudo pacman -S --noconfirm dwm-git
+    cd "$HOME/suckless/st-git"
+    updpkgsums && aurbuild -d custom && sudo pacman -S --noconfirm st-git
     cd "$HOME"
     g checkout master
     cd "$pwd_old"

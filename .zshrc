@@ -144,9 +144,11 @@ ddwm() {
     cd "$HOME"
     g checkout master
     cd "$HOME/suckless/dwm-git"
-    updpkgsums && aurbuild -c -d custom && sudo pacman -S --noconfirm dwm-git
+    cp -f ~/.config/dwm/config.h .
+    updpkgsums && aurbuild -c -d custom && sudo pacman -Syu --noconfirm dwm-git
     cd "$HOME/suckless/st-git"
-    updpkgsums && aurbuild -c -d custom && sudo pacman -S --noconfirm st-git
+    cp -f ~/.config/st/config.h .
+    updpkgsums && aurbuild -c -d custom && sudo pacman -Syu --noconfirm st-git
     cd "$pwd_old"
 }
 
@@ -157,9 +159,11 @@ ldwm() {
     cd "$HOME"
     g checkout light-dwm
     cd "$HOME/suckless/dwm-git"
-    updpkgsums && aurbuild -c -d custom && sudo pacman -S --noconfirm dwm-git
+    cp -f ~/.config/dwm/config.h .
+    updpkgsums && aurbuild -c -d custom && sudo pacman -Syu --noconfirm dwm-git
     cd "$HOME/suckless/st-git"
-    updpkgsums && aurbuild -c -d custom && sudo pacman -S --noconfirm st-git
+    cp -f ~/.config/st/config.h .
+    updpkgsums && aurbuild -c -d custom && sudo pacman -Syu --noconfirm st-git
     cd "$HOME"
     g checkout master
     cd "$pwd_old"

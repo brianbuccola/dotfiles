@@ -13,6 +13,7 @@ set complete+=kspell           " Use <C-n> and <C-p> to get suggested spelling c
 set directory=~/.vim/tmp       " Directory for swap files.
 set ignorecase                 " Ignore case, except... (see smartcase)
 set incsearch                  " Highlight as you type search phrase.
+set laststatus=1               " Only show status line if there are at least two windows.
 set modeline                   " Use file-specific settings, if available.
 set mouse=a                    " Mouse support everywhere.
 set mousehide                  " Auto-hide cursor while typing.

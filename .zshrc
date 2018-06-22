@@ -140,33 +140,15 @@ alias x='startx'
 ddwm() {
     # Change dwm status bar and st to dark colorscheme.
     # Mnemonic: dark dwm
-    local pwd_old=$(pwd)
-    cd "$HOME"
-    g checkout master
-    cd "$HOME/suckless/dwm-git"
-    /usr/bin/cp -f ~/.config/dwm/config.h .
-    updpkgsums && aurbuild -c -d custom && sudo pacman -Syu --noconfirm dwm-git
-    cd "$HOME/suckless/st-git"
-    /usr/bin/cp -f ~/.config/st/config.h .
-    updpkgsums && aurbuild -c -d custom && sudo pacman -Syu --noconfirm st-git
-    cd "$pwd_old"
+    p -Rns --noconfirm dwm-git-light st-git-light
+    p -S --noconfirm dwm-git-dark st-git-dark
 }
 
 ldwm() {
     # Change dwm status bar and st to light colorscheme.
     # Mnemonic: light dwm
-    local pwd_old=$(pwd)
-    cd "$HOME"
-    g checkout light-dwm
-    cd "$HOME/suckless/dwm-git"
-    /usr/bin/cp -f ~/.config/dwm/config.h .
-    updpkgsums && aurbuild -c -d custom && sudo pacman -Syu --noconfirm dwm-git
-    cd "$HOME/suckless/st-git"
-    /usr/bin/cp -f ~/.config/st/config.h .
-    updpkgsums && aurbuild -c -d custom && sudo pacman -Syu --noconfirm st-git
-    cd "$HOME"
-    g checkout master
-    cd "$pwd_old"
+    p -Rns --noconfirm dwm-git-dark st-git-dark
+    p -S --noconfirm dwm-git-light st-git-light
 }
 
 lspdf() {

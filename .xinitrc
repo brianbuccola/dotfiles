@@ -12,7 +12,7 @@ xsetroot -solid "#000000"
 xset s 300 300
 xautolock -time 5 -locker slock &
 
-# exec i3
+# exec xmonad
 
 while true; do
     ${HOME}/repos/scripts/dwmstatus

@@ -36,7 +36,7 @@ static const char bright_white[]    = "#ebdbb2";
 static const char *colors[][3]      = {
 	/*               fg             bg      border   */
 	[SchemeNorm] = { bright_black,  black,  bright_black },
-	[SchemeSel]  = { bright_yellow, black,  yellow  },
+	[SchemeSel]  = { bright_yellow, black,  bright_yellow  },
 };
 
 /* tagging */

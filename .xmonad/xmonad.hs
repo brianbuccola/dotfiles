@@ -1,4 +1,3 @@
--- vim:    set ft=haskell tw=0 sw=4
 -- file:   ~/.xmonad/xmonad.hs
 -- author: Brian Buccola <brian.buccola@gmail.com>
 
@@ -7,28 +6,20 @@
 -- =========
 
 import XMonad
+import System.Exit
 import qualified XMonad.StackSet as W -- provides greedyView and RationalRect
-import qualified Data.List as L       -- provides isInfixOf, used for mySearchPredicate
-import qualified Data.Char as C       -- provides toLower, used for mySearchPredicate
 import XMonad.Actions.CycleWS         -- cycle through WSs, toggle last WS
 import XMonad.Actions.Warp            -- banish mouse pointer
-import XMonad.Actions.WindowGo        -- provides runOrRaise
-import XMonad.Hooks.DynamicLog        -- for xmobar
+import XMonad.Hooks.DynamicLog        -- for xmobar; provides statusBar, pad, etc.
 import XMonad.Hooks.ManageHelpers     -- provides isDialog
 import XMonad.Hooks.UrgencyHook       -- colorize urgent WSs
-import XMonad.Util.Run                -- provides spawnPipe, runInTerm, and hPutStrLn
 import XMonad.Util.EZConfig           -- easily configure keybindings
-import XMonad.Util.Scratchpad         -- scratchpad terminal
 import XMonad.Layout.Spacing          -- pad windows with some spacing
 import XMonad.Layout.NoBorders        -- provides smartBorders, noBorders
 import XMonad.Layout.Tabbed           -- tabbed windows layout
 import XMonad.Layout.Renamed          -- custom layout names
-import XMonad.Prompt                  -- prompts
-import XMonad.Prompt.Man              -- man page prompt
-import XMonad.Prompt.Shell            -- execute shell commands prompt
-import XMonad.Prompt.Window           -- list and go to/bring window
 import Graphics.X11.ExtraTypes.XF86   -- bind media keys
-import Colors.Gruvbox                 -- personal colors, defined in Colors/Gruvbox.hs
+import Colors.GruvboxDark             -- personal colors, defined in Colors/GruvboxDark.hs
 
 -- ======
 --  Main
@@ -40,36 +31,35 @@ main = xmonad =<< statusBar myBar myPP myToggleBarKey myConfig
 --  Basics
 -- ========
 
-myFont = "xft:Fira Mono:pixelsize=12"
 myBar = "xmobar"
-myToggleBarKey XConfig {XMonad.modMask = modMask} = (modMask .|. shiftMask, xK_x) -- "M-S-x" to toggle xmobar visibility
 
 myPP = xmobarPP
-    { ppTitle   = xmobarColor myLightGreen "" . pad
-    , ppCurrent = xmobarColor myLightYellow "" . (\s -> "[" ++ s ++ "]")
-    , ppUrgent  = xmobarColor myLightRed myDarkRed . pad
-    , ppHidden  = pad . renameWS
+    { ppCurrent = xmobarColor myBrightYellow "" . wrap "<" ">"
+    , ppHidden  = pad
+    , ppUrgent  = xmobarColor myBrightRed myRed . pad
     , ppSep     = ""
     , ppWsSep   = ""
-    , ppLayout  = xmobarColor myLightMagenta ""
+    , ppTitle   = xmobarColor myBrightGreen "" . pad
+    , ppLayout  = xmobarColor myBrightMagenta ""
     }
-    where
-        renameWS ws
-            | ws == "NSP" = "" -- don't print scatchpad WS name
-            | otherwise   = ws
 
-myConfig = withUrgencyHook NoUrgencyHook defaultConfig
-    { terminal           =  "st"
+myToggleBarKey XConfig {modMask = modMask} = (modMask, xK_b) -- "M-b" to toggle xmobar visibility
+
+myConfig = withUrgencyHook NoUrgencyHook def
+    { terminal           =  "st -e tmux"
     , modMask            =  mod1Mask
-    , borderWidth        =  1
-    , normalBorderColor  =  myLightBlack
-    , focusedBorderColor =  myDarkYellow
-    , workspaces         =  [ "www", "mutt", "doc", "term", "chat", "rss", "netflix", "log", "misc", "NSP" ] -- NSP for scratchpad
-    , startupHook        =  return() -- prefer .xinitrc
+    , borderWidth        =  2
+    , normalBorderColor  =  myBrightBlack
+    , focusedBorderColor =  myYellow
+    , workspaces         =  [ "q", "m", "d", "t", "n", "v", "w", "x", "y", "z" ]
+    , startupHook        =  myStartupHook
     , manageHook         =  myManageHook
     , layoutHook         =  myLayoutHook
     }
     `additionalKeysP` myKeys
+
+myFont      = "xft:xos4 Terminus:size=9"
+myDmenuFont = "xos4 Terminus:size=9"
 
 -- =============
 --  Keybindings
@@ -78,109 +68,96 @@ myConfig = withUrgencyHook NoUrgencyHook defaultConfig
 myKeys =
     [
     -- Basics
-      ( "M-S-n"         , nextWS                                                            )
-    , ( "M-S-p"         , prevWS                                                            )
-    , ( "M-<Backspace>" , toggleWS                                                          )
-    , ( "M-<Escape>"    , banish LowerRight                                                 )
-    , ( "M-<Return>"    , spawn "st"                                                        )
-    , ( "M-S-w"         , spawn "qutebrowser"                                               )
-    , ( "M-s"           , scratchpadSpawnActionCustom "st -n scratchpad -t scratchpad"      )
-    , ( "M-w"           , windows $ W.greedyView "www"                                      ) -- go to WS "www"
-    , ( "M-c"           , windows $ W.greedyView "chat"                                     ) -- go to WS "chat"
-    , ( "M-d"           , windows $ W.greedyView "doc"                                      ) -- go to WS "doc"
-    , ( "M-S-t"         , windows $ W.greedyView "term"                                     ) -- go to WS "term"
-    , ( "M-f"           , windows $ W.greedyView "netflix"                                  ) -- go to WS "netflix"
-    , ( "M-S-l"         , windows $ W.greedyView "log"                                      ) -- go to WS "log"
-    , ( "M-S-m"         , windows $ W.greedyView "misc"                                     ) -- go to WS "misc"
-
-    -- Apps
-    , ( "M-o"   , raiseMaybe ( spawn "chromium"         ) ( className =? "Chromium"    )    ) -- chr"o"mium
-    , ( "M-v"   , raiseMaybe ( spawn "pavucontrol -t 1" ) ( className =? "Pavucontrol" )    ) -- "v"olume
-    , ( "M-y"   , raiseMaybe ( spawn "skypeforlinux"    ) ( title =? "Skype Preview"   )    ) -- sk"y"pe
-    , ( "M-S-h" , raiseMaybe ( runInTerm "" "htop"      ) ( title =? "htop"            )    ) -- "h"top
-    , ( "M-m"   , raiseMaybe ( runInTerm "" "mutt"      ) ( title =? "mutt"            )    ) -- "m"utt
-    , ( "M-n"   , raiseMaybe ( runInTerm "" "ncmpcpp"   ) ( title =? "ncmpcpp"         )    ) -- "n"cmpcpp
-    , ( "M-r"   , raiseMaybe ( runInTerm "" "newsboat"  ) ( title =? "newsboat"        )    ) -- "r"ss
+      ( "M-<Backspace>"          , toggleWS                                              )
+    , ( "M-<Escape>"             , banish LowerRight                                     )
+    , ( "M-S-<Return>"           , spawn "st -e tmux"                                    )
+    , ( "M-q"                    , windows $ W.greedyView "q"                            )
+    , ( "M-m"                    , windows $ W.greedyView "m"                            )
+    , ( "M-d"                    , windows $ W.greedyView "d"                            )
+    , ( "M-t"                    , windows $ W.greedyView "t"                            )
+    , ( "M-n"                    , windows $ W.greedyView "n"                            )
+    , ( "M-v"                    , windows $ W.greedyView "v"                            )
+    , ( "M-w"                    , windows $ W.greedyView "w"                            )
+    , ( "M-x"                    , windows $ W.greedyView "x"                            )
+    , ( "M-y"                    , windows $ W.greedyView "y"                            )
+    , ( "M-z"                    , windows $ W.greedyView "z"                            )
+    , ( "M-S-q"                  , windows $ W.shift "q"                                 )
+    , ( "M-S-m"                  , windows $ W.shift "m"                                 )
+    , ( "M-S-d"                  , windows $ W.shift "d"                                 )
+    , ( "M-S-t"                  , windows $ W.shift "t"                                 )
+    , ( "M-S-n"                  , windows $ W.shift "n"                                 )
+    , ( "M-S-v"                  , windows $ W.shift "v"                                 )
+    , ( "M-S-w"                  , windows $ W.shift "w"                                 )
+    , ( "M-S-x"                  , windows $ W.shift "x"                                 )
+    , ( "M-S-y"                  , windows $ W.shift "y"                                 )
+    , ( "M-S-z"                  , windows $ W.shift "z"                                 )
+    , ( "M-C-m"                  , windows W.focusMaster                                 )
+    , ( "M-C-t"                  , withFocused $ windows . W.sink                        ) -- Push window back into tiling.
+    , ( "M-S-r"                  , spawn "xmonad --recompile && xmonad --restart"        )
+    , ( "M-S-C-q"                , io (exitWith ExitSuccess)                             )
 
     -- Screenshots
-    , ( "<Print>"   , spawn "scrot '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots'"    )
-    , ( "M-<Print>" , spawn "scrot -s '%Y-%m-%d-%T_$wx$h.png' -e 'mv $f ~/pictures/scrots'" )
+    , ( "<Print>"                , spawn myScreenshotCmd                                 )
+    , ( "S-<Print>"              , spawn myScreenShotCmdSel                              )
 
     -- Media keys, etc.
-    , ( "<XF86AudioLowerVolume>" , spawn "pactl set-sink-volume 0 -5%"                      )
-    , ( "<XF86AudioMute>"        , spawn "pactl set-sink-mute 0 toggle"                     )
-    , ( "<XF86AudioRaiseVolume>" , spawn "pactl set-sink-volume 0 +5%"                      )
-    , ( "<XF86AudioMicMute>"     , spawn "pactl set-source-mute 1 toggle"                   )
-    , ( "<XF86AudioPlay>"        , spawn "mpc toggle"                                       )
-    , ( "<XF86AudioNext>"        , spawn "mpc next"                                         )
-    , ( "<XF86AudioPrev>"        , spawn "mpc prev"                                         )
-    , ( "<XF86AudioStop>"        , spawn "mpc stop"                                         )
-    , ( "<XF86Display>"          , spawn "display-adjust && keyboard-adjust"                )
-    , ( "<XF86TouchpadToggle>"   , spawn "~/repos/scripts/touchpad-toggle"                  )
+    , ( "<XF86AudioRaiseVolume>" , spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%"      )
+    , ( "<XF86AudioLowerVolume>" , spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%"      )
+    , ( "<XF86AudioMute>"        , spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle"     )
+    , ( "<XF86AudioMicMute>"     , spawn "pactl set-source-mute @DEFAULT_SOURCE@ toggle" )
+    , ( "<XF86AudioPlay>"        , spawn "mpc toggle"                                    )
+    , ( "<XF86AudioNext>"        , spawn "mpc next"                                      )
+    , ( "<XF86AudioPrev>"        , spawn "mpc prev"                                      )
+    , ( "<XF86AudioStop>"        , spawn "mpc stop"                                      )
+    , ( "<XF86Display>"          , spawn "display-adjust && keyboard-adjust && ~/.fehbg" )
+    , ( "<XF86ScreenSaver>"      , spawn "slock"                                         )
+    , ( "<XF86TouchpadToggle>"   , spawn "touchpad-toggle"                               )
 
     -- Prompts
-    , ( "M-g" , windowPrompt defaultXPConfig
-        { font            = myFont
-        , bgColor         = "black"
-        , fgColor         = myLightCyan
-        , bgHLight        = myLightCyan
-        , fgHLight        = "black"
-        , searchPredicate = mySearchPredicate
-        } Goto allWindows
-      )
-    , ( "M-b" , windowPrompt defaultXPConfig
-        { font            = myFont
-        , bgColor         = "black"
-        , fgColor         = myLightMagenta
-        , bgHLight        = myLightMagenta
-        , fgHLight        = "black"
-        , searchPredicate = mySearchPredicate
-        } Bring allWindows
-      )
-    , ( "M-/" , manPrompt defaultXPConfig
-        { font            = myFont
-        , bgColor         = "black"
-        , fgColor         = myLightRed
-        , bgHLight        = myLightRed
-        , fgHLight        = "black"
-        , searchPredicate = mySearchPredicate
-        }
-      )
-    , ( "M-x" , shellPrompt defaultXPConfig
-        { font            = myFont
-        , bgColor         = "black"
-        , fgColor         = myLightGreen
-        , bgHLight        = myLightGreen
-        , fgHLight        = "black"
-        , searchPredicate = mySearchPredicate
-        }
-      )
+    , ( "M-r"                    , spawn myDmenuCmd                                      )
+    , ( "M-/"                    , spawn myManmenuCmd                                    )
+    , ( "M-p"                    , spawn myPassmenuCmdBoth                               )
+    , ( "M-S-p"                  , spawn myPassmenuCmdPass                               )
+    , ( "M-C-p"                  , spawn myPassmenuCmdUser                               )
     ]
 
-mySearchPredicate x y = (L.isInfixOf . map C.toLower $ x) (map C.toLower y)
+myScreenshotCmd    = "import -silent -window root \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""
+myScreenShotCmdSel = "import -silent \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""
+
+myDmenuCmd        = "dmenu_run" ++ " -fn '" ++ myDmenuFont ++ "' -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightYellow ++ "'"
+myManmenuCmd      = "manmenu" ++ " -fn '" ++ myDmenuFont ++ "' -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightRed ++ "'"
+myPassmenuCmdBoth = "passmenu2 --typeboth " ++ " -fn '" ++ myDmenuFont ++ "' -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
+myPassmenuCmdPass = "passmenu2 --typepass " ++ " -fn '" ++ myDmenuFont ++ "' -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
+myPassmenuCmdUser = "passmenu2 --typeuser " ++ " -fn '" ++ myDmenuFont ++ "' -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
+
+-- =============
+--  StartupHook
+-- =============
+
+myStartupHook = do
+    spawn "tmux has-session -t scratchpad || st -c scratchpad -e tmux new -s scratchpad"
+    spawn "tmux has-session -t work || st -c work -e tmux new -s work"
 
 -- ============
 --  manageHook
 -- ============
 
 myManageHook = composeAll . concat $
-    [ [ className =? "qutebrowser"   --> doShift "www"            ]
-    , [ title     =? "mutt"          --> doShift "mutt"           ]
-    , [ className =? "MuPDF"         --> doShift "doc"            ]
-    , [ className =? "Acroread"      --> doShift "doc"            ]
-    , [ title     =? "Skype Preview" --> doShift "chat"           ]
-    , [ title     =? "newsboat"      --> doShift "rss"            ]
-    , [ title     =? "ncmpcpp"       --> doShift "ncmpcpp"        ]
-    , [ className =? "mpv"           --> doShift "misc"           ]
-    , [ className =? "transmission"  --> doShift "misc"           ]
-    , [ isDialog                     --> doFloat                  ]
-    , [ className =? c               --> doFloat | c <- myCFloats ]
-    , [ title     =? t               --> doFloat | t <- myTFloats ]
-    , [ resource  =? r               --> doFloat | r <- myRFloats ]
-    , [ scratchpadManageHook (W.RationalRect 0.1 0.1 0.8 0.8)     ]
+    [ [ className =? "qutebrowser" --> doShift "q"              ]
+    , [ title     =? "mutt"        --> doShift "m"              ]
+    , [ className =? "MuPDF"       --> doShift "d"              ]
+    , [ className =? "libreoffice" --> doShift "d"              ]
+    , [ className =? "scratchpad"  --> doShift "t"              ]
+    , [ title     =? "newsboat"    --> doShift "n"              ]
+    , [ className =? "mpv"         --> doShift "v"              ]
+    , [ className =? "work"        --> doShift "w"              ]
+    , [ isDialog                   --> doCenterFloat            ]
+    , [ className =? c             --> doFloat | c <- myCFloats ]
+    , [ title     =? t             --> doFloat | t <- myTFloats ]
+    , [ resource  =? r             --> doFloat | r <- myRFloats ]
     ]
     where
-        myCFloats = [ "Xmessage", "Gimp" ]
+        myCFloats = [ "Pinentry", "Xmessage" ]
         myTFloats = []
         myRFloats = []
 
@@ -190,21 +167,23 @@ myManageHook = composeAll . concat $
 
 myLayoutHook = smartBorders $ myTabbed ||| myTiled ||| myMirrorTiled ||| myFull
     where
-        myTabbed = renamed [Replace "___"] $ tabbedBottom shrinkText defaultTheme
+        myTabbed = renamed [Replace "___"] $ tabbedBottom shrinkText def
             { fontName            = myFont
-            , activeColor         = myLightBlack
-            , activeTextColor     = myLightWhite
-            , activeBorderColor   = myDarkWhite
-            , inactiveColor       = myDarkBlack
-            , inactiveTextColor   = myDarkWhite
-            , inactiveBorderColor = myLightBlack
-            , urgentColor         = myDarkRed
-            , urgentTextColor     = myLightRed
-            , urgentBorderColor   = myLightBlack
+            , activeColor         = myBrightBlack
+            , activeTextColor     = myBrightWhite
+            , activeBorderColor   = myWhite
+            , inactiveColor       = myBlack
+            , inactiveTextColor   = myWhite
+            , inactiveBorderColor = myBrightBlack
+            , urgentColor         = myRed
+            , urgentTextColor     = myBrightRed
+            , urgentBorderColor   = myBrightBlack
             }
-        myTiled       = renamed [Replace "|||"] $ spacing 2 $ Tall nmaster delta ratio
+        myTiled       = renamed [Replace "|||"] $ spacingRaw False (Border 0 0 0 0) False (Border 2 2 2 2) True $ Tall nmaster delta ratio
         nmaster       = 1     -- number of master windows
         ratio         = 1/2   -- master-to-slave window ratio
-        delta         = 1/100 -- percent of screen to increment by when resizing
+        delta         = 5/100 -- percent of screen to increment by when resizing
         myMirrorTiled = renamed [Replace "="] $ Mirror myTiled
         myFull        = renamed [Replace "[ ]"] $ Full
+
+-- vim: set ft=haskell tw=0 sw=4:

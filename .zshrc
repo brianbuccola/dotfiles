@@ -140,14 +140,16 @@ alias x='startx'
 ddwm() {
     # Change dwm status bar and st to dark colorscheme.
     # Mnemonic: dark dwm
-    p -Rns --noconfirm dwm-git-light st-git-light
+    p -Rns --noconfirm dwm-git-light
+    p -Rns --noconfirm st-git-light
     p -S --noconfirm dwm-git-dark st-git-dark
 }
 
 ldwm() {
     # Change dwm status bar and st to light colorscheme.
     # Mnemonic: light dwm
-    p -Rns --noconfirm dwm-git-dark st-git-dark
+    p -Rns --noconfirm dwm-git-dark
+    p -Rns --noconfirm st-git-dark
     p -S --noconfirm dwm-git-light st-git-light
 }
 

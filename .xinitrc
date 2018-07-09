@@ -6,9 +6,9 @@
 
 display-adjust
 keyboard-adjust
+~/.fehbg
 touchpad-toggle
 xrdb -merge ~/.Xresources
-xsetroot -solid "#000000"
 xset s 300 300
 xautolock -time 5 -locker slock &
 

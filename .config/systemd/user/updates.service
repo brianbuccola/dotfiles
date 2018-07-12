@@ -3,8 +3,7 @@ Description=Check for updates in repos and AUR
 
 [Service]
 Type=oneshot
-ExecStart=/home/brian/repos/scripts/checkup-official
-ExecStart=/home/brian/repos/scripts/checkup-aur
+ExecStart=/home/brian/repos/scripts/check-updates
 TimeoutStopSec=10
 
 [Install]

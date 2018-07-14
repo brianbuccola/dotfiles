@@ -154,17 +154,11 @@ ldwm() {
 }
 
 lspdf() {
-    if [[ $? -eq 0 ]]; then
-        ls | \
-          sed 's/\.pdf$//g' | \
-          sed 's/\./, /g' | \
-          sed 's/-/ /g' | \
-          column -t -s '_'
-    elif [[ $? -eq 1 ]]; then
-        ls "$1" | column -t -s '_' | sed 's/\.pdf$//g' | sed 's/-/ /g'
-    else
-        echo "Error: too many arguments."
-    fi
+    ls "$@" | \
+        sed 's/\.pdf$//g' | \
+        sed 's/\./, /g' | \
+        sed 's/-/ /g' | \
+        column -t -s '_'
 }
 
 screencast() {

@@ -40,6 +40,10 @@ c.fonts.web.family.fixed = "monospace"
 c.fonts.web.family.serif = "DejaVu Serif"
 c.fonts.web.family.sans_serif = "Fira Sans"
 
+# Aliases
+c.aliases['socks'] = "set content.proxy socks://localhost:8080/"
+c.aliases['nosocks'] = "set content.proxy system"
+
 # Bindings
 ## normal mode
 config.unbind('b', mode="normal")

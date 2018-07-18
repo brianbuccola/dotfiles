@@ -1,6 +1,6 @@
-####################################
-# newsbeuter example configuration #
-####################################
+##################################
+# newsboat example configuration #
+##################################
 
 # my colors
 ## color <element> <fgcolor> <bgcolor> [<attr> ...]
@@ -20,7 +20,9 @@ highlight article     "^Author:"   yellow  default bold
 highlight article     "^Link:"     cyan    default bold
 highlight article     "^Date:"     red     default bold
 highlight articlelist "semantics?" red     default bold
-highlight articlelist "(t|T)420"   red     default bold
+highlight articlelist "t420"       red     default bold
+highlight articlelist "pok(e|3)r"  red     default bold
+highlight articlelist "dwm"        red     default bold
 highlight all "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" blue default bold
 highlight all "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" red default bold
 
@@ -54,6 +56,8 @@ bind-key  o sort
 bind-key  O rev-sort
 bind-key  a mark-feed-read
 bind-key  d delete-article
+unbind-key s
+bind-key  S save
 bind-key ^E edit-urls
 bind-key  E edit-flags
 ## article
@@ -107,7 +111,7 @@ browser "qutebrowser --target tab-bg-silent"
 ## configuration option: cache-file
 ## description: This configuration option sets the cache file. This is especially useful if the filesystem of your home directory doesn't support proper locking (e.g. NFS).
 ## parameter syntax: <path>
-# cache-file "~/.newsbeuter/cache.db"
+# cache-file "~/.newsboat/cache.db"
 
 ## configuration option: cleanup-on-quit
 ## description: If yes, then the cache gets locked and superfluous feeds and items are removed, such as feeds that can't be found in the urls configuration file anymore.
@@ -115,7 +119,7 @@ browser "qutebrowser --target tab-bg-silent"
 # cleanup-on-quit yes
 
 ## configuration option: confirm-exit
-## description: If set to yes, then newsbeuter will ask for confirmation whether the user really wants to quit newsbeuter.
+## description: If set to yes, then newsboat will ask for confirmation whether the user really wants to quit newsboat.
 ## parameter syntax: [yes/no]
 # confirm-exit no
 confirm-exit "yes"
@@ -131,19 +135,19 @@ confirm-exit "yes"
 display-article-progress "yes"
 
 ## configuration option: download-retries
-## description: How many times newsbeuter shall try to successfully download a feed before giving up. This is an option to improve the success of downloads on slow and shaky connections such as via a TOR proxy.
+## description: How many times newsboat shall try to successfully download a feed before giving up. This is an option to improve the success of downloads on slow and shaky connections such as via a TOR proxy.
 ## parameter syntax: <number retries>
 # download-retries 1
 
 ## configuration option: download-timeout
-## description: The number of seconds newsbeuter shall wait when downloading a feed before giving up. This is an option to improve the success of downloads on slow and shaky connections such as via a TOR proxy.
+## description: The number of seconds newsboat shall wait when downloading a feed before giving up. This is an option to improve the success of downloads on slow and shaky connections such as via a TOR proxy.
 ## parameter syntax: <seconds>
 download-timeout 10
 
 ## configuration option: error-log
 ## description: If set, then user errors (e.g. errors regarding defunct RSS feeds) will be logged to this file.
 ## parameter syntax: <path>
-error-log "~/.local/share/newsbeuter/log"
+error-log "~/.local/share/newsboat/log"
 
 ## configuration option: feed-sort-order
 ## description: If set to "firsttag", the feeds in the feed list will be sorted by their first tag in the urls file.
@@ -231,7 +235,7 @@ keep-articles-days "31"
 ## configuration option: notify-format
 ## description: Format string that is used for formatting notifications. See the chapter on format strings for more information.
 ## parameter syntax: <string>
-# notify-format "newsbeuter: finished reload, %f unread feeds (%n unread articles total)"
+# notify-format "newsboat: finished reload, %f unread feeds (%n unread articles total)"
 
 ## configuration option: notify-program
 ## description: If set, then the configured program will be executed if new articles arrived (through a reload) or if notify-always is true. The first parameter of the called program contains the notification message.
@@ -269,7 +273,7 @@ notify-beep "yes"
 # pager internal
 
 ## configuration option: podcast-auto-enqueue
-## description: If yes, then all podcast URLs that are found in articles are added to the podcast download queue. See the respective section in the documentation for more information on podcast support in newsbeuter.
+## description: If yes, then all podcast URLs that are found in articles are added to the podcast download queue. See the respective section in the documentation for more information on podcast support in newsboat.
 ## parameter syntax: [yes/no]
 # podcast-auto-enqueue no
 
@@ -289,7 +293,7 @@ notify-beep "yes"
 # proxy-type http
 
 ## configuration option: refresh-on-startup
-## description: If yes, then all feeds will be reloaded when newsbeuter starts up. This is equivalent to the -r commandline option.
+## description: If yes, then all feeds will be reloaded when newsboat starts up. This is equivalent to the -r commandline option.
 ## parameter syntax: [yes/no]
 # refresh-on-startup no
 
@@ -349,9 +353,9 @@ show-keymap-hint "no"
 # text-width 0
 
 ## configuration option: urls-source
-## description: This configuration command sets the source where URLs shall be retrieved from. By default, this is ~/.newsbeuter/urls. Alternatively, you can set it to "opml", which enables newsbeuter's OPML online subscription mode, or to "googlereader", which enables newsbeuter's Google Reader support. In order to make Google Reader support work correctly, you also need to set googlereader-login and googlereader-password.
+## description: This configuration command sets the source where URLs shall be retrieved from. By default, this is ~/.newsboat/urls. Alternatively, you can set it to "opml", which enables newsboat's OPML online subscription mode, or to "googlereader", which enables newsboat's Google Reader support. In order to make Google Reader support work correctly, you also need to set googlereader-login and googlereader-password.
 ## parameter syntax: <source>
-# urls-source ~/.newsbeuter/urls
+# urls-source ~/.newsboat/urls
 
 ## configuration option: use-proxy
 ## description: If yes, then the configured proxy will be used for downloading the RSS feeds.

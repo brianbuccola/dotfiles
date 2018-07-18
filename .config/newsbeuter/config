@@ -4,25 +4,25 @@
 
 # my colors
 ## color <element> <fgcolor> <bgcolor> [<attr> ...]
-color background        red     color0 bold
-color listnormal        white   color0
-color listfocus         white   color0 bold
-color listnormal_unread blue    color0
-color listfocus_unread  blue    color0 bold
-color info              green   color0 bold
-color article           color15 color0
+color background        red     default bold
+color listnormal        white   default
+color listfocus         white   default bold
+color listnormal_unread blue    default
+color listfocus_unread  blue    default bold
+color info              green   default bold
+color article           color15 default
 
 # my highlights
 ## highlight <target> <regex> <fgcolor> [<bgcolor> [<attribute> ...]]
-highlight article     "^Feed:"     magenta color0 bold
-highlight article     "^Title:"    green   color0 bold
+highlight article     "^Feed:"     magenta default bold
+highlight article     "^Title:"    green   default bold
 highlight article     "^Author:"   yellow  default bold
-highlight article     "^Link:"     cyan    color0 bold
-highlight article     "^Date:"     red     color0 bold
-highlight articlelist "semantics?" red     color0 bold
-highlight articlelist "(t|T)420"   red     color0 bold
-highlight all "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" blue color0 bold
-highlight all "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" red color0 bold
+highlight article     "^Link:"     cyan    default bold
+highlight article     "^Date:"     red     default bold
+highlight articlelist "semantics?" red     default bold
+highlight articlelist "(t|T)420"   red     default bold
+highlight all "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" blue default bold
+highlight all "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" red default bold
 
 # my title formats
 feedlist-title-format     "Feedlist (%u unread, %t total)%?T? - tag `%T'&?"

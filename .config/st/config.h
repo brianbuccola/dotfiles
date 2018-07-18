@@ -82,6 +82,9 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/* bg opacity */
+unsigned int alpha = 0xcc;
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* gruvbox-dark colors */
@@ -109,6 +112,7 @@ static const char *colorname[] = {
 	"#555555",  /* 257                                 */
 	"#000000",  /* 258: gruvbox-dark hard contrast bg  */
 	"#f9f5d7",  /* 259: gruvbox-light hard contrast bg */
+	"black",    /* 260: for opacity */
 };
 
 /*
@@ -116,7 +120,7 @@ static const char *colorname[] = {
  * foreground, background, cursor, reverse cursor
  */
 unsigned int defaultfg = 15;
-unsigned int defaultbg = 0;
+unsigned int defaultbg = 260;
 static unsigned int defaultcs = 1;
 static unsigned int defaultrcs = 257;
 

@@ -35,7 +35,7 @@ c.hints.chars = "aoeuidhtns.pgc"
 c.url.searchengines['rd'] = "https://www.reddit.com/r/{}"
 
 # Fonts
-c.fonts.monospace = "xos4 Terminus"
+c.fonts.monospace = "Dina"
 c.fonts.web.family.fixed = "monospace"
 c.fonts.web.family.serif = "DejaVu Serif"
 c.fonts.web.family.sans_serif = "Fira Sans"

@@ -36,9 +36,10 @@ c.url.searchengines['rd'] = "https://www.reddit.com/r/{}"
 
 # Fonts
 c.fonts.monospace = "Dina"
-c.fonts.web.family.fixed = "monospace"
-c.fonts.web.family.serif = "DejaVu Serif"
-c.fonts.web.family.sans_serif = "Fira Sans"
+c.fonts.web.family.fixed = "Noto Sans Mono"
+c.fonts.web.family.serif = "Noto Serif"
+c.fonts.web.family.sans_serif = "Noto Sans"
+c.fonts.web.family.standard = "Noto Serif"
 
 # Aliases
 c.aliases['socks'] = "set content.proxy socks://localhost:8080/"

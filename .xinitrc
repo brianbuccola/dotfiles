@@ -7,7 +7,6 @@
 display-adjust
 keyboard-adjust
 ~/.fehbg
-compton -b
 touchpad-toggle
 xrdb -merge ~/.Xresources
 xset s 300 300

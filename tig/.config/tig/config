@@ -1,0 +1,14 @@
+# [generic]
+bind generic <Ctrl-B> move-page-up
+bind generic <Ctrl-F> move-page-down
+bind generic g move-first-line
+bind generic G move-last-line
+bind generic <Ctrl-G> view-grep
+
+# [main]
+bind main G move-last-line
+bind main ! !git revert %(commit)
+
+# [status]
+bind status P !git push
+bind status i !sh -c 'echo "%(file)" >> .gitignore'

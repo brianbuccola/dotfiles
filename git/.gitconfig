@@ -1,0 +1,22 @@
+[user]
+	name = Brian Buccola
+	email = brian.buccola@gmail.com
+[color]
+	ui = true
+[alias]
+	st = status
+	cm = commit
+	br = branch
+	co = checkout
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%Cgreen%d%Creset %s %C(cyan)(%ar)%Creset' --abbrev-commit
+	df = diff
+	wdiff = diff --word-diff=color
+[push]
+	default = simple
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false

@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# Print date and time.
+
+date '+%a %d %b %H:%M:%S'

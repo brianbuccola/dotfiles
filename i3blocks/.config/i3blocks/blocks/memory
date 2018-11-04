@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# Print memory info.
+
+mem_used=$(free -h | awk '/^Mem/ { print $3 }')
+mem_free=$(free -m | awk '/^Mem/ { print $4 }')
+
+echo "${mem_used}"
+echo "${mem_used}"
+
+# warn if <1M left
+if [[ "${mem_free}" -lt $(( 1024 * 1 )) ]]; then
+    # bright red
+    echo "#fb4934"
+else
+    echo ""
+fi

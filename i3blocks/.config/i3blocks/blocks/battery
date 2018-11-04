@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# Print battery info.
+
+battery_status=$(acpi -b | grep -wo "Full\|Charging\|Discharging")
+battery_power=$(acpi -b | grep -o '[0-9]\+%' | tr -d '%')
+
+if [[ "${battery_status}" = "Charging" ]]; then
+    battery_time_until_charged=$(acpi -b | awk '{print $5}' | cut -d: -f1,2)
+    echo "${battery_power}% ↑ ("${battery_time_until_charged}")"
+    echo "${battery_power}% ↑ ("${battery_time_until_charged}")"
+elif [[ "${battery_status}" = "Discharging" ]]; then
+    battery_time_remaining=$(acpi -b | awk '{print $5}' | cut -d: -f1,2)
+    echo "${battery_power}% ↓ ("${battery_time_remaining}")"
+    echo "${battery_power}% ↓ ("${battery_time_remaining}")"
+else
+    echo "${battery_power}%"
+    echo "${battery_power}%"
+fi
+
+if [[ "${battery_power}" -lt 10 ]]; then
+    # bright red
+    echo "#fb4934"
+elif [[ "${battery_power}" -lt 50 ]]; then
+    # bright yellow
+    echo "#fabd2f"
+else
+    echo ""
+fi

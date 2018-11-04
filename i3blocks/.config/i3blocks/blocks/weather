@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# Print weather info from https://openweathermap.org/.
+
+api_key="4bbc64162016d9e345436714dd896ecc"
+
+city_id="Paris,FR"
+# city_id="London,CA"
+# city_id="New Orleans,US"
+
+units="metric"
+temp_symbol="°C"
+
+lo_temp_threshold=5
+hi_temp_threshold=30
+
+weather_url="https://api.openweathermap.org/data/2.5/weather?q=${city_id}&appid=${api_key}&units=${units}"
+
+weather_info=$(wget -qO- "${weather_url}")
+
+if [[ -z "${weather_info}" ]]; then
+    echo "(no weather)"
+    echo "(no weather)"
+    echo "#fb4934" # bright red
+fi
+
+# description of current conditions
+weather_desc=$(echo "${weather_info}" | grep -o -e '\"description\":\"[^\"]*\"' | head -n1 | awk -F ':' '{print $2}' | tr -d '"')
+
+# current temperature (as a float)
+weather_temp=$(echo "${weather_info}" | grep -o -e '\"temp\":[^,]*' | awk -F ':' '{print $2}' | tr -d '"')
+
+# round temperature (float -> int)
+weather_temp=$(echo "(${weather_temp} + 0.5) / 1" | bc)
+
+echo "${weather_desc} ${weather_temp}${temp_symbol}"
+echo "${weather_desc} ${weather_temp}${temp_symbol}"
+
+if [[ "${weather_temp}" -le "${lo_temp_threshold}" ]]; then
+    # bright blue
+    echo "#83a598"
+elif [[ "${weather_temp}" -ge "${hi_temp_threshold}" ]]; then
+    # bright red
+    echo "#fb4934"
+else
+    echo ""
+fi

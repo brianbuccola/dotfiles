@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+# Print number of updates.
+#
+# Note: /tmp/checkup-aur contains the number of AUR updates and is created by a
+# script that runs periodically.
+
+official_updates=$(pacman -Qqu --dbpath /tmp/checkup-db-brian | wc -l)
+aur_updates=$(</tmp/checkup-aur)
+
+total_updates=$(( "${official_updates}" + "${aur_updates}" ))
+
+echo "${official_updates}(${aur_updates})"
+echo "${official_updates}(${aur_updates})"
+
+if [[ "${total_updates}" -gt 0 ]]; then
+    # bright green
+    echo "#b8bb26"
+else
+    echo ""
+fi

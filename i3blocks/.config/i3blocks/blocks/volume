@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+# Print volume info.
+
+vol_status=$(amixer get Master | tail -n1 | sed -r 's/.*\[(on|off)\].*/\1/')
+vol_pct=$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')
+
+if [[ "${vol_status}" = "off" ]]; then
+    echo "mute"
+    echo "mute"
+    echo "#fb4934"
+    exit 0
+elif [[ "${vol_status}" = "on"  ]]; then
+    echo "${vol_pct}%"
+    echo "${vol_pct}%"
+    exit 0
+else
+    echo "error"
+    echo "error"
+    exit 33
+fi

@@ -1,0 +1,36 @@
+#!/bin/bash
+#
+# Print bandwidth info.
+
+rx1=$(</sys/class/net/wlp3s0/statistics/rx_bytes)
+tx1=$(</sys/class/net/wlp3s0/statistics/tx_bytes)
+
+sleep 1
+
+rx2=$(</sys/class/net/wlp3s0/statistics/rx_bytes)
+tx2=$(</sys/class/net/wlp3s0/statistics/tx_bytes)
+
+rx_rate=$(( $rx2 - $rx1 ))
+tx_rate=$(( $tx2 - $tx1 ))
+
+# shift by 10 bytes to get KiB/s.
+rx_kib=$(( $rx_rate >> 10 ))
+tx_kib=$(( $tx_rate >> 10 ))
+
+# incoming
+echo -n "↓ "
+if [[ "$rx_rate" -gt 1048576 ]]; then
+    printf '%sM' $(echo "scale=1; $rx_kib / 1024" | bc)
+else
+    echo -n "${rx_kib}K"
+fi
+
+echo -n " "
+
+# outgoing
+echo -n "↑ "
+if [[ "$tx_rate" -gt 1048576 ]]; then
+    printf '%sM' $(echo "scale=1; $tx_kib / 1024" | bc)
+else
+    echo -n "${tx_kib}K"
+fi

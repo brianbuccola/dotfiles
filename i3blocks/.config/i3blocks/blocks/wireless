@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# Print wireless info.
+
+interface=wlp3s0
+
+iwconfig "${interface}" 2>&1 | grep -q no\ wireless\ extensions\. && {
+    echo wired
+    echo wired
+    echo ""
+    exit 0
+}
+
+iwconfig "${interface}" 2>&1 | grep -q ESSID:off && {
+    echo "(wifi off)"
+    echo "(wifi off)"
+    echo "#fb4934"
+    exit 0
+}
+
+essid=$(iwgetid --raw)
+quality=$(iwconfig "${interface}" | awk -F '=' '/Quality/ {print $2}' | cut -d ' ' -f 1)
+quality_pct=$(echo "$quality * 100" | bc -l | sed 's/\.[0-9]*//')
+
+echo $essid $quality_pct%
+echo $essid $quality_pct%
+
+if [[ "${quality_pct}" -lt 50 ]]; then
+    # blue
+    echo "#458588"
+else
+    echo ""
+fi

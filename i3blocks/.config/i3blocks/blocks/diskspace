@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# Print disk space.
+
+disk_space=$(df | awk '/\/$/ { print $4 }')
+disk_space_human=$(df -h | awk '/\/$/ { print $4 }')
+
+echo "${disk_space_human}"
+echo "${disk_space_human}"
+
+# warn if <5G remaining
+if [[ "${disk_space}" -lt $(( 5 * 1024 * 1024 )) ]]; then
+    # bright red
+    echo "#fb4934"
+else
+    echo ""
+fi

@@ -130,11 +130,13 @@ alias r='ranger'
 alias R='R --quiet'
 alias t='tmux'
 alias timer='termdown'
+alias v='vim'
 alias vless="vim -u /usr/share/vim/vim74/macros/less.vim"
 alias vpn-mcgill='sudo openconnect securevpn.mcgill.ca'
 alias vpn-mit='sudo openconnect vpn.mit.edu'
 alias wt='watch -n1 systemctl --user list-timers'
 alias x='startx'
+alias z='zathura'
 
 # Functions
 ddwm() {
@@ -179,6 +181,8 @@ screencast() {
 compdef g=git
 compdef p=pacman
 compdef t=tmux
+compdef v=vim
+compdef z=zathura
 
 # colorize less, especially for manpages
 export LESS_TERMCAP_mb=$(printf "\e[1;31m")     # begin blinking

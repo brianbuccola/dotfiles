@@ -2,6 +2,7 @@ set font "Dina 10"
 set guioptions ""
 set recolor-darkcolor "#98971a"
 set recolor-lightcolor "#000000"
+set show-recent 0
 map . navigate next
 map , navigate previous
 map <BackSpace> scroll full-up

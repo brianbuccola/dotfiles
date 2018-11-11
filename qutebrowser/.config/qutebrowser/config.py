@@ -28,9 +28,6 @@ c.tabs.padding = {"top": 4, "bottom": 4, "left": 4, "right": 4}
 c.downloads.location.directory = "/tmp"
 c.downloads.location.prompt = False
 
-# Cookies
-c.content.cookies.accept = "all"
-
 # Hints
 c.hints.chars = "aoeuidhtns.pgc"
 

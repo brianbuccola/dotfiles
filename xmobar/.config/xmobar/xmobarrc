@@ -10,7 +10,6 @@ Config { font = "xft:Dina:size=8"
                     , Run DynNetwork [ "-t", "<rx>|<tx>", "-S", "true", "-L", "1000", "-H", "5000"
                                      , "--low", "#b8bb26", "--normal", "#fabd2f", "--high", "#fb4934"
                                      ] 10
-                    , Run Kbd [("us(dvp)", "dvp")]
                     , Run Weather "LFPO" [ "-t", "<station>: <tempC>°C", "-L", "4", "-H", "27"
                                          , "--low", "#83a598", "--normal", "#fabd2f", "--high", "#fb4934"
                                          ] 300

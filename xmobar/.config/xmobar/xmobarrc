@@ -1,4 +1,4 @@
-Config { font = "xft:xos4 Terminus:size=9"
+Config { font = "xft:Dina:size=8"
        , position = Top
        , bgColor = "#000000"
        , fgColor = "#a89984"

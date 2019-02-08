@@ -196,6 +196,10 @@ let g:auto_save_no_updatetime=1
 " vim-online-thesaurus
 let g:online_thesaurus_map_keys=0
 
+" vim-textobj-quote
+map <silent> <leader>qc <Plug>ReplaceWithCurly
+map <silent> <leader>qs <Plug>ReplaceWithStraight
+
 " vimtex
 let g:vimtex_imaps_enabled=0
 let g:vimtex_view_method='zathura'

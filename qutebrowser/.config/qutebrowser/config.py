@@ -34,6 +34,7 @@ c.hints.chars = "aoeuidhtns.pgc"
 
 # Search engines
 c.url.searchengines['rd'] = "https://www.reddit.com/r/{}"
+c.url.searchengines['sh'] = "https://sci-hub.tw/{}"
 
 # Fonts
 c.fonts.monospace = "Dina"

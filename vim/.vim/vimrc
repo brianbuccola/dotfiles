@@ -35,6 +35,7 @@ set wildmode=list:longest,full " Make completion more like zsh.
 let mapleader=' '              " Set <leader> to space.
 let maplocalleader=' '         " Set <localleader> to space.
 let g:netrw_liststyle=3        " Use tree style directory listing.
+let g:tex_flavor="latex"       " Set tex files' filetype to latex, not plaintex.
 " }}}
 " Colors {{{
 set termguicolors " Enable true color support.

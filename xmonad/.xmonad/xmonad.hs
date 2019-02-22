@@ -185,7 +185,7 @@ myLayoutHook = smartBorders $ avoidStruts $ myTiled ||| myTabbed ||| myFull
             , urgentTextColor     = myBrightRed
             , urgentBorderColor   = myBrightBlack
             }
-        myTiled       = renamed [Replace "|||"] $ spacingRaw False (Border 0 0 0 0) False (Border 2 2 2 2) True $ Tall nmaster delta ratio
+        myTiled       = renamed [Replace "|||"] $ spacingRaw True (Border 2 2 2 2) True (Border 2 2 2 2) True $ Tall nmaster delta ratio
         nmaster       = 1     -- number of master windows
         ratio         = 1/2   -- master-to-slave window ratio
         delta         = 5/100 -- percent of screen to increment by when resizing

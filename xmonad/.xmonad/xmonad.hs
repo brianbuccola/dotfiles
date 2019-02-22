@@ -171,7 +171,7 @@ myManageHook = composeAll . concat $
 --  layoutHook
 -- ============
 
-myLayoutHook = smartBorders $ myTabbed ||| myTiled ||| myMirrorTiled ||| myFull
+myLayoutHook = smartBorders $ avoidStruts $ myTiled ||| myTabbed ||| myFull
     where
         myTabbed = renamed [Replace "___"] $ tabbedBottom shrinkText def
             { fontName            = myFont

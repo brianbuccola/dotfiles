@@ -173,7 +173,7 @@ myManageHook = composeAll . concat $
 
 myLayoutHook = smartBorders $ avoidStruts $ myTiled ||| myTabbed ||| myFull
     where
-        myTabbed = renamed [Replace "___"] $ tabbedBottom shrinkText def
+        myTabbed = renamed [Replace " ___ "] $ tabbedBottom shrinkText def
             { fontName            = myFont
             , activeColor         = myBrightBlack
             , activeTextColor     = myBrightWhite
@@ -185,11 +185,11 @@ myLayoutHook = smartBorders $ avoidStruts $ myTiled ||| myTabbed ||| myFull
             , urgentTextColor     = myBrightRed
             , urgentBorderColor   = myBrightBlack
             }
-        myTiled       = renamed [Replace "|||"] $ spacingRaw True (Border 2 2 2 2) True (Border 2 2 2 2) True $ Tall nmaster delta ratio
+        myTiled       = renamed [Replace " ||| "] $ spacingRaw True (Border 2 2 2 2) True (Border 2 2 2 2) True $ Tall nmaster delta ratio
         nmaster       = 1     -- number of master windows
         ratio         = 1/2   -- master-to-slave window ratio
         delta         = 5/100 -- percent of screen to increment by when resizing
-        myMirrorTiled = renamed [Replace "="] $ Mirror myTiled
-        myFull        = renamed [Replace "[ ]"] $ Full
+        myMirrorTiled = renamed [Replace " = "] $ Mirror myTiled
+        myFull        = renamed [Replace " [ ] "] $ Full
 
 -- vim: set ft=haskell tw=0 sw=4:

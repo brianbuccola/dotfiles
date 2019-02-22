@@ -203,7 +203,7 @@ map <silent> <leader>qs <Plug>ReplaceWithStraight
 
 " vimtex
 let g:vimtex_imaps_enabled=0
-let g:vimtex_view_method='zathura'
+let g:vimtex_view_method='mupdf'
 if has('nvim')
     let g:vimtex_compiler_progname='nvr'
 endif

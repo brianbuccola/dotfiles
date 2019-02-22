@@ -11,6 +11,8 @@ import qualified XMonad.StackSet as W -- provides greedyView and RationalRect
 import XMonad.Actions.CycleWS         -- cycle through WSs, toggle last WS
 import XMonad.Actions.Warp            -- banish mouse pointer
 import XMonad.Hooks.DynamicLog        -- for xmobar; provides statusBar, pad, etc.
+import XMonad.Hooks.EwmhDesktops      -- use EWMH hints
+import XMonad.Hooks.ManageDocks       -- automatically manage dock-type programs
 import XMonad.Hooks.ManageHelpers     -- provides isDialog
 import XMonad.Hooks.UrgencyHook       -- colorize urgent WSs
 import XMonad.Util.EZConfig           -- easily configure keybindings
@@ -25,7 +27,7 @@ import Colors.GruvboxDark             -- personal colors, defined in Colors/Gruv
 --  Main
 -- ======
 
-main = xmonad =<< statusBar myBar myPP myToggleBarKey myConfig
+main = xmonad =<< statusBar myBar myPP myToggleBarKey (docks $ ewmh myConfig)
 
 -- ========
 --  Basics
@@ -55,6 +57,7 @@ myConfig = withUrgencyHook NoUrgencyHook def
     , startupHook        =  myStartupHook
     , manageHook         =  myManageHook
     , layoutHook         =  myLayoutHook
+    , handleEventHook    =  handleEventHook def <+> fullscreenEventHook
     }
     `additionalKeysP` myKeys
 

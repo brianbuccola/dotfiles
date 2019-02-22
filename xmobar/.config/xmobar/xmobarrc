@@ -10,12 +10,6 @@ Config { font = "xft:Dina:size=8"
                     , Run DynNetwork [ "-t", "<rx>|<tx>", "-S", "true", "-L", "1000", "-H", "5000"
                                      , "--low", "#b8bb26", "--normal", "#fabd2f", "--high", "#fb4934"
                                      ] 10
-                    , Run Weather "LFPO" [ "-t", "<station>: <tempC>°C", "-L", "4", "-H", "27"
-                                         , "--low", "#83a598", "--normal", "#fabd2f", "--high", "#fb4934"
-                                         ] 300
-                    , Run Weather "CYXU" [ "-t", "<station>: <tempC>°C", "-L", "4", "-H", "27"
-                                         , "--low", "#83a598", "--normal", "#fabd2f", "--high", "#fb4934"
-                                         ] 300
                     , Run Battery ["-t", "<acstatus>: <left>%", "-L", "10", "-H", "70"
                                   , "--low", "#fb4934", "--normal", "#fabd2f", "--high", "#b8bb26"
                                   , "--", "-O", "<fc=#b8bb26>on</fc>", "-o", "off ", "-i", "idle"
@@ -28,5 +22,5 @@ Config { font = "xft:Dina:size=8"
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %wlp3s0wi%  %dynnetwork%  %LFPO%  %CYXU%  %battery%  <fc=#8ec07c>%updates%</fc>  <fc=#d3869b>%default:Master%</fc>  <fc=#d79921>%date%</fc> "
+       , template = "%StdinReader% }{ %wlp3s0wi%  %dynnetwork%  %battery%  <fc=#8ec07c>%updates%</fc>  <fc=#d3869b>%default:Master%</fc>  <fc=#d79921>%date%</fc> "
        }

@@ -132,6 +132,7 @@ alias t='tmux'
 alias timer='termdown'
 alias v='vim'
 alias vless="vim -u /usr/share/vim/vim74/macros/less.vim"
+alias w='curl wttr.in'
 alias wt='watch -n1 systemctl --user list-timers'
 alias x='startx'
 

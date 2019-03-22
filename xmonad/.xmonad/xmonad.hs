@@ -36,7 +36,7 @@ main = xmonad =<< statusBar myBar myPP myToggleBarKey (docks $ ewmh myConfig)
 myBar = "xmobar"
 
 myPP = xmobarPP
-    { ppCurrent = xmobarColor myBrightYellow "" . wrap "<" ">"
+    { ppCurrent = xmobarColor myBrightYellow "" . wrap "{" "}"
     , ppHidden  = pad
     , ppUrgent  = xmobarColor myBrightRed myRed . pad
     , ppSep     = ""

@@ -121,6 +121,7 @@ alias ld='ls -d .*/ */'
 alias ll='ls -alh'
 alias l.='ls -d .*'
 alias ls='ls --color=auto -F'
+alias m='mupdf'
 alias mv='mv -i'
 alias mx='mpv $(xsel)'
 alias p='sudo pacman'
@@ -133,7 +134,6 @@ alias v='vim'
 alias vless="vim -u /usr/share/vim/vim74/macros/less.vim"
 alias wt='watch -n1 systemctl --user list-timers'
 alias x='startx'
-alias z='zathura'
 
 # Functions
 ddwm() {
@@ -176,10 +176,10 @@ screencast() {
 
 # Add completions to aliases and functions
 compdef g=git
+compdef m=mupdf
 compdef p=pacman
 compdef t=tmux
 compdef v=vim
-compdef z=zathura
 
 # colorize less, especially for manpages
 export LESS_TERMCAP_mb=$(printf "\e[1;31m")     # begin blinking

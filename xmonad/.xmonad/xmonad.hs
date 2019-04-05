@@ -61,7 +61,6 @@ myConfig = withUrgencyHook NoUrgencyHook def
     }
     `additionalKeysP` myKeys
 
-myDmenuFont = "Dina:size=8"
 myFont      = "xft:Misc Tamsyn:size=12"
 
 -- =============
@@ -128,12 +127,12 @@ myKeys =
 myScreenshotCmd    = "import -silent -window root \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""
 myScreenShotCmdSel = "import -silent \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""
 
-myDmenuCmd        = "dmenu_run" ++ " -fn '" ++ myDmenuFont ++ "' -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightYellow ++ "'"
-myManmenuCmd      = "manmenu" ++ " -fn '" ++ myDmenuFont ++ "' -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightRed ++ "'"
-myPassmenuCmdBoth = "passmenu2 --typeboth " ++ " -fn '" ++ myDmenuFont ++ "' -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
-myPassmenuCmdPass = "passmenu2 --typepass " ++ " -fn '" ++ myDmenuFont ++ "' -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
-myPassmenuCmdUser = "passmenu2 --typeuser " ++ " -fn '" ++ myDmenuFont ++ "' -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
-myVolmenuCmd      = "volmenu" ++ " -fn '" ++ myDmenuFont ++ "' -nb '" ++ myBlack ++ "' -nf '" ++myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightMagenta ++ "'"
+myDmenuCmd        = "dmenu_run" ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightYellow ++ "'"
+myManmenuCmd      = "manmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightRed ++ "'"
+myPassmenuCmdBoth = "passmenu2 --typeboth " ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
+myPassmenuCmdPass = "passmenu2 --typepass " ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
+myPassmenuCmdUser = "passmenu2 --typeuser " ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
+myVolmenuCmd      = "volmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightMagenta ++ "'"
 
 -- =============
 --  StartupHook

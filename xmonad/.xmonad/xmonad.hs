@@ -61,8 +61,8 @@ myConfig = withUrgencyHook NoUrgencyHook def
     }
     `additionalKeysP` myKeys
 
-myFont      = "xft:Dina:size=8"
 myDmenuFont = "Dina:size=8"
+myFont      = "xft:Misc Tamsyn:size=12"
 
 -- =============
 --  Keybindings

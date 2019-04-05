@@ -1,4 +1,4 @@
-Config { font = "xft:Dina:size=8"
+Config { font = "xft:Misc Tamsyn:size=12"
        , position = Top
        , bgColor = "#000000"
        , fgColor = "#a89984"

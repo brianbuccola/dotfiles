@@ -22,6 +22,7 @@ import XMonad.Layout.Tabbed           -- tabbed windows layout
 import XMonad.Layout.Renamed          -- custom layout names
 import Graphics.X11.ExtraTypes.XF86   -- bind media keys
 import Colors.GruvboxDark             -- personal colors, defined in Colors/GruvboxDark.hs
+-- import Colors.GruvboxLight            -- personal colors, defined in Colors/GruvboxLight.hs
 
 -- ======
 --  Main

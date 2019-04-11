@@ -137,20 +137,18 @@ alias wt='watch -n1 systemctl --user list-timers'
 alias x='startx'
 
 # Functions
-ddwm() {
-    # Change dwm status bar and st to dark colorscheme.
-    # Mnemonic: dark dwm
-    p -Rns --noconfirm dwm-git-light
+dst() {
+    # Change st to dark colorscheme.
+    # Mnemonic: dark st
     p -Rns --noconfirm st-git-light
-    p -S --noconfirm dwm-git-dark st-git-dark
+    p -S --noconfirm st-git-dark
 }
 
-ldwm() {
-    # Change dwm status bar and st to light colorscheme.
-    # Mnemonic: light dwm
-    p -Rns --noconfirm dwm-git-dark
+lst() {
+    # Change st to light colorscheme.
+    # Mnemonic: light st
     p -Rns --noconfirm st-git-dark
-    p -S --noconfirm dwm-git-light st-git-light
+    p -S --noconfirm st-git-light
 }
 
 lspdf() {

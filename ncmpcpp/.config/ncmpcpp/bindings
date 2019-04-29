@@ -572,6 +572,9 @@ def_key "l"
 def_key "h"
   previous_column
 
+def_key "ctrl-l"
+  show_lyrics
+
 def_key "ctrl-n"
   next_screen
 

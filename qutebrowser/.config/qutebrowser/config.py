@@ -25,6 +25,9 @@ c.tabs.title.format = "{title}"
 c.tabs.title.format_pinned = ""
 c.tabs.padding = {"top": 4, "bottom": 4, "left": 4, "right": 4}
 
+# Content
+c.content.autoplay = False
+
 # Storage
 c.downloads.location.directory = "/tmp"
 c.downloads.location.prompt = False

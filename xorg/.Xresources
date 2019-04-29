@@ -9,5 +9,5 @@ Xmessage*background: #cc241d
 Xmessage*buttons: okay:0
 Xmessage*center: true
 Xmessage*defaultButton: okay
-Xmessage*font: -*-terminus-*-*-*-*-14-*-*-*-*-*-*-*
+Xmessage*font: -*-tamsyn-*-*-*-*-16-*-*-*-*-*-*-*
 Xmessage*shapeStyle: rectangle

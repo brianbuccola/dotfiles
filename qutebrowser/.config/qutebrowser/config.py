@@ -9,6 +9,9 @@ c.confirm_quit = ["downloads", "multiple-tabs"]
 c.statusbar.padding = {"top": 4, "bottom": 4, "left": 0, "right": 0}
 c.window.title_format = "{perc}{title}"
 
+# Yanking URLs
+c.url.yank_ignored_parameters += ["smid", "smtyp", "fbclid"]
+
 # Completion
 c.completion.shrink = True
 

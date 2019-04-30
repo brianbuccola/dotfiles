@@ -122,6 +122,9 @@ macro index gt "<change-folder>=gmail/Trash<enter>"     "go to trash"
 macro index gS "<change-folder>=gmail/Spam<enter>"      "go to spam"
 macro index gf "<limit>~F<enter>"                       "show flagged messages"
 
+## save attachment to /tmp, not to current directory (~)
+macro attach s "<save-entry><bol>/tmp/<eol>" "save message/attachment to a mailbox/file in /tmp"
+
 ## create alias (bind to A and reserve a for mark all new as read)
 macro index A "<create-alias>" "create an alias from a message sender"
 

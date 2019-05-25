@@ -31,6 +31,7 @@ c.content.autoplay = False
 # Website quirks
 config.set("content.headers.user_agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36", "web.whatsapp.com")
 config.set("content.register_protocol_handler", False, "mail.google.com")
+config.set("content.register_protocol_handler", True, "calendar.google.com")
 
 # Storage
 c.downloads.location.directory = "/tmp"

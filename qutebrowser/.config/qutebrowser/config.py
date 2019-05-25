@@ -30,6 +30,7 @@ c.content.autoplay = False
 
 # Website quirks
 config.set("content.headers.user_agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36", "web.whatsapp.com")
+config.set("content.register_protocol_handler", False, "mail.google.com")
 
 # Storage
 c.downloads.location.directory = "/tmp"
@@ -111,6 +112,7 @@ config.bind('X', "spawn --userscript youtube-to-youpak", mode="normal")
 config.bind(';?', "hint links userscript echo-url", mode="normal")
 config.bind(';u', "spawn --userscript open-doi", mode="normal")
 config.bind(';p', "hint links run :open -p {hint-url}")
+config.bind(';m', "hint links spawn st -e mutt {hint-url}", mode="normal")
 
 ## command mode
 config.bind('<ctrl-e>', "edit-command --run", mode="command")

@@ -122,7 +122,8 @@ myKeys =
     , ( "M-p"                    , spawn myPassmenuCmdBoth                               )
     , ( "M-S-p"                  , spawn myPassmenuCmdPass                               )
     , ( "M-C-p"                  , spawn myPassmenuCmdUser                               )
-    , ( "M-u"                    , spawn myVolmenuCmd                                 )
+    , ( "M-u"                    , spawn myVolmenuCmd                                    )
+    , ( "M-C-d"                  , spawn myDocmenuCmd                                    )
     ]
 
 myScreenshotCmd    = "import -silent -window root \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""
@@ -134,6 +135,7 @@ myPassmenuCmdBoth = "passmenu2 --typeboth " ++ " -nb '" ++ myBlack ++ "' -nf '" 
 myPassmenuCmdPass = "passmenu2 --typepass " ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
 myPassmenuCmdUser = "passmenu2 --typeuser " ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
 myVolmenuCmd      = "volmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightMagenta ++ "'"
+myDocmenuCmd      = "docmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightBlue ++ "'"
 
 -- =============
 --  StartupHook

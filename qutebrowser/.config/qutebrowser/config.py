@@ -29,6 +29,7 @@ c.tabs.padding = {"top": 4, "bottom": 4, "left": 4, "right": 4}
 c.content.autoplay = False
 
 # Website quirks
+config.set("content.autoplay", True, "open.spotify.com")
 config.set("content.headers.user_agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36", "web.whatsapp.com")
 config.set("content.register_protocol_handler", False, "mail.google.com")
 config.set("content.register_protocol_handler", True, "calendar.google.com")

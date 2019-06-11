@@ -7,7 +7,7 @@ c.content.headers.do_not_track = False
 # User interface
 c.confirm_quit = ["downloads", "multiple-tabs"]
 c.statusbar.padding = {"top": 4, "bottom": 4, "left": 0, "right": 0}
-c.window.title_format = "{perc}{title}"
+c.window.title_format = "{perc}{current_title}"
 
 # Yanking URLs
 c.url.yank_ignored_parameters += ["smid", "smtyp", "fbclid"]
@@ -21,7 +21,7 @@ c.input.partial_timeout = 30000
 # Tabs
 c.tabs.show = "multiple"
 c.tabs.indicator.width = 0
-c.tabs.title.format = "{title}"
+c.tabs.title.format = "{current_title}"
 c.tabs.title.format_pinned = ""
 c.tabs.padding = {"top": 4, "bottom": 4, "left": 4, "right": 4}
 

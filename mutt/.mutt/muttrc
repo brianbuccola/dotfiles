@@ -141,5 +141,3 @@ macro pager W "<enter-command>set wrap=0 nosmart_wrap nomarkers<enter>" "unset w
 
 ## open URLs with extract_url
 macro pager u "<enter-command>unset pipe_decode<enter><pipe-message>extract_url<enter>" "open URLs with extract_url"
-
-# vim: set ft=muttrc tw=0:

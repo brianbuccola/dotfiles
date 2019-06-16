@@ -142,6 +142,7 @@ myDocmenuCmd      = "docmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++myBrightBlac
 -- =============
 
 myStartupHook = do
+    spawn "tmux has-session -t mutt || st -c mutt -e tmux new -s mutt mutt"
     spawn "tmux has-session -t scratchpad || st -c scratchpad -e tmux new -s scratchpad"
     spawn "tmux has-session -t work || st -c work -e tmux new -s work"
 
@@ -151,6 +152,7 @@ myStartupHook = do
 
 myManageHook = composeAll . concat $
     [ [ className =? "qutebrowser" --> doShift "q"              ]
+    , [ className =? "mutt"        --> doShift "m"              ]
     , [ title     =? "mutt"        --> doShift "m"              ]
     , [ className =? "MuPDF"       --> doShift "d"              ]
     , [ className =? "libreoffice" --> doShift "d"              ]

@@ -3,8 +3,9 @@
 # author: Brian Buccola <brian.buccola@gmail.com>
 
 # Personal info
-set from = "brian.buccola@gmail.com"            # default from address
 set realname = "Brian Buccola"                  # use real name
+set reverse_name                                # reply from address that was sent to
+alternates "^brian\.buccola@gmail\.com$|^buccola@msu\.edu$"
 
 # Files, directories, and commands
 set alias_file = "~/.mutt/alias"                # alias file
@@ -21,30 +22,26 @@ source ~/.mutt/colors/default                   # source colors file
 source ~/.mutt/gpg.rc                           # source GPG file
 source /usr/share/doc/mutt/samples/gpg.rc       # source GPG sample file
 
-# Mailboxes
-mailboxes "+gmail/INBOX" \
-          "+gmail/All Mail" \
-          "+gmail/Sent Mail" \
-          "+gmail/Spam" \
-          "+gmail/Trash" \
-          "+postponed"
-
 # Main options
 set arrow_cursor                                # use arrow cursor as indicator
 set beep_new                                    # bell/beep on new mail
-set folder = "~/.mail"                          # mailbox location
+set folder = "~/.mail"                          # mailbox location (defines '+' / '=' shortcut)
 set mail_check = 0                              # minimum time between scans
 set mbox_type = Maildir                         # mailbox type
 set postponed = "+postponed"                    # where to save postponed msg's (drafts) to
 set reverse_alias                               # show names from alias file in index
 set sort_alias = alias                          # sort alias file by alias
-set spoolfile = "+gmail/All Mail"               # default inbox on open
+set spoolfile = "+gmail/archive"                # default inbox on open
 set timeout = 3                                 # don't wait for user input before checking for new mail
 set ts_enabled                                  # let mutt set terminal status line and icon name
 unset help                                      # don't show help lines describing major keybindings
 unset mark_old                                  # mark new msg's as old when quitting mutt?
-unset record                                    # don't save sent items (gmail does automatically)
+unset record                                    # don't save sent items (gmail/msu does automatically)
 unset wait_key                                  # don't ask to "press any key to continue" after shell cmd, etc.
+
+# Mailboxes to poll for new mail (use of '+' must come *after* 'set folder')
+mailboxes "+gmail/archive" \
+          "+msu/inbox"
 
 # Index options
 set sort = threads                              # like gmail
@@ -75,17 +72,31 @@ set forward_quote                               # include message in forwards
 set include                                     # include message in replies
 set mime_forward = ask-yes                      # forward attachments as MIME/part of body?
 set reply_to                                    # reply to Reply to: field
-set reverse_name                                # reply based on who msg was sent to
-set sendmail = "/usr/bin/msmtp"                 # use msmtp to send mail
 
 # Hooks
-folder-hook "All Mail" 'macro index d "<save-message>=gmail/Trash<enter>" "send message to trash"'
-folder-hook "All Mail" 'macro index <Esc>d "<tag-thread><tag-prefix><save-message>=gmail/Trash<enter>" "send thread to trash"'
-folder-hook !"All Mail" 'macro index d "<delete-message>" "archive message (INBOX) or remove label (elsewhere)"'
-folder-hook !"All Mail" 'macro index <Esc>d "<delete-message>" "archive thread (INBOX) or remove label (elsewhere)"'
-## NB: the above hook removes label, i.e. removes msg from current (non-All Mail) folder.
-## This amounts to archiving (leaving a copy in All Mail), EXCEPT in the case of Trash.
-## When in Trash, this macro deletes the msg for good.
+## set appropriate from address and sendmail command when switching folders
+folder-hook "gmail/*" 'set from = "brian.buccola@gmail.com" ; set sendmail = "/usr/bin/msmtp -a gmail"'
+folder-hook "msu/*"   'set from = "buccola@msu.edu"         ; set sendmail = "/usr/bin/msmtp -a msu"'
+
+## same, but when sending a message
+send2-hook ~f"^brian\.buccola@gmail\.com$" 'set from = "brian.buccola@gmail.com" ; set sendmail = "/usr/bin/msmtp -a gmail"'
+send2-hook ~f"^buccola@msu\.edu$"          'set from = "buccola@msu.edu"         ; set sendmail = "/usr/bin/msmtp -a msu"'
+
+## gmail deletion: send to trash when in archive
+folder-hook "gmail/archive" 'macro index d "<save-message>=gmail/trash<enter>" "send message to gmail trash"'
+folder-hook "gmail/archive" 'macro index <Esc>d "<tag-thread><tag-prefix><save-message>=gmail/trash<enter>" "send thread to gmail trash"'
+
+## cont'd: simply delete when not in archive (or in trash); this amounts to archiving (leaving a copy in archive)
+folder-hook "gmail/[^a].*" 'macro index d "<delete-message>" "archive message (inbox) or remove label (elsewhere)"'
+folder-hook "gmail/[^a].*" 'macro index <Esc>d "<tag-thread><tag-prefix><delete-message>" "archive thread (inbox) or remove label (elsewhere)"'
+
+## msu deletion: send to trash (when not in trash)
+folder-hook "msu/[^t].*" 'macro index d "<save-message>=msu/trash<enter>" "send message to msu trash"'
+folder-hook "msu/[^t].*" 'macro index <Esc>d "<tag-thread><tag-prefix><save-message>=msu/trash<enter>" "send thread to msu trash"'
+
+## when in trash, delete forever
+folder-hook "trash" 'macro index d "<delete-message>" "delete message forever"'
+folder-hook "trash" 'macro index <Esc>d "<tag-thread><tag-prefix><delete-message>" "delete thread forever"'
 
 # Bindings
 bind index,alias,attach,pager \Cf next-page
@@ -116,12 +127,17 @@ macro generic,pager \
 macro index R "<shell-escape>/usr/bin/mbsync -Va<enter>" "sync IMAP"
 
 ## change to various folders
-macro index gi "<change-folder>=gmail/INBOX<enter>"     "go to inbox"
-macro index ga "<change-folder>=gmail/All<tab><enter>"  "go to all mail"
-macro index gs "<change-folder>=gmail/Sent<tab><enter>" "go to sent mail"
+macro index gi "<change-folder>=gmail/inbox<enter>"     "go to gmail inbox"
+macro index ga "<change-folder>=gmail/archive<enter>"   "go to gmail archive"
+macro index gs "<change-folder>=gmail/sent<enter>"      "go to gmail sent mail"
+macro index gt "<change-folder>=gmail/trash<enter>"     "go to gmail trash"
+macro index gj "<change-folder>=gmail/junk<enter>"      "go to gmail junk"
+macro index gmi "<change-folder>=msu/inbox<enter>"      "go to msu inbox"
+macro index gma "<change-folder>=msu/archive<enter>"    "go to msu archive"
+macro index gms "<change-folder>=msu/sent<enter>"       "go to msu sent mail"
+macro index gmt "<change-folder>=msu/trash<enter>"      "go to msu trash"
+macro index gmj "<change-folder>=msu/junk<enter>"       "go to msu junk"
 macro index gp "<change-folder>=postponed<enter>"       "go to postponed"
-macro index gt "<change-folder>=gmail/Trash<enter>"     "go to trash"
-macro index gS "<change-folder>=gmail/Spam<enter>"      "go to spam"
 macro index gf "<limit>~F<enter>"                       "show flagged messages"
 
 ## save attachment to /tmp, not to current directory (~)

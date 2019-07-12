@@ -50,7 +50,7 @@ if g:colors_name == "gruvbox"
 endif
 " }}}
 " GUI Settings {{{
-set guifont=xos4\ Terminus\ 12 " Use Terminus, size 12 font.
+set guifont=Noto\ Sans\ Mono\ 12
 set guioptions-=L          " Remove left-hand scroll bar even when there is a vertically split window.
 set guioptions-=T          " Remove toolbar.
 set guioptions-=m          " Remove menu bar.

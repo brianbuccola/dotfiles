@@ -14,20 +14,27 @@ color   tilde       brightcyan      default
 color   tree        red             default
 
 # index
-color   index       brightblue      blue    "~N!~h'brian.buccola@mail.mcgill.ca'!~h'brian.buccola@mail.huji.ac.il'"     # new gmail msg's
-color   index       brightred       red     "~N~h'brian.buccola@mail.mcgill.ca'"                                        # new mcgill msg's
-color   index       brightyellow    yellow  "~N~h'brian.buccola@mail.huji.ac.il'"                                       # new huji msg's
-color   index       brightgreen     green   "~N~h'buccolab@msu.edu'"                                                    # new msu msg's
-color   index       brightblue      default "~R!~h'brian.buccola@mail.mcgill.ca'!~h'brian.buccola@mail.huji.ac.il'!~P"  # read gmail msg's (bold)
-color   index       brightred       default "~R~h'brian.buccola@mail.mcgill.ca'"                                        # read mcgill msg's
-color   index       brightyellow    default "~R~h'brian.buccola@mail.huji.ac.il'"                                       # read huji msg's
-color   index       brightgreen     default "~R~h'buccolab@msu.edu'"                                                    # read msu msg's
-color   index       white           default "~R~P"                                                                      # grey messages from me (read)
-color   index       yellow          blue    "~O"                                                                        # old (but unread) messages
-color   index       brightred       default "~D"                                                                        # deleted messages
-color   index       brightred       white   "~="                                                                        # duplicate messages
-color   index       brightwhite     default "~T"                                                                        # tagged messages
-color   index       brightmagenta   default "~F"                                                                        # flagged messages
+color   index       brightblue      blue    "~N"                                      # new gmail msg's
+color   index       brightred       red     "~N~h'brian\.buccola@mail\.mcgill\.ca'"   # new mcgill msg's
+color   index       brightyellow    yellow  "~N~h'brian\.buccola@mail\.huji.ac\.il'"  # new huji msg's
+color   index       brightgreen     green   "~N~h'buccolab?@msu\.edu'"                # new msu msg's
+color   index       brightgreen     green   "~N~C'@list\.msu\.edu'"                   # new msu msg's
+color   index       brightgreen     green   "~N~C'lin-grad@.*\.msu\.edu'"             # new msu msg's
+color   index       brightblue      default "~R"                                      # read gmail msg's (bold)
+color   index       brightred       default "~R~h'brian\.buccola@mail\.mcgill\.ca'"   # read mcgill msg's
+color   index       brightyellow    default "~R~h'brian\.buccola@mail\.huji\.ac\.il'" # read huji msg's
+color   index       brightgreen     default "~R~h'buccolab?@msu\.edu'"                # read msu msg's
+color   index       brightgreen     default "~R~C'@list\.msu\.edu'"                   # read msu msg's
+color   index       brightgreen     default "~R~C'lin-grad@.*\.msu\.edu'"             # read msu msg's
+color   index       white           default "~R~P"                                    # grey messages from me (read)
+color   index       yellow          blue    "~O"                                      # old (but unread) messages
+color   index       brightred       default "~D"                                      # deleted messages
+color   index       brightred       white   "~="                                      # duplicate messages
+color   index       brightwhite     default "~T"                                      # tagged messages
+color   index       brightmagenta   default "~F"                                      # flagged (gmail) messages
+# color   index       brightcyan      default "~F~h'buccolab?@msu\.edu'"                # flagged msu messages
+# color   index       brightcyan      default "~F~C'@list\.msu\.edu'"                   # flagged msu messages
+# color   index       brightcyan      default "~F~C'lin-grad@.*\.msu\.edu'"             # flagged msu messages
 
 # header
 color   hdrdefault  white           default

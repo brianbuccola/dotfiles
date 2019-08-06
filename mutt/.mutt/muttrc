@@ -2,10 +2,9 @@
 # file:   ~/.mutt/muttrc
 # author: Brian Buccola <brian.buccola@gmail.com>
 
-# Personal info
-set realname = "Brian Buccola"                  # use real name
-set reverse_name                                # reply from address that was sent to
-alternates "^brian\.buccola@gmail\.com$|^buccola@msu\.edu$"
+# My addresses
+alternates '^brian\.buccola@gmail\.com$|^buccola@msu\.edu$'
+set reverse_name                                # reply with address that mail was sent to
 
 # Files, directories, and commands
 set alias_file = "~/.mutt/alias"                # alias file
@@ -31,7 +30,7 @@ set mbox_type = Maildir                         # mailbox type
 set postponed = "+postponed"                    # where to save postponed msg's (drafts) to
 set reverse_alias                               # show names from alias file in index
 set sort_alias = alias                          # sort alias file by alias
-set spoolfile = "+gmail/archive"                # default inbox on open
+# set spoolfile = "+gmail/archive"                # default inbox on open
 set timeout = 3                                 # don't wait for user input before checking for new mail
 set ts_enabled                                  # let mutt set terminal status line and icon name
 unset help                                      # don't show help lines describing major keybindings
@@ -42,6 +41,11 @@ unset wait_key                                  # don't ask to "press any key to
 # Mailboxes to poll for new mail (use of '+' must come *after* 'set folder')
 mailboxes "+gmail/archive" \
           "+msu/inbox"
+
+# Virtual mailboxes
+set virtual_spoolfile
+set nm_query_type = threads
+virtual-mailboxes "all" "notmuch://?query=folder:gmail/archive or folder:msu/inbox or folder:msu/sent"
 
 # Index options
 set sort = threads                              # like gmail
@@ -74,29 +78,17 @@ set mime_forward = ask-yes                      # forward attachments as MIME/pa
 set reply_to                                    # reply to Reply to: field
 
 # Hooks
-## set appropriate from address and sendmail command when switching folders
-folder-hook "gmail/*" 'set from = "brian.buccola@gmail.com" ; set sendmail = "/usr/bin/msmtp -a gmail"'
-folder-hook "msu/*"   'set from = "buccola@msu.edu"         ; set sendmail = "/usr/bin/msmtp -a msu"'
-
-## same, but when sending a message
-send2-hook ~f"^brian\.buccola@gmail\.com$" 'set from = "brian.buccola@gmail.com" ; set sendmail = "/usr/bin/msmtp -a gmail"'
-send2-hook ~f"^buccola@msu\.edu$"          'set from = "buccola@msu.edu"         ; set sendmail = "/usr/bin/msmtp -a msu"'
-
-## gmail deletion: send to trash when in archive
-folder-hook "gmail/archive" 'macro index d "<save-message>=gmail/trash<enter>" "send message to gmail trash"'
-folder-hook "gmail/archive" 'macro index <Esc>d "<tag-thread><tag-prefix><save-message>=gmail/trash<enter>" "send thread to gmail trash"'
-
-## cont'd: simply delete when not in archive (or in trash); this amounts to archiving (leaving a copy in archive)
-folder-hook "gmail/[^a].*" 'macro index d "<delete-message>" "archive message (inbox) or remove label (elsewhere)"'
-folder-hook "gmail/[^a].*" 'macro index <Esc>d "<tag-thread><tag-prefix><delete-message>" "archive thread (inbox) or remove label (elsewhere)"'
-
-## msu deletion: send to trash (when not in trash)
-folder-hook "msu/[^t].*" 'macro index d "<save-message>=msu/trash<enter>" "send message to msu trash"'
-folder-hook "msu/[^t].*" 'macro index <Esc>d "<tag-thread><tag-prefix><save-message>=msu/trash<enter>" "send thread to msu trash"'
-
-## when in trash, delete forever
-folder-hook "trash" 'macro index d "<delete-message>" "delete message forever"'
-folder-hook "trash" 'macro index <Esc>d "<tag-thread><tag-prefix><delete-message>" "delete thread forever"'
+## set appropriate from address and sendmail command when sending a message
+send2-hook ~f"^brian\.buccola@gmail\.com$" '\
+    set from = "brian.buccola@gmail.com" ;\
+    set realname = "Brian Buccola" ;\
+    set sendmail = "/usr/bin/msmtp -a gmail" \
+'
+send2-hook ~f"^buccola@msu\.edu$" '\
+    set from = "buccola@msu.edu" ;\
+    set realname = "Buccola, Brian" ;\
+    set sendmail = "/usr/bin/msmtp -a msu" \
+'
 
 # Bindings
 bind index,alias,attach,pager \Cf next-page
@@ -105,6 +97,7 @@ bind index,alias,attach,pager \Cu half-up
 bind index,alias,attach,pager \Cd half-down
 bind index,alias,attach,pager \Ce next-line
 bind index,alias,attach,pager \Cy previous-line
+bind index,alias,pager,attach g noop
 bind index,alias,attach gg first-entry
 bind index,alias,attach G  last-entry
 bind index,pager,attach gr  group-reply
@@ -116,17 +109,32 @@ bind pager k  previous-line
 bind pager gg top
 bind pager G  bottom
 
+## unbind deletion keys; use <save-message> instead, and save to the appropriate trash folder
+bind index,pager <Esc>d noop
+bind index,pager D      noop
+bind index,pager d      noop
+
 # Macros
-## view Mutt manual
+## apply gmail settings
 macro generic,pager \
-  "<esc>m" \
-  "<shell-escape>less /usr/share/doc/mutt/manual.txt<enter>" \
-  "show Mutt documentation"
+  ",g" \
+  "<enter-command>set from = 'brian.buccola@gmail.com' ; set realname = 'Brian Buccola' ; set sendmail = '/usr/bin/msmtp -a gmail'<enter>" \
+  "apply gmail settings"
+
+## apply msu settings
+macro generic,pager \
+  ",m" \
+  "<enter-command>set from = 'buccola@msu.edu' ; set realname = 'Buccola, Brian' ; set sendmail = '/usr/bin/msmtp -a msu'<enter>" \
+  "apply msu settings"
 
 ## quick-sync ~/.mail immediately with mbsync
-macro index R "<shell-escape>/usr/bin/mbsync -Va<enter>" "sync IMAP"
+macro index ,r "<shell-escape>/usr/bin/mbsync -Va<enter>" "sync IMAP"
+
+## notmuch
+macro index ,n "<shell-escape>notmuch new<enter>" "update notmuch"
 
 ## change to various folders
+macro index ,a "<change-vfolder>all<enter>"             "go to all (virtual folder)"
 macro index gi "<change-folder>=gmail/inbox<enter>"     "go to gmail inbox"
 macro index ga "<change-folder>=gmail/archive<enter>"   "go to gmail archive"
 macro index gs "<change-folder>=gmail/sent<enter>"      "go to gmail sent mail"

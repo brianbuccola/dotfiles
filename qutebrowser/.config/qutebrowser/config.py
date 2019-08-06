@@ -118,6 +118,10 @@ config.bind(';m', "hint links spawn st -e mutt {hint-url}", mode="normal")
 
 ## workaround for https://github.com/qutebrowser/qutebrowser/issues/4579
 config.bind('<tab>', "nop", mode="normal")
+config.bind('<tab>', "nop", mode="hint")
+config.bind('<tab>', "nop", mode="passthrough")
+config.bind('<tab>', "nop", mode="caret")
+config.bind('<tab>', "nop", mode="register")
 
 ## command mode
 config.bind('<ctrl-e>', "edit-command --run", mode="command")

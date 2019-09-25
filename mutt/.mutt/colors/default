@@ -18,12 +18,14 @@ color   index       brightblue      blue    "~N"                                
 color   index       brightred       red     "~N~h'brian\.buccola@mail\.mcgill\.ca'"   # new mcgill msg's
 color   index       brightyellow    yellow  "~N~h'brian\.buccola@mail\.huji.ac\.il'"  # new huji msg's
 color   index       brightgreen     green   "~N~h'buccolab?@msu\.edu'"                # new msu msg's
+color   index       brightgreen     green   "~N~C'@egr\.msu\.edu'"                    # new msu msg's
 color   index       brightgreen     green   "~N~C'@list\.msu\.edu'"                   # new msu msg's
 color   index       brightgreen     green   "~N~C'lin-grad@.*\.msu\.edu'"             # new msu msg's
 color   index       brightblue      default "~R"                                      # read gmail msg's (bold)
 color   index       brightred       default "~R~h'brian\.buccola@mail\.mcgill\.ca'"   # read mcgill msg's
 color   index       brightyellow    default "~R~h'brian\.buccola@mail\.huji\.ac\.il'" # read huji msg's
 color   index       brightgreen     default "~R~h'buccolab?@msu\.edu'"                # read msu msg's
+color   index       brightgreen     default "~R~C'@egr\.msu\.edu'"                    # read msu msg's
 color   index       brightgreen     default "~R~C'@list\.msu\.edu'"                   # read msu msg's
 color   index       brightgreen     default "~R~C'lin-grad@.*\.msu\.edu'"             # read msu msg's
 color   index       white           default "~R~P"                                    # grey messages from me (read)

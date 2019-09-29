@@ -23,7 +23,7 @@ highlight articlelist "semantics?" red     default bold
 highlight articlelist "t420"       red     default bold
 highlight articlelist "pok(e|3)r"  red     default bold
 highlight articlelist "dwm"        red     default bold
-highlight all "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" blue default bold
+highlight all "(https?|ftp)://[^ ]+" blue default bold
 highlight all "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" red default bold
 
 # my title formats

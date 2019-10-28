@@ -123,7 +123,6 @@ alias ls='ls --color=auto -F'
 alias m='mupdf'
 alias mv='mv -i'
 alias mx='mpv $(xsel)'
-alias p='sudo pacman'
 alias pg='ping www.google.com'
 alias r='ranger'
 alias R='R --quiet'
@@ -175,7 +174,6 @@ screencast() {
 # Add completions to aliases and functions
 compdef g=git
 compdef m=mupdf
-compdef p=pacman
 compdef t=tmux
 compdef v=vim
 

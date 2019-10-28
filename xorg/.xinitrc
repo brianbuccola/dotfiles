@@ -7,7 +7,6 @@
 display-adjust
 keyboard-adjust
 ~/.fehbg
-touchpad-toggle
 xrdb -merge ~/.Xresources
 xset s 300 300
 xautolock -time 5 -locker slock &

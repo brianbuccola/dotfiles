@@ -4,7 +4,7 @@ Config { font = "xft:Misc Tamsyn:size=12"
        , fgColor = "#a89984"
        , border = NoBorder
        , lowerOnStart = True
-       , commands = [ Run Wireless "wlp3s0" [ "-t", "<essid> <quality>", "-L", "50", "-H", "80"
+       , commands = [ Run Wireless "wlo1" [ "-t", "<essid> <quality>", "-L", "50", "-H", "80"
                                             , "--low", "#83a598", "--normal", "#fabd2f", "--high", "#b8bb26"
                                             ] 10
                     , Run DynNetwork [ "-t", "<rx>|<tx>", "-S", "true", "-L", "1000", "-H", "5000"
@@ -22,5 +22,5 @@ Config { font = "xft:Misc Tamsyn:size=12"
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %wlp3s0wi%  %dynnetwork%  %battery%  <fc=#8ec07c>%updates%</fc>  <fc=#d3869b>%default:Master%</fc>  <fc=#d79921>%date%</fc> "
+       , template = "%StdinReader% }{ %wlo1wi%  %dynnetwork%  %battery%  <fc=#8ec07c>%updates%</fc>  <fc=#d3869b>%default:Master%</fc>  <fc=#d79921>%date%</fc> "
        }

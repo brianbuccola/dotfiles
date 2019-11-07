@@ -59,7 +59,6 @@ c.fonts.messages.warning = "12pt monospace"
 c.fonts.prompts = "12pt Noto Sans"
 c.fonts.statusbar = "12pt monospace"
 c.fonts.tabs = "12pt monospace"
-c.fonts.web.family.fixed = "Fira Mono"
 c.fonts.web.family.fixed = "Noto Sans Mono"
 c.fonts.web.family.serif = "Noto Serif"
 c.fonts.web.family.sans_serif = "Noto Sans"
@@ -118,9 +117,6 @@ config.bind(';m', "hint links spawn st -e mutt {hint-url}", mode="normal")
 
 ## command mode
 config.bind('<ctrl-e>', "edit-command --run", mode="command")
-
-# Proxy
-# c.content.proxy = "socks://localhost:8080/"
 
 # Colors
 

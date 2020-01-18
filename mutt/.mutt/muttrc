@@ -35,6 +35,7 @@ set timeout = 3                                 # don't wait for user input befo
 set ts_enabled                                  # let mutt set terminal status line and icon name
 unset help                                      # don't show help lines describing major keybindings
 unset mark_old                                  # mark new msg's as old when quitting mutt?
+set quit = "ask-yes"                            # confirm quit
 unset record                                    # don't save sent items (gmail/msu does automatically)
 unset wait_key                                  # don't ask to "press any key to continue" after shell cmd, etc.
 

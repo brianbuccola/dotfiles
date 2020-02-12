@@ -40,7 +40,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "q", "m", "d", "t", "n", "v", "w", "y", "z" };
+static const char *tags[] = { "q", "m", "d", "t", "v", "w", "x", "y", "z" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -49,13 +49,12 @@ static const Rule rules[] = {
 	 */
 	/* class            instance        title       tags mask   isfloating  monitor */
 	{ "qutebrowser",    NULL,           NULL,       1 << 0,     0,          -1 },
-	{ NULL,             NULL,           "mutt",     1 << 1,     0,          -1 },
+	{ "mutt",           NULL,           NULL,       1 << 1,     0,          -1 },
 	{ "MuPDF",          NULL,           NULL,       1 << 2,     0,          -1 },
 	{ "Zathura",        NULL,           NULL,       1 << 2,     0,          -1 },
-	{ NULL,             NULL,           "newsboat", 1 << 4,     0,          -1 },
-	{ NULL,             NULL,           "mpv",      1 << 5,     0,          -1 },
-	{ NULL,             "scratchpad",   NULL,       1 << 3,     0,          -1 },
-	{ NULL,             "work",         NULL,       1 << 6,     0,          -1 },
+	{ NULL,             NULL,           "mpv",      1 << 4,     0,          -1 },
+	{ "scratchpad",     NULL,           NULL,       1 << 3,     0,          -1 },
+	{ "work",           NULL,           NULL,       1 << 5,     0,          -1 },
 	{ "Pinentry",       NULL,           NULL,       0,          1,          -1 },
 	{ "Xmessage",       NULL,           NULL,       0,          1,          -1 },
 };
@@ -143,9 +142,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_m,                      1)
 	TAGKEYS(                        XK_d,                      2)
 	TAGKEYS(                        XK_t,                      3)
-	TAGKEYS(                        XK_n,                      4)
-	TAGKEYS(                        XK_v,                      5)
-	TAGKEYS(                        XK_w,                      6)
+	TAGKEYS(                        XK_v,                      4)
+	TAGKEYS(                        XK_w,                      5)
+	TAGKEYS(                        XK_x,                      6)
 	TAGKEYS(                        XK_y,                      7)
 	TAGKEYS(                        XK_z,                      8)
 	{ MODKEY,                       XK_s,                      spawn, SHCMD("") }, /* NOP */

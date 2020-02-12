@@ -149,7 +149,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_y,                      7)
 	TAGKEYS(                        XK_z,                      8)
 	{ MODKEY,                       XK_s,                      spawn, SHCMD("") }, /* NOP */
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_r,      quit,           {0} },
 	{ 0,                            XK_Print,                spawn, SHCMD("import -silent -window root \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\"") },
 	{ ShiftMask,                    XK_Print,                spawn, SHCMD("import -silent \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\"") },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },

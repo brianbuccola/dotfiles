@@ -92,6 +92,7 @@ static const char *passmenucmdboth[] = { "passmenu2", "--typeboth", "-m", dmenum
 static const char *passmenucmdpass[] = { "passmenu2", "--typepass", "-m", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", bright_black, "-sb", black, "-sf", bright_green, NULL };
 static const char *passmenucmduser[] = { "passmenu2", "--typeuser", "-m", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", bright_black, "-sb", black, "-sf", bright_green, NULL };
 static const char *volmenucmd[]  = { "volmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", bright_black, "-sb", black, "-sf", bright_magenta, NULL };
+static const char *docmenucmd[]  = { "docmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", bright_black, "-sb", black, "-sf", bright_blue, NULL };
 static const char *termcmd[]     = { "st", "-e", "tmux", NULL };
 
 static Key keys[] = {
@@ -102,6 +103,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = passmenucmdpass } },
 	{ MODKEY|ControlMask,           XK_p,      spawn,          {.v = passmenucmduser } },
 	{ MODKEY,                       XK_u,      spawn,          {.v = volmenucmd } },
+	{ MODKEY,                       XK_c,      spawn,          {.v = docmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_Escape, spawn,          SHCMD("mouse-warp") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },

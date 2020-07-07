@@ -1,0 +1,17 @@
+#!/bin/bash
+
+old_url="$QUTE_URL"
+
+# https://grab.this.substring/foo/bar/
+old_substring=$(echo "$old_url" | sed -E 's|(https?://)([^/]*)(/.*)|\2|')
+
+# grab.this.substring -> grab-this-substring
+hyphenize_substring=$(echo "$old_substring" | tr '.' '-')
+
+# grab-this-substring -> grab-this-substring.proxy1.cl.msu.edu
+msuify_substring=$(echo "$hyphenize_substring.proxy1.cl.msu.edu")
+
+# put it all back together
+new_url=$(echo "$old_url" | sed -E "s|(https?://)([^/]*)(.*)|\1$msuify_substring\3|")
+
+echo "open ${new_url}" >> "${QUTE_FIFO}"

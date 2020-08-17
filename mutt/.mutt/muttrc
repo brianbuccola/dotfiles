@@ -157,3 +157,6 @@ macro pager W "<enter-command>set wrap=0 nosmart_wrap nomarkers<enter>" "unset w
 
 ## open URLs with extract_url
 macro pager u "<enter-command>unset pipe_decode<enter><pipe-message>extract_url<enter>" "open URLs with extract_url"
+
+## show Mutt documentation in Qutebrowser
+macro generic,pager <Esc>m "<shell-escape>open_url_in_instance.sh /usr/share/doc/mutt/manual.html &>/dev/null<enter>" "show Mutt documentation in Qutebrowser"

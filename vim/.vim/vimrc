@@ -209,6 +209,9 @@ let g:vimtex_include_search_enabled=0
 if has('nvim')
     let g:vimtex_compiler_progname='nvr'
 endif
+
+" vim-emoji
+set completefunc=emoji#complete
 " }}}
 " Extra digraphs {{{
 map! <C-k>[[ ⟦

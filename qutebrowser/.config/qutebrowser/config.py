@@ -1,3 +1,6 @@
+# Don't load autoconfig
+config.load_autoconfig(False)
+
 # General
 c.url.default_page = "about:blank"
 c.url.start_pages = ["about:blank"]

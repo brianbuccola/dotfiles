@@ -27,6 +27,7 @@ set smartcase                  " ...when search string contains uppercase.
 set spell                      " Highlight misspelled words.
 set spellcapcheck=             " Don't highlight uncapitalized first word.
 set splitright                 " Split to the right when executing :vsplit.
+set thesaurus=~/.vim/thesaurus/english.txt
 set undodir=~/.vim/undo        " Save undo histories all in one place.
 set undofile                   " Save undo history after exiting.
 set wildignore+=*.swp,*.bak,*.jpg,*.gif,*.pdf,*.png

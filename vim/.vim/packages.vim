@@ -16,7 +16,6 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 " Add additional packages.
 call minpac#add('PotatoesMaster/i3-vim-syntax')
 call minpac#add('SirVer/ultisnips')
-call minpac#add('beloglazov/vim-online-thesaurus')
 call minpac#add('bradford-smith94/quick-scope')
 call minpac#add('coderifous/textobj-word-column.vim')
 call minpac#add('chriskempson/base16-vim')

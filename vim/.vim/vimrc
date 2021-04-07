@@ -167,9 +167,6 @@ nnoremap <BS> <C-^>
 
 " Easy save.
 nnoremap <leader>w :update<CR>
-
-" Look up current word (under cursor) in online thesaurus.
-nnoremap <Leader>t :OnlineThesaurusCurrentWord<CR>
 " }}}
 " Plugin Settings {{{
 " vim-markdown
@@ -193,9 +190,6 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " vim-auto-save
 let g:auto_save_no_updatetime=1
-
-" vim-online-thesaurus
-let g:online_thesaurus_map_keys=0
 
 " vim-textobj-quote
 map <silent> <leader>qc <Plug>ReplaceWithCurly

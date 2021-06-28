@@ -55,6 +55,7 @@ c.fonts.default_family = "Misc Tamsyn"
 # Aliases
 c.aliases['socks'] = "set content.proxy socks://localhost:8080/"
 c.aliases['nosocks'] = "set content.proxy system"
+c.aliases['cache'] = "open https://www.google.com/search?q=cache:{url}"
 
 # Bindings
 ## normal mode

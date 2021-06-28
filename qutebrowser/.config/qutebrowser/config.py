@@ -51,11 +51,6 @@ c.url.searchengines['sh'] = "https://sci-hub.tw/{}"
 # Fonts
 c.fonts.default_size = "12pt"
 c.fonts.default_family = "Misc Tamsyn"
-c.fonts.prompts = "default_size Noto Sans"
-c.fonts.web.family.fixed = "Noto Sans Mono"
-c.fonts.web.family.serif = "Noto Serif"
-c.fonts.web.family.sans_serif = "Noto Sans"
-c.fonts.web.family.standard = "Noto Serif"
 
 # Aliases
 c.aliases['socks'] = "set content.proxy socks://localhost:8080/"

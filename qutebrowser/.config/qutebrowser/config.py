@@ -11,6 +11,8 @@ c.content.headers.do_not_track = False
 c.confirm_quit = ["downloads", "multiple-tabs"]
 c.statusbar.padding = {"top": 4, "bottom": 4, "left": 0, "right": 0}
 c.window.title_format = "{perc}{current_title}"
+c.zoom.default = 125
+# c.colors.webpage.darkmode.enabled = True
 
 # Yanking URLs
 c.url.yank_ignored_parameters += ["smid", "smtyp", "fbclid"]
@@ -68,7 +70,7 @@ config.bind('tO', "set-cmd-text :open -t {url:pretty}", mode="normal")
 config.bind('bO', "set-cmd-text :open -b {url:pretty}", mode="normal")
 config.bind('l', "tab-next", mode="normal")
 config.bind('h', "tab-prev", mode="normal")
-config.bind('<backspace>', "tab-next last", mode="normal")
+config.bind('<backspace>', "tab-focus last", mode="normal")
 config.bind('gh', "tab-move -", mode="normal")
 config.bind('gl', "tab-move +", mode="normal")
 config.bind('bh', "back -b", mode="normal")

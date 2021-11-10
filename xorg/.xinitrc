@@ -8,6 +8,7 @@ display-adjust
 keyboard-adjust
 ~/.fehbg
 xrdb -merge ~/.Xresources
+xrandr --dpi 96
 xset s 300 300
 xautolock -time 5 -locker slock &
 

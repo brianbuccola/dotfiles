@@ -52,7 +52,7 @@ c.url.searchengines['sh'] = "https://sci-hub.tw/{}"
 
 # Fonts
 c.fonts.default_size = "12pt"
-c.fonts.default_family = "Misc Tamsyn"
+c.fonts.default_family = "Dina"
 
 # Aliases
 c.aliases['socks'] = "set content.proxy socks://localhost:8080/"

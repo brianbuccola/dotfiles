@@ -123,7 +123,7 @@ myKeys =
     , ( "M-S-p"                  , spawn myPassmenuCmdPass                               )
     , ( "M-C-p"                  , spawn myPassmenuCmdUser                               )
     , ( "M-u"                    , spawn myVolmenuCmd                                    )
-    , ( "M-C-d"                  , spawn myDocmenuCmd                                    )
+    , ( "M-c"                    , spawn myDocmenuCmd                                    )
     ]
 
 myScreenshotCmd    = "import -silent -window root \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""

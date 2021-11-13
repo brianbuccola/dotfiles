@@ -10,7 +10,8 @@ import System.Exit
 import qualified XMonad.StackSet as W -- provides greedyView and RationalRect
 import XMonad.Actions.CycleWS         -- cycle through WSs, toggle last WS
 import XMonad.Actions.Warp            -- banish mouse pointer
-import XMonad.Hooks.DynamicLog        -- for xmobar; provides statusBar, pad, etc.
+import XMonad.Hooks.StatusBar         -- add status bar such as xmobar
+import XMonad.Hooks.StatusBar.PP      -- configure status bar printing printing
 import XMonad.Hooks.EwmhDesktops      -- use EWMH hints
 import XMonad.Hooks.ManageDocks       -- automatically manage dock-type programs
 import XMonad.Hooks.ManageHelpers     -- provides isDialog
@@ -28,13 +29,18 @@ import Colors.GruvboxDark             -- personal colors, defined in Colors/Gruv
 --  Main
 -- ======
 
-main = xmonad =<< statusBar myBar myPP myToggleBarKey (docks $ ewmh myConfig)
+main = xmonad
+     . ewmhFullscreen
+     . ewmh
+     . withEasySB mySB defToggleStrutsKey
+     . docks
+     $ myConfig
 
 -- ========
 --  Basics
 -- ========
 
-myBar = "xmobar"
+mySB = statusBarProp "xmobar" (pure myPP)
 
 myPP = xmobarPP
     { ppCurrent = xmobarColor myBrightYellow "" . wrap "{" "}"
@@ -46,8 +52,6 @@ myPP = xmobarPP
     , ppLayout  = xmobarColor myBrightMagenta ""
     }
 
-myToggleBarKey XConfig {modMask = modMask} = (modMask, xK_b) -- "M-b" to toggle xmobar visibility
-
 myConfig = withUrgencyHook NoUrgencyHook def
     { terminal           =  "st -e tmux"
     , modMask            =  mod1Mask
@@ -58,7 +62,6 @@ myConfig = withUrgencyHook NoUrgencyHook def
     , startupHook        =  myStartupHook
     , manageHook         =  myManageHook
     , layoutHook         =  myLayoutHook
-    , handleEventHook    =  handleEventHook def <+> fullscreenEventHook
     }
     `additionalKeysP` myKeys
 

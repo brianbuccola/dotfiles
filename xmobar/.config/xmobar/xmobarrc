@@ -18,9 +18,9 @@ Config { font = "xft:Dina:size=12"
                     , Run Volume "default" "Master" [ "-t", "<volume>%<status>", "--", "-O", "", "-o", " (mute)" ] 10
                     , Run Date "%a %d %b %H:%M:%S" "date" 10
                     , Run Com "/home/brian/repos/scripts/update-notify" [] "updates" 10
-                    , Run StdinReader
+                    , Run XMonadLog
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %wlo1wi%  %dynnetwork%  %battery%  <fc=#8ec07c>%updates%</fc>  <fc=#d3869b>%default:Master%</fc>  <fc=#d79921>%date%</fc> "
+       , template = "%XMonadLog% }{ %wlo1wi%  %dynnetwork%  %battery%  <fc=#8ec07c>%updates%</fc>  <fc=#d3869b>%default:Master%</fc>  <fc=#d79921>%date%</fc> "
        }

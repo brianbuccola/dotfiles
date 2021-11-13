@@ -17,6 +17,7 @@ import XMonad.Hooks.ManageDocks       -- automatically manage dock-type programs
 import XMonad.Hooks.ManageHelpers     -- provides isDialog
 import XMonad.Hooks.UrgencyHook       -- colorize urgent WSs
 import XMonad.Util.EZConfig           -- easily configure keybindings
+import XMonad.Util.Ungrab             -- allow releasing XMonad's keyboard grab (for screenshots etc.)
 import XMonad.Layout.Spacing          -- pad windows with some spacing
 import XMonad.Layout.NoBorders        -- provides smartBorders, noBorders
 import XMonad.Layout.Tabbed           -- tabbed windows layout
@@ -103,8 +104,9 @@ myKeys =
     , ( "M-S-C-q"                , io (exitWith ExitSuccess)                             )
 
     -- Screenshots
-    , ( "<Print>"                , spawn myScreenshotCmd                                 )
-    , ( "S-<Print>"              , spawn myScreenShotCmdSel                              )
+    , ( "<Print>"                , unGrab >> spawn myScreenshotCmd                       )
+    , ( "S-<Print>"              , unGrab >> spawn myScreenShotCmdSel                    )
+    , ( "C-<Print>"              , unGrab >> spawn myScreenShotCmdSelCopy                )
 
     -- Media keys, etc.
     , ( "<XF86AudioRaiseVolume>" , spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%"      )
@@ -129,8 +131,9 @@ myKeys =
     , ( "M-c"                    , spawn myDocmenuCmd                                    )
     ]
 
-myScreenshotCmd    = "import -silent -window root \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""
-myScreenShotCmdSel = "import -silent \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""
+myScreenshotCmd        = "import -silent -window root \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""
+myScreenShotCmdSel     = "import -silent \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""
+myScreenShotCmdSelCopy = "import -silent png:- | xclip -selection clipboard -t image/png"
 
 myDmenuCmd        = "dmenu_run" ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightYellow ++ "'"
 myManmenuCmd      = "manmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightRed ++ "'"

@@ -78,7 +78,6 @@ myKeys =
     -- Basics
       ( "M-<Backspace>"          , toggleWS                                              )
     , ( "M-<Escape>"             , banish LowerRight                                     )
-    , ( "M-S-<Return>"           , spawn "st -e tmux"                                    )
     , ( "M-q"                    , windows $ W.greedyView "q"                            )
     , ( "M-m"                    , windows $ W.greedyView "m"                            )
     , ( "M-d"                    , windows $ W.greedyView "d"                            )

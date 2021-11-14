@@ -16,6 +16,7 @@ import XMonad.Hooks.ManageHelpers     -- provides isDialog
 import XMonad.Hooks.StatusBar         -- add status bar such as xmobar
 import XMonad.Hooks.StatusBar.PP      -- configure status bar printing printing
 import XMonad.Hooks.UrgencyHook       -- colorize urgent WSs
+import XMonad.Util.Cursor             -- set cursor
 import XMonad.Util.EZConfig           -- easily configure keybindings
 import XMonad.Util.Ungrab             -- allow releasing XMonad's keyboard grab (for screenshots etc.)
 import XMonad.Layout.Spacing          -- pad windows with some spacing
@@ -148,6 +149,7 @@ myVolmenuCmd      = "volmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++myBrightBlac
 -- =============
 
 myStartupHook = do
+    setDefaultCursor xC_left_ptr
     spawn "tmux has-session -t mutt || st -c mutt -e tmux new -s mutt mutt"
     spawn "tmux has-session -t scratchpad || st -c scratchpad -e tmux new -s scratchpad"
     spawn "tmux has-session -t work || st -c work -e tmux new -s work"

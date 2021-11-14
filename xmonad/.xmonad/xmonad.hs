@@ -192,7 +192,7 @@ myLayoutHook = smartBorders $ avoidStruts $ myTiled ||| myTabbed ||| myFull
             , inactiveTextColor   = myWhite
             , inactiveBorderColor = myBrightBlack
             , urgentColor         = myRed
-            , urgentTextColor     = myBrightRed
+            , urgentTextColor     = myBrightYellow
             , urgentBorderColor   = myBrightBlack
             }
         myTiled       = renamed [Replace " ||| "] $ spacingRaw True (Border 2 2 2 2) True (Border 2 2 2 2) True $ Tall nmaster delta ratio

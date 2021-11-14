@@ -144,7 +144,7 @@ myPassmenuCmdUser = "passmenu2 --typeuser " ++ " -nb '" ++ myBlack ++ "' -nf '" 
 myVolmenuCmd      = "volmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightMagenta ++ "'"
 
 -- =============
---  StartupHook
+--  startupHook
 -- =============
 
 myStartupHook = do

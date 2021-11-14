@@ -194,6 +194,7 @@ myLayoutHook = smartBorders $ avoidStruts $ myTiled ||| myTabbed ||| myFull
             , urgentColor         = myRed
             , urgentTextColor     = myBrightYellow
             , urgentBorderColor   = myBrightBlack
+            , decoHeight          = 24
             }
         myTiled       = renamed [Replace " ||| "] $ spacingRaw True (Border 2 2 2 2) True (Border 2 2 2 2) True $ Tall nmaster delta ratio
         nmaster       = 1     -- number of master windows

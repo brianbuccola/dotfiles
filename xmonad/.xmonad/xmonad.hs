@@ -10,11 +10,11 @@ import System.Exit
 import qualified XMonad.StackSet as W -- provides greedyView and RationalRect
 import XMonad.Actions.CycleWS         -- cycle through WSs, toggle last WS
 import XMonad.Actions.Warp            -- banish mouse pointer
-import XMonad.Hooks.StatusBar         -- add status bar such as xmobar
-import XMonad.Hooks.StatusBar.PP      -- configure status bar printing printing
 import XMonad.Hooks.EwmhDesktops      -- use EWMH hints
 import XMonad.Hooks.ManageDocks       -- automatically manage dock-type programs
 import XMonad.Hooks.ManageHelpers     -- provides isDialog
+import XMonad.Hooks.StatusBar         -- add status bar such as xmobar
+import XMonad.Hooks.StatusBar.PP      -- configure status bar printing printing
 import XMonad.Hooks.UrgencyHook       -- colorize urgent WSs
 import XMonad.Util.EZConfig           -- easily configure keybindings
 import XMonad.Util.Ungrab             -- allow releasing XMonad's keyboard grab (for screenshots etc.)
@@ -54,19 +54,19 @@ myPP = xmobarPP
     }
 
 myConfig = withUrgencyHook NoUrgencyHook def
-    { terminal           =  "st -e tmux"
-    , modMask            =  mod1Mask
-    , borderWidth        =  2
-    , normalBorderColor  =  myBrightBlack
-    , focusedBorderColor =  myYellow
-    , workspaces         =  [ "q", "m", "d", "t", "n", "v", "w", "x", "y", "z" ]
-    , startupHook        =  myStartupHook
-    , manageHook         =  myManageHook
-    , layoutHook         =  myLayoutHook
+    { terminal           = "st -e tmux"
+    , modMask            = mod1Mask
+    , borderWidth        = 2
+    , normalBorderColor  = myBrightBlack
+    , focusedBorderColor = myYellow
+    , workspaces         = [ "q", "m", "d", "t", "n", "v", "w", "x", "y", "z" ]
+    , startupHook        = myStartupHook
+    , manageHook         = myManageHook
+    , layoutHook         = myLayoutHook
     }
     `additionalKeysP` myKeys
 
-myFont      = "xft:Dina:size=12"
+myFont = "xft:Dina:size=12"
 
 -- =============
 --  Keybindings
@@ -123,12 +123,12 @@ myKeys =
 
     -- Prompts
     , ( "M-r"                    , spawn myDmenuCmd                                      )
+    , ( "M-c"                    , spawn myDocmenuCmd                                    )
     , ( "M-/"                    , spawn myManmenuCmd                                    )
     , ( "M-p"                    , spawn myPassmenuCmdBoth                               )
     , ( "M-S-p"                  , spawn myPassmenuCmdPass                               )
     , ( "M-C-p"                  , spawn myPassmenuCmdUser                               )
     , ( "M-u"                    , spawn myVolmenuCmd                                    )
-    , ( "M-c"                    , spawn myDocmenuCmd                                    )
     ]
 
 myScreenshotCmd        = "import -silent -window root \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""
@@ -136,12 +136,12 @@ myScreenShotCmdSel     = "import -silent \"/tmp/screenshot-$(date '+%Y-%m-%d-%T'
 myScreenShotCmdSelCopy = "import -silent png:- | xclip -selection clipboard -t image/png"
 
 myDmenuCmd        = "dmenu_run" ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightYellow ++ "'"
+myDocmenuCmd      = "docmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightBlue ++ "'"
 myManmenuCmd      = "manmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightRed ++ "'"
 myPassmenuCmdBoth = "passmenu2 --typeboth " ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
 myPassmenuCmdPass = "passmenu2 --typepass " ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
 myPassmenuCmdUser = "passmenu2 --typeuser " ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
 myVolmenuCmd      = "volmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightMagenta ++ "'"
-myDocmenuCmd      = "docmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightBlue ++ "'"
 
 -- =============
 --  StartupHook

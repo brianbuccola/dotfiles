@@ -20,9 +20,7 @@ highlight article     "^Author:"   yellow  default bold
 highlight article     "^Link:"     cyan    default bold
 highlight article     "^Date:"     red     default bold
 highlight articlelist "semantics?" red     default bold
-highlight articlelist "t420"       red     default bold
-highlight articlelist "pok(e|3)r"  red     default bold
-highlight articlelist "dwm"        red     default bold
+highlight articlelist "xmonad"     red     default bold
 highlight all "(https?|ftp)://[^ ]+" blue default bold
 highlight all "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" red default bold
 
@@ -295,7 +293,7 @@ notify-beep "yes"
 ## configuration option: refresh-on-startup
 ## description: If yes, then all feeds will be reloaded when newsboat starts up. This is equivalent to the -r commandline option.
 ## parameter syntax: [yes/no]
-# refresh-on-startup no
+refresh-on-startup "yes"
 
 ## configuration option: reload-only-visible-feeds
 ## description: If yes, then manually reloading all feeds will only reload the currently visible feeds, e.g. if a filter or a tag is set.
@@ -305,7 +303,7 @@ reload-only-visible-feeds "yes"
 ## configuration option: reload-time
 ## description: The number of minutes between automatic reloads.
 ## parameter syntax: <number>
-reload-time "60"
+# reload-time "60"
 
 ## configuration option: reload-threads
 ## description: The number of parallel reload threads that shall be started when all feeds are reloaded.

@@ -8,7 +8,9 @@
 import XMonad
 import System.Exit
 import qualified XMonad.StackSet as W -- provides greedyView and RationalRect
+import XMonad.Actions.CopyWindow      -- copy window to all WSs
 import XMonad.Actions.CycleWS         -- cycle through WSs, toggle last WS
+import XMonad.Actions.FloatSnap       -- snap floats to corners of the screen etc.
 import XMonad.Actions.Warp            -- banish mouse pointer
 import XMonad.Hooks.EwmhDesktops      -- use EWMH hints
 import XMonad.Hooks.ManageDocks       -- automatically manage dock-type programs
@@ -66,12 +68,20 @@ myConfig = withUrgencyHook NoUrgencyHook def
     , layoutHook         = myLayoutHook
     }
     `additionalKeysP` myKeys
+    `additionalMouseBindings` myButtons
 
 myFont = "xft:Dina:size=12"
 
 -- =============
 --  Keybindings
 -- =============
+
+myButtons =
+    [
+      ((mod1Mask,               button1), (\w -> focus w >> mouseMoveWindow w >> ifClick (snapMagicMove (Just 50) (Just 50) w)))
+    , ((mod1Mask .|. shiftMask, button1), (\w -> focus w >> mouseMoveWindow w >> ifClick (snapMagicResize [L,R,U,D] (Just 50) (Just 50) w)))
+    , ((mod1Mask,               button3), (\w -> focus w >> mouseResizeWindow w >> ifClick (snapMagicResize [R,D] (Just 50) (Just 50) w)))
+    ]
 
 myKeys =
     [
@@ -100,6 +110,8 @@ myKeys =
     , ( "M-S-z"                  , windows $ W.shift "z"                                 )
     , ( "M-C-m"                  , windows W.focusMaster                                 )
     , ( "M-C-t"                  , withFocused $ windows . W.sink                        ) -- Push window back into tiling.
+    , ( "M-C-v"                  , windows copyToAll                                     )
+    , ( "M-S-C-v"                , killAllOtherCopies                                    )
     , ( "M-S-r"                  , spawn "xmonad --recompile && xmonad --restart"        )
     , ( "M-S-C-q"                , io (exitWith ExitSuccess)                             )
 

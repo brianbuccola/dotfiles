@@ -6,10 +6,12 @@
 -- =========
 
 import XMonad
+import XMonad.Prompt
 import System.Exit
 import qualified XMonad.StackSet as W -- provides greedyView and RationalRect
 import XMonad.Actions.CopyWindow      -- copy window to all WSs
 import XMonad.Actions.CycleWS         -- cycle through WSs, toggle last WS
+import XMonad.Actions.DynamicProjects -- make WSs projects, dynamically create, rename, move projects
 import XMonad.Actions.FloatSnap       -- snap floats to corners of the screen etc.
 import XMonad.Actions.Warp            -- banish mouse pointer
 import XMonad.Hooks.EwmhDesktops      -- use EWMH hints
@@ -38,7 +40,7 @@ main = xmonad
      . ewmh
      . withEasySB mySB defToggleStrutsKey
      . docks
-     $ myConfig
+     $ dynamicProjects projects myConfig
 
 -- ========
 --  Basics
@@ -72,6 +74,32 @@ myConfig = withUrgencyHook NoUrgencyHook def
 
 myFont = "xft:Dina:size=12"
 
+-- ==========
+--  Projects
+-- ==========
+
+projects =
+    [ Project { projectName = "m"
+              , projectDirectory = "~/"
+              , projectStartHook = Just $ do spawn "tmux has-session -t mutt || st -c mutt -e tmux new -s mutt mutt"
+              }
+
+    , Project { projectName = "t"
+              , projectDirectory = "~/"
+              , projectStartHook = Just $ do spawn "tmux has-session -t scratchpad || st -c scratchpad -e tmux new -s scratchpad"
+              }
+
+    , Project { projectName = "w"
+              , projectDirectory = "~/"
+              , projectStartHook = Just $ do spawn "tmux has-session -t work || st -c work -e tmux new -s work"
+              }
+
+    , Project { projectName = "n"
+              , projectDirectory = "~/"
+              , projectStartHook = Just $ do spawn "st -e newsboat"
+              }
+    ]
+
 -- =============
 --  Keybindings
 -- =============
@@ -88,6 +116,9 @@ myKeys =
     -- Basics
       ( "M-<Backspace>"          , toggleWS                                              )
     , ( "M-<Escape>"             , banish LowerRight                                     )
+    , ( "M-g"                    , switchProjectPrompt myXPConfig                        )
+    , ( "M-S-g"                  , shiftToProjectPrompt myXPConfig                       )
+    , ( "M-C-g"                  , renameProjectPrompt myXPConfig                        )
     , ( "M-q"                    , windows $ W.greedyView "q"                            )
     , ( "M-m"                    , windows $ W.greedyView "m"                            )
     , ( "M-d"                    , windows $ W.greedyView "d"                            )
@@ -143,6 +174,16 @@ myKeys =
     , ( "M-u"                    , spawn myVolmenuCmd                                    )
     ]
 
+myXPConfig = def { font = myFont
+                 , bgColor = myBlack
+                 , fgColor = myBrightCyan
+                 , bgHLight = myBrightCyan
+                 , fgHLight = myBlack
+                 , borderColor = myBrightCyan
+                 , position = CenteredAt 0.5 0.5
+                 , height = 24
+                 }
+
 myScreenshotCmd        = "import -silent -window root \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""
 myScreenShotCmdSel     = "import -silent \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""
 myScreenShotCmdSelCopy = "import -silent png:- | xclip -selection clipboard -t image/png"
@@ -161,9 +202,6 @@ myVolmenuCmd      = "volmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++myBrightBlac
 
 myStartupHook = do
     setDefaultCursor xC_left_ptr
-    spawn "tmux has-session -t mutt || st -c mutt -e tmux new -s mutt mutt"
-    spawn "tmux has-session -t scratchpad || st -c scratchpad -e tmux new -s scratchpad"
-    spawn "tmux has-session -t work || st -c work -e tmux new -s work"
 
 -- ============
 --  manageHook

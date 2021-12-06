@@ -10,6 +10,7 @@ set autochdir                  " Always switch to current file directory.
 set backup                     " Make backup files.
 set backupdir=~/.vim/backup    " Backup directory.
 set complete+=kspell           " Use <C-n> and <C-p> to get suggested spelling completions.
+set cursorline                 " Highlight the current row and line number.
 set directory=~/.vim/tmp       " Directory for swap files.
 set ignorecase                 " Ignore case, except... (see smartcase)
 set incsearch                  " Highlight as you type search phrase.

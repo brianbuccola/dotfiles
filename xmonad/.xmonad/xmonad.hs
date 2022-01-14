@@ -176,15 +176,16 @@ myKeys =
     , ( "M-u"                    , spawn myVolmenuCmd                                    )
     ]
 
-myXPConfig = def { font = myFont
-                 , bgColor = myBlack
-                 , fgColor = myBrightCyan
-                 , bgHLight = myBrightCyan
-                 , fgHLight = myBlack
-                 , borderColor = myBrightCyan
-                 , position = CenteredAt 0.5 0.5
-                 , height = 24
-                 }
+myXPConfig = def
+    { font        = myFont
+    , bgColor     = myBlack
+    , fgColor     = myBrightCyan
+    , bgHLight    = myBrightCyan
+    , fgHLight    = myBlack
+    , borderColor = myBrightCyan
+    , position    = CenteredAt 0.5 0.5
+    , height      = 24
+    }
 
 myScreenshotCmd        = "import -silent -window root \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""
 myScreenShotCmdSel     = "import -silent \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""

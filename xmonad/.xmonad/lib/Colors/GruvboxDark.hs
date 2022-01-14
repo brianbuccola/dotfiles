@@ -4,7 +4,7 @@ module Colors.GruvboxDark where
 --  Gruvbox-inspired colors (dark)
 -- ================================
 
-myBlack         = "#000000"
+myBlack         = "#1d2021"
 myRed           = "#cc241d"
 myGreen         = "#98971a"
 myYellow        = "#d79921"

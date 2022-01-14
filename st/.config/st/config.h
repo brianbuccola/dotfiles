@@ -96,7 +96,7 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* gruvbox-dark colors */
-	"#000000",  /*  0: black          */
+	"#1d2021",  /*  0: black          */
 	"#cc241d",  /*  1: red            */
 	"#98971a",  /*  2: green          */
 	"#d79921",  /*  3: yellow         */

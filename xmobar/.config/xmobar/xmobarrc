@@ -1,6 +1,6 @@
 Config { font = "xft:Dina:size=12"
        , position = Top
-       , bgColor = "#000000"
+       , bgColor = "#1d2021"
        , fgColor = "#a89984"
        , border = NoBorder
        , lowerOnStart = True

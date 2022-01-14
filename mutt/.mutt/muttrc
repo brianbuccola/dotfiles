@@ -150,11 +150,15 @@ macro index a \
   "mark all new as read"
 
 ## toggle wrapping, smart wrap, and markers
-macro pager w "<enter-command>set wrap=0 smart_wrap markers<enter>"    "set wrapping stuff"
-macro pager W "<enter-command>set wrap=0 nosmart_wrap nomarkers<enter>" "unset wrapping stuff"
+macro pager ,w "<enter-command>set wrap=0 smart_wrap markers<enter>"    "set wrapping stuff"
+macro pager ,W "<enter-command>set wrap=0 nosmart_wrap nomarkers<enter>" "unset wrapping stuff"
+
+## toggle context lines
+macro pager ,c "<enter-command>set pager_index_lines=10<enter>" "set context lines"
+macro pager ,C "<enter-command>set pager_index_lines=0<enter>" "unset context lines"
 
 ## open URLs with extract_url
-macro pager u "<enter-command>unset pipe_decode<enter><pipe-message>extract_url<enter>" "open URLs with extract_url"
+macro pager ,u "<enter-command>unset pipe_decode<enter><pipe-message>extract_url<enter>" "open URLs with extract_url"
 
 ## show Mutt documentation in Qutebrowser
-macro generic,pager <Esc>m "<shell-escape>open_url_in_instance.sh /usr/share/doc/mutt/manual.html &>/dev/null<enter>" "show Mutt documentation in Qutebrowser"
+macro generic,pager ,d "<shell-escape>open_url_in_instance.sh /usr/share/doc/mutt/manual.html &>/dev/null<enter>" "show Mutt documentation in Qutebrowser"

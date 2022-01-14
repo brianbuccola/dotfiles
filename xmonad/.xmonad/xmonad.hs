@@ -64,7 +64,7 @@ myConfig = withUrgencyHook NoUrgencyHook def
     , borderWidth        = 2
     , normalBorderColor  = myBrightBlack
     , focusedBorderColor = myYellow
-    , workspaces         = [ "q", "m", "d", "t", "n", "v", "w", "x", "y", "z" ]
+    , workspaces         = [ "q", "m", "d", "t", "n", "s", "v", "w", "x", "y", "z" ]
     , startupHook        = myStartupHook
     , manageHook         = myManageHook
     , layoutHook         = myLayoutHook
@@ -124,6 +124,7 @@ myKeys =
     , ( "M-d"                    , windows $ W.greedyView "d"                            )
     , ( "M-t"                    , windows $ W.greedyView "t"                            )
     , ( "M-n"                    , windows $ W.greedyView "n"                            )
+    , ( "M-s"                    , windows $ W.greedyView "s"                            )
     , ( "M-v"                    , windows $ W.greedyView "v"                            )
     , ( "M-w"                    , windows $ W.greedyView "w"                            )
     , ( "M-x"                    , windows $ W.greedyView "x"                            )
@@ -134,6 +135,7 @@ myKeys =
     , ( "M-S-d"                  , windows $ W.shift "d"                                 )
     , ( "M-S-t"                  , windows $ W.shift "t"                                 )
     , ( "M-S-n"                  , windows $ W.shift "n"                                 )
+    , ( "M-S-s"                  , windows $ W.shift "s"                                 )
     , ( "M-S-v"                  , windows $ W.shift "v"                                 )
     , ( "M-S-w"                  , windows $ W.shift "w"                                 )
     , ( "M-S-x"                  , windows $ W.shift "x"                                 )
@@ -215,6 +217,7 @@ myManageHook = composeAll . concat $
     , [ appName   =? "libreoffice" --> doShift "d"              ]
     , [ className =? "scratchpad"  --> doShift "t"              ]
     , [ title     =? "newsboat"    --> doShift "n"              ]
+    , [ className =? "Signal"      --> doShift "s"              ]
     , [ className =? "mpv"         --> doShift "v"              ]
     , [ className =? "work"        --> doShift "w"              ]
     , [ isDialog                   --> doCenterFloat            ]

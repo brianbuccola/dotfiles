@@ -111,13 +111,13 @@ bind index,pager d      noop
 # Macros
 ## apply gmail settings
 macro generic,pager \
-  ",g" \
+  ,g \
   "<enter-command>set from = 'brian.buccola@gmail.com' ; set realname = 'Brian Buccola' ; set sendmail = '/usr/bin/msmtp -a gmail'<enter>" \
   "apply gmail settings"
 
 ## apply msu settings
 macro generic,pager \
-  ",m" \
+  ,m \
   "<enter-command>set from = 'buccola@msu.edu' ; set realname = 'Buccola, Brian' ; set sendmail = '/usr/bin/msmtp -a msu'<enter>" \
   "apply msu settings"
 

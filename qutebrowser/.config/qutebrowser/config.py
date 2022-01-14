@@ -6,6 +6,7 @@ c.url.default_page = "about:blank"
 c.url.start_pages = ["about:blank"]
 c.content.default_encoding = "utf-8"
 c.content.headers.do_not_track = False
+c.content.notifications.enabled = False
 
 # User interface
 c.confirm_quit = ["downloads", "multiple-tabs"]

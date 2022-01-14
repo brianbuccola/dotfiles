@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Fira Mono:size=13";
+static char *font = "Jet Brains Mono NL:size=14";
 static int borderpx = 2;
 
 /*

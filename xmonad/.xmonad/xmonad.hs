@@ -146,7 +146,7 @@ myKeys =
     , ( "M-C-v"                  , windows copyToAll                                     )
     , ( "M-S-C-v"                , killAllOtherCopies                                    )
     , ( "M-S-r"                  , spawn "xmonad --recompile && xmonad --restart"        )
-    , ( "M-S-C-q"                , io (exitWith ExitSuccess)                             )
+    , ( "M-C-!"                  , io (exitWith ExitSuccess)                             )
 
     -- Screenshots
     , ( "<Print>"                , unGrab >> spawn myScreenshotCmd                       )

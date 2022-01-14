@@ -4,23 +4,26 @@ Config { font = "xft:Dina:size=12"
        , fgColor = "#a89984"
        , border = NoBorder
        , lowerOnStart = True
-       , commands = [ Run Wireless "wlo1" [ "-t", "<essid> <quality>", "-L", "50", "-H", "80"
-                                            , "--low", "#83a598", "--normal", "#fabd2f", "--high", "#b8bb26"
-                                            ] 10
-                    , Run DynNetwork [ "-t", "<rx>|<tx>", "-S", "true", "-L", "1000", "-H", "5000"
-                                     , "--low", "#b8bb26", "--normal", "#fabd2f", "--high", "#fb4934"
-                                     ] 10
-                    , Run Battery ["-t", "<acstatus>: <left>%", "-L", "10", "-H", "70"
-                                  , "--low", "#fb4934", "--normal", "#fabd2f", "--high", "#b8bb26"
-                                  , "--", "-O", "<fc=#b8bb26>on</fc>", "-o", "off ", "-i", "idle"
-                                  , "-f", "/sys/class/power_supply/AC/online"
+       , commands = [ Run Wireless "wlo1" [ "-t", "<essid> (<quality>%)" ] 10
+                    , Run DynNetwork [ "-t", "<rx>KB/s|<tx>KB/s" ] 10
+                    , Run Battery ["-t", "<acstatus> (<left>)"
+                                  , "-L", "10", "-H", "80"
+                                  , "-l", "#fb4934"
+                                  , "--", "-O", "on", "-i", "idle", "-o", "off"
+                                  , "-P"
+                                  , "-L", "5", "-H", "80"
+                                  , "--lows", "!LOW BATTERY! ", "--mediums", "", "--highs", ""
                                   ] 10
-                    , Run Volume "default" "Master" [ "-t", "<volume>%<status>", "--", "-O", "", "-o", " (mute)" ] 10
+                    , Run Volume "default" "Master" [ "-t", "<volume>%<status>"
+                                                    , "--", "-O", "", "-o", " (mute)"
+                                                    , "-c", "#fb4934"
+                                                    ] 10
+                    , Run Weather "KLAN" [ "-t", "<tempF>°F" ] 18000 -- run every half hour
                     , Run Date "%a %d %b %H:%M:%S" "date" 10
                     , Run Com "/home/brian/repos/scripts/update-notify" [] "updates" 10
                     , Run XMonadLog
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = "%XMonadLog% }{ %wlo1wi%  %dynnetwork%  %battery%  <fc=#8ec07c>%updates%</fc>  <fc=#d3869b>%default:Master%</fc>  <fc=#d79921>%date%</fc> "
+       , template = "%XMonadLog% }{ <fc=#fb4934><box type=Bottom width=2>%dynnetwork%</box></fc>  <fc=#83a598><box type=Bottom width=2>%wlo1wi%</box></fc>  <fc=#b8bb26><box type=Bottom width=2>%battery%</box></fc>  <fc=#8ec07c><box type=Bottom width=2>%updates%</box></fc>  <fc=#d3869b><box type=Bottom width=2>%default:Master%</box></fc>  <fc=#ebdbb2><box type=Bottom width=2>%KLAN%</box></fc>  <fc=#d79921><box type=Bottom width=2>%date%</box></fc> "
        }

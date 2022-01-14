@@ -28,7 +28,7 @@ set mbox_type = Maildir                         # mailbox type
 set postponed = "+postponed"                    # where to save postponed msg's (drafts) to
 set reverse_alias                               # show names from alias file in index
 set sort_alias = alias                          # sort alias file by alias
-set spoolfile = "+gmail/archive"                # default inbox on open
+# set spoolfile = "+gmail/archive"                # default inbox on open
 set timeout = 3                                 # don't wait for user input before checking for new mail
 set ts_enabled                                  # let mutt set terminal status line and icon name
 unset help                                      # don't show help lines describing major keybindings
@@ -38,8 +38,13 @@ unset record                                    # don't save sent items (gmail/m
 unset wait_key                                  # don't ask to "press any key to continue" after shell cmd, etc.
 
 # Mailboxes to poll for new mail (use of '+' must come *after* 'set folder')
-mailboxes "+gmail/archive" \
-          "+msu/archive"
+mailboxes "+gmail/inbox" \
+          "+msu/inbox"
+
+# Virtual mailboxes
+set virtual_spoolfile
+set nm_query_type = messages
+virtual-mailboxes "all" "notmuch://?query=folder:gmail/archive or folder:msu/archive or folder:msu/inbox or folder:msu/sent"
 
 # Index options
 set sort = threads                              # like gmail
@@ -124,7 +129,11 @@ macro generic,pager \
 ## quick-sync ~/.mail immediately with mbsync
 macro index ,r "<shell-escape>/usr/bin/mbsync -Va<enter>" "sync IMAP"
 
+## notmuch
+macro index ,n "<shell-escape>notmuch new<enter>" "update notmuch"
+
 ## change to various folders
+macro index ,a "<change-vfolder>all<enter>"             "go to all (virtual folder)"
 macro index gi "<change-folder>=gmail/inbox<enter>"     "go to gmail inbox"
 macro index ga "<change-folder>=gmail/archive<enter>"   "go to gmail archive"
 macro index gs "<change-folder>=gmail/sent<enter>"      "go to gmail sent mail"

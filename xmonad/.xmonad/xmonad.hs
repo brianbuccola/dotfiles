@@ -81,7 +81,7 @@ myFont = "xft:Dina:size=12"
 projects =
     [ Project { projectName = "m"
               , projectDirectory = "~/"
-              , projectStartHook = Just $ do spawn "tmux has-session -t mutt || st -c mutt -e tmux new -s mutt mutt"
+              , projectStartHook = Just $ do spawn "tmux has-session -t neomutt || st -c neomutt -e tmux new -s neomutt neomutt"
               }
 
     , Project { projectName = "t"
@@ -211,8 +211,8 @@ myStartupHook = do
 
 myManageHook = composeAll . concat $
     [ [ className =? "qutebrowser" --> doShift "q"              ]
-    , [ className =? "mutt"        --> doShift "m"              ]
-    , [ title     =? "mutt"        --> doShift "m"              ]
+    , [ className =? "neomutt"        --> doShift "m"           ]
+    , [ title     =? "neomutt"        --> doShift "m"           ]
     , [ className =? "MuPDF"       --> doShift "d"              ]
     , [ appName   =? "libreoffice" --> doShift "d"              ]
     , [ className =? "scratchpad"  --> doShift "t"              ]

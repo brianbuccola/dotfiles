@@ -6,8 +6,7 @@
 -- =========
 
 import XMonad
-import XMonad.Prompt
-import System.Exit
+import System.Exit                    -- provides exitWith to exit xmonad
 import qualified XMonad.StackSet as W -- provides greedyView and RationalRect
 import XMonad.Actions.CopyWindow      -- copy window to all WSs
 import XMonad.Actions.CycleWS         -- cycle through WSs, toggle last WS
@@ -20,13 +19,14 @@ import XMonad.Hooks.ManageHelpers     -- provides isDialog
 import XMonad.Hooks.StatusBar         -- add status bar such as xmobar
 import XMonad.Hooks.StatusBar.PP      -- configure status bar printing printing
 import XMonad.Hooks.UrgencyHook       -- colorize urgent WSs
+import XMonad.Layout.NoBorders        -- provides smartBorders, noBorders
+import XMonad.Layout.Renamed          -- custom layout names
+import XMonad.Layout.Spacing          -- pad windows with some spacing
+import XMonad.Layout.Tabbed           -- tabbed windows layout
+import XMonad.Prompt                  -- customize prompts
 import XMonad.Util.Cursor             -- set cursor
 import XMonad.Util.EZConfig           -- easily configure keybindings
 import XMonad.Util.Ungrab             -- allow releasing XMonad's keyboard grab (for screenshots etc.)
-import XMonad.Layout.Spacing          -- pad windows with some spacing
-import XMonad.Layout.NoBorders        -- provides smartBorders, noBorders
-import XMonad.Layout.Tabbed           -- tabbed windows layout
-import XMonad.Layout.Renamed          -- custom layout names
 import Graphics.X11.ExtraTypes.XF86   -- bind media keys
 import Colors.GruvboxDark             -- personal colors, defined in Colors/GruvboxDark.hs
 -- import Colors.GruvboxLight            -- personal colors, defined in Colors/GruvboxLight.hs

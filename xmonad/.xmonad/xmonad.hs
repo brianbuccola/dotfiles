@@ -49,7 +49,7 @@ main = xmonad
 mySB = statusBarProp "xmobar" (pure myPP)
 
 myPP = xmobarPP
-    { ppCurrent = xmobarColor myBrightYellow "" . wrap "{" "}"
+    { ppCurrent = xmobarColor myBrightYellow "" . wrap "<box type=Bottom width=2> " " </box>"
     , ppHidden  = pad
     , ppUrgent  = xmobarColor myBrightYellow myRed . wrap " " " "
     , ppSep     = ""

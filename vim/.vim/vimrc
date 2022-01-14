@@ -46,10 +46,6 @@ set background=dark
 let g:gruvbox_contrast_dark="hard"
 let g:gruvbox_italic=1
 colorscheme gruvbox
-if g:colors_name == "gruvbox"
-    " Use truly black background (for proper terminal opacity).
-    highlight Normal ctermbg=16 guibg=#000000
-endif
 " }}}
 " GUI Settings {{{
 set guifont=Noto\ Sans\ Mono\ 12

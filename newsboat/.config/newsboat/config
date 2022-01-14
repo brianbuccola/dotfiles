@@ -61,6 +61,9 @@ bind-key  E edit-flags
 ## article
 bind-key  y open-in-browser article
 
+# don't confirm whether to mark feed read
+confirm-mark-feed-read no
+
 # my macros
 macro x set browser "mpv %u &>/dev/null &" ; open-in-browser-and-mark-read ; set browser "open_url_in_instance.sh &>/dev/null"
 

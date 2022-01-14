@@ -11,9 +11,4 @@ xrdb -merge ~/.Xresources
 xset s 300 300
 xautolock -time 5 -locker slock &
 
-while true; do
-    ${HOME}/repos/scripts/dwmstatus
-    sleep 1
-done &
-
-exec xmonad
+exec ~/.xmonad/xmonad-x86_64-linux

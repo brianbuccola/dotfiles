@@ -191,13 +191,13 @@ myScreenshotCmd        = "import -silent -window root \"/tmp/screenshot-$(date '
 myScreenShotCmdSel     = "import -silent \"/tmp/screenshot-$(date '+%Y-%m-%d-%T').png\""
 myScreenShotCmdSelCopy = "import -silent png:- | xclip -selection clipboard -t image/png"
 
-myDmenuCmd        = "dmenu_run" ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightYellow ++ "'"
-myDocmenuCmd      = "docmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightBlue ++ "'"
-myManmenuCmd      = "manmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightRed ++ "'"
-myPassmenuCmdBoth = "passmenu2 --typeboth " ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
-myPassmenuCmdPass = "passmenu2 --typepass " ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
-myPassmenuCmdUser = "passmenu2 --typeuser " ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightGreen ++ "'"
-myVolmenuCmd      = "volmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++myBrightBlack ++ "' -sb '" ++ myBlack ++ "' -sf '" ++ myBrightMagenta ++ "'"
+myDmenuCmd        = "dmenu_run" ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myWhite ++ "' -sb '" ++ myCyan ++ "' -sf '" ++ myBrightWhite ++ "'"
+myDocmenuCmd      = "docmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myWhite ++ "' -sb '" ++ myBlue ++ "' -sf '" ++ myBrightWhite ++ "'"
+myManmenuCmd      = "manmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myWhite ++ "' -sb '" ++ myRed ++ "' -sf '" ++ myBrightWhite ++ "'"
+myPassmenuCmdBoth = "passmenu2 --typeboth " ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myWhite ++ "' -sb '" ++ myGreen ++ "' -sf '" ++ myBrightWhite ++ "'"
+myPassmenuCmdPass = "passmenu2 --typepass " ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myWhite ++ "' -sb '" ++ myGreen ++ "' -sf '" ++ myBrightWhite ++ "'"
+myPassmenuCmdUser = "passmenu2 --typeuser " ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myWhite ++ "' -sb '" ++ myGreen ++ "' -sf '" ++ myBrightWhite ++ "'"
+myVolmenuCmd      = "volmenu" ++ " -nb '" ++ myBlack ++ "' -nf '" ++ myWhite ++ "' -sb '" ++ myMagenta ++ "' -sf '" ++ myBrightWhite ++ "'"
 
 -- =============
 --  startupHook

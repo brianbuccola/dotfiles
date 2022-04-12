@@ -212,8 +212,8 @@ myStartupHook = do
 
 myManageHook = composeAll . concat $
     [ [ className =? "qutebrowser" --> doShift "q"              ]
-    , [ className =? "neomutt"        --> doShift "m"           ]
-    , [ title     =? "neomutt"        --> doShift "m"           ]
+    , [ className =? "neomutt"     --> doShift "m"              ]
+    , [ title     =? "neomutt"     --> doShift "m"              ]
     , [ className =? "MuPDF"       --> doShift "d"              ]
     , [ appName   =? "libreoffice" --> doShift "d"              ]
     , [ className =? "scratchpad"  --> doShift "t"              ]

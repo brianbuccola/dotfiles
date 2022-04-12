@@ -210,7 +210,7 @@ endif
 
 " vim-emoji
 set completefunc=emoji#complete
-nnoremap <leader>j :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>``
+nnoremap <leader>j :s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>``
 " }}}
 " Extra digraphs {{{
 map! <C-k>[[ ⟦

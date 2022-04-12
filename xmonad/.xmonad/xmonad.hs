@@ -227,7 +227,7 @@ myManageHook = composeAll . concat $
     , [ resource  =? r             --> doFloat | r <- myRFloats ]
     ]
     where
-        myCFloats = [ "Pinentry", "Xmessage" ]
+        myCFloats = [ "Pinentry", "Xdialog", "Xmessage" ]
         myTFloats = []
         myRFloats = []
 

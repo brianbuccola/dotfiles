@@ -15,6 +15,7 @@ set message_cachedir = "~/.mutt/cache/bodies"   # where to store bodies
 
 # Always sourced
 source $alias_file                              # source alias file
+source ~/.mutt/group                            # source group file
 source ~/.mutt/colors/default                   # source colors file
 source ~/.mutt/gpg.rc                           # source GPG file
 source /usr/share/doc/mutt/samples/gpg.rc       # source GPG sample file

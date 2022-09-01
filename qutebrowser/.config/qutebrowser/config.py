@@ -4,6 +4,7 @@ config.load_autoconfig(False)
 # General
 c.url.default_page = "about:blank"
 c.url.start_pages = ["about:blank"]
+c.content.cookies.accept = "no-3rdparty"
 c.content.default_encoding = "utf-8"
 c.content.headers.do_not_track = False
 c.content.notifications.enabled = False

@@ -189,9 +189,9 @@ export LESS_TERMCAP_ue=$(printf "\e[0m")        # end underline
 export LESS_TERMCAP_us=$(printf "\e[1;32m")     # begin underline
 
 # environment variables
-export PATH="$PATH:$HOME/.local/bin:$HOME/texlive/2021/bin/x86_64-linux:$HOME/repos/scripts"
-export MANPATH="$MANPATH:$HOME/.local/man:$HOME/texlive/2021/texmf-dist/doc/man"
-export INFOPATH="$INFOPATH:$HOME/texlive/2021/texmf-dist/doc/info"
+export PATH="$PATH:$HOME/.local/bin:$HOME/texlive/2022/bin/x86_64-linux:$HOME/repos/scripts"
+export MANPATH="$MANPATH:$HOME/.local/man:$HOME/texlive/2022/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:$HOME/texlive/2022/texmf-dist/doc/info"
 export SUDO_EDITOR="/usr/bin/vim"
 export VISUAL="/usr/bin/vim"
 export EDITOR="/usr/bin/vim"

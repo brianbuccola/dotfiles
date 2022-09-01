@@ -162,12 +162,13 @@ screencast() {
     ffmpeg \
         -y \
         -f x11grab \
-        -video_size 1600x900 \
+        -video_size 1920x1080 \
         -framerate 25 \
         -i "$DISPLAY" \
         -f alsa \
         -i default \
-        -c:v ffvhuff \
+        -c:v libx264 \
+        -preset ultrafast \
         -c:a flac \
         output.mkv
 }

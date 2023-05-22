@@ -25,6 +25,7 @@ set scrolloff=5                " Keep 5 lines (top/bottom) for scope.
 set showcmd                    " Show command being typed.
 set showmatch                  " Show matching brackets.
 set smartcase                  " ...when search string contains uppercase.
+set smoothscroll               " Smooth scroll when wrap is set.
 set spell                      " Highlight misspelled words.
 set spellcapcheck=             " Don't highlight uncapitalized first word.
 set splitright                 " Split to the right when executing :vsplit.

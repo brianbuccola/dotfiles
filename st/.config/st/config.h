@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Jet Brains Mono NL:size=14";
+static char *font = "Intel One Mono:size=18";
 static int borderpx = 2;
 
 /*

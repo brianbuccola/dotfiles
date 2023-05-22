@@ -8,7 +8,7 @@ display-adjust
 keyboard-adjust
 ~/.fehbg
 xrdb -merge ~/.Xresources
-xset s 300 300
-xautolock -time 5 -locker slock &
+xset s off
+xset -dpms
 
 exec ~/.xmonad/xmonad-x86_64-linux

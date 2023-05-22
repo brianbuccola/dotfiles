@@ -28,7 +28,7 @@ color   index       brightgreen     default "~R~h'buccolab?@msu\.edu'"          
 color   index       brightgreen     default "~R~C'@egr\.msu\.edu'"                    # read msu msg's
 color   index       brightgreen     default "~R~C'@list\.msu\.edu'"                   # read msu msg's
 color   index       brightgreen     default "~R~C'lin-grad@.*\.msu\.edu'"             # read msu msg's
-color   index       white           default "~R~P"                                    # grey messages from me (read)
+color   index       black           default "~R~P"                                    # grey messages from me (read)
 color   index       yellow          blue    "~O"                                      # old (but unread) messages
 color   index       brightred       default "~D"                                      # deleted messages
 color   index       brightred       white   "~="                                      # duplicate messages

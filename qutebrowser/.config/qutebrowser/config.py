@@ -38,6 +38,8 @@ c.content.blocking.adblock.lists = ['https://easylist.to/easylist/easylist.txt',
 
 # Website quirks
 config.set("content.autoplay", True, "open.spotify.com")
+config.set("content.blocking.enabled", False, "brulosophy.com")
+config.set("content.blocking.enabled", False, "hoopladigital.com")
 config.set("content.register_protocol_handler", False, "mail.google.com")
 config.set("content.register_protocol_handler", True, "calendar.google.com")
 

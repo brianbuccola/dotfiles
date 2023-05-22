@@ -12,7 +12,7 @@ function! PackInit() abort
     call minpac#add('SirVer/ultisnips')
     call minpac#add('bradford-smith94/quick-scope')
     call minpac#add('coderifous/textobj-word-column.vim')
-    call minpac#add('honza/vim-snippets')
+    call minpac#add('honza/vim-snippets', {'type': 'opt'})
     call minpac#add('junegunn/fzf.vim')
     call minpac#add('junegunn/goyo.vim')
     call minpac#add('junegunn/limelight.vim')

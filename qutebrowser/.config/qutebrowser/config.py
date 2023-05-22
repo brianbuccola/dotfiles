@@ -17,7 +17,7 @@ c.zoom.default = 125
 # c.colors.webpage.darkmode.enabled = True
 
 # Yanking URLs
-c.url.yank_ignored_parameters += ["smid", "smtyp", "fbclid"]
+c.url.yank_ignored_parameters += ["smid", "smtyp", "fbclid", "fb_news_token"]
 
 # Completion
 c.completion.shrink = True

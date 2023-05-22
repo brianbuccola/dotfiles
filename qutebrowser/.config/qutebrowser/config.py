@@ -9,9 +9,6 @@ c.content.default_encoding = "utf-8"
 c.content.headers.do_not_track = False
 c.content.notifications.enabled = False
 
-# Temporary workaround to fix renderer process crash
-c.qt.workarounds.remove_service_workers = True
-
 # User interface
 c.confirm_quit = ["downloads", "multiple-tabs"]
 c.statusbar.padding = {"top": 4, "bottom": 4, "left": 0, "right": 0}

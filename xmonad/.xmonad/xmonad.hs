@@ -120,7 +120,7 @@ myKeys =
     , ( "M-S-g"                  , shiftToProjectPrompt myXPConfig                       )
     , ( "M-C-g"                  , renameProjectPrompt myXPConfig                        )
     , ( "M-q"                    , windows $ W.greedyView "q"                            )
-    -- , ( "M-m"                    , windows $ W.greedyView "m"                            )
+    , ( "M-m"                    , windows $ W.greedyView "m"                            )
     , ( "M-d"                    , windows $ W.greedyView "d"                            )
     , ( "M-t"                    , windows $ W.greedyView "t"                            )
     , ( "M-n"                    , windows $ W.greedyView "n"                            )

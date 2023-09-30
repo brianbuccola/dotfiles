@@ -179,9 +179,6 @@ compdef m=mupdf
 compdef t=tmux
 compdef v=vim
 
-
-# environment variables
-export PATH="$PATH:$HOME/.local/bin:$HOME/texlive/2022/bin/x86_64-linux:$HOME/repos/scripts"
 # Colorize `less`, especially for manpages
 export LESS_TERMCAP_mb=$'\e[1;31m'     # begin blinking
 export LESS_TERMCAP_md=$'\e[1;31m'     # begin bold
@@ -192,6 +189,9 @@ export LESS_TERMCAP_ue=$'\e[0m'        # end underline
 export LESS_TERMCAP_us=$'\e[1;32m'     # begin underline
 export GROFF_NO_SGR=1                  # without this, colors no longer work
 export MANPAGER='less -s -M +Gg'       # display percentage into document
+
+# Environment variables
+export PATH="$PATH:$HOME/.local/bin:$HOME/texlive/2022/bin/x86_64-linux:$HOME/repos/scripts"
 export MANPATH="$MANPATH:$HOME/.local/man:$HOME/texlive/2022/texmf-dist/doc/man"
 export INFOPATH="$INFOPATH:$HOME/texlive/2022/texmf-dist/doc/info"
 export SUDO_EDITOR="/usr/bin/vim"

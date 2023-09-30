@@ -54,7 +54,7 @@ set strict_threads                              # thread based on "In-Reply-To:"
 
 # Pager options
 set menu_scroll                                 # scroll line-by-line in menus
-set pager_index_lines = 10                      # number of index lines to show
+set pager_index_lines = 5                       # number of index lines to show
 set pager_stop                                  # don't go to next message automatically
 # set wrap=78                                     # wrap text after 78 columns
 auto_view text/html                             # view html automatically
@@ -164,7 +164,7 @@ macro pager ,w "<enter-command>set wrap=0 smart_wrap markers<enter>"    "set wra
 macro pager ,W "<enter-command>set wrap=0 nosmart_wrap nomarkers<enter>" "unset wrapping stuff"
 
 ## toggle context lines
-macro pager ,c "<enter-command>set pager_index_lines=10<enter>" "set context lines"
+macro pager ,c "<enter-command>set pager_index_lines=5<enter>" "set context lines"
 macro pager ,C "<enter-command>set pager_index_lines=0<enter>" "unset context lines"
 
 ## open URLs with extract_url

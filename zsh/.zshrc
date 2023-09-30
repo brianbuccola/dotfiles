@@ -57,7 +57,7 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
 # Git prompt
-local gitval='$(__git_ps1 " (%s)")'
+local gitval='$(__git_ps1 "%s ")'
 source /usr/share/git/completion/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
@@ -102,8 +102,8 @@ autoload -Uz colors
 colors
 
 # Custom prompt
-PROMPT="┌─%B%T%b %(?..[%B%F{red}%?%f%b] )%F{white}%~%f
-└─╼%F{white}${gitval}%f %# "
+PROMPT="%B%T%b %(?..[%B%F{red}%?%f%b] )%F{white}%~%f
+${gitval}%# "
 
 # Aliases
 alias ...='cd ../..'

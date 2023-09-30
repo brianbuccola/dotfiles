@@ -45,9 +45,13 @@ c.content.blocking.adblock.lists = ['https://easylist.to/easylist/easylist.txt',
 config.set("content.autoplay", True, "open.spotify.com")
 config.set("content.blocking.enabled", False, "brulosophy.com")
 config.set("content.blocking.enabled", False, "hoopladigital.com")
+config.set("content.blocking.enabled", False, "nbcnews.com")
+config.set("content.headers.user_agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/6.4.2 Chrome/102.0.5005.177 Safari/537.36", "twitter.com")
 config.set("content.register_protocol_handler", False, "mail.google.com")
 config.set("content.register_protocol_handler", False, "outlook.office.com")
 config.set("content.register_protocol_handler", True, "calendar.google.com")
+config.set("content.cookies.accept", "all", "teams.microsoft.com")
+config.set("qt.args", ["disable-accelerated-2d-canvas"])
 
 # Storage
 c.downloads.location.directory = "/tmp"

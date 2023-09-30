@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# Given a URL to an image, copy the image to the clipboard.
+
+curl -L -o - "$1" | xclip -selection clipboard -t image/jpeg

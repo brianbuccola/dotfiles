@@ -72,12 +72,12 @@ c.aliases['cache'] = "open https://www.google.com/search?q=cache:{url}"
 # Bindings
 ## normal mode
 config.unbind('b', mode="normal")
-config.bind('tt', "set-cmd-text --space :open -t", mode="normal")
-config.bind('bb', "set-cmd-text --space :open -b", mode="normal")
-config.bind('ww', "set-cmd-text --space :open -w", mode="normal")
-config.bind('O', "set-cmd-text :open {url:pretty}", mode="normal")
-config.bind('tO', "set-cmd-text :open -t {url:pretty}", mode="normal")
-config.bind('bO', "set-cmd-text :open -b {url:pretty}", mode="normal")
+config.bind('tt', "cmd-set-text --space :open -t", mode="normal")
+config.bind('bb', "cmd-set-text --space :open -b", mode="normal")
+config.bind('ww', "cmd-set-text --space :open -w", mode="normal")
+config.bind('O', "cmd-set-text :open {url:pretty}", mode="normal")
+config.bind('tO', "cmd-set-text :open -t {url:pretty}", mode="normal")
+config.bind('bO', "cmd-set-text :open -b {url:pretty}", mode="normal")
 config.bind('l', "tab-next", mode="normal")
 config.bind('h', "tab-prev", mode="normal")
 config.bind('<backspace>', "tab-focus last", mode="normal")

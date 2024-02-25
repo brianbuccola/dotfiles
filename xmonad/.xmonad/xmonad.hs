@@ -26,7 +26,6 @@ import XMonad.Layout.Tabbed           -- tabbed windows layout
 import XMonad.Prompt                  -- customize prompts
 import XMonad.Util.Cursor             -- set cursor
 import XMonad.Util.EZConfig           -- easily configure keybindings
-import XMonad.Util.Ungrab             -- allow releasing XMonad's keyboard grab (for screenshots etc.)
 import Graphics.X11.ExtraTypes.XF86   -- bind media keys
 import Colors.GruvboxDark             -- personal colors, defined in Colors/GruvboxDark.hs
 -- import Colors.GruvboxLight            -- personal colors, defined in Colors/GruvboxLight.hs

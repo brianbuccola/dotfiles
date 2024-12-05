@@ -151,11 +151,8 @@ macro index gf "<limit>~F<enter>"                       "show flagged messages"
 ## save attachment to /tmp, not to current directory (~)
 macro attach s "<save-entry><bol>/tmp/<eol>" "save message/attachment to a mailbox/file in /tmp"
 
-## create alias (bind to A and reserve a for mark all new as read)
-macro index A "<create-alias>" "create an alias from a message sender"
-
 ## mark all new as read
-macro index a \
+macro index A \
   "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter><first-entry><sync-mailbox>" \
   "mark all new as read"
 

@@ -25,5 +25,5 @@ Config { font = "Dina 10"
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = "%XMonadLog% }{ <fc=#fb4934><box type=Bottom width=2>%dynnetwork%</box></fc>  <fc=#83a598><box type=Bottom width=2>%wlo1wi%</box></fc>  <fc=#b8bb26><box type=Bottom width=2>%battery%</box></fc>  <fc=#8ec07c><box type=Bottom width=2>%updates%</box></fc>  <fc=#d3869b><box type=Bottom width=2>%default:Master%</box></fc>  <fc=#ebdbb2><box type=Bottom width=2>%KLAN%</box></fc>  <fc=#d79921><box type=Bottom width=2>%date%</box></fc> "
+       , template = "%XMonadLog% }{ <fc=#fb4934><box type=Bottom width=2 mb=1>%dynnetwork%</box></fc>  <fc=#83a598><box type=Bottom width=2 mb=1>%wlo1wi%</box></fc>  <fc=#b8bb26><box type=Bottom width=2 mb=1>%battery%</box></fc>  <fc=#8ec07c><box type=Bottom width=2 mb=1>%updates%</box></fc>  <fc=#d3869b><box type=Bottom width=2 mb=1>%default:Master%</box></fc>  <fc=#ebdbb2><box type=Bottom width=2 mb=1>%KLAN%</box></fc>  <fc=#d79921><box type=Bottom width=2 mb=1>%date%</box></fc> "
        }
